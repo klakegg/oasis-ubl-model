@@ -1,0 +1,40 @@
+name: Consumption
+definition: A class to describe the consumption of a utility.
+since_version: '2.1'
+
+fields:
+- possessive_noun: Utility Statement Type
+  primary_noun: Code
+  type: Code
+  definition: A code identifying the type of the Utility Statement required for this consumption. Explains the kind of utility the statement is about, e.g.. "gas", "electricity", "telephone"
+  examples: Electricity
+  cardinality: 0..1
+  since_version: '2.1'
+
+objects:
+- qualifier: Main
+  type: Period
+  definition: The period of consumption.
+  cardinality: 0..1
+  since_version: '2.1'
+- type: Allowance Charge
+  definition: An allowance or charges that may apply with this consumption.
+  cardinality: 0..n
+  since_version: '2.1'
+- type: Tax Total
+  definition: The total of taxes for each tax type covering the consumption.
+  cardinality: 0..n
+  since_version: '2.1'
+- type: Energy Water Supply
+  definition: The details of any energy or water consumption.
+  cardinality: 0..1
+  since_version: '2.1'
+- type: Telecommunications Supply
+  definition: The details of any telecommunications consumption.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Legal
+  type: Monetary Total
+  definition: The total amount payable on this consumption, including any allowances, charges, or taxes.
+  cardinality: '1'
+  since_version: '2.1'

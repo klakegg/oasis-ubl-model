@@ -1,0 +1,22 @@
+name: Tender Requirement
+definition: A template for a required document in a tendering process.
+since_version: '2.1'
+
+fields:
+- primary_noun: Name
+  type: Name
+  definition: A name of this tender requirement.
+  cardinality: 1..n
+  since_version: '2.1'
+- primary_noun: Description
+  type: Text
+  definition: Text describing this tender requirement.
+  cardinality: 0..n
+  since_version: '2.1'
+
+objects:
+- qualifier: Template
+  type: Document Reference
+  definition: A reference to the template for a required document.
+  cardinality: 0..1
+  since_version: '2.1'

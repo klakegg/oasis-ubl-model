@@ -1,0 +1,53 @@
+name: Forecast Exception
+definition: 'As explained in Exception Criteria Line: Three types of exception criteria can be defined, Operational, Metric or Forecast Exceptions. This class provides criteria for forecast exception type: the identification of the purpose of the forecast, the source of data and the time basis criteria for the exception.'
+since_version: '2.1'
+
+fields:
+- possessive_noun: Purpose
+  primary_noun: Code
+  type: Code
+  definition: 'It is either Sales forecast or Order Forecast. Definition can be changed like: "The purpose of the Forecast (either sales or order), about which an exception criteria is being defined".'
+  cardinality: '1'
+  since_version: '2.1'
+- possessive_noun: Forecast Type
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the type of forecast. Example of values are:BASE PROMOTIONAL SEASONAL TOTAL
+  cardinality: '1'
+  since_version: '2.1'
+- possessive_noun: Issue
+  primary_noun: Date
+  type: Date
+  definition: The date on which the forecast was issued.
+  cardinality: '1'
+  since_version: '2.1'
+- possessive_noun: Issue
+  primary_noun: Time
+  type: Time
+  definition: The time at which the forecast was issued.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Data Source
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the partner who provides this information.
+  cardinality: '1'
+  since_version: '2.1'
+- possessive_noun: Comparison Data
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the partner providing the information in this forecast exception.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Comparison Forecast Issue
+  primary_noun: Time
+  type: Time
+  definition: The time at which this comparison forecast was issued.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Comparison Forecast Issue
+  primary_noun: Date
+  type: Date
+  definition: The date on which this comparison forecast was issued.
+  cardinality: 0..1
+  since_version: '2.1'

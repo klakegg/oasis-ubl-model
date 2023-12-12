@@ -1,0 +1,72 @@
+name: Verified Gross Mass
+definition: A class to describe a verified gross mass (VGM) measure and its documentation.
+alternative_business_terms: VGM
+since_version: '2.2'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this mass measure.
+  cardinality: 0..1
+  since_version: '2.2'
+- possessive_noun: Weighing
+  primary_noun: Date
+  type: Date
+  definition: The weighing date.
+  cardinality: 0..1
+  since_version: '2.2'
+- possessive_noun: Weighing
+  primary_noun: Time
+  type: Time
+  definition: The weighing time.
+  cardinality: 0..1
+  since_version: '2.2'
+- possessive_noun: Weighing Method
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the weighing method used (e.g. according the SOLAS Convention).
+  examples: 1, 2
+  cardinality: '1'
+  since_version: '2.2'
+- possessive_noun: Weighing Device
+  primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for the weighing device used for executing the weight measurement.
+  examples: WeighScale-01
+  cardinality: 0..1
+  since_version: '2.2'
+- possessive_noun: Weighing Device
+  primary_noun: Type
+  type: Text
+  definition: Text describing the weighing device type used for executing the weight measurement.
+  examples: Truck Scale, Weighbridge
+  cardinality: 0..1
+  since_version: '2.2'
+- primary_noun: Mass
+  type: Measure
+  definition: The total verified gross mass of a packed container which includes the cargo weight, block and bracing materials and container tare.
+  alternative_business_terms: VGM
+  untded_code: '6092'
+  cardinality: '1'
+  since_version: '2.2'
+
+objects:
+- qualifier: Weighing
+  type: Party
+  definition: The party executing the weight measure.
+  cardinality: 0..1
+  since_version: '2.2'
+- qualifier: Shipper
+  type: Party
+  definition: The party playing the role of the Shipper (BCO, FF or NVOCC) who is responsible for the VGM (e.g. according the SOLAS Convention).
+  cardinality: 0..1
+  since_version: '2.2'
+- qualifier: Responsible
+  type: Party
+  definition: The party responsible for signing the VGM on behalf of the Shipper.
+  cardinality: 0..1
+  since_version: '2.2'
+- type: Document Reference
+  definition: A reference to the VGM documentary evidence.
+  cardinality: 1..n
+  since_version: '2.2'

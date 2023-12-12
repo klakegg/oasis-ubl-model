@@ -1,0 +1,112 @@
+name: Goods Item Itinerary
+definition: A document providing details relating to a transport service, such as transport movement, identification of equipment and goods, subcontracted service providers, etc.
+since_version: '2.1'
+
+fields:
+- possessive_noun: UBL Version
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies the earliest version of the UBL 2 schema for this document type that defines all of the elements that might be encountered in the current instance.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Customization
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies a user-defined customization of UBL for a specific use.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Profile
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies a user-defined profile of the customization of UBL being used.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Profile Execution
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies an instance of executing a profile, to associate all transactions in a collaboration.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this document, assigned by the sender.
+  cardinality: '1'
+  since_version: '2.1'
+- primary_noun: Indicator
+  type: Indicator
+  definition: Indicates whether this document is a copy (true) or not (false).
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: UUID
+  type: Identifier
+  definition: A universally unique identifier for an instance of this document.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Issue
+  primary_noun: Date
+  type: Date
+  definition: The date, assigned by the sender, on which this document was issued.
+  cardinality: '1'
+  since_version: '2.1'
+- possessive_noun: Issue
+  primary_noun: Time
+  type: Time
+  definition: The time, assigned by the sender, at which this document was issued.
+  cardinality: '1'
+  since_version: '2.1'
+- primary_noun: Note
+  type: Text
+  definition: Free-form text pertinent to this document, conveying information that is not contained explicitly in other structures.
+  cardinality: 0..n
+  since_version: '2.1'
+- primary_noun: Version
+  type: Identifier
+  definition: Identifies a version of a Goods Item Itinerary in order to distinguish updates.
+  cardinality: '1'
+  since_version: '2.1'
+- possessive_noun: Transport Execution Plan
+  primary_noun: Reference
+  type: Identifier
+  definition: The Transport Execution Plan associated with this Goods Item Itinerary.
+  cardinality: '1'
+  since_version: '2.1'
+
+objects:
+- type: Signature
+  definition: A signature applied to this document.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Sender
+  type: Party
+  definition: The sender of this Goods Item Itinerary.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Receiver
+  type: Party
+  definition: The receiver of this Goods Item Itinerary.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Referenced
+  type: Consignment
+  definition: A consignment being transported in the transport service associated with this Goods Item Itinerary.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Referenced
+  type: Transport Equipment
+  definition: Transport equipment being transported in the transport service associated with this Goods Item Itinerary.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Referenced
+  type: Package
+  definition: A package being transported in the transport service associated with this Goods Item Itinerary.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Referenced
+  type: Goods Item
+  definition: An item of goods being transported in the transport service associated with this Goods Item Itinerary.
+  cardinality: 0..n
+  since_version: '2.1'
+- type: Transportation Segment
+  definition: A part of a transport service that has its own Transport Execution Plan. A Transportation Segment may cover services other than transport, such as terminal handling, document management, customs procedures, etc.
+  cardinality: 1..n
+  since_version: '2.1'

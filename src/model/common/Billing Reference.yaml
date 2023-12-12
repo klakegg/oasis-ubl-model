@@ -1,0 +1,44 @@
+name: Billing Reference
+definition: A class to define a reference to a billing document.
+since_version: '2.0'
+
+objects:
+- qualifier: Invoice
+  type: Document Reference
+  definition: A reference to an invoice.
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Self Billed Invoice
+  type: Document Reference
+  definition: A reference to a self billed invoice.
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Credit Note
+  type: Document Reference
+  definition: A reference to a credit note.
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Self Billed Credit Note
+  type: Document Reference
+  definition: A reference to a self billed credit note.
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Debit Note
+  type: Document Reference
+  definition: A reference to a debit note.
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Reminder
+  type: Document Reference
+  definition: A reference to a billing reminder.
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Additional
+  type: Document Reference
+  definition: A reference to an additional document.
+  cardinality: 0..1
+  since_version: '2.0'
+- type: Billing Reference Line
+  definition: A reference to a transaction line in the billing document.
+  cardinality: 0..n
+  since_version: '2.0'

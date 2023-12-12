@@ -1,0 +1,65 @@
+name: Consumption Line
+definition: A class to describe a line item for utility consumption. To specify more than one utility item, use separate consumption lines.
+since_version: '2.1'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this consumption line.
+  examples: '1'
+  cardinality: '1'
+  since_version: '2.1'
+- possessive_noun: Document Line Reference
+  primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for the transaction line on a related document (such as an invoice) that covers this consumption line.
+  examples: Consumption
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Quantity
+  type: Quantity
+  definition: The quantity invoiced.
+  cardinality: '1'
+  since_version: '2.1'
+- possessive_noun: Line Extension
+  primary_noun: Amount
+  type: Amount
+  definition: The monetary amount, including discount, to be charged for this consumption line.
+  cardinality: '1'
+  since_version: '2.1'
+- possessive_noun: Line Extension
+  primary_noun: Amount
+  type: Amount
+  definition: The total amount for this consumption line, including all allowances, charges and taxes.
+  cardinality: 0..1
+  since_version: '2.3'
+
+objects:
+- type: Period
+  definition: The period of time covered by this consumption line.
+  cardinality: 0..1
+  since_version: '2.1'
+- type: Delivery
+  definition: A delivery of the utility item on this consumption line.
+  cardinality: 0..n
+  since_version: '2.1'
+- type: Allowance Charge
+  definition: An allowance or charge that applies to this consumption line.
+  cardinality: 0..n
+  since_version: '2.1'
+- type: Tax Total
+  definition: A total amount of taxes of a particular kind applicable to this consumption line.
+  cardinality: 0..n
+  since_version: '2.1'
+- type: Utility Item
+  definition: The utility item consumed.
+  cardinality: '1'
+  since_version: '2.1'
+- type: Price
+  definition: The price associated with this consumption line, expressed in a data structure containing multiple properties.
+  cardinality: 0..1
+  since_version: '2.1'
+- type: Unstructured Price
+  definition: The price associated with this consumption line expressed in a less structured form that includes just the amount and the time of use.
+  cardinality: 0..1
+  since_version: '2.1'

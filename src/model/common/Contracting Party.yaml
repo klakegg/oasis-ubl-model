@@ -1,0 +1,29 @@
+name: Contracting Party
+definition: A class to describe an individual, a group, or a body having a procurement role in a tendering process.
+since_version: '2.1'
+
+fields:
+- primary_noun: URI
+  type: Identifier
+  definition: The buyer profile is typically located on a web site where the contracting party publishes its procurement opportunities
+  alternative_business_terms: Buyer Profile
+  cardinality: 0..1
+  since_version: '2.1'
+
+objects:
+- type: Contracting Party Type
+  definition: The type of contracting party that is independent of its role.
+  cardinality: 0..n
+  since_version: '2.1'
+- type: Contracting Activity
+  definition: The nature of the type of business of the organization
+  cardinality: 0..n
+  since_version: '2.1'
+- type: Contracting Representation Type
+  definition: The type of represention empowering the party to act on behalf of a third party
+  cardinality: 0..1
+  since_version: '2.3'
+- type: Party
+  definition: The contracting party itself.
+  cardinality: '1'
+  since_version: '2.1'

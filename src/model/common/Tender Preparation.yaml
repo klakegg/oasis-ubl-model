@@ -1,0 +1,45 @@
+name: Tender Preparation
+definition: A class to describe directions for preparing a tender.
+since_version: '2.1'
+
+fields:
+- possessive_noun: Tender Envelope
+  primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for the tender envelope to be used with the tender.
+  cardinality: '1'
+  since_version: '2.1'
+- possessive_noun: Tender Envelope Type
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the type of tender envelope (economical or objective criteria versus technical or subjective criteria).
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Description
+  type: Text
+  definition: Text describing the tender envelope.
+  cardinality: 0..n
+  since_version: '2.1'
+- possessive_noun: Open Tender
+  primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for the open tender associated with this tender preparation.
+  cardinality: 0..1
+  since_version: '2.1'
+
+objects:
+- type: Procurement Project Lot
+  definition: The procurement project lot associated with a particular tenderer.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Document
+  type: Tender Requirement
+  definition: A reference to the template for a required document in a tendering process.
+  examples: Curricula required, Experience required, ....
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Tender
+  type: Encryption Data
+  definition: A reference to the details of the encryption process used for the tender.
+  cardinality: 0..n
+  since_version: '2.2'

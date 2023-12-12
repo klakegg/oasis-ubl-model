@@ -1,0 +1,74 @@
+name: Item Location Quantity
+definition: A class for information about pricing structure, lead time, delivery, and location associated with an item.
+since_version: '2.0'
+
+fields:
+- possessive_noun: Lead
+  primary_noun: Time
+  type: Measure
+  definition: The lead time, i.e., the time taken from the time at which an item is ordered to the time of its delivery.
+  examples: '2 days , 24 hours '
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Quantity
+  type: Quantity
+  definition: The minimum quantity that can be ordered to qualify for a specific price.
+  examples: '10 boxes , 1 carton , 1000 sheets '
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Quantity
+  type: Quantity
+  definition: The maximum quantity that can be ordered to qualify for a specific price.
+  examples: '10 boxes , 1 carton , 1000 sheets '
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Indicator
+  type: Indicator
+  definition: An indication that the transported item, as delivered, in the stated quantity to the stated location, is subject to an international regulation concerning the carriage of dangerous goods (true) or not (false).
+  examples: Default is negative
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Trading
+  primary_noun: Restrictions
+  type: Text
+  definition: Text describing trade restrictions on the quantity of this item or on the item itself.
+  examples: 'not for export '
+  cardinality: 0..n
+  since_version: '2.0'
+
+objects:
+- qualifier: Applicable Territory
+  type: Address
+  definition: The applicable sales territory.
+  cardinality: 0..n
+  since_version: '2.0'
+- type: Price
+  definition: The price associated with this item location quantity
+  cardinality: 0..1
+  since_version: '2.0'
+- type: Delivery Unit
+  definition: A delivery unit in which the item is located.
+  cardinality: 0..n
+  since_version: '2.0'
+- qualifier: Applicable
+  type: Tax Category
+  definition: A tax category applicable to this item location quantity.
+  cardinality: 0..n
+  since_version: '2.0'
+- type: Package
+  definition: The package to which this price applies.
+  cardinality: 0..1
+  since_version: '2.1'
+- type: Allowance Charge
+  definition: An allowance or charge associated with this item location quantity.
+  cardinality: 0..n
+  since_version: '2.1'
+- type: Dependent Price Reference
+  definition: The price of the item as a percentage of the price of some other item.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Applicable Delivery
+  type: Period
+  definition: The period during which item must be delivered for the price to apply
+  cardinality: 0..1
+  since_version: '2.4'

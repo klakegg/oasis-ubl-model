@@ -1,0 +1,15 @@
+name: Security Measure
+definition: A class to describe a security measure
+since_version: '2.3'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this security measure.
+  cardinality: 0..1
+  since_version: '2.3'
+- primary_noun: Description
+  type: Text
+  definition: The description of this security measure
+  cardinality: 1..n
+  since_version: '2.3'

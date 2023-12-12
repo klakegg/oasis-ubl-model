@@ -1,0 +1,21 @@
+name: Promotional Specification
+definition: A class to describe a promotional event as a set of item locations that share a set of promotional tactics.
+since_version: '2.1'
+
+fields:
+- possessive_noun: Specification
+  primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this promotional specification.
+  cardinality: 0..1
+  since_version: '2.1'
+
+objects:
+- type: Promotional Event Line Item
+  definition: A line item for a promotional event involving a specific product at a specific location; it describes the expected impacts associated with the event and specifies the promotional price of the item."
+  cardinality: 1..n
+  since_version: '2.1'
+- type: Event Tactic
+  definition: An event tactic associated with this promotion.
+  cardinality: 0..n
+  since_version: '2.1'

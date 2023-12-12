@@ -1,0 +1,24 @@
+name: Trading Terms
+definition: A class for describing the terms of a trade agreement.
+since_version: '2.0'
+
+fields:
+- primary_noun: Information
+  type: Text
+  definition: Text describing the terms of a trade agreement.
+  examples: 'Unless credit terms have been expressly agreed by Dell, payment for the products or services will be made in full before physical delivery of products or services. Customer must pay for all shipping and handling charges. '
+  cardinality: 0..n
+  since_version: '2.0'
+- primary_noun: Reference
+  type: Text
+  definition: A reference quoting the basis of the terms
+  examples: http://www1.ap.dell.com/content/topics/topic.aspx/ap/policy/en/au/sales_terms_au
+  cardinality: 0..1
+  since_version: '2.0'
+
+objects:
+- qualifier: Applicable
+  type: Address
+  definition: The address at which these trading terms apply.
+  cardinality: 0..1
+  since_version: '2.0'

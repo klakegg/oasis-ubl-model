@@ -1,0 +1,109 @@
+name: Procurement Project
+definition: A class to describe a project to procure goods, works, or services.
+since_version: '2.1'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this procurement project.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Name
+  type: Name
+  definition: A name of this procurement project.
+  cardinality: 0..n
+  since_version: '2.1'
+- primary_noun: Description
+  type: Text
+  definition: Text describing this procurement project.
+  cardinality: 0..n
+  since_version: '2.1'
+- possessive_noun: Type
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the type of procurement project (e.g., goods, works, services).
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Type
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the subcategory of the type of work for this project (e.g., land surveying, IT consulting).
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Quality Control
+  primary_noun: Code
+  type: Code
+  definition: The indication of whether or not the control quality is included in the works project.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Fee
+  type: Amount
+  definition: The amount of the reimbursement fee for concession procurement projects.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Description
+  type: Text
+  definition: Text describing the reimbursement fee for concession procurement projects.
+  cardinality: 0..n
+  since_version: '2.1'
+- possessive_noun: Delivery
+  primary_noun: Date
+  type: Date
+  definition: The requested delivery date for this procurement project.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Overall
+  primary_noun: Contract
+  type: Quantity
+  definition: The estimated overall quantity for this procurement project.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Note
+  type: Text
+  definition: Free-form text applying to the Procurement Project. This element may contain additional information about the lot/contract that is not contained explicitly in another structure.
+  cardinality: 0..n
+  since_version: '2.1'
+- possessive_noun: SME
+  primary_noun: Suitable
+  type: Indicator
+  definition: Suitable for Small- and Medium-sized Enterprises. This element specifies that the buyer accepts the risks associated of contracting with SMEs.
+  cardinality: 0..1
+  since_version: '2.3'
+
+objects:
+- type: Procurement Additional Type
+  definition: An association to additional procurement type.
+  cardinality: 0..n
+  since_version: '2.3'
+- type: Requested Tender Total
+  definition: Budget monetary amounts for the project as whole.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Main
+  type: Commodity Classification
+  definition: An association to the main classification category for the deliverable requested.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Additional
+  type: Commodity Classification
+  definition: An association to additional classification categories for the deliverable requested.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Realized
+  type: Location
+  definition: A place where this procurement project will be physically realized.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Planned
+  type: Period
+  definition: The period during which this procurement project is planned to take place.
+  cardinality: 0..1
+  since_version: '2.1'
+- type: Contract Extension
+  definition: The contract extension for this tendering process.
+  cardinality: 0..1
+  since_version: '2.1'
+- type: Request For Tender Line
+  definition: A good or service this project is intended to procure.
+  cardinality: 0..n
+  since_version: '2.1'

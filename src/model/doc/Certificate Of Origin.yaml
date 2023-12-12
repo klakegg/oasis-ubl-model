@@ -1,0 +1,116 @@
+name: Certificate Of Origin
+definition: A document that describes the Certificate of Origin.
+since_version: '2.0'
+
+fields:
+- possessive_noun: UBL Version
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies the earliest version of the UBL 2 schema for this document type that defines all of the elements that might be encountered in the current instance.
+  examples: 2.0.5
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Customization
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies a user-defined customization of UBL for a specific use.
+  examples: NES
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Profile
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies a user-defined profile of the customization of UBL being used.
+  examples: BasicProcurementProcess
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Profile Execution
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies an instance of executing a profile, to associate all transactions in a collaboration.
+  examples: BPP-1001
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this document, assigned by the sender.
+  untded_code: '1188'
+  cardinality: '1'
+  since_version: '2.0'
+- primary_noun: UUID
+  type: Identifier
+  definition: A universally unique identifier for an instance of this document.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Issue
+  primary_noun: Date
+  type: Date
+  definition: The date, assigned by the sender, on which this document was issued.
+  untded_code: '2039'
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Issue
+  primary_noun: Time
+  type: Time
+  definition: The time, assigned by the sender, at which this document was issued.
+  untded_code: '2039'
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Description
+  type: Text
+  definition: Textual description of the document instance.
+  cardinality: 0..n
+  since_version: '2.0'
+- primary_noun: Note
+  type: Text
+  definition: Free-form text pertinent to this document, conveying information that is not contained explicitly in other structures.
+  cardinality: 0..n
+  since_version: '2.0'
+- primary_noun: Version
+  type: Identifier
+  definition: Identifies the version of this Certificate of Origin.
+  cardinality: 0..1
+  since_version: '2.0'
+
+objects:
+- type: Signature
+  definition: A signature applied to this document.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Exporter
+  type: Party
+  definition: The Party who makes the export declaration, or on whose behalf the export declaration is made, and who is the owner of the goods or has similar right of disposal over them at the time when the declaration is accepted.
+  alternative_business_terms: Exporter (WCO ID 41 and 42)
+  untded_code: 3036 and 3039
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Importer
+  type: Party
+  definition: The Party who makes an import declaration, or on whose behalf a Customs clearing agent or other authorized person makes an import declaration. This may include a person who has possession of the goods or to whom the goods are consigned.
+  alternative_business_terms: Importer (WCO ID 39 and 40)
+  untded_code: 3036 and 3039
+  cardinality: 0..1
+  since_version: '2.0'
+- type: Endorser Party
+  definition: The Party providing the endorsement.
+  cardinality: 0..n
+  since_version: '2.0'
+- type: Certificate Of Origin Application
+  definition: Details of the application for a Certificate of Origin.
+  cardinality: '1'
+  since_version: '2.0'
+- qualifier: Issuer
+  type: Endorsement
+  definition: Issuer Endorsement details.
+  cardinality: '1'
+  since_version: '2.0'
+- qualifier: Embassy
+  type: Endorsement
+  definition: Embassy Endorsement details.
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Insurance
+  type: Endorsement
+  definition: Insurance Endorsement details.
+  cardinality: 0..1
+  since_version: '2.0'

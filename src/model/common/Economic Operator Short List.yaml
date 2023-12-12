@@ -1,0 +1,32 @@
+name: Economic Operator Short List
+definition: A class to provide information about the preselection of a short list of economic operators for consideration as possible candidates in a tendering process.
+since_version: '2.1'
+
+fields:
+- primary_noun: Description
+  type: Text
+  definition: Text describing the criteria used to restrict the number of candidates.
+  cardinality: 0..n
+  since_version: '2.1'
+- primary_noun: Quantity
+  type: Quantity
+  definition: The number of economic operators expected to be on the short list.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Quantity
+  type: Quantity
+  definition: The maximum number of economic operators on the short list.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Quantity
+  type: Quantity
+  definition: The minimum number of economic operators on the short list.
+  cardinality: 0..1
+  since_version: '2.1'
+
+objects:
+- qualifier: Pre Selected
+  type: Party
+  definition: The parties pre-selected allowed to submit tenders in a negotiated procedure. Negotiated procedure is a type of procedure where the contracting authorities can set the parties to be invited in the procurement project
+  cardinality: 0..n
+  since_version: '2.1'

@@ -1,0 +1,122 @@
+name: Maritime Health Declaration
+definition: A class to desccribe a maritime health declaration.
+since_version: '2.3'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this maritime health declaration.
+  cardinality: 0..1
+  since_version: '2.3'
+- primary_noun: Indicator
+  type: Indicator
+  definition: Indicates whether there is an infectious diasase case on board (true) or not (false).
+  cardinality: 0..1
+  since_version: '2.3'
+- primary_noun: Indicator
+  type: Indicator
+  definition: Indicates whether a sick person is more ill than extected (true) or not (false).
+  cardinality: 0..1
+  since_version: '2.3'
+- primary_noun: Indicator
+  type: Indicator
+  definition: Indicates whether a medical practioner has been consulted (true) or not (false).
+  cardinality: 0..1
+  since_version: '2.3'
+- primary_noun: Indicator
+  type: Indicator
+  definition: Indicates whether stowaways have been found on board (true) or not (false).
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Animal On Board
+  primary_noun: Indicator
+  type: Indicator
+  definition: Indicates whether a sick animal is on board (true) or not (false).
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Cargo Transport
+  primary_noun: Indicator
+  type: Indicator
+  definition: Indicates whether the cargo under transport has been fumigated (true) or not (false).
+  cardinality: 0..1
+  since_version: '2.3'
+- primary_noun: Indicator
+  type: Indicator
+  definition: Indicates whether sanity measures are applied (true) or not (false).
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Sanitation Certificate On Board
+  primary_noun: Indicator
+  type: Indicator
+  definition: Indicates whether a valid sanitary certificate is on board (true) or not (false).
+  cardinality: 0..1
+  since_version: '2.3'
+- primary_noun: Indicator
+  type: Indicator
+  definition: Indicates whether a reinspaction is required (true) or not (false).
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Person
+  primary_noun: Quantity
+  type: Quantity
+  definition: Specifies the total number of dead persons on board the vessel.
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Person
+  primary_noun: Quantity
+  type: Quantity
+  definition: Specifies the total number of ill persons on board the vessel.
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Animal
+  primary_noun: Description
+  type: Text
+  definition: Describes any sick animals on board the vessel.
+  cardinality: 0..n
+  since_version: '2.3'
+- possessive_noun: Stowaway
+  primary_noun: Description
+  type: Text
+  definition: Describes any stowaways on board the vessel.
+  cardinality: 0..n
+  since_version: '2.3'
+- possessive_noun: Drinking Water Analysis
+  primary_noun: Date
+  type: Date
+  definition: The date when the last drinking water analysis was made.
+  cardinality: 0..1
+  since_version: '2.3'
+
+objects:
+- type: WHO Affected Area Visit
+  definition: A WHO Affected Area visit related to this maritime health declaration.
+  cardinality: 0..n
+  since_version: '2.3'
+- type: Personnel Health Incident
+  definition: A personal health incident related to this maritime health declaration.
+  cardinality: 0..n
+  since_version: '2.3'
+- type: Sanitary Measure
+  definition: A sanitary meassure for this health declaration.
+  cardinality: 0..n
+  since_version: '2.3'
+- qualifier: Place Of Report
+  type: Location
+  definition: The location where this maritime health declaration is reported.
+  cardinality: 0..1
+  since_version: '2.3'
+- qualifier: Medical
+  type: Certificate
+  definition: The medical certificate for this maritime health declaration.
+  cardinality: 0..1
+  since_version: '2.3'
+- qualifier: Ship Sanitation Control
+  type: Certificate
+  definition: A certificate describing the sanitation control of this maritime health certificate.
+  cardinality: 0..1
+  since_version: '2.3'
+- qualifier: Ship Sanitation Control Exemption
+  type: Document Reference
+  definition: A reference to a document evidencing the exemption of a ship sanitation control certificate, when absent.
+  cardinality: 0..n
+  since_version: '2.3'

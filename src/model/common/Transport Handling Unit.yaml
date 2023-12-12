@@ -1,0 +1,153 @@
+name: Transport Handling Unit
+definition: A class to describe a uniquely identifiable unit consisting of one or more packages, goods items, or pieces of transport equipment.
+alternative_business_terms: Logistics Unit, Handling Unit, THU
+since_version: '2.0'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this transport handling unit.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Transport Handling Unit Type
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the type of this transport handling unit.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Handling
+  primary_noun: Code
+  type: Code
+  definition: The handling required for this transport handling unit, expressed as a code.
+  alternative_business_terms: Special Handling
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Instructions
+  type: Text
+  definition: The handling required for this transport handling unit, expressed as text.
+  untded_code: '4078'
+  cardinality: 0..n
+  since_version: '2.0'
+- primary_noun: Indicator
+  type: Indicator
+  definition: An indicator that the materials contained in this transport handling unit are subject to an international regulation concerning the carriage of dangerous goods (true) or not (false).
+  examples: Default is negative
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Goods Item
+  primary_noun: Quantity
+  type: Quantity
+  definition: The total number of goods items in this transport handling unit.
+  untded_code: '7500'
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Package
+  primary_noun: Quantity
+  type: Quantity
+  definition: The total number of packages in this transport handling unit.
+  untded_code: '7500'
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Remarks
+  type: Text
+  definition: Text describing damage associated with this transport handling unit.
+  untded_code: '7500'
+  cardinality: 0..n
+  since_version: '2.0'
+- primary_noun: Marks
+  type: Text
+  definition: Text describing the marks and numbers on this transport handling unit.
+  alternative_business_terms: Marks and Numbers, Shipping Marks
+  untded_code: '7102'
+  cardinality: 0..n
+  since_version: '2.0'
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for use in tracing this transport handling unit, such as the EPC number used in RFID.
+  cardinality: 0..1
+  since_version: '2.1'
+
+objects:
+- qualifier: Handling Unit
+  type: Despatch Line
+  definition: A despatch line associated with this transport handling unit.
+  cardinality: 0..n
+  since_version: '2.0'
+- qualifier: Actual
+  type: Package
+  definition: A package contained in this transport handling unit.
+  cardinality: 0..n
+  since_version: '2.0'
+- qualifier: Received Handling Unit
+  type: Receipt Line
+  definition: A receipt line associated with this transport handling unit.
+  cardinality: 0..n
+  since_version: '2.0'
+- type: Transport Equipment
+  definition: A piece of transport equipment associated with this transport handling unit.
+  cardinality: 0..n
+  since_version: '2.0'
+- type: Transport Means
+  definition: A means of transport associated with this transport handling unit.
+  cardinality: 0..n
+  since_version: '2.1'
+- type: Hazardous Goods Transit
+  definition: Transit-related information regarding a type of hazardous goods contained in this transport handling unit.
+  cardinality: 0..n
+  since_version: '2.0'
+- qualifier: Measurement
+  type: Dimension
+  definition: A measurable dimension (length, mass, weight, or volume) of this transport handling unit.
+  cardinality: 0..n
+  since_version: '2.0'
+- qualifier: Minimum
+  type: Temperature
+  definition: The minimum required operating temperature of this transport handling unit.
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Maximum
+  type: Temperature
+  definition: The maximum allowable operating temperature of this transport handling unit.
+  cardinality: 0..1
+  since_version: '2.0'
+- type: Goods Item
+  definition: A goods item contained in this transport handling unit.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Floor Space Measurement
+  type: Dimension
+  definition: The floor space measurement dimension associated with this transport handling unit.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Pallet Space Measurement
+  type: Dimension
+  definition: The pallet space measurement dimension associated to this transport handling unit.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Shipment
+  type: Document Reference
+  definition: A reference to a shipping document associated with this transport handling unit.
+  cardinality: 0..n
+  since_version: '2.1'
+- type: Status
+  definition: The status of this transport handling unit.
+  cardinality: 0..n
+  since_version: '2.1'
+- type: Customs Declaration
+  definition: Describes identifiers or references relating to customs procedures.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Referenced
+  type: Shipment
+  definition: A shipment associated with this transport handling unit.
+  cardinality: 0..n
+  since_version: '2.1'
+- type: Package
+  definition: A package contained in this transport handling unit.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Damage Documentation
+  type: Attachment
+  definition: An attachment, such as a photo, documenting damage associated with this transport handling unit.
+  cardinality: 0..n
+  since_version: '2.4'

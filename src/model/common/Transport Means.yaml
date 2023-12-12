@@ -1,0 +1,84 @@
+name: Transport Means
+definition: A class to describe a particular vehicle or vessel used for the conveyance of goods or persons.
+alternative_business_terms: Conveyance
+since_version: '2.0'
+
+fields:
+- possessive_noun: Journey
+  primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for the regular service schedule of this means of transport.
+  alternative_business_terms: Voyage Number, Scheduled Conveyance Identifier (WCO ID 205), Flight Number
+  untded_code: '8028'
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Nationality
+  primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for the country in which this means of transport is registered.
+  alternative_business_terms: Nationality of Means of Transport (WCO 175, 178 and 179)
+  examples: 'LIB '
+  untded_code: '8453'
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Nationality
+  type: Text
+  definition: Text describing the country in which this means of transport is registered.
+  alternative_business_terms: Flag of Vessel, Nationality of Ship
+  examples: Liberia
+  untded_code: '8452'
+  cardinality: 0..n
+  since_version: '2.0'
+- possessive_noun: Direction
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the direction of this means of transport.
+  alternative_business_terms: Transit Direction
+  examples: 'North , East '
+  untded_code: '8452'
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Transport Means Type
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the type of this means of transport (truck, vessel, etc.).
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Trade Service
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the service regularly provided by the carrier operating this means of transport.
+  cardinality: 0..1
+  since_version: '2.1'
+
+objects:
+- type: Stowage
+  definition: The location within the means of transport where goods are to be or have been stowed.
+  cardinality: 0..1
+  since_version: '2.0'
+- type: Air Transport
+  definition: An aircraft used for transport.
+  cardinality: 0..1
+  since_version: '2.0'
+- type: Road Transport
+  definition: A vehicle used for road transport.
+  cardinality: 0..1
+  since_version: '2.0'
+- type: Rail Transport
+  definition: Equipment used for rail transport.
+  cardinality: 0..1
+  since_version: '2.0'
+- type: Maritime Transport
+  definition: A vessel used for transport by water (not only by sea).
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Owner
+  type: Party
+  definition: The party that owns this means of transport.
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Measurement
+  type: Dimension
+  definition: A measurable dimension (length, mass, weight, or volume) of this means of transport.
+  cardinality: 0..n
+  since_version: '2.1'

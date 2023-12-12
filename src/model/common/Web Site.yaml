@@ -1,0 +1,42 @@
+name: Web Site
+definition: A class to describe a web site.
+since_version: '2.2'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for a specific web site.
+  examples: UBL
+  cardinality: 0..1
+  since_version: '2.2'
+- primary_noun: Name
+  type: Name
+  definition: The common name of the web site.
+  examples: UBL Online Community
+  cardinality: 0..1
+  since_version: '2.2'
+- primary_noun: Description
+  type: Text
+  definition: Text describing the web site.
+  examples: Online community for the Universal Business Language (UBL) OASIS Standard
+  cardinality: 0..n
+  since_version: '2.2'
+- possessive_noun: Web Site Type
+  primary_noun: Code
+  type: Code
+  definition: A code that specifies the type web site.
+  examples: Satellite, Portal, Operative, Industry, ...
+  cardinality: 0..1
+  since_version: '2.2'
+- primary_noun: URI
+  type: Identifier
+  definition: The Uniform Resource Identifier (URI) of the web site; i.e., its Uniform Resource Locator (URL).
+  examples: http://ubl.xml.org/
+  cardinality: '1'
+  since_version: '2.2'
+
+objects:
+- type: Web Site Access
+  definition: Access information for the website (e.g. guest credentials).
+  cardinality: 0..n
+  since_version: '2.2'

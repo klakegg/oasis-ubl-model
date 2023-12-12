@@ -1,0 +1,29 @@
+name: Lot Distribution
+definition: A class defining how to treat different lots in a single procurement.
+since_version: '2.2'
+
+fields:
+- possessive_noun: Maximum
+  primary_noun: Lots Awarded
+  type: Numeric
+  definition: The maximum number of lots that can be awarded to a single tenderer.
+  cardinality: 0..1
+  since_version: '2.2'
+- possessive_noun: Maximum
+  primary_noun: Lots Submitted
+  type: Numeric
+  definition: The maximum number of lots to which a tenderer can submit an offer to.
+  cardinality: 0..1
+  since_version: '2.2'
+- possessive_noun: Grouping
+  primary_noun: Lots
+  type: Text
+  definition: Description on how to combine lots when submitting a tender.
+  cardinality: 0..n
+  since_version: '2.2'
+
+objects:
+- type: Lots Group
+  definition: A combination of lots used when evaluating a tender.
+  cardinality: 0..n
+  since_version: '2.3'

@@ -1,0 +1,81 @@
+name: Personnel Health Incident
+definition: A class to describe a health incident involving crew or other personnel.
+since_version: '2.3'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this personal health incident.
+  cardinality: '1'
+  since_version: '2.3'
+- possessive_noun: Joined Ship
+  primary_noun: Date
+  type: Date
+  definition: The date when the person joined the ship.
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Nature Of Illness
+  primary_noun: Description
+  type: Text
+  definition: A text decribing the nature of the illness.
+  cardinality: 1..n
+  since_version: '2.3'
+- possessive_noun: Onset
+  primary_noun: Date
+  type: Date
+  definition: The first date of the health incident.
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Reported To Medical Officer
+  primary_noun: Indicator
+  type: Indicator
+  definition: An indicator of whether this personal health incident has been reported to a medical officer (true) or not (false).
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Given Treatment
+  primary_noun: Description
+  type: Text
+  definition: A text describing the given treatment.
+  cardinality: 0..n
+  since_version: '2.3'
+- possessive_noun: Still Ill
+  primary_noun: Indicator
+  type: Indicator
+  definition: Indicates whether the person is still ill (true) or not (false).
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Died
+  primary_noun: Indicator
+  type: Indicator
+  definition: Indicates whether the person died from this health incident (true) or not (false).
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Still On Board
+  primary_noun: Indicator
+  type: Indicator
+  definition: Indicates whether the person is still on board (true) or not (false).
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Evacuated
+  primary_noun: Indicator
+  type: Indicator
+  definition: Indicates whether the person has been evacuated (true) or not (false).
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Buried At Sea
+  primary_noun: Indicator
+  type: Indicator
+  definition: Indicates whether the person has been buired at sea (true) or not (false).
+  cardinality: 0..1
+  since_version: '2.3'
+- primary_noun: Note
+  type: Text
+  definition: Any additional information that is not included elsewhere, expressed as text.
+  cardinality: 0..n
+  since_version: '2.3'
+
+objects:
+- type: Person
+  definition: The person associated to this health incident.
+  cardinality: 0..1
+  since_version: '2.3'

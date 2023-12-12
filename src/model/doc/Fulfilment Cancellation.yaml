@@ -1,0 +1,123 @@
+name: Fulfilment Cancellation
+definition: A document used to cancel an entire fulfilment document (Despatch Advice or Receipt Advice).
+since_version: '2.1'
+
+fields:
+- possessive_noun: UBL Version
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies the earliest version of the UBL 2 schema for this document type that defines all of the elements that might be encountered in the current instance.
+  examples: 2.0.5
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Customization
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies a user-defined customization of UBL for a specific use.
+  examples: NES
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Profile
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies a user-defined profile of the customization of UBL being used.
+  examples: BasicProcurementProcess
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Profile Execution
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies an instance of executing a profile, to associate all transactions in a collaboration.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this document, assigned by the sender.
+  cardinality: '1'
+  since_version: '2.1'
+- primary_noun: Indicator
+  type: Indicator
+  definition: Indicates whether this document is a copy (true) or not (false).
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: UUID
+  type: Identifier
+  definition: A universally unique identifier for an instance of this document.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Issue
+  primary_noun: Date
+  type: Date
+  definition: The date, assigned by the sender, on which this document was issued.
+  cardinality: '1'
+  since_version: '2.1'
+- possessive_noun: Issue
+  primary_noun: Time
+  type: Time
+  definition: The time, assigned by the sender, at which this document was issued.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Note
+  type: Text
+  definition: Free-form text pertinent to this document, conveying information that is not contained explicitly in other structures.
+  cardinality: 0..n
+  since_version: '2.1'
+- primary_noun: Note
+  type: Text
+  definition: The reason for cancellation of the referenced document.
+  cardinality: 1..n
+  since_version: '2.1'
+
+objects:
+- qualifier: Despatch
+  type: Document Reference
+  definition: A reference to a Despatch Advice associated with this document.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Receipt
+  type: Document Reference
+  definition: A reference to a Receipt Advice associated with this document.
+  cardinality: 0..n
+  since_version: '2.1'
+- type: Order Reference
+  definition: A reference to an Order document associated with the referenced Despatch or Receipt Advice(s).
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Additional
+  type: Document Reference
+  definition: A reference to an additional document associated with this document.
+  cardinality: 0..n
+  since_version: '2.1'
+- type: Contract
+  definition: The contracts or framework agreements with which the referenced fulfilment document is associated.
+  cardinality: 0..n
+  since_version: '2.1'
+- type: Signature
+  definition: A signature applied to this document.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Buyer
+  type: Customer Party
+  definition: The buyer.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Seller
+  type: Supplier Party
+  definition: The seller.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Delivery
+  type: Customer Party
+  definition: The delivery party.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Despatch
+  type: Supplier Party
+  definition: The despatch party.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Originator
+  type: Customer Party
+  definition: The originator party
+  cardinality: 0..1
+  since_version: '2.1'

@@ -1,0 +1,54 @@
+name: Subscriber Consumption
+definition: The consumption for a specific party for given consumption point provided by a numbers of suppliers. An enterprise can have one utility statement for several parties (e.g. a ministry of defence receiving a telephone bill). In this way each subscriber consumption represent a sub utility statement.
+since_version: '2.1'
+
+fields:
+- possessive_noun: Consumption
+  primary_noun: Identifier
+  type: Identifier
+  definition: The identifier tor this specification.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Specification Type
+  primary_noun: Code
+  type: Code
+  definition: The code which specifies the type of this specification, e.g. an on account specification or the yearly specification.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Note
+  type: Text
+  definition: Free-form text conveying information that is not contained explicitly in other structures.
+  examples: This is how we have calculating your yearly statement
+  cardinality: 0..n
+  since_version: '2.1'
+- possessive_noun: Total Metered
+  primary_noun: Quantity
+  type: Quantity
+  definition: The total quantity consumed, as calculated from meter readings.
+  examples: '2000.0'
+  cardinality: 0..1
+  since_version: '2.1'
+
+objects:
+- qualifier: Subscriber
+  type: Party
+  definition: The party subscribing to the utility.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Utility
+  type: Consumption Point
+  definition: The point at which the utility is consumed.
+  cardinality: '1'
+  since_version: '2.1'
+- type: On Account Payment
+  definition: The planned prepayments (on account) regarding this subscription.
+  cardinality: 0..n
+  since_version: '2.1'
+- type: Consumption
+  definition: The consumption in case the consumption is from one and only one supplier.
+  cardinality: 0..1
+  since_version: '2.1'
+- type: Supplier Consumption
+  definition: The consumption in case the consumption is from more than one supplier.
+  cardinality: 0..n
+  since_version: '2.1'

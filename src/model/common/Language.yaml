@@ -1,0 +1,21 @@
+name: Language
+definition: A class to describe a language.
+since_version: '2.0'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this language.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Name
+  type: Name
+  definition: The name of this language.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Locale
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the locale in which this language is used.
+  cardinality: 0..1
+  since_version: '2.0'

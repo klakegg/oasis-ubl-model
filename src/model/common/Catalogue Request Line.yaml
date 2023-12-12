@@ -1,0 +1,39 @@
+name: Catalogue Request Line
+definition: A class to define a line describing a request for a catalogue line.
+since_version: '2.0'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for the requested catalogue line.
+  examples: '1 '
+  cardinality: '1'
+  since_version: '2.0'
+- possessive_noun: Contract
+  primary_noun: Subdivision
+  type: Text
+  definition: A subdivision of a contract or tender covering the line being requested.
+  examples: 'Installation , Phase One , Support and Maintenance '
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Note
+  type: Text
+  definition: Free-form text conveying information that is not contained explicitly in other structures.
+  cardinality: 0..n
+  since_version: '2.0'
+
+objects:
+- qualifier: Line Validity
+  type: Period
+  definition: The period for which the information in the requested catalogue line is valid.
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Required
+  type: Item Location Quantity
+  definition: Properties of the item in the requested catalogue line that are dependent on location and quantity.
+  cardinality: 0..n
+  since_version: '2.0'
+- type: Item
+  definition: The item associated with the requested catalogue line.
+  cardinality: '1'
+  since_version: '2.0'

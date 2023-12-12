@@ -1,0 +1,190 @@
+name: Address
+definition: A class to define common information related to an address.
+since_version: '2.0'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this address within an agreed scheme of address identifiers.
+  alternative_business_terms: DetailsKey
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Address Type
+  primary_noun: Code
+  type: Code
+  definition: A mutually agreed code signifying the type of this address.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Address Format
+  primary_noun: Code
+  type: Code
+  definition: A mutually agreed code signifying the format of this address.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Postbox
+  type: Text
+  definition: A post office box number registered for postal delivery by a postal service provider.
+  alternative_business_terms: PostBox, PO Box
+  examples: '123 '
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Floor
+  type: Text
+  definition: An identifiable floor of a building.
+  alternative_business_terms: SubPremiseNumber
+  examples: '30 '
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Room
+  type: Text
+  definition: An identifiable room, suite, or apartment of a building.
+  alternative_business_terms: SubPremiseNumber
+  examples: 'Reception '
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Street
+  primary_noun: Name
+  type: Name
+  definition: The name of the street, road, avenue, way, etc. to which the number of the building is attached.
+  alternative_business_terms: Thoroughfare
+  examples: 'Kwun Tong Road '
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Street
+  primary_noun: Name
+  type: Name
+  definition: An additional street name used to further clarify the address.
+  alternative_business_terms: Thoroughfare
+  examples: 'Cnr Aberdeen Road '
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Block
+  primary_noun: Name
+  type: Name
+  definition: The name of the block (an area surrounded by streets and usually containing several buildings) in which this address is located.
+  examples: Seabird
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Building
+  primary_noun: Name
+  type: Name
+  definition: The name of a building.
+  alternative_business_terms: BuildingName
+  examples: 'Plot 421 '
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Building
+  primary_noun: Number
+  type: Text
+  definition: The number of a building within the street.
+  alternative_business_terms: PremiseNumber
+  examples: '388 '
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Description
+  type: Text
+  definition: Text describing this address for clarification or specificity
+  cardinality: 0..n
+  since_version: '2.3'
+- primary_noun: Mail
+  type: Text
+  definition: The specific identifable location within a building where mail is delivered.
+  alternative_business_terms: MailStop
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Department
+  type: Text
+  definition: The department of the addressee.
+  alternative_business_terms: Department
+  examples: 'Accounts Payable '
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Mark
+  primary_noun: Attention
+  type: Text
+  definition: The name, expressed as text, of a person or department in an organization to whose attention incoming mail is directed; corresponds to the printed forms "for the attention of", "FAO", and ATTN:".
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Mark
+  primary_noun: Care
+  type: Text
+  definition: The name, expressed as text, of a person or organization at this address into whose care incoming mail is entrusted; corresponds to the printed forms "care of" and "c/o".
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Plot
+  primary_noun: Identification
+  type: Text
+  definition: An identifier (e.g., a parcel number) for the piece of land associated with this address.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: City Subdivision
+  primary_noun: Name
+  type: Name
+  definition: The name of the subdivision of a city, town, or village in which this address is located, such as the name of its district or borough.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: City
+  primary_noun: Name
+  type: Name
+  definition: The name of a city, town, or village.
+  alternative_business_terms: LocalityName
+  examples: 'Hong Kong '
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Zone
+  type: Text
+  definition: The postal identifier for this address according to the relevant national postal service, such as a ZIP code or Post Code.
+  alternative_business_terms: PostalCodeNumber
+  examples: 'SW11 4EW 2500 GG '
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Country
+  primary_noun: Subentity
+  type: Text
+  definition: The political or administrative division of a country in which this address is located, such as the name of its county, province, or state, expressed as text.
+  alternative_business_terms: AdministrativeArea, State, Country, Shire, Canton
+  examples: 'Florida , Tamilnadu '
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Country Subentity
+  primary_noun: Code
+  type: Code
+  definition: The political or administrative division of a country in which this address is located, such as a county, province, or state, expressed as a code (typically nationally agreed).
+  alternative_business_terms: AdministrativeAreaCode, State Code
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Region
+  type: Text
+  definition: The recognized geographic or economic region or group of countries in which this address is located.
+  alternative_business_terms: LocalityName, Economic Zone
+  examples: 'European Union '
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: District
+  type: Text
+  definition: The district or geographical division of a country or region in which this address is located.
+  alternative_business_terms: LocalityName, Area
+  examples: 'East Coast '
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Timezone
+  primary_noun: Offset
+  type: Text
+  definition: The time zone in which this address is located (as an offset from Universal Coordinated Time (UTC)) at the time of exchange.
+  examples: "+8:00 -3:00 "
+  cardinality: 0..1
+  since_version: '2.0'
+
+objects:
+- type: Address Line
+  definition: An unstructured address line.
+  cardinality: 0..n
+  since_version: '2.0'
+- type: Country
+  definition: The country in which this address is situated.
+  cardinality: 0..1
+  since_version: '2.0'
+- type: Location Coordinate
+  definition: The geographical coordinates of this address.
+  cardinality: 0..n
+  since_version: '2.0'

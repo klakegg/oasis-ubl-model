@@ -1,0 +1,16 @@
+name: Sanitary Measure
+definition: A class describing a plan, action or meassure that has been implemented for sanitary reasons.
+since_version: '2.3'
+
+fields:
+- possessive_noun: Sanitary Measure
+  primary_noun: Type
+  type: Code
+  definition: A code decribing the type of sanitary meassure.
+  cardinality: '1'
+  since_version: '2.3'
+- primary_noun: Application
+  type: Date
+  definition: The date this sanitary meassure was applied.
+  cardinality: 0..1
+  since_version: '2.3'

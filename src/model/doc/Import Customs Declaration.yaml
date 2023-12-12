@@ -1,0 +1,146 @@
+name: Import Customs Declaration
+definition: A customs declaration document for importing goods.
+since_version: '2.3'
+
+fields:
+- possessive_noun: UBL Version
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies the earliest version of the UBL 2 schema for this document type that defines all of the elements that might be encountered in the current instance.
+  examples: '2.3'
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Customization
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies a user-defined customization of UBL for a specific use.
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Profile
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies a user-defined profile of the customization of UBL being used.
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Profile Execution
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies an instance of executing a profile, to associate all transactions in a collaboration.
+  cardinality: 0..1
+  since_version: '2.3'
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this document.
+  cardinality: '1'
+  since_version: '2.3'
+- primary_noun: UUID
+  type: Identifier
+  definition: A universally unique identifier for an instance of this document.
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Issue
+  primary_noun: Date
+  type: Date
+  definition: The date, assigned by the sender, on which this document was issued.
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Issue
+  primary_noun: Time
+  type: Time
+  definition: The time, assigned by the sender, at which this document was issued.
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Type
+  primary_noun: Code
+  type: Code
+  definition: Code specifying the type of import.
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Type
+  primary_noun: Code
+  type: Code
+  definition: Code specifying the subtype of import.
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Transaction
+  primary_noun: Code
+  type: Code
+  definition: Code specifying the type of transactions for this import
+  cardinality: 0..1
+  since_version: '2.3'
+- primary_noun: Note
+  type: Text
+  definition: Free-form text pertinent to this document, conveying information that is not contained explicitly in other structures.
+  cardinality: 0..n
+  since_version: '2.3'
+- primary_noun: Version
+  type: Identifier
+  definition: Identifies a version of an Import Customs Declaration in order to distinguish updates.
+  cardinality: 0..1
+  since_version: '2.3'
+
+objects:
+- qualifier: Validity
+  type: Period
+  definition: A period, assigned by the issuer, during which the information in the declaration is valid.
+  cardinality: 0..1
+  since_version: '2.3'
+- qualifier: Customs Exit Office
+  type: Location
+  definition: Customs exit office of the goods being declared.
+  cardinality: 0..1
+  since_version: '2.3'
+- qualifier: Jurisdiction Region
+  type: Address
+  definition: A geographic area in which this declaration applies.
+  cardinality: 0..1
+  since_version: '2.3'
+- qualifier: Importer
+  type: Party
+  definition: The Party who makes the import declaration, or on whose behalf the import declaration is made, and who is the owner of the goods or has similar right of disposal over them at the time when the declaration is accepted.
+  examples: Importer (WCO ID 74A)
+  cardinality: 0..1
+  since_version: '2.3'
+- qualifier: Consignor
+  type: Party
+  definition: The Party responsible for the consignment
+  cardinality: 0..1
+  since_version: '2.3'
+- qualifier: Consignee
+  type: Party
+  definition: The Party responsible for receiving the goods.
+  cardinality: 0..1
+  since_version: '2.3'
+- qualifier: Freight Forwarder
+  type: Party
+  definition: The Party responsibe for the freight forwarding.
+  cardinality: 0..1
+  since_version: '2.3'
+- qualifier: Customs
+  type: Party
+  definition: The authority who is legally responsible for processing the declaration.
+  cardinality: 0..1
+  since_version: '2.3'
+- qualifier: Notifier
+  type: Party
+  definition: The party responsible for contact on master level.
+  cardinality: 0..1
+  since_version: '2.3'
+- type: Shipment
+  definition: The shipment related to this trade certificate
+  cardinality: '1'
+  since_version: '2.3'
+- qualifier: Previous
+  type: Customs Declaration
+  definition: A reference to a previously sent customs declaration.
+  cardinality: 0..1
+  since_version: '2.3'
+- qualifier: Additional
+  type: Document Reference
+  definition: A reference to additional documents related to or relevant for this customs declaration.
+  cardinality: 0..n
+  since_version: '2.3'
+- type: Signature
+  definition: A signature applied to this document.
+  cardinality: 0..n
+  since_version: '2.3'

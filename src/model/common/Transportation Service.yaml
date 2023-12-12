@@ -1,0 +1,129 @@
+name: Transportation Service
+definition: A class to describe a transportation service.
+since_version: '2.0'
+
+fields:
+- possessive_noun: Transport Service
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the extent of this transportation service (e.g., door-to-door, port-to-port).
+  cardinality: '1'
+  since_version: '2.0'
+- possessive_noun: Tariff Class
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the tariff class applicable to this transportation service.
+  alternative_business_terms: Tariff Class Specifier
+  untded_code: '5440'
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Priority
+  type: Text
+  definition: The priority of this transportation service.
+  untded_code: '4218'
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Freight Rate Class
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the rate class for freight in this transportation service.
+  alternative_business_terms: Charge Basis
+  untded_code: '5099'
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Transportation Service
+  primary_noun: Description
+  type: Text
+  definition: Text describing this transportation service.
+  cardinality: 0..n
+  since_version: '2.1'
+- possessive_noun: Transportation Service Details
+  primary_noun: URI
+  type: Identifier
+  definition: The Uniform Resource Identifier (URI) of a document providing additional details regarding this transportation service.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Nomination
+  primary_noun: Date
+  type: Date
+  definition: In a transport contract, the deadline date by which this transportation service has to be booked. For example, if this service is scheduled for Wednesday 16 February 2011 at 10 a.m. CET, the nomination date might be Tuesday15 February 2011.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Nomination
+  primary_noun: Time
+  type: Time
+  definition: In a transport contract, the deadline time by which this transportation service has to be booked. For example, if this service is scheduled for Wednesday 16 February 2011 at 10 a.m. CET, the nomination date might be Tuesday15 February 2011 and the nomination time 4 p.m. at the latest.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Name
+  type: Name
+  definition: The name of this transportation service.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Sequence
+  type: Numeric
+  definition: A number indicating the order of this transportation service in a sequence of transportation services.
+  cardinality: 0..1
+  since_version: '2.1'
+
+objects:
+- type: Transport Equipment
+  definition: A piece of transport equipment used in this transportation service.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Supported
+  type: Transport Equipment
+  definition: A piece of transport equipment supported in this transportation service.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Unsupported
+  type: Transport Equipment
+  definition: A piece of transport equipment that is not supported in this transportation service.
+  cardinality: 0..n
+  since_version: '2.1'
+- type: Commodity Classification
+  definition: A classification of this transportation service.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Supported
+  type: Commodity Classification
+  definition: A classification (e.g., general cargo) for commodities that can be handled in this transportation service.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Unsupported
+  type: Commodity Classification
+  definition: A classification for commodities that cannot be handled in this transportation service.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Total Capacity
+  type: Dimension
+  definition: The total capacity or volume available in this transportation service.
+  cardinality: 0..1
+  since_version: '2.1'
+- type: Shipment Stage
+  definition: One of the stages of shipment in this transportation service.
+  cardinality: 0..n
+  since_version: '2.1'
+- type: Transport Event
+  definition: One of the transport events taking place in this transportation service.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Responsible Transport Service Provider
+  type: Party
+  definition: The transport service provider responsible for this transportation service.
+  cardinality: 0..1
+  since_version: '2.1'
+- type: Environmental Emission
+  definition: An environmental emission resulting from this transportation service.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Estimated Duration
+  type: Period
+  definition: The estimated duration of this transportation service.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Scheduled
+  type: Service Frequency
+  definition: A class to specify which day of the week a transport service is operational.
+  cardinality: 0..n
+  since_version: '2.1'

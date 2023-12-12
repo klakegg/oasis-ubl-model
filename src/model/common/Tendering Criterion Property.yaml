@@ -1,0 +1,139 @@
+name: Tendering Criterion Property
+definition: A class to describe the criterion properties.
+since_version: '2.2'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier to refer to the criterion property.
+  cardinality: 0..1
+  since_version: '2.2'
+- primary_noun: Name
+  type: Name
+  definition: The name of the criterion property.
+  cardinality: 0..1
+  since_version: '2.2'
+- primary_noun: Description
+  type: Text
+  definition: A description of the criterion property.
+  cardinality: 0..n
+  since_version: '2.2'
+- possessive_noun: Type
+  primary_noun: Code
+  type: Code
+  definition: A mutually agreed code signifying the type of the property.
+  cardinality: 0..1
+  since_version: '2.2'
+- possessive_noun: Value Data Type
+  primary_noun: Code
+  type: Code
+  definition: The data type of the numeric value and any constraints on the data type metadata.
+  cardinality: 0..1
+  since_version: '2.2'
+- possessive_noun: Value Unit
+  primary_noun: Code
+  type: Code
+  definition: The unit of measure of the numeric value as a quantity or measure.
+  cardinality: 0..1
+  since_version: '2.2'
+- possessive_noun: Value Currency
+  primary_noun: Code
+  type: Code
+  definition: The currency of the numeric value as an amount.
+  cardinality: 0..1
+  since_version: '2.2'
+- primary_noun: Amount
+  type: Amount
+  definition: The expected amount that the responder has to provide in the criterion response.
+  cardinality: 0..1
+  since_version: '2.2'
+- primary_noun: Identifier
+  type: Identifier
+  definition: The expected identifier that the responder has to provide in the criterion response.
+  cardinality: 0..1
+  since_version: '2.2'
+- primary_noun: Indicator
+  type: Indicator
+  definition: The expected indicator (true or false) that the responder has to provide in the criterion response.
+  cardinality: 0..1
+  since_version: '2.3'
+- primary_noun: Code
+  type: Code
+  definition: The expected code that the responder has to provide in the criterion response.
+  cardinality: 0..1
+  since_version: '2.2'
+- primary_noun: Value
+  type: Numeric
+  definition: The expected value that the responder has to provide in the criterion response.
+  cardinality: 0..1
+  since_version: '2.2'
+- primary_noun: Description
+  type: Text
+  definition: 'The description of the of the expected '
+  cardinality: 0..1
+  since_version: '2.2'
+- primary_noun: URI
+  type: Identifier
+  definition: The expected URL that the responder has to provide in the criterion response.
+  cardinality: 0..1
+  since_version: '2.3'
+- primary_noun: Amount
+  type: Amount
+  definition: The maximum amount the response must have.
+  cardinality: 0..1
+  since_version: '2.2'
+- primary_noun: Amount
+  type: Amount
+  definition: The minimum amount the response must have.
+  cardinality: 0..1
+  since_version: '2.2'
+- primary_noun: Value
+  type: Numeric
+  definition: The maximum value the response must have.
+  cardinality: 0..1
+  since_version: '2.2'
+- primary_noun: Value
+  type: Numeric
+  definition: The minimum value the response must have.
+  cardinality: 0..1
+  since_version: '2.2'
+- primary_noun: Quantity
+  type: Quantity
+  definition: The maximum quantity value the response must have.
+  cardinality: 0..1
+  since_version: '2.3'
+- primary_noun: Quantity
+  type: Quantity
+  definition: The minimum quantity value the response must have.
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Translation Type
+  primary_noun: Code
+  type: Code
+  definition: The type of Transation that the requirement will be translated for example certified translation
+  cardinality: 0..1
+  since_version: '2.2'
+- possessive_noun: Certification Level
+  primary_noun: Description
+  type: Text
+  definition: The description of the level of the expected certification
+  cardinality: 0..n
+  since_version: '2.2'
+- possessive_noun: Copy Quality Type
+  primary_noun: Code
+  type: Code
+  definition: The type of Copy quality, expressed as a code.
+  cardinality: 0..1
+  since_version: '2.2'
+
+objects:
+- qualifier: Applicable
+  type: Period
+  definition: The period to which this criterion property will apply.
+  cardinality: 0..n
+  since_version: '2.2'
+- qualifier: Template
+  type: Evidence
+  definition: An evidence that can be used to meet this criterion property.
+  cardinality: 0..n
+  since_version: '2.2'

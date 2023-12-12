@@ -1,0 +1,40 @@
+name: Notification Requirement
+definition: A class to describe a notification requirement.
+since_version: '2.1'
+
+fields:
+- possessive_noun: Notification Type
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the type of notification (e.g., pickup status).
+  cardinality: '1'
+  since_version: '2.1'
+- possessive_noun: Post Event Notification
+  primary_noun: Duration
+  type: Measure
+  definition: The length of time between the occurrence of a given event and the issuance of a notification.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Pre Event Notification
+  primary_noun: Duration
+  type: Measure
+  definition: The length of time to elapse between the issuance of a notification and the occurrence of the event it relates to.
+  cardinality: 0..1
+  since_version: '2.1'
+
+objects:
+- qualifier: Notify
+  type: Party
+  definition: A party to be notified.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Notification
+  type: Period
+  definition: A period during which a notification will be issued.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Notification
+  type: Location
+  definition: A location at which a notification will be issued.
+  cardinality: 0..n
+  since_version: '2.1'

@@ -1,0 +1,34 @@
+name: Meter Property
+definition: The name of this meter property.
+since_version: '2.1'
+
+fields:
+- primary_noun: Name
+  type: Name
+  definition: The name of this meter property, expressed as a code.
+  examples: 'Energy Rating , Collar Size , Fat Content '
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Name
+  primary_noun: Code
+  type: Code
+  definition: The value of this meter property, expressed as text.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Value
+  type: Text
+  definition: The value of this meter property, expressed as a quantity.
+  examples: '100 watts , 15 European , 20% +/- 5% '
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Quantity
+  type: Quantity
+  definition: The value of this meter property, expressed as a quantity.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Value
+  primary_noun: Qualifier
+  type: Text
+  definition: An additional value to qualify the value of the meter
+  cardinality: 0..n
+  since_version: '2.1'

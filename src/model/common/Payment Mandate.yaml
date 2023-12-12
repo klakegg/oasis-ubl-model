@@ -1,0 +1,60 @@
+name: Payment Mandate
+definition: A class to describe a payment mandate.
+since_version: '2.1'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this payment mandate.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Mandate Type
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the type of this payment mandate.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Maximum Payment
+  primary_noun: Instructions
+  type: Numeric
+  definition: The number of maximum payment instructions allowed within the validity period.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Paid
+  primary_noun: Amount
+  type: Amount
+  definition: The maximum amount to be paid within a single instruction.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Signature
+  primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for a signature applied by a signatory party.
+  cardinality: 0..1
+  since_version: '2.1'
+
+objects:
+- qualifier: Payer
+  type: Party
+  definition: The payer party (if different from the debtor).
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Payer
+  type: Financial Account
+  definition: The payer's financial account.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Validity
+  type: Period
+  definition: The period during which this mandate is valid.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Payment Reversal
+  type: Period
+  definition: The period of the reverse payment.
+  cardinality: 0..1
+  since_version: '2.1'
+- type: Clause
+  definition: A clause applicable to this payment mandate.
+  cardinality: 0..n
+  since_version: '2.1'

@@ -1,0 +1,16 @@
+name: Procurement Additional Type
+definition: A class to describe additional types for a procurement project
+since_version: '2.3'
+
+fields:
+- possessive_noun: Type
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the type of procurement project (e.g., goods, works, services).
+  cardinality: 0..1
+  since_version: '2.3'
+- primary_noun: Type
+  type: Text
+  definition: Tthe type of procurement project (e.g., goods, works, services), expressed as text.
+  cardinality: 0..n
+  since_version: '2.3'

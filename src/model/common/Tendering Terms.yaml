@@ -1,0 +1,279 @@
+name: Tendering Terms
+definition: A class to describe tendering terms for a tendering process.
+since_version: '2.1'
+
+fields:
+- possessive_noun: Awarding Method Type
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the awarding method in a tendering process (e.g., a method favoring the tender with the lowest price or the tender that is most economically advantageous).
+  examples: Price, Multiple criteria
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Price Evaluation
+  primary_noun: Code
+  type: Code
+  definition: Textual description of the legal form required for potential tenderers.
+  examples: Unit prices, global price
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Quantity
+  type: Quantity
+  definition: Maximum number of variants the tenderer is allowed to present for this tendering project.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Constraint
+  type: Indicator
+  definition: An indicator that variants are allowed and unconstrained in number (true) or not allowed (false).
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Description
+  type: Text
+  definition: Text specifying the things for which variants are accepted.
+  cardinality: 0..n
+  since_version: '2.1'
+- primary_noun: Variant Constraint
+  type: Code
+  definition: A code signifying the modalities for a tenderer to submit variants of tenders.
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Formula
+  primary_noun: Description
+  type: Text
+  definition: Text describing the formula for price revision.
+  cardinality: 0..n
+  since_version: '2.1'
+- possessive_noun: Program
+  primary_noun: Code
+  type: Code
+  definition: The program that funds the tendering process (e.g., "National", "European"), expressed as a code.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Program
+  type: Text
+  definition: The program that funds the tendering process (e.g., EU 6th Framework Program) expressed as text.
+  cardinality: 0..n
+  since_version: '2.1'
+- primary_noun: Advertisement
+  type: Amount
+  definition: The maximum advertised monetary value of the tendering process.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Note
+  type: Text
+  definition: Free-form text conveying information that is not contained explicitly in other structures.
+  cardinality: 0..n
+  since_version: '2.1'
+- possessive_noun: Payment Frequency
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the frequency of payment in the contract associated with the tendering process.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: URI
+  type: Identifier
+  definition: The Uniform Resource Identifier (URI) of an electronic registry of economic operators.
+  alternative_business_terms: Web site
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Required
+  primary_noun: Curricula
+  type: Indicator
+  definition: An indicator that tenderers are required to provide a curriculum vitae for each participant in the project (true) or are not so required (false).
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Required
+  primary_noun: Curricula
+  type: Code
+  definition: A code signifying the conditions applying for tenderers to provide a curriculum vitae.
+  cardinality: 0..1
+  since_version: '2.3'
+- primary_noun: Conditions
+  type: Indicator
+  definition: Indicates whether other conditions exist (true) or not (false). If the indicator is true, the description may be provided.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Procurement
+  type: Indicator
+  definition: Indicates whether the procurement is recurring (true) or not (false).
+  cardinality: 0..1
+  since_version: '2.2'
+- primary_noun: Procurement Description
+  type: Text
+  definition: Any additional information about recurrence (e.g. estimated timing).
+  cardinality: 0..n
+  since_version: '2.3'
+- possessive_noun: Further
+  primary_noun: Publication
+  type: Text
+  definition: The description of the estimated timing for further notices to be published.
+  cardinality: 0..n
+  since_version: '2.2'
+- primary_noun: Conditions
+  type: Text
+  definition: Other existing conditions.
+  cardinality: 0..n
+  since_version: '2.1'
+- possessive_noun: Security Clearance
+  primary_noun: Date
+  type: Date
+  definition: The end date until which the candidates can obtain the necessary level of security clearance.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Documentation Fee
+  primary_noun: Amount
+  type: Amount
+  definition: The amount to be paid to obtain the contract documents and additional documentation.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Multiple Tenders
+  type: Code
+  definition: A code signifying whether a tenderer is allowed to submit multiple tenders.
+  cardinality: 0..1
+  since_version: '2.3'
+
+objects:
+- qualifier: Penalty
+  type: Clause
+  definition: The penalty clauses
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Required
+  type: Financial Guarantee
+  definition: A financial guarantee of a tenderer or bid submitter's actual entry into a contract in the event that it is the successful bidder.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Procurement Legislation
+  type: Document Reference
+  definition: A reference to a document providing references to procurement legislation applicable to the tendering process.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Fiscal Legislation
+  type: Document Reference
+  definition: A reference to a document providing references to fiscal legislation applicable to the tendering process.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Environmental Legislation
+  type: Document Reference
+  definition: A reference to a document providing references to environmental legislation applicable to the tendering process.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Employment Legislation
+  type: Document Reference
+  definition: A reference to a document providing references to employment legislation applicable to the tendering process.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Contractual
+  type: Document Reference
+  definition: A reference to a document that will become part of the awarded contract.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Call For Tenders
+  type: Document Reference
+  definition: A reference to a Call for Tender associated with these tendering terms.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Warranty Validity
+  type: Period
+  definition: The period during which a warranty for work, service, or goods associated with these tendering terms is valid.
+  cardinality: 0..1
+  since_version: '2.1'
+- type: Payment Terms
+  definition: A specification of payment terms associated with the tendering process.
+  cardinality: 0..n
+  since_version: '2.1'
+- type: Tenderer Qualification Request
+  definition: Required set of qualifications for a tenderer in this tendering process.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Allowed
+  type: Subcontract Terms
+  definition: Subcontract terms for the tendering process.
+  cardinality: 0..n
+  since_version: '2.1'
+- type: Tender Preparation
+  definition: Directions for preparing a tender for the+D2057 tendering process.
+  examples: Curricula required, Experience required, ....
+  cardinality: 0..n
+  since_version: '2.1'
+- type: Contract Execution Requirement
+  definition: A requirement relating to execution of the contract that will be awarded as a result of the tendering process.
+  cardinality: 0..n
+  since_version: '2.1'
+- type: Awarding Terms
+  definition: The terms in the tendering process for awarding the contract for a project.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Additional Information
+  type: Party
+  definition: A party that has additional information about the tendering process.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Document Provider
+  type: Party
+  definition: The party that has the contract documents for the tendering process.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Tender Recipient
+  type: Party
+  definition: The party to which tenders will be presented.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Contract Responsible
+  type: Party
+  definition: The party responsible for the execution of the contract.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Tender Evaluation
+  type: Party
+  definition: A party in the contracting authority responsible for evaluating tenders received.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Qualification Request Recipient
+  type: Party
+  definition: A party in the contracting authority responsible for receiving qualification requests.
+  cardinality: 0..1
+  since_version: '2.3'
+- qualifier: Tender Validity
+  type: Period
+  definition: The period during which tenders submitted for this tendering process must remain valid.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Contract Acceptance
+  type: Period
+  definition: The period of time during which the contracting authority may accept a contract.
+  cardinality: 0..1
+  since_version: '2.1'
+- type: Appeal Terms
+  definition: Information about the terms to present for an appeal against a tender award.
+  cardinality: 0..1
+  since_version: '2.1'
+- type: Language
+  definition: One of the default languages specified for the tendering process.
+  cardinality: 0..n
+  since_version: '2.1'
+- type: Budget Account Line
+  definition: A budget account line associated with the tendering process.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Replaced Notice
+  type: Document Reference
+  definition: A class defining a reference to the notice that is being replaced.
+  cardinality: 0..1
+  since_version: '2.1'
+- type: Lot Distribution
+  definition: List of specific ways to tender to the lots of the procurement project.
+  cardinality: 0..1
+  since_version: '2.2'
+- type: Post Award Process
+  definition: Information about the post-award process.
+  cardinality: 0..1
+  since_version: '2.2'
+- type: Economic Operator Short List
+  definition: A set of criteria used to create a short list of candidates.
+  cardinality: 0..1
+  since_version: '2.2'
+- type: Security Clearance Term
+  definition: Information about the terms to present for a security clearance.
+  cardinality: 0..n
+  since_version: '2.3'

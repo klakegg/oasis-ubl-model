@@ -1,0 +1,11 @@
+name: Address Line
+definition: A class to define an unstructured address line.
+since_version: '2.0'
+
+fields:
+- primary_noun: Line
+  type: Text
+  definition: An address line expressed as unstructured text.
+  examples: '123 Standard Chartered Tower '
+  cardinality: '1'
+  since_version: '2.0'

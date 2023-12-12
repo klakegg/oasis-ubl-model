@@ -1,0 +1,48 @@
+name: Maritime Waste
+definition: A class to describe a transaction of maritime waste.
+since_version: '2.3'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this maritime waste transaction.
+  cardinality: 0..1
+  since_version: '2.3'
+- primary_noun: Description
+  type: Text
+  definition: A text descriping this maritime waste transaction.
+  cardinality: 0..n
+  since_version: '2.3'
+- possessive_noun: Waste Type
+  primary_noun: Code
+  type: Code
+  definition: A code specifying the type of waste in this maritime waste transaction.
+  cardinality: 0..1
+  since_version: '2.3'
+- primary_noun: To Be Delivered
+  type: Measure
+  definition: The messure of waste to be delivered.
+  cardinality: 0..1
+  since_version: '2.3'
+- primary_noun: Retained On Board
+  type: Measure
+  definition: The meassure of waste retained on board.
+  cardinality: 0..1
+  since_version: '2.3'
+- primary_noun: Max Dedicated Storage Capacity
+  type: Measure
+  definition: The messure for the maximum dedicated storage capacity.
+  cardinality: 0..1
+  since_version: '2.3'
+- primary_noun: Estimated Generated Until Next Port
+  type: Measure
+  definition: The messure of waste generated until the next port.
+  cardinality: 0..1
+  since_version: '2.3'
+
+objects:
+- qualifier: Remaining Waste Delivery Port
+  type: Location
+  definition: The location of the port where the remaining waste is delivered.
+  cardinality: 0..n
+  since_version: '2.3'

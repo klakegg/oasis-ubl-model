@@ -1,0 +1,26 @@
+name: Authorization
+definition: A class to define an authorization that as been issued
+since_version: '2.3'
+
+fields:
+- primary_noun: Code
+  type: Code
+  definition: A code defining the business purpose or scope of this authorization
+  cardinality: 0..1
+  since_version: '2.3'
+- primary_noun: Purpose
+  type: Text
+  definition: The purpose or scope of this authorization expressed as a text
+  cardinality: 0..n
+  since_version: '2.3'
+
+objects:
+- qualifier: Validity
+  type: Period
+  definition: The period during which this authorization is valid
+  cardinality: 0..1
+  since_version: '2.3'
+- type: Certificate
+  definition: One or more certificates related to this authorization
+  cardinality: 0..n
+  since_version: '2.3'

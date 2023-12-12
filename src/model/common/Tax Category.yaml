@@ -1,0 +1,64 @@
+name: Tax Category
+definition: A class to describe one of the tax categories within a taxation scheme (e.g., High Rate VAT, Low Rate VAT).
+since_version: '2.0'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this tax category.
+  examples: http://www.unece.org/uncefact/codelist/standard/UNECE_DutyorTaxorFeeCategoryCode_D09B.xsd
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Name
+  type: Name
+  definition: The name of this tax category.
+  examples: 'Luxury Goods , Wine Equalization , Exempt '
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Percent
+  type: Percent
+  definition: The tax rate for this category, expressed as a percentage.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Base Unit
+  primary_noun: Measure
+  type: Measure
+  definition: A Unit of Measures used as the basic for the tax calculation applied at a certain rate per unit.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Amount
+  type: Amount
+  definition: Where a tax is applied at a certain rate per unit, the rate per unit applied.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Tax Exemption Reason
+  primary_noun: Code
+  type: Code
+  definition: The reason for tax being exempted, expressed as a code.
+  examples: http://www.unece.org/uncefact/codelist/standard/UNECE_DutyTaxFeeTypeCode_D09B.xsd
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Tax Exemption
+  primary_noun: Reason
+  type: Text
+  definition: The reason for tax being exempted, expressed as text.
+  cardinality: 0..n
+  since_version: '2.0'
+- possessive_noun: Tier
+  primary_noun: Range
+  type: Text
+  definition: Where a tax is tiered, the range of taxable amounts that determines the rate of tax applicable to this tax category.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Tier
+  primary_noun: Rate
+  type: Percent
+  definition: Where a tax is tiered, the tax rate that applies within the specified range of taxable amounts for this tax category.
+  cardinality: 0..1
+  since_version: '2.0'
+
+objects:
+- type: Tax Scheme
+  definition: The taxation scheme within which this tax category is defined.
+  cardinality: 0..1
+  since_version: '2.0'

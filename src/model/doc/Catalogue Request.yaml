@@ -1,0 +1,157 @@
+name: Catalogue Request
+definition: A document used to request a Catalogue.
+since_version: '2.0'
+
+fields:
+- possessive_noun: UBL Version
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies the earliest version of the UBL 2 schema for this document type that defines all of the elements that might be encountered in the current instance.
+  examples: 2.0.5
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Customization
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies a user-defined customization of UBL for a specific use.
+  examples: NES
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Profile
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies a user-defined profile of the customization of UBL being used.
+  examples: BasicProcurementProcess
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Profile Execution
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies an instance of executing a profile, to associate all transactions in a collaboration.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this document, assigned by the sender.
+  cardinality: '1'
+  since_version: '2.0'
+- primary_noun: UUID
+  type: Identifier
+  definition: A universally unique identifier for an instance of this document.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Name
+  type: Name
+  definition: Text, assigned by the sender, that identifies this document to business users.
+  examples: 'winter 2005 collection '
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Issue
+  primary_noun: Date
+  type: Date
+  definition: The date, assigned by the sender, on which this document was issued.
+  cardinality: '1'
+  since_version: '2.0'
+- possessive_noun: Issue
+  primary_noun: Time
+  type: Time
+  definition: The time, assigned by the sender, at which this document was issued.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Note
+  type: Text
+  definition: Free-form text pertinent to this document, conveying information that is not contained explicitly in other structures.
+  cardinality: 0..n
+  since_version: '2.0'
+- primary_noun: Description
+  type: Text
+  definition: Textual description of the document instance.
+  examples: 'latest computer accessories for laptops '
+  cardinality: 0..n
+  since_version: '2.0'
+- primary_noun: Indicator
+  type: Indicator
+  definition: Indicates a request for a pricing update.
+  examples: default is true
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Indicator
+  type: Indicator
+  definition: Indicates a request for an update of the item specifications.
+  examples: default is true
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Line
+  primary_noun: Count
+  type: Numeric
+  definition: The number of Catalogue Lines in this document.
+  cardinality: 0..1
+  since_version: '2.0'
+
+objects:
+- qualifier: Validity
+  type: Period
+  definition: The period, assigned by the Catalogue Managing party, during which the information in the Catalogue requested is to be effective. This may be given as start and end dates or a duration.
+  cardinality: 0..n
+  since_version: '2.0'
+- type: Signature
+  definition: A signature applied to this document.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Receiver
+  type: Party
+  definition: The party receiving the Catalogue Request.
+  cardinality: '1'
+  since_version: '2.0'
+- qualifier: Provider
+  type: Party
+  definition: The party sending the Catalogue Request.
+  cardinality: '1'
+  since_version: '2.0'
+- qualifier: Seller
+  type: Supplier Party
+  definition: The seller.
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Contractor
+  type: Customer Party
+  definition: The customer party responsible for the contracts with which the Catalogue is associated.
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Requested
+  type: Catalogue Reference
+  definition: A reference to a specific Catalogue; used if the Catalogue Request is for an update.
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Referenced
+  type: Contract
+  definition: A contract or framework agreement with which the Catalogue being requested is associated.
+  cardinality: 0..n
+  since_version: '2.0'
+- type: Trading Terms
+  definition: The trading terms associated with the requested Catalogue.
+  cardinality: 0..1
+  since_version: '2.0'
+- type: Document Reference
+  definition: A reference to another document associated with this document.
+  cardinality: 0..n
+  since_version: '2.0'
+- qualifier: Applicable Territory
+  type: Address
+  definition: A reference to a territory (region, country, city, etc.) to which the requested Catalogue will apply, expressed as an Address.
+  cardinality: 0..n
+  since_version: '2.0'
+- qualifier: Requested
+  type: Language
+  definition: The language in which the Catalogue is requested to be provided.
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Requested
+  type: Classification Scheme
+  definition: A requested classification scheme for the requested Catalogue.
+  cardinality: 0..n
+  since_version: '2.0'
+- type: Catalogue Request Line
+  definition: An association to specific Catalogue Lines for the catalogue requested.
+  cardinality: 0..n
+  since_version: '2.0'

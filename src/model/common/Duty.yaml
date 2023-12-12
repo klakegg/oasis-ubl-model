@@ -1,0 +1,30 @@
+name: Duty
+definition: The charging rate used for both call charging and time dependent charging
+since_version: '2.1'
+
+fields:
+- primary_noun: Amount
+  type: Amount
+  definition: The amount of this duty.
+  examples: '88.23'
+  cardinality: '1'
+  since_version: '2.1'
+- primary_noun: Duty
+  type: Text
+  definition: Text describing this duty.
+  examples: ConnectionFee
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Duty
+  primary_noun: Code
+  type: Code
+  definition: The type of this charge rate, expressed as a code.
+  examples: ConnectionFee
+  cardinality: 0..1
+  since_version: '2.1'
+
+objects:
+- type: Tax Category
+  definition: The tax category applicable to this duty.
+  cardinality: 0..1
+  since_version: '2.1'

@@ -1,0 +1,12 @@
+name: Air Transport
+definition: A class to identify a specific aircraft used for transportation.
+since_version: '2.0'
+
+fields:
+- possessive_noun: Aircraft
+  primary_noun: Identifier
+  type: Identifier
+  definition: An identifer for a specific aircraft.
+  untded_code: '8213'
+  cardinality: '1'
+  since_version: '2.0'

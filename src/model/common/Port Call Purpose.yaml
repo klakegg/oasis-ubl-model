@@ -1,0 +1,22 @@
+name: Port Call Purpose
+definition: A class to describe the purpose of a port call.
+since_version: '2.3'
+
+fields:
+- possessive_noun: Type
+  primary_noun: Code
+  type: Code
+  definition: The purpose of this port call, expressed as a code.
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Type
+  primary_noun: Text
+  type: Text
+  definition: The purpose of this port call, expressed as a text.
+  cardinality: 0..n
+  since_version: '2.3'
+- primary_noun: Description
+  type: Text
+  definition: A description of the purpose of the port call.
+  cardinality: 0..n
+  since_version: '2.3'

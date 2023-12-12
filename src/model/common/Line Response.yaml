@@ -1,0 +1,13 @@
+name: Line Response
+definition: A class to describe responses to a line in a document.
+since_version: '2.0'
+
+objects:
+- type: Line Reference
+  definition: A reference to the line being responded to.
+  cardinality: '1'
+  since_version: '2.0'
+- type: Response
+  definition: A response to the referenced line.
+  cardinality: 1..n
+  since_version: '2.0'

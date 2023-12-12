@@ -1,0 +1,48 @@
+name: Immobilized Security
+definition: A class to describe an immobilized security to be used as a guarantee.
+since_version: '2.1'
+
+fields:
+- possessive_noun: Immobilization Certificate
+  primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for the certificate of this immobilized security.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Security
+  primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for the security being immobilized.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Issue
+  primary_noun: Date
+  type: Date
+  definition: The date on which this immobilized security was issued.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Face
+  primary_noun: Value
+  type: Amount
+  definition: The value of the security on the day it was immobilized.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Market
+  primary_noun: Value
+  type: Amount
+  definition: The current market value of the immobilized security.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Shares
+  primary_noun: Number
+  type: Quantity
+  definition: The number of shares immobilized.
+  cardinality: 0..1
+  since_version: '2.1'
+
+objects:
+- qualifier: Issuer
+  type: Party
+  definition: The party issuing the immobilized security certificate.
+  cardinality: 0..1
+  since_version: '2.1'

@@ -1,0 +1,91 @@
+name: Export Customs Declaration
+definition: A customs declaration document for exporting goods
+since_version: '2.3'
+
+fields:
+- possessive_noun: UBL Version
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies the earliest version of the UBL 2 schema for this document type that defines all of the elements that might be encountered in the current instance.
+  examples: '2.3'
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Customization
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies a user-defined customization of UBL for a specific use.
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Profile
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies a user-defined profile of the customization of UBL being used.
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Profile Execution
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies an instance of executing a profile, to associate all transactions in a collaboration.
+  examples: BPP-1001
+  cardinality: 0..1
+  since_version: '2.3'
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this document, assigned by the sender.
+  cardinality: '1'
+  since_version: '2.3'
+- primary_noun: UUID
+  type: Identifier
+  definition: A universally unique identifier for an instance of this document.
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Issue
+  primary_noun: Date
+  type: Date
+  definition: The date, assigned by the sender, on which this document was issued.
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Issue
+  primary_noun: Time
+  type: Time
+  definition: The time, assigned by the sender, at which this document was issued.
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Type
+  primary_noun: Code
+  type: Code
+  definition: A code specifying the type of export
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Reason
+  primary_noun: Code
+  type: Code
+  definition: A code specifying the reason for the goods being exported
+  cardinality: 0..1
+  since_version: '2.3'
+- primary_noun: Note
+  type: Text
+  definition: Free-form text pertinent to this document, conveying information that is not contained explicitly in other structures.
+  cardinality: 0..n
+  since_version: '2.3'
+- primary_noun: Version
+  type: Identifier
+  definition: Identifies the current version of this export customs declaration
+  cardinality: 0..1
+  since_version: '2.3'
+
+objects:
+- qualifier: Exporter
+  type: Party
+  definition: The party who exports the goods or has similar right of disposal over them at the time of export
+  alternative_business_terms: Exporter (WCO ID 41 and 42)
+  cardinality: '1'
+  since_version: '2.3'
+- type: Customs Declaration
+  definition: The reference to the customs declaration of the goods being exported
+  cardinality: '1'
+  since_version: '2.3'
+- type: Signature
+  definition: A signature applied to this document.
+  cardinality: 0..n
+  since_version: '2.3'

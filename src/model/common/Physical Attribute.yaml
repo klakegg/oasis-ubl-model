@@ -1,0 +1,30 @@
+name: Physical Attribute
+definition: A class to describe a physical attribute.
+since_version: '2.0'
+
+fields:
+- possessive_noun: Attribute
+  primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this physical attribute.
+  examples: 'colour style '
+  cardinality: '1'
+  since_version: '2.0'
+- possessive_noun: Position
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the position of this physical attribute.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Description
+  primary_noun: Code
+  type: Code
+  definition: A description of the physical attribute, expressed as a code.
+  examples: 'XXL , Small '
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Description
+  type: Text
+  definition: A description of the physical attribute, expressed as text.
+  cardinality: 0..n
+  since_version: '2.0'

@@ -1,0 +1,182 @@
+name: Hazardous Item
+definition: A class to describe a hazardous item.
+since_version: '2.0'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this hazardous item.
+  examples: 'Round Up '
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Placard
+  primary_noun: Notation
+  type: Text
+  definition: Text of the placard notation corresponding to the hazard class of this hazardous item. Can also be the hazard identification number of the orange placard (upper part) required on the means of transport.
+  examples: '5.1 '
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Placard
+  primary_noun: Endorsement
+  type: Text
+  definition: Text of the placard endorsement that is to be shown on the shipping papers for this hazardous item. Can also be used for the number of the orange placard (lower part) required on the means of transport.
+  examples: '2 '
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Information
+  type: Text
+  definition: Text providing further information about the hazardous substance.
+  examples: 'Must be stored away from flammable materials N.O.S. or a Waste Characteristics Code in conjunction with an EPA Waste Stream code '
+  cardinality: 0..n
+  since_version: '2.0'
+- possessive_noun: UNDG
+  primary_noun: Code
+  type: Code
+  definition: The UN code for this kind of hazardous item.
+  alternative_business_terms: UN Code
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: UN Packing Group
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the UN Packing Group protective packaging requirements for this hazardous item.
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: UN Packing
+  primary_noun: Group
+  type: Text
+  definition: A text describing the UN Packing Group protective packaging requirements for this hazardous item.
+  cardinality: 0..n
+  since_version: '2.3'
+- possessive_noun: Emergency Procedures
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the emergency procedures for this hazardous item.
+  alternative_business_terms: EMG code, EMS Page Number
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Medical First Aid Guide
+  primary_noun: Code
+  type: Code
+  definition: A code signifying a medical first aid guide appropriate to this hazardous item.
+  alternative_business_terms: MFAG page number
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Tunnel Restriction
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the restrictions for this hazardous item for passing through a tunnel.
+  examples: B1000C
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Pollutant
+  primary_noun: Code
+  type: Code
+  definition: A code for specifying the maritime pollutant for this hazardous item.
+  alternative_business_terms: IMDG code
+  examples: PP
+  cardinality: 0..1
+  since_version: '2.3'
+- primary_noun: Name
+  type: Name
+  definition: The full technical name of a specific hazardous substance contained in this goods item.
+  examples: 'Granular Sodium Chlorate WeedKiller '
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Category
+  type: Name
+  definition: The name of the category of hazard that applies to the Item.
+  untded_code: '7418'
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Hazardous Category
+  primary_noun: Code
+  type: Code
+  definition: A code signifying a kind of hazard for a material.
+  alternative_business_terms: Hazardous material class code
+  untded_code: '7419'
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Orange Hazard Placard
+  primary_noun: Identifier
+  type: Identifier
+  definition: The number for the upper part of the orange hazard placard required on the means of transport.
+  alternative_business_terms: Hazard identification number (upper part)
+  untded_code: '8158'
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Orange Hazard Placard
+  primary_noun: Identifier
+  type: Identifier
+  definition: The number for the lower part of the orange hazard placard required on the means of transport.
+  alternative_business_terms: Substance identification number (lower part)
+  untded_code: '8186'
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Marking
+  primary_noun: Identifier
+  type: Identifier
+  definition: An identifier to the marking of the Hazardous Item
+  alternative_business_terms: Dangerous goods label marking
+  untded_code: '8246'
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Hazard Class
+  primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for the hazard class applicable to this hazardous item as defined by the relevant regulation authority (e.g., the IMDG Class Number of the SOLAS Convention of IMO and the ADR/RID Class Number for the road/rail environment).
+  alternative_business_terms: IMDG Class Number, ADR/RID Class Number
+  untded_code: '8351'
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Weight
+  type: Measure
+  definition: The net weight of this hazardous item, excluding packaging.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Volume
+  type: Measure
+  definition: The volume of this hazardous item, excluding packaging and transport equipment.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Quantity
+  type: Quantity
+  definition: The quantity of goods items in this hazardous item that are hazardous.
+  untded_code: '7240'
+  cardinality: 0..1
+  since_version: '2.0'
+
+objects:
+- qualifier: Contact
+  type: Party
+  definition: The individual, group, or body to be contacted in case of a hazardous incident associated with this item.
+  cardinality: 0..1
+  since_version: '2.0'
+- type: Secondary Hazard
+  definition: A secondary hazard associated with this hazardous item.
+  cardinality: 0..n
+  since_version: '2.0'
+- type: Hazardous Goods Transit
+  definition: Information related to the transit of this kind of hazardous goods.
+  cardinality: 0..n
+  since_version: '2.0'
+- qualifier: Emergency
+  type: Temperature
+  definition: The threshold temperature at which emergency procedures apply in the handling of temperature-controlled goods.
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Flashpoint
+  type: Temperature
+  definition: The flashpoint temperature of this hazardous item; i.e., the lowest temperature at which vapors above a volatile combustible substance ignite in air when exposed to flame.
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Additional
+  type: Temperature
+  definition: Another temperature relevant to the handling of this hazardous item.
+  cardinality: 0..n
+  since_version: '2.0'
+- qualifier: Position On Board
+  type: Stowage
+  definition: A stowage indicating where to find this hazardous item.
+  cardinality: 0..1
+  since_version: '2.3'

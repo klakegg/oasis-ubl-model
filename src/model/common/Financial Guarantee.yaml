@@ -1,0 +1,33 @@
+name: Financial Guarantee
+definition: A class to describe the bond guarantee of a tenderer or bid submitter's actual entry into a contract in the event that it is the successful bidder.
+since_version: '2.1'
+
+fields:
+- possessive_noun: Guarantee Type
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the type of financial guarantee. For instance "Provisional Guarantee" or "Final Guarantee"
+  cardinality: '1'
+  since_version: '2.1'
+- primary_noun: Description
+  type: Text
+  definition: Text describing this financial guarantee.
+  cardinality: 0..n
+  since_version: '2.1'
+- primary_noun: Liability
+  type: Amount
+  definition: The amount of liability in this financial guarantee.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Amount
+  type: Rate
+  definition: The rate used to calculate the amount of liability in this financial guarantee.
+  cardinality: 0..1
+  since_version: '2.1'
+
+objects:
+- qualifier: Constitution
+  type: Period
+  definition: The period during the tendering process to which this financial guarantee has to be settled.
+  cardinality: 0..1
+  since_version: '2.1'

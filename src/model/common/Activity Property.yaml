@@ -1,0 +1,15 @@
+name: Activity Property
+definition: A class to define a name/value pair for a property of an inventory planning activity.
+since_version: '2.1'
+
+fields:
+- primary_noun: Name
+  type: Name
+  definition: The name of this activity property.
+  cardinality: '1'
+  since_version: '2.1'
+- primary_noun: Value
+  type: Text
+  definition: The value of this activity property.
+  cardinality: '1'
+  since_version: '2.1'

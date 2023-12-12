@@ -1,0 +1,22 @@
+name: Party Group
+definition: A class to define a Group of Parties
+since_version: '2.4'
+
+fields:
+- possessive_noun: Group Type
+  primary_noun: Code
+  type: Code
+  definition: A code to specify the type of grouping (e.g. EEIG)
+  cardinality: 0..1
+  since_version: '2.4'
+- primary_noun: Type
+  type: Text
+  definition: Type of Grouping as text
+  cardinality: 0..n
+  since_version: '2.4'
+
+objects:
+- type: Party
+  definition: A party within the group
+  cardinality: 1..n
+  since_version: '2.4'

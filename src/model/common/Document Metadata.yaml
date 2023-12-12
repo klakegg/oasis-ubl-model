@@ -1,0 +1,37 @@
+name: Document Metadata
+definition: A class to describe the metadata of a specific business document based on any document format (e.g. UBL, EDIFACT, ...).
+since_version: '2.2'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for the document.
+  cardinality: 0..1
+  since_version: '2.2'
+- possessive_noun: Format
+  primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for the document format (e.g. standard business vocabularies).
+  examples: UBL, ISO20022, EDIFACT
+  cardinality: '1'
+  since_version: '2.2'
+- possessive_noun: Version
+  primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for a precise version of a document format.
+  examples: '2.2'
+  cardinality: '1'
+  since_version: '2.2'
+- possessive_noun: Schema
+  primary_noun: URI
+  type: Identifier
+  definition: The Uniform Resource Identifier (URI) of a schema definition for the business document (e.g. a namespace URI for XML schemas, a message ID for non-xml legacy documents).
+  examples: urn:oasis:names:specification:ubl:schema:xsd:Invoice-2, INVOIC
+  cardinality: 0..1
+  since_version: '2.2'
+- possessive_noun: Document Type
+  primary_noun: Code
+  type: Code
+  definition: The type of document, expressed as a code.
+  cardinality: 0..1
+  since_version: '2.2'

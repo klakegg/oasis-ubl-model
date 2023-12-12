@@ -1,0 +1,112 @@
+name: Person
+definition: A class to describe a person.
+since_version: '2.0'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this person.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Name
+  type: Name
+  definition: This person's given name.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Name
+  type: Name
+  definition: This person's family name.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Title
+  type: Text
+  definition: This person's title of address (e.g., Mr, Ms, Dr, Sir).
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Name
+  type: Name
+  definition: This person's middle name(s) or initials.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Name
+  type: Name
+  definition: This person's second family name.
+  examples: 'Delivery Dock '
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Name
+  primary_noun: Suffix
+  type: Text
+  definition: A suffix to this person's name (e.g., PhD, OBE, Jr).
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Job
+  primary_noun: Title
+  type: Text
+  definition: This person's job title (for a particular role) within an organization.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Nationality
+  type: Identifier
+  definition: An identifier for this person's nationality.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Gender
+  primary_noun: Code
+  type: Code
+  definition: A code (e.g., ISO 5218) signifying the gender of this person.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Birth
+  primary_noun: Date
+  type: Date
+  definition: This person's date of birth.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Birthplace
+  primary_noun: Name
+  type: Name
+  definition: The name of the place where this person was born, expressed as text.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Department
+  type: Text
+  definition: The department or subdivision of an organization that this person belongs to (in a particular role).
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Role
+  primary_noun: Code
+  type: Code
+  definition: A code stating the person's role
+  cardinality: 0..1
+  since_version: '2.2'
+
+objects:
+- qualifier: Birthplace
+  type: Location
+  definition: The location where this person was born.
+  cardinality: 0..1
+  since_version: '2.3'
+- qualifier: Citizenship
+  type: Country
+  definition: The country of the person's citizenship.
+  cardinality: 0..1
+  since_version: '2.2'
+- type: Contact
+  definition: Contact information for this person.
+  cardinality: 0..1
+  since_version: '2.1'
+- type: Financial Account
+  definition: The financial account associated with this person.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Identity
+  type: Document Reference
+  definition: A reference to a document that can precisely identify this person (e.g., a driver's license).
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Residence
+  type: Address
+  definition: This person's address of residence.
+  cardinality: 0..1
+  since_version: '2.1'

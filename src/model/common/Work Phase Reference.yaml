@@ -1,0 +1,47 @@
+name: Work Phase Reference
+definition: A class that refers to a phase of work. Used for instance to specify what part of the contract the billing is referring to.
+since_version: '2.1'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this phase of work.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Work Phase
+  primary_noun: Code
+  type: Code
+  definition: A code signifying this phase of work.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Work
+  primary_noun: Phase
+  type: Text
+  definition: Text describing this phase of work.
+  cardinality: 0..n
+  since_version: '2.1'
+- possessive_noun: Progress
+  primary_noun: Percent
+  type: Percent
+  definition: The progress percentage of the work phase.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Start
+  primary_noun: Date
+  type: Date
+  definition: The date on which this phase of work begins.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: End
+  primary_noun: Date
+  type: Date
+  definition: The date on which this phase of work ends.
+  cardinality: 0..1
+  since_version: '2.1'
+
+objects:
+- qualifier: Work Order
+  type: Document Reference
+  definition: A reference to a document regarding the work order for the project in which this phase of work takes place.
+  cardinality: 0..n
+  since_version: '2.1'

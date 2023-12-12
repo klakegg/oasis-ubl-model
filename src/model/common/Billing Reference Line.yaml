@@ -1,0 +1,21 @@
+name: Billing Reference Line
+definition: A class to define a reference to a transaction line in a billing document.
+since_version: '2.0'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this transaction line in a billing document.
+  cardinality: '1'
+  since_version: '2.0'
+- primary_noun: Amount
+  type: Amount
+  definition: The monetary amount of the transaction line, including any allowances and charges but excluding taxes.
+  cardinality: 0..1
+  since_version: '2.0'
+
+objects:
+- type: Allowance Charge
+  definition: An allowance or charge applicable to the transaction line.
+  cardinality: 0..n
+  since_version: '2.0'

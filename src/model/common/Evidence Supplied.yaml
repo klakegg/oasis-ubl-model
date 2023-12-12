@@ -1,0 +1,10 @@
+name: Evidence Supplied
+definition: A reference to evidence.
+since_version: '2.1'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: The identifier of the referenced evidence.
+  cardinality: '1'
+  since_version: '2.1'

@@ -1,0 +1,139 @@
+name: Manifest
+definition: A document listing the contents, cargo, passengers and crew of an airplane, a ship, a truck or a vagon.
+since_version: '2.3'
+
+fields:
+- possessive_noun: UBL Version
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies the earliest version of the UBL 2 schema for this document type that defines all of the elements that might be encountered in the current instance.
+  examples: '2.3'
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Customization
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies a user-defined customization of UBL for a specific use.
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Profile
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies a user-defined profile of the customization of UBL being used.
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Profile Execution
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies an instance of executing a profile, to associate all transactions in a collaboration.
+  cardinality: 0..1
+  since_version: '2.3'
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this document.
+  cardinality: '1'
+  since_version: '2.3'
+- primary_noun: UUID
+  type: Identifier
+  definition: A universally unique identifier for an instance of this document.
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Issue
+  primary_noun: Date
+  type: Date
+  definition: The date, assigned by the sender, on which this document was issued.
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Issue
+  primary_noun: Time
+  type: Time
+  definition: The time, assigned by the sender, at which this document was issued.
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Manifest Type
+  primary_noun: Code
+  type: Code
+  definition: The type of Manifest, expressed as a code.
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Manifest
+  primary_noun: Type
+  type: Text
+  definition: The type of Manifest, expressed as text.
+  cardinality: 0..n
+  since_version: '2.3'
+- primary_noun: Description
+  type: Text
+  definition: Textual description of this document instance.
+  cardinality: 0..n
+  since_version: '2.3'
+- primary_noun: Note
+  type: Text
+  definition: Free-form text pertinent to this document, conveying information that is not contained explicitly in other structures.
+  cardinality: 0..n
+  since_version: '2.3'
+- primary_noun: Version
+  type: Identifier
+  definition: Identifies a version of a common transportation report in order to distinguish updates.
+  cardinality: 0..1
+  since_version: '2.3'
+- primary_noun: Indicator
+  type: Indicator
+  definition: An indicator of whether ad valorem duties are levied on commodities described in this manifest (true) or not (false).
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Carriage
+  primary_noun: Value
+  type: Amount
+  definition: Value declared by the shipper or his agent for the purpose of varying the carrier's level of liability from that provided in the contract of carriage in case of loss or damage to goods or delayed delivery.
+  alternative_business_terms: Interest in Delivery
+  cardinality: 0..1
+  since_version: '2.3'
+
+objects:
+- qualifier: Sending Logistics Operator
+  type: Party
+  definition: The logistics operator party issuing this manifest
+  cardinality: '1'
+  since_version: '2.3'
+- qualifier: Authority
+  type: Party
+  definition: The authority or regulator receiving this manifest.
+  cardinality: 0..1
+  since_version: '2.3'
+- qualifier: Consignor
+  type: Party
+  definition: The party responsible for sending the goods mentioned in this manifest.
+  cardinality: 0..1
+  since_version: '2.3'
+- qualifier: Consignee
+  type: Party
+  definition: The party receiving the goods mentioned in this manifest.
+  cardinality: 0..1
+  since_version: '2.3'
+- qualifier: Crew
+  type: Person
+  definition: A person registred as crew in this manifest.
+  cardinality: 0..n
+  since_version: '2.3'
+- qualifier: Passenger
+  type: Person
+  definition: A person registred as passenger in this manifest
+  cardinality: 0..n
+  since_version: '2.3'
+- type: Shipment
+  definition: A shipment associated with this manifest.
+  cardinality: 0..1
+  since_version: '2.3'
+- type: Document Reference
+  definition: A reference to a document relevant for or associated with this common transportation report.
+  cardinality: 0..n
+  since_version: '2.3'
+- type: Document Distribution
+  definition: An interested party to whom this document is distributed.
+  cardinality: 0..n
+  since_version: '2.3'
+- type: Signature
+  definition: A signature applied to this document.
+  cardinality: 0..n
+  since_version: '2.3'

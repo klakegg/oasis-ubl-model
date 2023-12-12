@@ -1,0 +1,191 @@
+name: Transport Execution Plan Request
+definition: A document sent by a transport user to request a transport service from a transport service provider.
+since_version: '2.1'
+
+fields:
+- possessive_noun: UBL Version
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies the earliest version of the UBL 2 schema for this document type that defines all of the elements that might be encountered in the current instance.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Customization
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies a user-defined customization of UBL for a specific use.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Profile
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies a user-defined profile of the customization of UBL being used.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Profile Execution
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies an instance of executing a profile, to associate all transactions in a collaboration.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this document, assigned by the sender.
+  cardinality: '1'
+  since_version: '2.1'
+- primary_noun: Version
+  type: Identifier
+  definition: An identifier for the current version of the Transport Execution Plan Request.
+  examples: '1.1 '
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Indicator
+  type: Indicator
+  definition: Indicates whether this document is a copy (true) or not (false).
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: UUID
+  type: Identifier
+  definition: A universally unique identifier for an instance of this document.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Issue
+  primary_noun: Date
+  type: Date
+  definition: The date, assigned by the sender, on which this document was issued.
+  alternative_business_terms: Transport Document Date
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Issue
+  primary_noun: Time
+  type: Time
+  definition: The time, assigned by the sender, at which this document was issued.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Document Status
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the status of the Transport Execution Plan Request.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Document Status Reason
+  primary_noun: Code
+  type: Code
+  definition: A code signifying a reason associated with the status of the Transport Execution Plan Request.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Document Status Reason
+  primary_noun: Description
+  type: Text
+  definition: A reason associated with the status of the Transport Execution Plan Request.
+  examples: '123 Standard Chartered Tower '
+  cardinality: 0..n
+  since_version: '2.1'
+- primary_noun: Note
+  type: Text
+  definition: Free-form text pertinent to this document, conveying information that is not contained explicitly in other structures.
+  cardinality: 0..n
+  since_version: '2.1'
+- primary_noun: Remarks
+  type: Text
+  definition: Remarks from the transport user regarding the transport operations referenced in the Transport Execution Plan Request.
+  cardinality: 0..n
+  since_version: '2.1'
+
+objects:
+- qualifier: Sender
+  type: Party
+  definition: The party sending the Transport Execution Plan Request.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Receiver
+  type: Party
+  definition: The party receiving the Transport Execution Plan Request.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Transport User
+  type: Party
+  definition: The party requesting the transport services referenced in the Transport Execution Plan Request.
+  cardinality: '1'
+  since_version: '2.1'
+- qualifier: Transport Service Provider
+  type: Party
+  definition: The party providing the transport services referenced in the Transport Execution Plan Request.
+  cardinality: '1'
+  since_version: '2.1'
+- qualifier: Payee
+  type: Party
+  definition: The party that will pay for the transport service(s) referred to in a Transport Execution Plan.
+  cardinality: 0..1
+  since_version: '2.1'
+- type: Signature
+  definition: A signature applied to this document.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Transport Execution Plan
+  type: Document Reference
+  definition: A reference to an original Transport Execution Plan Document.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Transport Service Description
+  type: Document Reference
+  definition: A reference to the Transport Service Description, which is used by a transport service provider to announce transport services to transport users (buyers).
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Additional
+  type: Document Reference
+  definition: A reference to an additional document associated with this document.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Transport
+  type: Contract
+  definition: A potential contract related to the Transport Execution Plan Request.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Transport Service Provider Response Deadline
+  type: Period
+  definition: A deadline for a response from the Transport Service Provider to this Transport Execution Plan Request.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Main
+  type: Transportation Service
+  definition: A description of the main transportation service referenced in the Transport Execution Plan Request.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Additional
+  type: Transportation Service
+  definition: A description of an additional transportation service referenced in the Transport Execution Plan Request.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Service Start Time
+  type: Period
+  definition: The period within which the services referred to in the Transport Execution Plan Request must begin.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Service End Time
+  type: Period
+  definition: The period during which the services referred to in the Transport Execution Plan Request must be completed.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: From
+  type: Location
+  definition: The location of origin of the transport service referenced in the Transport Execution Plan Request.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: To
+  type: Location
+  definition: The destination location for the transport service referenced in the Transport Execution Plan Request.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: At
+  type: Location
+  definition: The location of a transport service (e.g., terminal handling service) that does not require transport movement.
+  cardinality: 0..1
+  since_version: '2.1'
+- type: Transport Execution Terms
+  definition: A description of terms and conditions related to the Transport Execution Plan Request.
+  cardinality: 0..1
+  since_version: '2.1'
+- type: Consignment
+  definition: A description of an identifiable collection of goods items to be transported between the consignor and the consignee. This information may be defined within a transport contract. A consignment may comprise more than one shipment (e.g., when consolidated by a freight forwarder).
+  cardinality: 1..n
+  since_version: '2.1'

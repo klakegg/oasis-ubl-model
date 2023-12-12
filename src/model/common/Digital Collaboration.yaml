@@ -1,0 +1,23 @@
+name: Digital Collaboration
+definition: A class to describe a digital trade collaboration.
+alternative_business_terms: Business Collaboration
+since_version: '2.2'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for the digital collaboration.
+  cardinality: 0..1
+  since_version: '2.2'
+
+objects:
+- qualifier: Sending
+  type: Digital Service
+  definition: The sending digital service associated with this digital collaboration.
+  cardinality: 0..1
+  since_version: '2.2'
+- qualifier: Receiving
+  type: Digital Service
+  definition: The receiving digital service associated with this digital collaboration.
+  cardinality: 0..1
+  since_version: '2.2'

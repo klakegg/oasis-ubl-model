@@ -1,0 +1,22 @@
+name: Fee
+definition: A class to describe a revenue.
+since_version: '2.3'
+
+fields:
+- possessive_noun: Fee Type
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the type of this fee.
+  cardinality: 0..1
+  since_version: '2.3'
+- primary_noun: Amount
+  type: Amount
+  definition: The amount of a fee.
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Fee
+  primary_noun: Description
+  type: Text
+  definition: Text describing this fee.
+  cardinality: 0..n
+  since_version: '2.3'

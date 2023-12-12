@@ -1,0 +1,381 @@
+name: Shipment Stage
+definition: A class to describe one stage of movement in a transport of goods.
+since_version: '2.0'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this shipment stage.
+  examples: 1 , 2 , etc..
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Shipment Stage Type
+  primary_noun: Code
+  type: Code
+  definition: The type of shipment stage, expressed as a code.
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Shipment Stage
+  primary_noun: Type
+  type: Text
+  definition: The type of shipment stage, expressed as text.
+  examples: Intra European, entering Europe, exiting Europe
+  cardinality: 0..n
+  since_version: '2.3'
+- possessive_noun: Transport Mode
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the method of transport used for this shipment stage.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Transport Means Type
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the kind of transport means (truck, vessel, etc.) used for this shipment stage.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Direction
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the direction of transit in this shipment stage.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Indicator
+  type: Indicator
+  definition: An indicator that this stage takes place before the main carriage of the shipment (true) or not (false).
+  examples: Truck delivery to wharf
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Indicator
+  type: Indicator
+  definition: An indicator that this stage takes place after the main carriage of the shipment (true) or not (false).
+  examples: Truck delivery from wharf
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Indicator
+  type: Indicator
+  definition: An indicator that cabotage applies for this shipment stage (true) or not (false).
+  cardinality: 0..1
+  since_version: '2.3'
+- primary_noun: Indicator
+  type: Indicator
+  definition: An indicator that the transported goods in this shipment stage are subject to an international regulation concerning the carriage of dangerous goods (true) or not (false).
+  alternative_business_terms: Dangerous Goods RID Indicator
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Delivery
+  primary_noun: Date
+  type: Date
+  definition: The estimated date of delivery in this shipment stage.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Delivery
+  primary_noun: Time
+  type: Time
+  definition: The estimated time of delivery in this shipment stage.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Delivery
+  primary_noun: Date
+  type: Date
+  definition: The delivery date required by the buyer in this shipment stage.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Delivery
+  primary_noun: Time
+  type: Time
+  definition: The delivery time required by the buyer in this shipment stage.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Sequence
+  primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for the loading sequence (of consignments) associated with this shipment stage.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Sequence
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies the successive loading sequence (of consignments) associated with a shipment stage.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Instructions
+  type: Text
+  definition: Text of instructions applicable to a shipment stage.
+  cardinality: 0..n
+  since_version: '2.1'
+- primary_noun: Instructions
+  type: Text
+  definition: Text of instructions relating to demurrage (the case in which a vessel is prevented from loading or discharging cargo within the stipulated laytime).
+  cardinality: 0..n
+  since_version: '2.1'
+- possessive_noun: Crew
+  primary_noun: Quantity
+  type: Quantity
+  definition: The total number of crew aboard a transport means.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Passenger
+  primary_noun: Quantity
+  type: Quantity
+  definition: The total number of passengers aboard a transport means.
+  cardinality: 0..1
+  since_version: '2.1'
+
+objects:
+- qualifier: Transit
+  type: Period
+  definition: The period during which this shipment stage actually took place.
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Carrier
+  type: Party
+  definition: A carrier party responsible for this shipment stage.
+  cardinality: 0..n
+  since_version: '2.0'
+- type: Transport Means
+  definition: The means of transport used in this shipment stage.
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Loading Port
+  type: Location
+  definition: The location of loading for a shipment stage.
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Unloading Port
+  type: Location
+  definition: The location of unloading for a shipment stage.
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Transship Port
+  type: Location
+  definition: The location of transshipment relating to a shipment stage.
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Loading
+  type: Transport Event
+  definition: The loading of goods in this shipment stage.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Examination
+  type: Transport Event
+  definition: The examination of shipments in this shipment stage.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Availability
+  type: Transport Event
+  definition: The making available of shipments in this shipment stage.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Exportation
+  type: Transport Event
+  definition: The export event associated with this shipment stage.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Discharge
+  type: Transport Event
+  definition: The discharge event associated with this shipment stage.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Warehousing
+  type: Transport Event
+  definition: The warehousing event associated with this shipment stage.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Takeover
+  type: Transport Event
+  definition: The receiver's takeover of the goods in this shipment stage.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Optional Takeover
+  type: Transport Event
+  definition: The optional takeover of the goods in this shipment stage.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Dropoff
+  type: Transport Event
+  definition: The dropping off of goods in this shipment stage.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Actual Pickup
+  type: Transport Event
+  definition: The pickup of goods in this shipment stage.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Delivery
+  type: Transport Event
+  definition: The delivery of goods in this shipment stage.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Receipt
+  type: Transport Event
+  definition: The receipt of goods in this shipment stage.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Storage
+  type: Transport Event
+  definition: The storage of goods in this shipment stage.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Acceptance
+  type: Transport Event
+  definition: The acceptance of goods in this shipment stage.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Terminal Operator
+  type: Party
+  definition: A terminal operator associated with this shipment stage.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Customs Agent
+  type: Party
+  definition: A customs agent associated with this shipment stage.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Estimated Transit
+  type: Period
+  definition: The estimated transit period of this shipment stage.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Freight
+  type: Allowance Charge
+  definition: A freight allowance charge for this shipment stage.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Freight Charge
+  type: Location
+  definition: The location associated with a freight charge related to this shipment stage.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Detention
+  type: Transport Event
+  definition: The detention of a transport means during loading and unloading operations.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Requested Departure
+  type: Transport Event
+  definition: The departure requested by the party requesting a transportation service.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Requested Arrival
+  type: Transport Event
+  definition: The arrival requested by the party requesting a transportation service.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Requested Waypoint
+  type: Transport Event
+  definition: A waypoint requested by the party requesting a transportation service.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Planned Departure
+  type: Transport Event
+  definition: The departure planned by the party providing a transportation service.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Planned Arrival
+  type: Transport Event
+  definition: The arrival planned by the party providing a transportation service.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Planned Waypoint
+  type: Transport Event
+  definition: A waypoint planned by the party providing a transportation service.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Actual Departure
+  type: Transport Event
+  definition: The actual departure from a specific location during a transportation service.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Actual Waypoint
+  type: Transport Event
+  definition: The location of an actual waypoint during a transportation service.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Actual Arrival
+  type: Transport Event
+  definition: The actual arrival at a specific location during a transportation service.
+  cardinality: 0..1
+  since_version: '2.1'
+- type: Transport Event
+  definition: A significant occurrence in the course of this shipment of goods.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Estimated Departure
+  type: Transport Event
+  definition: Describes an estimated departure at a location during a transport service.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Estimated Arrival
+  type: Transport Event
+  definition: Describes an estimated arrival at a location during a transport service.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Passenger
+  type: Person
+  definition: A person who travels in a conveyance without participating in its operation.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Driver
+  type: Person
+  definition: Describes a person responsible for driving the transport means.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Reporting
+  type: Person
+  definition: Describes a person being responsible for providing the required administrative reporting relating to a transport.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Crew Member
+  type: Person
+  definition: A person operating or serving aboard a transport means.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Security Officer
+  type: Person
+  definition: The person on board the vessel, accountable to the master, designated by the company as responsible for the security of the ship, including implementation and maintenance of the ship security plan and for the liaison with the company security officer and the port facility security officers.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Master
+  type: Person
+  definition: The person responsible for the ship's safe and efficient operation, including cargo operations, navigation, crew management and for ensuring that the vessel complies with local and international laws, as well as company and flag state policies.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Ships Surgeon
+  type: Person
+  definition: The person responsible for the health of the people aboard a ship at sea.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Destination
+  type: Port Call
+  definition: A destination port call for this shipment stage.
+  cardinality: 0..1
+  since_version: '2.3'
+- type: Ship Store Article
+  definition: The ship store articles for this shipment stage.
+  cardinality: 0..n
+  since_version: '2.3'
+- type: Crew Person Effect
+  definition: The crew person effects for this shipment stage.
+  cardinality: 0..n
+  since_version: '2.3'
+- type: Maritime Waste
+  definition: The maritime waste for this shipment stage.
+  cardinality: 0..n
+  since_version: '2.3'
+- type: Ballast Water Summary
+  definition: A ballast water summary for this shipment stage.
+  cardinality: 0..1
+  since_version: '2.3'
+- type: ISPS Requirements
+  definition: The ISPS (International Ship and Port Facility Security Code) requirements for this shipment stage.
+  cardinality: 0..1
+  since_version: '2.3'
+- type: Maritime Health Declaration
+  definition: A maritime declaration of health for this shipment stage.
+  cardinality: 0..1
+  since_version: '2.3'
+- type: Fuel Consumption
+  definition: One or more fuel consumptions of this shipment stage.
+  cardinality: 0..n
+  since_version: '2.4'

@@ -1,0 +1,27 @@
+name: Stowage
+definition: A class to describe a location on board a means of transport where specified goods or transport equipment have been stowed or are to be stowed.
+since_version: '2.0'
+
+fields:
+- possessive_noun: Location
+  primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for the location.
+  alternative_business_terms: Cell Location, coded
+  untded_code: '8043'
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Location
+  type: Text
+  definition: Text describing the location.
+  alternative_business_terms: Cell Location
+  untded_code: '8042'
+  cardinality: 0..n
+  since_version: '2.0'
+
+objects:
+- qualifier: Measurement
+  type: Dimension
+  definition: A measurable dimension (length, mass, weight, or volume) of this stowage.
+  cardinality: 0..n
+  since_version: '2.0'

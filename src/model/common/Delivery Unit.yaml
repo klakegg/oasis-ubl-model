@@ -1,0 +1,24 @@
+name: Delivery Unit
+definition: A class to describe a delivery unit.
+since_version: '2.0'
+
+fields:
+- possessive_noun: Batch
+  primary_noun: Quantity
+  type: Quantity
+  definition: The quantity of ordered Items that constitutes a batch for delivery purposes.
+  examples: '100 units , by the dozen '
+  cardinality: '1'
+  since_version: '2.0'
+- primary_noun: Unit
+  type: Quantity
+  definition: The quantity of units in the Delivery Unit expressed in the units used by the consumer.
+  examples: 'packs of 10 '
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Indicator
+  type: Indicator
+  definition: An indication that the transported goods are subject to an international regulation concerning the carriage of dangerous goods (true) or not (false).
+  examples: Default is negative
+  cardinality: 0..1
+  since_version: '2.0'

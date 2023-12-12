@@ -1,0 +1,49 @@
+name: Meter
+definition: A class to describe a meter and its readings.
+since_version: '2.1'
+
+fields:
+- possessive_noun: Meter
+  primary_noun: Number
+  type: Text
+  definition: The meter number, expressed as text.
+  examples: 61722x
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Meter
+  primary_noun: Name
+  type: Name
+  definition: The name of this meter, which serves as an identifier to distinguish a main meter from a submeter.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Meter
+  primary_noun: Constant
+  type: Text
+  definition: The factor by which readings of this meter must be multiplied to calculate consumption, expressed as text.
+  examples: '1.000'
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Meter Constant
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the formula to be used in applying the meter constant.
+  examples: Factor
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Delivered
+  primary_noun: Quantity
+  type: Quantity
+  definition: The quantity delivered; the total quantity consumed as calculated from the meter readings.
+  examples: '5761.00'
+  cardinality: 0..1
+  since_version: '2.1'
+
+objects:
+- type: Meter Reading
+  definition: A reading of this meter.
+  cardinality: 0..n
+  since_version: '2.1'
+- type: Meter Property
+  definition: A property of this meter.
+  cardinality: 0..n
+  since_version: '2.1'

@@ -1,0 +1,72 @@
+name: Tax Subtotal
+definition: A class to define the subtotal for a particular tax category within a particular taxation scheme, such as standard rate within VAT.
+since_version: '2.0'
+
+fields:
+- primary_noun: Amount
+  type: Amount
+  definition: The net amount to which the tax percent (rate) is applied to calculate the tax amount.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Tax
+  primary_noun: Amount
+  type: Amount
+  definition: The amount of this tax subtotal.
+  cardinality: '1'
+  since_version: '2.0'
+- primary_noun: Amount
+  type: Amount
+  definition: The total amount after the tax amount has been added to the taxable amount.
+  cardinality: 0..1
+  since_version: '2.4'
+- possessive_noun: Calculation
+  primary_noun: Sequence
+  type: Numeric
+  definition: The number of this tax subtotal in the sequence of subtotals corresponding to the order in which multiple taxes are applied. If all taxes are applied to the same taxable amount (i.e., their order of application is inconsequential), then CalculationSequenceNumeric is 1 for all tax subtotals applied to a given amount.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Tax
+  primary_noun: Amount
+  type: Amount
+  definition: The amount of this tax subtotal, expressed in the currency used for invoicing.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Percent
+  type: Percent
+  definition: The tax rate of the tax category applied to this tax subtotal, expressed as a percentage.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Base Unit
+  primary_noun: Measure
+  type: Measure
+  definition: The unit of measure on which the tax calculation is based
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Amount
+  type: Amount
+  definition: Where a tax is applied at a certain rate per unit, the rate per unit applied.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Tier
+  primary_noun: Range
+  type: Text
+  definition: Where a tax is tiered, the range of taxable amounts that determines the rate of tax applicable to this tax subtotal.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Tier
+  primary_noun: Rate
+  type: Percent
+  definition: Where a tax is tiered, the tax rate that applies within a specified range of taxable amounts for this tax subtotal.
+  cardinality: 0..1
+  since_version: '2.0'
+
+objects:
+- type: Tax Category
+  definition: The tax category applicable to this subtotal.
+  cardinality: '1'
+  since_version: '2.0'
+- qualifier: Tax Due
+  type: Country
+  definition: The country where this tax is due.
+  cardinality: 0..1
+  since_version: '2.4'

@@ -1,0 +1,66 @@
+name: Signature
+definition: A class to define a signature.
+since_version: '2.0'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this signature.
+  cardinality: '1'
+  since_version: '2.0'
+- primary_noun: Reason
+  type: Code
+  definition: A code defining the reason or purpose of this signature
+  cardinality: 0..1
+  since_version: '2.3'
+- primary_noun: Note
+  type: Text
+  definition: Free-form text conveying information that is not contained explicitly in other structures; in particular, information regarding the circumstances in which the signature is being used.
+  cardinality: 0..n
+  since_version: '2.0'
+- possessive_noun: Validation
+  primary_noun: Date
+  type: Date
+  definition: The date upon which this signature was verified.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Validation
+  primary_noun: Time
+  type: Time
+  definition: The time at which this signature was verified.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Validator
+  type: Identifier
+  definition: An identifier for the organization, person, service, or server that verified this signature.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Canonicalization
+  primary_noun: Method
+  type: Text
+  definition: The method used to perform XML canonicalization of this signature.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Signature
+  primary_noun: Method
+  type: Text
+  definition: Text describing the method of signature.
+  cardinality: 0..1
+  since_version: '2.0'
+
+objects:
+- qualifier: Signatory
+  type: Party
+  definition: The signing party.
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Digital Signature
+  type: Attachment
+  definition: The actual encoded signature (e.g., in XMLDsig format).
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Original
+  type: Document Reference
+  definition: A reference to the document that the signature applies to. For evidentiary purposes, this may be the document image that the signatory party saw when applying their signature.
+  cardinality: 0..1
+  since_version: '2.0'

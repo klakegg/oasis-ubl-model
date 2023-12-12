@@ -1,0 +1,70 @@
+name: External Reference
+definition: A class to describe an external object, such as a document stored at a remote location.
+since_version: '2.0'
+
+fields:
+- primary_noun: URI
+  type: Identifier
+  definition: The Uniform Resource Identifier (URI) that identifies the external object as an Internet resource.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Document
+  primary_noun: Hash
+  type: Text
+  definition: A hash value for the externally stored object.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Hash Algorithm
+  primary_noun: Method
+  type: Text
+  definition: A hash algorithm used to calculate the hash value of the externally stored object.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Expiry
+  primary_noun: Date
+  type: Date
+  definition: The date on which availability of the resource can no longer be relied upon.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Expiry
+  primary_noun: Time
+  type: Time
+  definition: The time after which availability of the resource can no longer be relied upon.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Mime
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the mime type of the external object.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Format
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the format of the external object.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Encoding
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the encoding/decoding algorithm used with the external object.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Character Set
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the character set of an external document.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: File
+  primary_noun: Name
+  type: Name
+  definition: The file name of the external object.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Description
+  type: Text
+  definition: Text describing the external object.
+  examples: 'computer accessories for laptops '
+  cardinality: 0..n
+  since_version: '2.1'

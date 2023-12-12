@@ -1,0 +1,97 @@
+name: Payment Means
+definition: A class to describe a means of payment.
+since_version: '2.0'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this means of payment.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Payment Means
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the type of this means of payment.
+  cardinality: '1'
+  since_version: '2.0'
+- possessive_noun: Payment Means
+  primary_noun: Description
+  type: Text
+  definition: A description of this means of payment.
+  cardinality: 0..n
+  since_version: '2.4'
+- possessive_noun: Payment Due
+  primary_noun: Date
+  type: Date
+  definition: The date on which payment is due for this means of payment.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Payment Channel
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the payment channel for this means of payment.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Instruction
+  primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for the payment instruction.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Note
+  type: Text
+  definition: Free-form text conveying information that is not contained explicitly in other structures.
+  cardinality: 0..n
+  since_version: '2.0'
+- possessive_noun: Payment
+  primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for a payment made using this means of payment.
+  cardinality: 0..n
+  since_version: '2.0'
+- possessive_noun: Charge Bearer
+  primary_noun: Code
+  type: Code
+  definition: A code signifying which party or parties will assume the charges and fees associated with the payment using this payment means.
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Service Level
+  primary_noun: Code
+  type: Code
+  definition: A code signifying an agreed service level for the type of payment associated with this payment means.
+  examples: SEPA, SDVA, URGP, SVDE
+  cardinality: 0..1
+  since_version: '2.3'
+
+objects:
+- type: Card Account
+  definition: A credit card, debit card, or charge card account that constitutes this means of payment.
+  cardinality: 0..n
+  since_version: '2.0'
+- qualifier: Payer
+  type: Financial Account
+  definition: The payer's financial account.
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Payee
+  type: Financial Account
+  definition: The payee's financial account.
+  cardinality: 0..1
+  since_version: '2.0'
+- type: Credit Account
+  definition: A credit account associated with this means of payment.
+  cardinality: 0..1
+  since_version: '2.0'
+- type: Payment Mandate
+  definition: The payment mandate associated with this means of payment.
+  cardinality: 0..1
+  since_version: '2.1'
+- type: Trade Financing
+  definition: A trade finance agreement applicable to this means of payment.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Remittance
+  type: Document Distribution
+  definition: A person or entity who will receive the remittance advice information about the payment associated with this payment means.
+  cardinality: 0..n
+  since_version: '2.3'

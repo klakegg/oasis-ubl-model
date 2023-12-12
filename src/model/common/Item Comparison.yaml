@@ -1,0 +1,17 @@
+name: Item Comparison
+definition: A class to provide information about price and quantity of an item for use in price comparisons based on price, quantity, or measurements.
+since_version: '2.0'
+
+fields:
+- possessive_noun: Price
+  primary_noun: Amount
+  type: Amount
+  definition: The price for the Item Comparison
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Quantity
+  type: Quantity
+  definition: The quantity for which this comparison is valid.
+  examples: 'per unit '
+  cardinality: 0..1
+  since_version: '2.0'

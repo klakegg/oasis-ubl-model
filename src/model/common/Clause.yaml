@@ -1,0 +1,15 @@
+name: Clause
+definition: A class to define a clause (a distinct article or provision) in a contract, treaty, will, or other formal or legal written document requiring compliance.
+since_version: '2.1'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this clause.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Content
+  type: Text
+  definition: The text of this clause.
+  cardinality: 0..n
+  since_version: '2.1'

@@ -1,0 +1,59 @@
+name: Hazardous Goods Transit
+definition: A class to describe hazardous goods in transit.
+since_version: '2.0'
+
+fields:
+- possessive_noun: Transport Emergency Card
+  primary_noun: Code
+  type: Code
+  definition: An identifier for a transport emergency card describing the actions to be taken in an emergency in transporting the hazardous goods. It may be the identity number of a hazardous emergency response plan assigned by the appropriate authority.
+  alternative_business_terms: TREM card
+  untded_code: '8364'
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Packing Criteria
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the packaging requirement for transportation of the hazardous goods as assigned by IATA, IMDB, ADR, RID etc.
+  alternative_business_terms: Packing Group
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Hazardous Regulation
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the set of legal regulations governing the transportation of the hazardous goods.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Inhalation Toxicity Zone
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the Inhalation Toxicity Hazard Zone for the hazardous goods, as defined by the US Department of Transportation.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Transport Authorization
+  primary_noun: Code
+  type: Code
+  definition: A code signifying authorization for the transportation of hazardous cargo.
+  alternative_business_terms: Permission for Transport
+  untded_code: '8211'
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Transit
+  primary_noun: Description
+  type: Text
+  definition: A textual description of this hazardous goods transit.
+  examples: Munic via A7
+  cardinality: 0..n
+  since_version: '2.3'
+
+objects:
+- qualifier: Maximum
+  type: Temperature
+  definition: The maximum temperature at which the hazardous goods can safely be transported.
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Minimum
+  type: Temperature
+  definition: The minimum temperature at which the hazardous goods can safely be transported.
+  cardinality: 0..1
+  since_version: '2.0'

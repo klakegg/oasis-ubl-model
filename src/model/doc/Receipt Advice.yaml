@@ -1,0 +1,156 @@
+name: Receipt Advice
+definition: A document used to describe the receipt of goods and services or as a reply to a despatch advice.
+alternative_business_terms: Receipt, Delivery Acknowledgement
+since_version: '2.0'
+
+fields:
+- possessive_noun: UBL Version
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies the earliest version of the UBL 2 schema for this document type that defines all of the elements that might be encountered in the current instance.
+  examples: 2.0.5
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Customization
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies a user-defined customization of UBL for a specific use.
+  examples: NES
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Profile
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies a user-defined profile of the subset of UBL being used.
+  examples: BasicProcurementProcess
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Profile Execution
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies an instance of executing a profile, to associate all transactions in a collaboration.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this document, assigned by the sender.
+  cardinality: '1'
+  since_version: '2.0'
+- primary_noun: Indicator
+  type: Indicator
+  definition: Indicates whether this document is a copy (true) or not (false).
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: UUID
+  type: Identifier
+  definition: A universally unique identifier for an instance of this document.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Issue
+  primary_noun: Date
+  type: Date
+  definition: The date, assigned by the sender, on which this document was issued.
+  cardinality: '1'
+  since_version: '2.0'
+- possessive_noun: Issue
+  primary_noun: Time
+  type: Time
+  definition: The time, assigned by the sender, at which this document was issued.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Document Status
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the status of the Receipt Advice with respect to its original state. This code may be used if the document precedes the event and is subsequently found to be incorrect and in need of cancellation or revision.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Receipt Advice Type
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the type of the Receipt Advice.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Acceptance
+  primary_noun: Code
+  type: Code
+  definition: A code to specify the acceptance or rejection of the delivery.
+  examples: Accepted in full, partially accepted, refused (not today), rejected.
+  cardinality: 0..1
+  since_version: '2.4'
+- possessive_noun: Reason
+  primary_noun: Code
+  type: Code
+  definition: The reason for a rejection, expressed as a code.
+  cardinality: 0..1
+  since_version: '2.4'
+- possessive_noun: Reject
+  primary_noun: Reason
+  type: Text
+  definition: The reason for a rejection, expressed as text.
+  cardinality: 0..n
+  since_version: '2.4'
+- possessive_noun: Action
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the action that the delivery party wishes the despatch party to take in the case of a rejection.
+  cardinality: 0..1
+  since_version: '2.4'
+- primary_noun: Note
+  type: Text
+  definition: Free-form text pertinent to this document, conveying information that is not contained explicitly in other structures.
+  cardinality: 0..n
+  since_version: '2.0'
+- possessive_noun: Line
+  primary_noun: Count
+  type: Numeric
+  definition: The number of Receipt Lines in this document.
+  cardinality: 0..1
+  since_version: '2.0'
+
+objects:
+- type: Order Reference
+  definition: A reference to an Order associated with this Receipt Advice.
+  cardinality: 0..n
+  since_version: '2.0'
+- qualifier: Despatch
+  type: Document Reference
+  definition: A reference to a Despatch Advice associated with this document.
+  cardinality: 0..n
+  since_version: '2.0'
+- qualifier: Additional
+  type: Document Reference
+  definition: A reference to an additional document associated with this document.
+  cardinality: 0..n
+  since_version: '2.0'
+- type: Signature
+  definition: A signature applied to this document.
+  cardinality: 0..n
+  since_version: '2.0'
+- qualifier: Delivery
+  type: Customer Party
+  definition: The customer party.
+  cardinality: '1'
+  since_version: '2.0'
+- qualifier: Despatch
+  type: Supplier Party
+  definition: The supplier party.
+  cardinality: '1'
+  since_version: '2.0'
+- qualifier: Buyer
+  type: Customer Party
+  definition: The buyer.
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Seller
+  type: Supplier Party
+  definition: The seller.
+  cardinality: 0..1
+  since_version: '2.0'
+- type: Shipment
+  definition: Details about the Shipment.
+  cardinality: 0..1
+  since_version: '2.0'
+- type: Receipt Line
+  definition: A line detailing a kind of item received.
+  cardinality: 0..n
+  since_version: '2.0'

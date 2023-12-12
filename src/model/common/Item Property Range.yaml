@@ -1,0 +1,15 @@
+name: Item Property Range
+definition: A class to describe a range of values for an item property.
+since_version: '2.1'
+
+fields:
+- primary_noun: Value
+  type: Text
+  definition: The minimum value in this range of values.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Value
+  type: Text
+  definition: The maximum value in this range of values.
+  cardinality: 0..1
+  since_version: '2.1'

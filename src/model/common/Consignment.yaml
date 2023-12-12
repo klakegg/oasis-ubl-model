@@ -1,0 +1,632 @@
+name: Consignment
+definition: A class to describe an identifiable collection of one or more goods items to be transported between the consignor and the consignee. This information may be defined within a transport contract. A consignment may comprise more than one shipment (e.g., when consolidated by a freight forwarder).
+since_version: '2.0'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier assigned to a collection of goods for both import and export.
+  alternative_business_terms: Unique consignment reference number (UCR)
+  untded_code: '1202'
+  cardinality: '1'
+  since_version: '2.0'
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this consignment, assigned by the carrier.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this consignment, assigned by the consignee.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this consignment, assigned by the consignor.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this consignment, assigned by the freight forwarder.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this consignment, assigned by the broker.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this consignment, assigned by the contracted carrier.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this consignment, assigned by the performing carrier.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Description
+  type: Text
+  definition: A textual summary description of the consignment.
+  cardinality: 0..n
+  since_version: '2.0'
+- possessive_noun: Invoice
+  primary_noun: Amount
+  type: Amount
+  definition: The total of all invoice amounts declared in this consignment.
+  untded_code: '5072'
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Value
+  type: Amount
+  definition: The total declared value for customs purposes of all the goods in this consignment, regardless of whether they are subject to the same customs procedure, tariff/statistical categorization, country information, or duty regime.
+  untded_code: '5070'
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Tariff
+  primary_noun: Description
+  type: Text
+  definition: Text describing the tariff applied to this consignment.
+  untded_code: '5430'
+  cardinality: 0..n
+  since_version: '2.0'
+- possessive_noun: Tariff
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the tariff applied to this consignment.
+  alternative_business_terms: Tariff code number (WCO ID 145)
+  untded_code: '5431'
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Insurance Premium
+  primary_noun: Amount
+  type: Amount
+  definition: The amount of the premium payable to an insurance company for insuring the goods contained in this consignment.
+  alternative_business_terms: Insurance Cost
+  untded_code: '5486'
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Weight
+  type: Measure
+  definition: The total declared weight of the goods in this consignment, including packaging but excluding the carrier's equipment.
+  alternative_business_terms: Total gross weight (WCO ID 131)
+  examples: Total cube of all goods items referred to as one consignment.
+  untded_code: '6092'
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Weight
+  type: Measure
+  definition: The total net weight of all the goods items referred to as one consignment.
+  untded_code: '6014'
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Weight
+  type: Measure
+  definition: The total net weight of the goods in this consignment, exclusive of packaging.
+  untded_code: '6048'
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Weight
+  type: Measure
+  definition: The weight upon which a charge is to be based.
+  alternative_business_terms: Chargeable Weight. Basis.Measure
+  untded_code: '6030'
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Volume
+  type: Measure
+  definition: The total volume of the goods referred to as one consignment.
+  alternative_business_terms: Cube
+  untded_code: '6422'
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Volume
+  type: Measure
+  definition: The total net volume of all goods items referred to as one consignment.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Length
+  type: Measure
+  definition: The total length in a means of transport or a piece of transport equipment which, given the width and height of the transport means, will accommodate all of the consignments in a single consolidation.
+  untded_code: '6042'
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Remarks
+  type: Text
+  definition: Remarks concerning the complete consignment, to be printed on the transport document.
+  untded_code: '4244'
+  cardinality: 0..n
+  since_version: '2.0'
+- primary_noun: Indicator
+  type: Indicator
+  definition: An indication that the transported goods in this consignment are subject to an international regulation concerning the carriage of dangerous goods (true) or not (false).
+  alternative_business_terms: Dangerous Goods RID Indicator
+  examples: default is negative
+  untded_code: '7184'
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Food
+  primary_noun: Indicator
+  type: Indicator
+  definition: An indication that the transported goods in this consignment are animal foodstuffs (true) or not (false).
+  examples: default is negative
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Food
+  primary_noun: Indicator
+  type: Indicator
+  definition: An indication that the transported goods in this consignment are for human consumption (true) or not (false).
+  examples: default is negative
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Indicator
+  type: Indicator
+  definition: An indication that the transported goods are livestock (true) or not (false).
+  examples: default is negative
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Indicator
+  type: Indicator
+  definition: An indication that the transported goods in this consignment are bulk cargoes (true) or not (false).
+  examples: default is negative
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Indicator
+  type: Indicator
+  definition: An indication that the transported goods in this consignment are containerized cargoes (true) or not (false).
+  examples: default is negative
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Indicator
+  type: Indicator
+  definition: An indication that the transported goods in this consignment are general cargoes (true) or not (false).
+  examples: default is negative
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Security
+  primary_noun: Indicator
+  type: Indicator
+  definition: An indication that the transported goods in this consignment require special security (true) or not (false).
+  examples: default is negative
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Indicator
+  type: Indicator
+  definition: An indication that this consignment will be paid for by a third party (true) or not (false).
+  examples: default is negative
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Instructions
+  type: Text
+  definition: Service instructions to the carrier, expressed as text.
+  cardinality: 0..n
+  since_version: '2.1'
+- primary_noun: Instructions
+  type: Text
+  definition: Service instructions for customs clearance, expressed as text.
+  cardinality: 0..n
+  since_version: '2.1'
+- primary_noun: Instructions
+  type: Text
+  definition: Service instructions for the forwarder, expressed as text.
+  cardinality: 0..n
+  since_version: '2.1'
+- primary_noun: Instructions
+  type: Text
+  definition: Special service instructions, expressed as text.
+  cardinality: 0..n
+  since_version: '2.1'
+- possessive_noun: Sequence
+  primary_noun: Identifier
+  type: Identifier
+  definition: A sequence identifier for this consignment.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Shipping Priority Level
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the priority or level of service required for this consignment.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Handling
+  primary_noun: Code
+  type: Code
+  definition: The handling required for this consignment, expressed as a code.
+  alternative_business_terms: Special Handling
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Instructions
+  type: Text
+  definition: The handling required for this consignment, expressed as text.
+  cardinality: 0..n
+  since_version: '2.1'
+- primary_noun: Information
+  type: Text
+  definition: Free-form text pertinent to this consignment, conveying information that is not contained explicitly in other structures.
+  cardinality: 0..n
+  since_version: '2.1'
+- possessive_noun: Goods Item
+  primary_noun: Quantity
+  type: Quantity
+  definition: The total number of goods items in this consignment.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Transport Handling Unit
+  primary_noun: Quantity
+  type: Quantity
+  definition: The number of pieces of transport handling equipment (pallets, boxes, cases, etc.) in this consignment.
+  alternative_business_terms: Number of THUs
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Value
+  type: Amount
+  definition: The amount covered by insurance for this consignment.
+  alternative_business_terms: Value Insured
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Value
+  type: Amount
+  definition: The value of this consignment, declared by the shipper or his agent solely for the purpose of varying the carrier's level of liability from that provided in the contract of carriage, in case of loss or damage to goods or delayed delivery.
+  alternative_business_terms: Declared value for carriage, Interest in delivery
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Value
+  type: Amount
+  definition: The value, declared for statistical purposes, of those goods in this consignment that have the same statistical heading.
+  alternative_business_terms: Statistical Value
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Value
+  type: Amount
+  definition: The monetary amount that has to be or has been paid as calculated under the applicable trade delivery.
+  alternative_business_terms: FOB Value
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Instructions
+  type: Text
+  definition: Special instructions relating to this consignment.
+  cardinality: 0..n
+  since_version: '2.1'
+- primary_noun: Indicator
+  type: Indicator
+  definition: An indicator that this consignment has been split in transit (true) or not (false).
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Instructions
+  type: Text
+  definition: A set of delivery instructions relating to this consignment.
+  cardinality: 0..n
+  since_version: '2.1'
+- primary_noun: Quantity
+  type: Quantity
+  definition: The count in this consignment considering goods items, child consignments, shipments
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Indicator
+  type: Indicator
+  definition: An indicator that this consignment can be consolidated (true) or not (false).
+  examples: default is negative
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Instructions
+  type: Text
+  definition: Instructions regarding haulage of this consignment, expressed as text.
+  cardinality: 0..n
+  since_version: '2.1'
+- possessive_noun: Sequence
+  primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for the loading sequence of this consignment.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Child Consignment
+  primary_noun: Quantity
+  type: Quantity
+  definition: The quantity of (consolidated) child consignments
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Packages
+  primary_noun: Quantity
+  type: Quantity
+  definition: The total number of packages associated with a Consignment.
+  cardinality: 0..1
+  since_version: '2.1'
+
+objects:
+- qualifier: Consolidated
+  type: Shipment
+  definition: A consolidated shipment (a shipment created by an act of consolidation).
+  cardinality: 0..n
+  since_version: '2.1'
+- type: Customs Declaration
+  definition: A class describing identifiers or references relating to customs procedures.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Requested Pickup
+  type: Transport Event
+  definition: The pickup of this consignment requested by the party requesting a transportation service (the transport user).
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Requested Delivery
+  type: Transport Event
+  definition: The delivery of this consignment requested by the party requesting a transportation service (the transport user).
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Planned Pickup
+  type: Transport Event
+  definition: The pickup of this consignment planned by the party responsible for providing the transportation service (the transport service provider).
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Planned Delivery
+  type: Transport Event
+  definition: The delivery of this consignment planned by the party responsible for providing the transportation service (the transport service provider).
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Actual Pickup
+  type: Transport Event
+  definition: The actual pickup of this consignment by the party responsible for providing the transportation service (the transport service provider).
+  cardinality: 0..1
+  since_version: '2.2'
+- qualifier: Actual Delivery
+  type: Transport Event
+  definition: The actual delivery of this consignment by the party responsible for providing the transportation service (the transport service provider).
+  cardinality: 0..1
+  since_version: '2.2'
+- type: Status
+  definition: The status of a particular condition associated with this consignment.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Child
+  type: Consignment
+  definition: One of the child consignments of which a consolidated consignment is composed.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Consignee
+  type: Party
+  definition: A party to which goods are consigned.
+  alternative_business_terms: Consignee (WCO ID 51 and 52)
+  untded_code: 3036 and 3039
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Exporter
+  type: Party
+  definition: The party that makes the export declaration, or on behalf of which the export declaration is made, and that is the owner of the goods in this consignment or has similar right of disposal over them at the time when the declaration is accepted.
+  alternative_business_terms: Exporter (WCO ID 41 and 42)
+  untded_code: 3036 and 3039
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Consignor
+  type: Party
+  definition: The party consigning goods, as stipulated in the transport contract by the party ordering transport.
+  alternative_business_terms: Consignor (WCO ID 71 and 72)
+  untded_code: 3036 and 3039
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Importer
+  type: Party
+  definition: The party that makes an import declaration regarding this consignment, or on behalf of which a customs clearing agent or other authorized person makes an import declaration regarding this consignment. This may include a person who has possession of the goods or to whom the goods are consigned.
+  alternative_business_terms: Importer (WCO ID 39 and 40)
+  untded_code: 3036 and 3039
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Carrier
+  type: Party
+  definition: The party providing the transport of goods in this consignment between named points.
+  alternative_business_terms: Transport Company, Shipping Line, NVOCC, Airline, Haulier, Courier, Carrier (WCO ID 49 and 50)
+  untded_code: 3036 and 3039
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Freight Forwarder
+  type: Party
+  definition: The party combining individual smaller consignments into a single larger shipment (the consolidated shipment), which is sent to a counterpart that mirrors the consolidator's activity by dividing the consolidated consignment into its original components.
+  alternative_business_terms: Consolidator (WCO ID 192 AND 193)
+  untded_code: 3036 and 3039
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Notify
+  type: Party
+  definition: The party to be notified upon arrival of goods and when special occurrences (usually pre-defined) take place during a transportation service.
+  alternative_business_terms: WCO ID 57 and 58
+  untded_code: 3036 and 3039
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Original Despatch
+  type: Party
+  definition: The original despatch (sender) party for this consignment.
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Final Delivery
+  type: Party
+  definition: The final delivery party for this consignment.
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Performing Carrier
+  type: Party
+  definition: The party performing the carriage of this consignment.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Substitute Carrier
+  type: Party
+  definition: A substitute party performing the carriage of this consignment.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Logistics Operator
+  type: Party
+  definition: The logistics operator party for this consignment.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Transport Advisor
+  type: Party
+  definition: The party providing transport advice this consignment.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Hazardous Item Notification
+  type: Party
+  definition: The party that would be notified of a hazardous item in this consignment.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Insurance
+  type: Party
+  definition: The party holding the insurance for this consignment.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Mortgage Holder
+  type: Party
+  definition: The party holding the mortgage for this consignment.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Bill Of Lading Holder
+  type: Party
+  definition: The party holding the bill of lading for this consignment.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Original Departure
+  type: Country
+  definition: The country from which the goods in this consignment were originally exported, without any commercial transaction taking place in intermediate countries.
+  alternative_business_terms: Country of origin (WCO ID 062)
+  untded_code: 3206 and 3207
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Final Destination
+  type: Country
+  definition: The country in which the goods in this consignment are to be delivered to the final consignee or buyer.
+  alternative_business_terms: Ultimate Destination Country, Country of Final Arrival, Country of Destination
+  untded_code: 3216 and 3217
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Transit
+  type: Country
+  definition: One of the countries through which goods or passengers in this consignment are routed between the country of original departure and the country of final destination.
+  alternative_business_terms: Country(ies) of routing (WCO ID 064)
+  untded_code: '3263'
+  cardinality: 0..n
+  since_version: '2.0'
+- qualifier: Transport
+  type: Contract
+  definition: A transport contract relating to this consignment.
+  cardinality: 0..1
+  since_version: '2.0'
+- type: Transport Event
+  definition: A class describing a significant occurrence or happening related to the transportation of goods.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Original Despatch
+  type: Transportation Service
+  definition: The service for pickup from the consignor under the transport contract for this consignment.
+  examples: 'Door-to-door , Pier-to-door '
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Final Delivery
+  type: Transportation Service
+  definition: The service for delivery to the consignee under the transport contract for this consignment.
+  examples: 'Door-to-door , Pier-to-door '
+  cardinality: 0..1
+  since_version: '2.0'
+- type: Delivery Terms
+  definition: The conditions agreed upon between a seller and a buyer with regard to the delivery of goods and/or services (e.g., CIF, FOB, or EXW from the INCOTERMS Terms of Delivery).
+  alternative_business_terms: Trade Terms, INCOTERMS
+  cardinality: 0..1
+  since_version: '2.0'
+- type: Payment Terms
+  definition: The terms of payment between the parties (such as logistics service client, logistics service provider) in a transaction.
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Collect
+  type: Payment Terms
+  definition: The terms of payment that apply to the collection of this consignment.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Disbursement
+  type: Payment Terms
+  definition: The terms of payment for disbursement.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Prepaid
+  type: Payment Terms
+  definition: The terms of payment for prepayment.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Freight
+  type: Allowance Charge
+  definition: A cost incurred by the shipper in moving goods, by whatever means, from one place to another under the terms of the contract of carriage for this consignment. In addition to transport costs, this may include such elements as packing, documentation, loading, unloading, and insurance to the extent that they relate to the freight costs.
+  alternative_business_terms: Freight Costs
+  untded_code: '5290'
+  cardinality: 0..n
+  since_version: '2.0'
+- qualifier: Extra
+  type: Allowance Charge
+  definition: A charge for extra allowance.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Main Carriage
+  type: Shipment Stage
+  definition: A shipment stage during main carriage.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Pre Carriage
+  type: Shipment Stage
+  definition: A shipment stage during precarriage (usually refers to movement activity that takes place prior to the container being loaded at a port of loading).
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: On Carriage
+  type: Shipment Stage
+  definition: A shipment stage during on-carriage (usually refers to movement activity that takes place after the container is discharged at a port of discharge).
+  cardinality: 0..n
+  since_version: '2.1'
+- type: Transport Handling Unit
+  definition: A transport handling unit used for loose and containerized goods.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: First Arrival Port
+  type: Location
+  definition: The first arrival location in a transport. This would be a port for sea, an airport for air, a terminal for rail, or a border post for land crossing.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Last Exit Port
+  type: Location
+  definition: The final exporting location in a transport. This would be a port for sea, an airport for air, a terminal for rail, or a border post for land crossing.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Office Of Entry
+  type: Location
+  definition: The location of the office of entry of this consignment.
+  cardinality: 0..1
+  since_version: '2.3'
+- qualifier: Office Of Sub Sequentially Entry
+  type: Location
+  definition: The location of the office of the subsequentially entry of this consignment.
+  cardinality: 0..1
+  since_version: '2.3'
+- qualifier: Office Of Exit
+  type: Location
+  definition: The location of the office of exit of this consignment.
+  cardinality: 0..1
+  since_version: '2.3'
+- qualifier: Office Of Departure
+  type: Location
+  definition: The location of the office of departure of this consignment.
+  cardinality: 0..1
+  since_version: '2.3'
+- qualifier: Office Of Destination
+  type: Location
+  definition: The location of the office of destination of this consignment.
+  cardinality: 0..1
+  since_version: '2.3'
+- qualifier: Office Of Import
+  type: Location
+  definition: The location of the office of import of this consignment.
+  cardinality: 0..1
+  since_version: '2.3'
+- qualifier: Office Of Export
+  type: Location
+  definition: The location of the office of export of this consignment.
+  cardinality: 0..1
+  since_version: '2.3'
+- type: Document Reference
+  definition: A reference to a document related to or relevant for this consignment.
+  cardinality: 0..n
+  since_version: '2.3'
+- type: Environmental Emission
+  definition: One or more environmental emissions of this consignment.
+  cardinality: 0..n
+  since_version: '2.4'

@@ -1,0 +1,32 @@
+name: Port Call Record
+definition: A record for a ship call at a port facility.
+alternative_business_terms: Port facility call record
+since_version: '2.3'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this port call record.
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Security Level
+  primary_noun: Code
+  type: Code
+  definition: A code describing the security level of the port facility call record.
+  cardinality: 0..1
+  since_version: '2.3'
+
+objects:
+- type: Security Measure
+  definition: One or more security measures applied to this port call record.
+  cardinality: 0..n
+  since_version: '2.3'
+- qualifier: Port Facility
+  type: Location
+  definition: The location of the port facility.
+  cardinality: 0..1
+  since_version: '2.3'
+- type: Period
+  definition: The period when this port call took place.
+  cardinality: 0..1
+  since_version: '2.3'

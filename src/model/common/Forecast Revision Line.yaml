@@ -1,0 +1,55 @@
+name: Forecast Revision Line
+definition: A class to define a line in a Forecast Revision describing a revision to a line in a Forecast.
+since_version: '2.1'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this forecast revision line.
+  cardinality: '1'
+  since_version: '2.1'
+- primary_noun: Note
+  type: Text
+  definition: Free-form text conveying information that is not contained explicitly in other structures.
+  cardinality: 0..n
+  since_version: '2.1'
+- primary_noun: Description
+  type: Text
+  definition: Text describing the revision to this line.
+  cardinality: 0..n
+  since_version: '2.1'
+- possessive_noun: Forecast Line
+  primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for the revised forecast line.
+  cardinality: '1'
+  since_version: '2.1'
+- possessive_noun: Issue
+  primary_noun: Date
+  type: Date
+  definition: The date on which the forecast modified by this revision was generated or created.
+  cardinality: '1'
+  since_version: '2.1'
+- possessive_noun: Issue
+  primary_noun: Time
+  type: Time
+  definition: The time at which the forecast modified by this revision was generated or created.
+  cardinality: '1'
+  since_version: '2.1'
+- possessive_noun: Adjustment Reason
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the reason for the adjustment specified in this forecast revision line.
+  cardinality: 0..1
+  since_version: '2.1'
+
+objects:
+- qualifier: Forecast
+  type: Period
+  definition: The period to which this forecast revision line applies.
+  cardinality: 0..1
+  since_version: '2.1'
+- type: Sales Item
+  definition: Sales information for the item to which this line applies.
+  cardinality: 0..1
+  since_version: '2.1'

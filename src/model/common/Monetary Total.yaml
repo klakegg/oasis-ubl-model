@@ -1,0 +1,76 @@
+name: Monetary Total
+definition: A class to define a monetary total.
+since_version: '2.0'
+
+fields:
+- possessive_noun: Line Extension
+  primary_noun: Amount
+  type: Amount
+  definition: The monetary amount of an extended transaction line, net of tax and settlement discounts, but inclusive of any applicable rounding amount.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Tax Exclusive
+  primary_noun: Amount
+  type: Amount
+  definition: The monetary amount of an extended transaction line, exclusive of taxes.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Tax Inclusive
+  primary_noun: Amount
+  type: Amount
+  definition: The monetary amount including taxes; the sum of payable amount and prepaid amount.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Total
+  primary_noun: Amount
+  type: Amount
+  definition: The total monetary amount of all allowances.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Tax Inclusive
+  primary_noun: Amount
+  type: Amount
+  definition: The total monetary amount of all allowances, inclusive of all taxes.
+  cardinality: 0..1
+  since_version: '2.4'
+- possessive_noun: Total
+  primary_noun: Amount
+  type: Amount
+  definition: The total monetary amount of all charges.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Tax Inclusive
+  primary_noun: Amount
+  type: Amount
+  definition: The total monetary amount of all charges, inclusive of all taxes.
+  cardinality: 0..1
+  since_version: '2.4'
+- possessive_noun: Total
+  primary_noun: Amount
+  type: Amount
+  definition: The total withholding tax amount.
+  cardinality: 0..1
+  since_version: '2.2'
+- possessive_noun: Prepaid
+  primary_noun: Amount
+  type: Amount
+  definition: The total prepaid monetary amount.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Rounding
+  primary_noun: Amount
+  type: Amount
+  definition: The rounding amount (positive or negative) added to produce the line extension amount.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Amount
+  type: Amount
+  definition: The amount of the monetary total to be paid.
+  cardinality: '1'
+  since_version: '2.0'
+- possessive_noun: Alternative
+  primary_noun: Amount
+  type: Amount
+  definition: The amount of the monetary total to be paid, expressed in an alternative currency.
+  cardinality: 0..1
+  since_version: '2.1'

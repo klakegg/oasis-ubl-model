@@ -1,0 +1,67 @@
+name: Port Call
+definition: A class to describe a call to a port.
+since_version: '2.3'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this Port Call.
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Operations
+  primary_noun: Description
+  type: Text
+  definition: Description of the planned operations in this Port Call.
+  cardinality: 0..n
+  since_version: '2.3'
+- possessive_noun: Works
+  primary_noun: Description
+  type: Text
+  definition: Description of the planned works in this Port Call.
+  cardinality: 0..n
+  since_version: '2.3'
+- possessive_noun: Inspections
+  primary_noun: Description
+  type: Text
+  definition: Description of the planned inspections in this Port Call.
+  cardinality: 0..n
+  since_version: '2.3'
+- possessive_noun: Expected Anchorage
+  primary_noun: Indicator
+  type: Indicator
+  definition: An indicator of whether the ship is expected to stay at an anchorage upon arrival at the port of call (true) or not (false).
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Position In Port
+  primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for the position in the port for this Port Call
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Condition
+  primary_noun: Description
+  type: Text
+  definition: Description about the condition of the cargo and ballast tank.
+  cardinality: 0..n
+  since_version: '2.3'
+
+objects:
+- type: Ship Requirement
+  definition: Ship requirements for this port call.
+  cardinality: 0..n
+  since_version: '2.3'
+- qualifier: Primary
+  type: Port Call Purpose
+  definition: The primary purpose of this port call.
+  cardinality: 0..1
+  since_version: '2.3'
+- qualifier: Additional
+  type: Port Call Purpose
+  definition: Any additional or secondary purposes of this port call.
+  cardinality: 0..n
+  since_version: '2.3'
+- qualifier: Requested Arrival
+  type: Event
+  definition: The requested arrival event.
+  cardinality: 0..1
+  since_version: '2.3'

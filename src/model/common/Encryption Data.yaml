@@ -1,0 +1,26 @@
+name: Encryption Data
+definition: Details of an encryption process
+since_version: '2.2'
+
+fields:
+- possessive_noun: Message
+  primary_noun: Format
+  type: Text
+  definition: The format of the encrypted message.
+  cardinality: '1'
+  since_version: '2.2'
+
+objects:
+- qualifier: Encryption Certificate
+  type: Attachment
+  definition: A reference to the certificate used in the encryption process.
+  cardinality: 0..1
+  since_version: '2.2'
+- type: Encryption Certificate Path Chain
+  definition: A reference to the path chain defined for the encryption process.
+  cardinality: 0..n
+  since_version: '2.2'
+- type: Encryption Symmetric Algorithm
+  definition: A reference to the symmetric algorithm used for the encryption process.
+  cardinality: 0..n
+  since_version: '2.2'

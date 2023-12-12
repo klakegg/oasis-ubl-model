@@ -1,0 +1,31 @@
+name: Instruction For Returns Line
+definition: A class to define a line in an Instruction for Returns.
+since_version: '2.1'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this instruction for returns line.
+  cardinality: '1'
+  since_version: '2.1'
+- primary_noun: Note
+  type: Text
+  definition: Free-form text conveying information that is not contained explicitly in other structures.
+  cardinality: 0..n
+  since_version: '2.1'
+- primary_noun: Quantity
+  type: Quantity
+  definition: The quantity of goods being returned.
+  cardinality: '1'
+  since_version: '2.1'
+
+objects:
+- qualifier: Manufacturer
+  type: Party
+  definition: The manufacturer of the goods being returned.
+  cardinality: 0..1
+  since_version: '2.1'
+- type: Item
+  definition: A description of the item being returned.
+  cardinality: '1'
+  since_version: '2.1'

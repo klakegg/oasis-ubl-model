@@ -1,0 +1,17 @@
+name: Notice Sub Type
+definition: A class to define a Notice Subtype
+since_version: '2.4'
+
+fields:
+- possessive_noun: Sub Type
+  primary_noun: Code
+  type: Code
+  definition: A code to specify the Subtype of notice
+  cardinality: 0..1
+  since_version: '2.4'
+- possessive_noun: Sub Type
+  primary_noun: Description
+  type: Text
+  definition: Subtype of notice as text
+  cardinality: 0..n
+  since_version: '2.4'

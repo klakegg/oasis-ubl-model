@@ -1,0 +1,23 @@
+name: Budget Account
+definition: A class to define a budget account.
+since_version: '2.1'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for the budget account, typically an internal accounting reference.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Budget
+  primary_noun: Year
+  type: Numeric
+  definition: The number of the year for this budget account, e.g. 2012
+  cardinality: 0..1
+  since_version: '2.1'
+
+objects:
+- qualifier: Required
+  type: Classification Scheme
+  definition: A classification scheme required for this budget account.
+  cardinality: 0..1
+  since_version: '2.1'

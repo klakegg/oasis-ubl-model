@@ -1,0 +1,70 @@
+name: Transport Schedule
+definition: Describes the location and schedule relating to a transport means.
+since_version: '2.1'
+
+fields:
+- primary_noun: Sequence
+  type: Numeric
+  definition: A number indicating the order of this status in the sequence in which statuses are to be presented.
+  cardinality: '1'
+  since_version: '2.1'
+- possessive_noun: Reference
+  primary_noun: Date
+  type: Date
+  definition: The reference date for the transport schedule status.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Reference
+  primary_noun: Time
+  type: Time
+  definition: The reference time for the transport schedule status.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Reliability
+  primary_noun: Percent
+  type: Percent
+  definition: The reliability of the transport schedule status, expressed as a percentage.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Remarks
+  type: Text
+  definition: Remarks related to the transport schedule status.
+  cardinality: 0..n
+  since_version: '2.1'
+
+objects:
+- qualifier: Status
+  type: Location
+  definition: The location for which status is reported.
+  cardinality: '1'
+  since_version: '2.1'
+- qualifier: Actual Arrival
+  type: Transport Event
+  definition: The actual arrival at a location.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Actual Departure
+  type: Transport Event
+  definition: The actual departure from a location.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Estimated Departure
+  type: Transport Event
+  definition: An estimated departure from a specified location.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Estimated Arrival
+  type: Transport Event
+  definition: An estimated arrival at a specified location.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Planned Departure
+  type: Transport Event
+  definition: The planned departure from a specified location.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Planned Arrival
+  type: Transport Event
+  definition: The planned arrival at a specified location.
+  cardinality: 0..1
+  since_version: '2.1'

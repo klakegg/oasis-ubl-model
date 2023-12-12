@@ -1,0 +1,21 @@
+name: Contract Execution Requirement
+definition: A class to describe a requirement for execution of a contract.
+since_version: '2.1'
+
+fields:
+- primary_noun: Name
+  type: Name
+  definition: A name for this requirement.
+  cardinality: 0..n
+  since_version: '2.1'
+- possessive_noun: Execution Requirement
+  primary_noun: Code
+  type: Code
+  definition: A code signifying a type of requirement to be fulfiled by the economic operator.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Description
+  type: Text
+  definition: Text describing this requirement.
+  cardinality: 0..n
+  since_version: '2.1'

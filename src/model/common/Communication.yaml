@@ -1,0 +1,24 @@
+name: Communication
+definition: A class to describe a means of communication.
+since_version: '2.0'
+
+fields:
+- possessive_noun: Channel
+  primary_noun: Code
+  type: Code
+  definition: The method of communication, expressed as a code.
+  examples: Phone Fax Email
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Channel
+  type: Text
+  definition: The method of communication, expressed as text.
+  examples: Skype
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Value
+  type: Text
+  definition: An identifying value (phone number, email address, etc.) for this channel of communication
+  examples: "+44 1 2345 6789 president@whitehouse.com "
+  cardinality: 0..1
+  since_version: '2.0'

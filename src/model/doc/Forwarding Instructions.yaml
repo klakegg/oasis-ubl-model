@@ -1,0 +1,157 @@
+name: Forwarding Instructions
+definition: A document issued to a forwarder, giving instructions regarding the action to be taken for the forwarding of goods described therein. Forwarding Instructions is used by any party who gives instructions for the transportation services required for a consignment of goods to any party who is contracted to provide the transportation services. The parties who issue this document are commonly referred to as the shipper or consignor, while the parties who receive this document are forwarders, carriers, shipping agents, etc. This document may also be issued by a forwarder or shipping agent in its capacity as a shipper. This document can be used to arrange for the transportation (1) of different types of goods or cargoes; (2) whether containerized or non-containerized; (3) through different modes of transport including multi-modal; and (4) from any origin to any destination.
+alternative_business_terms: Forwarding Instruction, Freight Forwarding Instruction, Shippers Letter of Instruction, Shipper's Letter of Instruction, Shipping Instruction
+since_version: '2.0'
+
+fields:
+- possessive_noun: UBL Version
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies the earliest version of the UBL 2 schema for this document type that defines all of the elements that might be encountered in the current instance.
+  examples: 2.0.5
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Customization
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies a user-defined customization of UBL for a specific use.
+  examples: NES
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Profile
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies a user-defined profile of the customization of UBL being used.
+  examples: BasicProcurementProcess
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Profile Execution
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies an instance of executing a profile, to associate all transactions in a collaboration.
+  examples: BPP-1001
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this document, assigned by the sender.
+  untded_code: '1121'
+  cardinality: '1'
+  since_version: '2.0'
+- primary_noun: Identifier
+  type: Identifier
+  definition: Reference number assigned by a carrier or its agent to identify a specific shipment, such as a booking reference number when cargo space is reserved prior to loading.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: UUID
+  type: Identifier
+  definition: A universally unique identifier for an instance of this document.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Issue
+  primary_noun: Date
+  type: Date
+  definition: The date, assigned by the sender, on which this document was issued.
+  untded_code: '2185'
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Issue
+  primary_noun: Time
+  type: Time
+  definition: The time, assigned by the sender, at which this document was issued.
+  untded_code: '2185'
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Name
+  type: Name
+  definition: Text, assigned by the sender, that identifies this document to business users.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Description
+  type: Text
+  definition: Textual description of the document instance.
+  cardinality: 0..n
+  since_version: '2.0'
+- primary_noun: Note
+  type: Text
+  definition: Free-form text pertinent to this document, conveying information that is not contained explicitly in other structures.
+  cardinality: 0..n
+  since_version: '2.0'
+- possessive_noun: Document Status
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the status of the Forwarding Instructions with respect to its original state. This code may be used if the document precedes the event and is subsequently found to be incorrect and in need of cancellation or revision.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Shipping Order
+  primary_noun: Identifier
+  type: Identifier
+  definition: Reference number to identify a Shipping Order.
+  untded_code: '1121'
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Indicator
+  type: Indicator
+  definition: Indicates whether the transport document is consigned to order.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Indicator
+  type: Indicator
+  definition: A term used in commerce in reference to certain duties, called ad valorem duties, which are levied on commodities at certain rates per centum on their value.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Value
+  type: Amount
+  definition: Value declared by the shipper or his agent solely for the purpose of varying the carrier's level of liability from that provided in the contract of carriage in case of loss or damage to goods or delayed delivery.
+  untded_code: '5036'
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Instruction
+  type: Text
+  definition: Contains other free-text instructions to the forwarders or carriers related to the shipment. This ought to be used only where such information cannot be represented in other structured information entities within the document.
+  untded_code: '4244'
+  cardinality: 0..n
+  since_version: '2.0'
+
+objects:
+- qualifier: Consignor
+  type: Party
+  definition: The party consigning goods, as stipulated in the transport contract by the party ordering transport.
+  alternative_business_terms: Consignor (WCO ID 71 and 72)
+  untded_code: 3036 and 3039
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Carrier
+  type: Party
+  definition: The party providing the transport of goods between named points.
+  alternative_business_terms: Transport Company, Shipping Line, NVOCC, Airline, Haulier, Courier, Carrier (WCO ID 49 and 50)
+  untded_code: 3036 and 3039
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Freight Forwarder
+  type: Party
+  definition: A party combining individual smaller consignments into a single larger shipment (a so-called consolidated consignment or shipment) that is sent to a counterpart who mirrors the consolidator's activity by dividing the consolidated consignment into its original components.
+  alternative_business_terms: Consolidator (WCO ID 192 AND 193)
+  untded_code: 3036 and 3039
+  cardinality: 0..1
+  since_version: '2.0'
+- type: Shipment
+  definition: An identifiable collection of one or more goods items to be transported between the seller party and the buyer party.
+  cardinality: '1'
+  since_version: '2.0'
+- type: Document Reference
+  definition: A reference to another document associated with this document.
+  cardinality: 0..n
+  since_version: '2.0'
+- type: Exchange Rate
+  definition: Information about the rate of exchange (conversion) between two currencies.
+  cardinality: 0..n
+  since_version: '2.0'
+- type: Document Distribution
+  definition: A list of interested parties to whom this document is distributed.
+  cardinality: 0..n
+  since_version: '2.2'
+- type: Signature
+  definition: A signature applied to this document.
+  cardinality: 0..n
+  since_version: '2.0'

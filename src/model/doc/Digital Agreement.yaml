@@ -1,0 +1,117 @@
+name: Digital Agreement
+definition: A document used to support business parties agreeing on a set of digital processes, terms and conditions to ensure interoperability.
+alternative_business_terms: Trading Partner Agreement, TPA
+since_version: '2.2'
+
+fields:
+- possessive_noun: UBL Version
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies the earliest version of the UBL 2 schema for this document type that defines all of the elements that might be encountered in the current instance.
+  examples: '2.2'
+  cardinality: 0..1
+  since_version: '2.2'
+- possessive_noun: Customization
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies a user-defined customization of UBL for a specific use.
+  examples: EESPA
+  cardinality: 0..1
+  since_version: '2.2'
+- possessive_noun: Profile
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies a user-defined profile of the customization of UBL being used.
+  examples: BasicProcurementProcess
+  cardinality: 0..1
+  since_version: '2.2'
+- possessive_noun: Profile Execution
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies an instance of executing a profile, to associate all transactions in a collaboration.
+  examples: BPP-1001
+  cardinality: 0..1
+  since_version: '2.2'
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this document, assigned by the sender.
+  cardinality: '1'
+  since_version: '2.2'
+- primary_noun: UUID
+  type: Identifier
+  definition: A universally unique identifier for an instance of this document.
+  cardinality: 0..1
+  since_version: '2.2'
+- possessive_noun: Issue
+  primary_noun: Date
+  type: Date
+  definition: The date, assigned by the sender, on which this document was issued.
+  cardinality: '1'
+  since_version: '2.2'
+- possessive_noun: Issue
+  primary_noun: Time
+  type: Time
+  definition: The time, assigned by the sender, at which this document was issued.
+  cardinality: 0..1
+  since_version: '2.2'
+- possessive_noun: Agreement Type
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the type of digital agreement (e.g. bi-lateral, multi-lateral).
+  examples: multi-lateral
+  cardinality: 0..1
+  since_version: '2.2'
+- possessive_noun: Version
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies the current version of this digital agreement.
+  examples: '1.1'
+  cardinality: '1'
+  since_version: '2.2'
+- possessive_noun: Previous Version
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies the previous version of this digital agreement.
+  examples: '1'
+  cardinality: 0..1
+  since_version: '2.2'
+- possessive_noun: Response Message Level
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the minimum response message level the parties are required to provide (e.g. EESPA response message level).
+  examples: RM2
+  cardinality: 0..1
+  since_version: '2.2'
+
+objects:
+- type: Signature
+  definition: A signature applied to this document.
+  cardinality: 0..n
+  since_version: '2.2'
+- qualifier: Governor
+  type: Party
+  definition: The party governing the agreement (e.g. a multi-lateral digital agreement).
+  cardinality: 0..1
+  since_version: '2.2'
+- type: Participant Party
+  definition: The business parties agreeing on a set of digital processes, terms and conditions to ensure interoperability.
+  cardinality: 1..n
+  since_version: '2.2'
+- qualifier: Agreement
+  type: Country
+  definition: The country to which this digital agreement applies.
+  cardinality: 0..n
+  since_version: '2.2'
+- qualifier: Required Certification
+  type: Document Reference
+  definition: A reference to a certification document required by this digital agreement.
+  cardinality: 0..n
+  since_version: '2.2'
+- type: Digital Agreement Terms
+  definition: A reference to digital agreement terms and conditions.
+  cardinality: 0..1
+  since_version: '2.2'
+- type: Digital Process
+  definition: The digital processes in scope of this digital agreement.
+  cardinality: 1..n
+  since_version: '2.2'

@@ -1,0 +1,21 @@
+name: Contracting System
+definition: A class to describe the contracting system. If the procedure is individual (nonrepetitive), this class ought not be used.
+since_version: '2.2'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for the contracting system.
+  cardinality: 0..1
+  since_version: '2.2'
+- possessive_noun: Contracting System
+  primary_noun: Type
+  type: Code
+  definition: 'A code signifying the type of contracting system (e.g., framework agreement, dynamic purchasing system). '
+  cardinality: 0..1
+  since_version: '2.2'
+- primary_noun: Description
+  type: Text
+  definition: The description of the contracting system
+  cardinality: 0..n
+  since_version: '2.2'

@@ -1,0 +1,51 @@
+name: Result Of Verification
+definition: A class to describe the result of an attempt to verify a signature.
+since_version: '2.1'
+
+fields:
+- primary_noun: Validator
+  type: Identifier
+  definition: An identifier for the organization, person, service, or server that verified the signature.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Result
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the result of the verification.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Validation
+  primary_noun: Date
+  type: Date
+  definition: The date upon which verification took place.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Validation
+  primary_noun: Time
+  type: Time
+  definition: The time at which verification took place.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Process
+  type: Text
+  definition: The verification process.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Tool
+  type: Text
+  definition: The tool used to verify the signature.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Tool
+  primary_noun: Version
+  type: Text
+  definition: The version of the tool used to verify the signature.
+  cardinality: 0..1
+  since_version: '2.1'
+
+objects:
+- qualifier: Signatory
+  type: Party
+  definition: The signing party.
+  cardinality: 0..1
+  since_version: '2.1'

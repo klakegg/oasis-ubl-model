@@ -1,0 +1,22 @@
+name: Web Site Access
+definition: A class to describe access to a web site.
+since_version: '2.1'
+
+fields:
+- primary_noun: URI
+  type: Identifier
+  definition: The Uniform Resource Identifier (URI) for this web site; i.e., its Uniform Resource Locator (URL).
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Password
+  type: Text
+  definition: A password to the web site.
+  examples: confidence
+  cardinality: '1'
+  since_version: '2.1'
+- primary_noun: Login
+  type: Text
+  definition: Text describing login details.
+  examples: Utsuser
+  cardinality: '1'
+  since_version: '2.1'

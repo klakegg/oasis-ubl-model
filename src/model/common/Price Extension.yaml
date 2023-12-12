@@ -1,0 +1,21 @@
+name: Price Extension
+definition: A class to describe a price extension, calculated by multiplying the price per unit by the quantity of items.
+since_version: '2.1'
+
+fields:
+- primary_noun: Amount
+  type: Amount
+  definition: The amount of this price extension.
+  cardinality: '1'
+  since_version: '2.1'
+- primary_noun: Amount
+  type: Amount
+  definition: The amount of this price extension inclusive of all taxes.
+  cardinality: 0..1
+  since_version: '2.4'
+
+objects:
+- type: Tax Total
+  definition: A total amount of taxes of a particular kind applicable to this price extension.
+  cardinality: 0..n
+  since_version: '2.1'

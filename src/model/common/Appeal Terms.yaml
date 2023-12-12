@@ -1,0 +1,32 @@
+name: Appeal Terms
+definition: A class to describe the terms and conditions, set by the contracting authority, under which an appeal can be lodged for a tender award.
+since_version: '2.1'
+
+fields:
+- primary_noun: Description
+  type: Text
+  definition: Text describing the terms of an appeal.
+  cardinality: 0..n
+  since_version: '2.1'
+
+objects:
+- qualifier: Presentation
+  type: Period
+  definition: The period during which an appeal can be presented.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Appeal Information
+  type: Party
+  definition: The party presenting the information for an appeal.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Appeal Receiver
+  type: Party
+  definition: The party to whom an appeal will be presented.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Mediation
+  type: Party
+  definition: The party that has been appointed to mediate any appeal.
+  cardinality: 0..1
+  since_version: '2.1'

@@ -1,0 +1,16 @@
+name: Lots Group
+definition: A class for defining set of lots.
+since_version: '2.3'
+
+fields:
+- primary_noun: Lots Group
+  type: Identifier
+  definition: An identifier for the lotsgroup.
+  cardinality: '1'
+  since_version: '2.3'
+
+objects:
+- type: Procurement Project Lot Reference
+  definition: A Procurement project lot that is included in this LotsGroup.
+  cardinality: 1..n
+  since_version: '2.3'

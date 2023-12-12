@@ -1,0 +1,17 @@
+name: Economic Operator Role
+definition: A class to describe the tenderer contracting role.
+since_version: '2.1'
+
+fields:
+- possessive_noun: Role
+  primary_noun: Code
+  type: Code
+  definition: A code specifying the role of the party.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Role
+  primary_noun: Description
+  type: Text
+  definition: A textual description of the party role.
+  cardinality: 0..n
+  since_version: '2.1'

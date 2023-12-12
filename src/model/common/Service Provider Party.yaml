@@ -1,0 +1,33 @@
+name: Service Provider Party
+definition: A class to describe a party contracting to provide services, such as transportation, finance, etc.
+since_version: '2.1'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this service provider.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Service Type
+  primary_noun: Code
+  type: Code
+  definition: The type of service provided, expressed as a code.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Service
+  primary_noun: Type
+  type: Text
+  definition: The type of service provided, expressed as text.
+  cardinality: 0..n
+  since_version: '2.1'
+
+objects:
+- type: Party
+  definition: The party providing the service.
+  cardinality: '1'
+  since_version: '2.1'
+- qualifier: Seller
+  type: Contact
+  definition: The contact for the service provider.
+  cardinality: 0..1
+  since_version: '2.1'

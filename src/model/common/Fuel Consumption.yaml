@@ -1,0 +1,48 @@
+name: Fuel Consumption
+definition: A class to describe fuel consumption.
+since_version: '2.4'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this fuel consumption.
+  cardinality: 0..1
+  since_version: '2.4'
+- possessive_noun: Fuel
+  primary_noun: Type
+  type: Code
+  definition: The type of fuel, expressed as a code.
+  cardinality: 0..1
+  since_version: '2.4'
+- possessive_noun: Fuel
+  primary_noun: Type
+  type: Text
+  definition: The type of fuel, expressed as text.
+  cardinality: 0..n
+  since_version: '2.4'
+- possessive_noun: Fuel Consumption
+  primary_noun: Measure
+  type: Measure
+  definition: The measure of this fuel consumption.
+  cardinality: 0..1
+  since_version: '2.4'
+
+objects:
+- qualifier: Additional
+  type: Fuel Property
+  definition: One or more additional properties of the fuel being consumed.
+  cardinality: 0..n
+  since_version: '2.4'
+- type: Fuel Metering
+  definition: One or more meters of the fuel being consumed.
+  cardinality: 0..n
+  since_version: '2.4'
+- type: Environmental Emission
+  definition: One or more environmental emissions of the fuel being measured.
+  cardinality: 0..n
+  since_version: '2.4'
+- qualifier: Fuel Provider
+  type: Party
+  definition: The party providing the fuel.
+  cardinality: 0..1
+  since_version: '2.4'

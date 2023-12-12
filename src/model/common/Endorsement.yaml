@@ -1,0 +1,34 @@
+name: Endorsement
+definition: A class to describe an endorsement of a document.
+since_version: '2.0'
+
+fields:
+- primary_noun: Document
+  type: Identifier
+  definition: An identifier for this endorsement.
+  cardinality: '1'
+  since_version: '2.0'
+- possessive_noun: Approval
+  primary_noun: Status
+  type: Text
+  definition: The status of this endorsement.
+  alternative_business_terms: Authentication Code
+  untded_code: '4427'
+  cardinality: '1'
+  since_version: '2.0'
+- primary_noun: Remarks
+  type: Text
+  definition: Remarks provided by the endorsing party.
+  untded_code: '4428'
+  cardinality: 0..n
+  since_version: '2.0'
+
+objects:
+- type: Endorser Party
+  definition: The type of party providing this endorsement.
+  cardinality: '1'
+  since_version: '2.0'
+- type: Signature
+  definition: A signature applied to this endorsement.
+  cardinality: 0..n
+  since_version: '2.0'

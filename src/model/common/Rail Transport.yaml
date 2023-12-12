@@ -1,0 +1,19 @@
+name: Rail Transport
+definition: A class defining details about a train wagon used as a means of transport.
+since_version: '2.0'
+
+fields:
+- possessive_noun: Train
+  primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for the train used as the means of transport.
+  alternative_business_terms: Train Number (WCO ID 167)
+  untded_code: '8213'
+  cardinality: '1'
+  since_version: '2.0'
+- possessive_noun: Rail Car
+  primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for the rail car on the train used as the means of transport.
+  cardinality: 0..1
+  since_version: '2.0'

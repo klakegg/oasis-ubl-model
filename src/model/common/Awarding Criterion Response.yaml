@@ -1,0 +1,43 @@
+name: Awarding Criterion Response
+definition: Defines the response for an awarding criterion from the tendering party.
+since_version: '2.1'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identification of this awarding criterion response.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Awarding Criterion
+  primary_noun: Identifier
+  type: Identifier
+  definition: An identifer of the awarding criterion being referred to.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Description
+  type: Text
+  definition: Describes the awarding criterion.
+  cardinality: 0..n
+  since_version: '2.1'
+- primary_noun: Description
+  type: Text
+  definition: Describes the awarding criterion response.
+  cardinality: 0..n
+  since_version: '2.1'
+- primary_noun: Quantity
+  type: Quantity
+  definition: Specifies the quantity tendered for this awarding criterion.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Amount
+  type: Amount
+  definition: Specifies the monetary amount tendered for this awarding criterion.
+  cardinality: 0..1
+  since_version: '2.1'
+
+objects:
+- qualifier: Subordinate
+  type: Awarding Criterion Response
+  definition: Defines responses to any subsidiary awarding criterion.
+  cardinality: 0..n
+  since_version: '2.1'

@@ -1,0 +1,23 @@
+name: Related Item
+definition: A class to describe the relationship to an item different from the item associated with the item line in which RelatedItem is used.
+since_version: '2.0'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for the related item.
+  examples: 'First , Second '
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Quantity
+  type: Quantity
+  definition: The quantity that applies to the relationship.
+  examples: '6 , 10mg per Kilo '
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Description
+  type: Text
+  definition: Text describing the relationship.
+  examples: 'If used in wet conditions or extreme environments '
+  cardinality: 0..n
+  since_version: '2.0'

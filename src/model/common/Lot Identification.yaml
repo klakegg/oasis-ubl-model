@@ -1,0 +1,24 @@
+name: Lot Identification
+definition: A class for defining a lot identifier (the identifier of a set of item instances that would be used in case of a recall of that item).
+since_version: '2.0'
+
+fields:
+- possessive_noun: Lot
+  primary_noun: Number
+  type: Identifier
+  definition: An identifier for the lot.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Expiry
+  primary_noun: Date
+  type: Date
+  definition: The expiry date of the lot.
+  cardinality: 0..1
+  since_version: '2.0'
+
+objects:
+- qualifier: Additional
+  type: Item Property
+  definition: An additional property of the lot.
+  cardinality: 0..n
+  since_version: '2.0'

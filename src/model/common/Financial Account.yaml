@@ -1,0 +1,56 @@
+name: Financial Account
+definition: A class to describe a financial account.
+since_version: '2.0'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: The identifier for this financial account; the bank account number.
+  examples: SWIFT(BIC) and IBAN are defined in ISO 9362 and ISO 13616.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Name
+  type: Name
+  definition: The name of this financial account.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Name
+  type: Name
+  definition: An alias for the name of this financial account, to be used in place of the actual account name for security reasons.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Account Type
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the type of this financial account.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Account Format
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the format of this financial account.
+  examples: ISO20022 Clearing System Identification Code
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Currency
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the currency in which this financial account is held.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Note
+  type: Text
+  definition: Free-form text applying to the Payment for the owner of this account.
+  cardinality: 0..n
+  since_version: '2.0'
+
+objects:
+- qualifier: Financial Institution
+  type: Branch
+  definition: The branch of the financial institution associated with this financial account.
+  cardinality: 0..1
+  since_version: '2.0'
+- type: Country
+  definition: The country in which the holder of the financial account is domiciled.
+  cardinality: 0..1
+  since_version: '2.0'

@@ -1,0 +1,15 @@
+name: Encryption Certificate Path Chain
+definition: Details of a certificate path chain used in encryption.
+since_version: '2.2'
+
+fields:
+- primary_noun: Value
+  type: Text
+  definition: The path chain value manifest in the instance.
+  cardinality: 0..1
+  since_version: '2.2'
+- primary_noun: URI
+  type: Identifier
+  definition: The path chain value references external to the instance.
+  cardinality: 0..1
+  since_version: '2.2'

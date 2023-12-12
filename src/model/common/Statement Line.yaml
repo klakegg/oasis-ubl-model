@@ -1,0 +1,115 @@
+name: Statement Line
+definition: A class to define a line in a Statement of account.
+since_version: '2.0'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this statement line.
+  cardinality: '1'
+  since_version: '2.0'
+- primary_noun: Note
+  type: Text
+  definition: Free-form text conveying information that is not contained explicitly in other structures.
+  cardinality: 0..n
+  since_version: '2.0'
+- primary_noun: UUID
+  type: Identifier
+  definition: A universally unique identifier for this statement line.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Indicator
+  type: Indicator
+  definition: An indication that this statement line contains an outstanding balance from the previous bill(s) (true) or does not (false).
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Line
+  primary_noun: Amount
+  type: Amount
+  definition: The amount debited on this statement line.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Line
+  primary_noun: Amount
+  type: Amount
+  definition: The amount credited on this statement line.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Balance
+  primary_noun: Amount
+  type: Amount
+  definition: The balance amount on this statement line.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Payment Purpose
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the business purpose for this payment.
+  cardinality: 0..1
+  since_version: '2.1'
+
+objects:
+- type: Payment Means
+  definition: A means of payment associated with this statement line.
+  cardinality: 0..1
+  since_version: '2.0'
+- type: Payment Terms
+  definition: A specification of payment terms associated with this statement line.
+  cardinality: 0..n
+  since_version: '2.0'
+- qualifier: Buyer
+  type: Customer Party
+  definition: The buyer associated with this statement line.
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Seller
+  type: Supplier Party
+  definition: The seller/supplier associated with this statement line.
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Originator
+  type: Customer Party
+  definition: The originating party.
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Accounting
+  type: Customer Party
+  definition: The Accounting Customer Party related to the statement information reported on this Statement Line.
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Accounting
+  type: Supplier Party
+  definition: The Accounting Supplier Party related to the statement information reported on this Statement Line.
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Payee
+  type: Party
+  definition: The payee.
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Invoice
+  type: Period
+  definition: An invoice period to which this statement line applies.
+  cardinality: 0..n
+  since_version: '2.0'
+- type: Billing Reference
+  definition: A reference to a billing document associated with this statement line.
+  cardinality: 0..n
+  since_version: '2.0'
+- type: Document Reference
+  definition: A reference to a document associated with this statement line.
+  cardinality: 0..n
+  since_version: '2.0'
+- type: Exchange Rate
+  definition: The rate of exchange between the currency of the Statement and the currency of the document described in the BillingReference.
+  cardinality: 0..1
+  since_version: '2.0'
+- type: Allowance Charge
+  definition: A charge or discount price component associated with this statement line.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Collected
+  type: Payment
+  definition: A collected payment.
+  cardinality: 0..n
+  since_version: '2.1'

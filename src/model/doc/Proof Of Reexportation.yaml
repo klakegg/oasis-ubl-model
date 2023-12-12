@@ -1,0 +1,105 @@
+name: Proof Of Reexportation
+definition: A document providing a status or a proof that goods have been re-exported
+since_version: '2.3'
+
+fields:
+- possessive_noun: UBL Version
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies the earliest version of the UBL 2 schema for this document type that defines all of the elements that might be encountered in the current instance.
+  examples: '2.3'
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Customization
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies a user-defined customization of UBL for a specific use.
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Profile
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies a user-defined profile of the customization of UBL being used.
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Profile Execution
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies an instance of executing a profile, to associate all transactions in a collaboration.
+  examples: BPP-1001
+  cardinality: 0..1
+  since_version: '2.3'
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this document, assigned by the sender.
+  cardinality: '1'
+  since_version: '2.3'
+- primary_noun: UUID
+  type: Identifier
+  definition: A universally unique identifier for an instance of this document.
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Issue
+  primary_noun: Date
+  type: Date
+  definition: The date, assigned by the sender, on which this document was issued.
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Issue
+  primary_noun: Time
+  type: Time
+  definition: The time, assigned by the sender, at which this document was issued.
+  cardinality: 0..1
+  since_version: '2.3'
+- primary_noun: Note
+  type: Text
+  definition: Free-form text pertinent to this document, conveying information that is not contained explicitly in other structures.
+  cardinality: 0..n
+  since_version: '2.3'
+- primary_noun: Version
+  type: Identifier
+  definition: Identifies the current version of this request for proof
+  cardinality: 0..1
+  since_version: '2.3'
+
+objects:
+- qualifier: Exporting Customs
+  type: Party
+  definition: The competent Customs party of the exporting country.
+  cardinality: 0..1
+  since_version: '2.3'
+- qualifier: Importing Guarantor
+  type: Party
+  definition: A party (often a chamber of commerce) which provides a guarantee for the goods while being temporarily imported.
+  cardinality: 0..1
+  since_version: '2.3'
+- qualifier: Exporting Guarantor
+  type: Party
+  definition: A party (often a chamber of commerce) which provides a guarantee for the goods while being temporarily exported.
+  cardinality: 0..1
+  since_version: '2.3'
+- type: Goods Item Passport Counterfoil
+  definition: One or more goods item passport or ATA Carnet counterfoils associated with this proof of re-exportation
+  alternative_business_terms: ATA Carnet counterfoil
+  cardinality: 1..n
+  since_version: '2.3'
+- qualifier: Reexportation
+  type: Evidence
+  definition: One or more references to evidence supporting that goods have been re-exported
+  cardinality: 1..n
+  since_version: '2.3'
+- qualifier: Goods Item Passport
+  type: Attachment
+  definition: Attachment of the goods item passport or ATA Carnet related to this proof of re-exportation
+  alternative_business_terms: ATA Carnet
+  cardinality: 0..1
+  since_version: '2.3'
+- qualifier: Additional
+  type: Document Reference
+  definition: One or more references to additional documents related to this proof of re-exportation
+  cardinality: 0..n
+  since_version: '2.3'
+- type: Signature
+  definition: A signature applied to this document.
+  cardinality: 0..n
+  since_version: '2.3'

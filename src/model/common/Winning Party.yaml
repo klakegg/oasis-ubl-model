@@ -1,0 +1,16 @@
+name: Winning Party
+definition: A party that is identified as the awarded by a tender result.
+since_version: '2.1'
+
+fields:
+- primary_noun: Rank
+  type: Text
+  definition: Indicates the rank obtained in the award.
+  cardinality: 0..1
+  since_version: '2.1'
+
+objects:
+- type: Party
+  definition: Information about an organization, sub-organization, or individual fulfilling a role in a business process.
+  cardinality: '1'
+  since_version: '2.1'

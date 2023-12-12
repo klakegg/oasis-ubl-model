@@ -1,0 +1,11 @@
+name: Service Frequency
+definition: A class to specify which day of the week a transport service is operational.
+since_version: '2.1'
+
+fields:
+- possessive_noun: Week
+  primary_noun: Day
+  type: Code
+  definition: A day of the week, expressed as code.
+  cardinality: '1'
+  since_version: '2.1'

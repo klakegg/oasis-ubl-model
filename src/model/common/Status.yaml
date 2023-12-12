@@ -1,0 +1,77 @@
+name: Status
+definition: A class to describe the condition or position of an object.
+since_version: '2.0'
+
+fields:
+- possessive_noun: Condition
+  primary_noun: Code
+  type: Code
+  definition: Specifies the status condition of the related object.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Reference
+  primary_noun: Date
+  type: Date
+  definition: The reference date for this status.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Reference
+  primary_noun: Time
+  type: Time
+  definition: The reference time for this status.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Description
+  type: Text
+  definition: Text describing this status.
+  cardinality: 0..n
+  since_version: '2.0'
+- possessive_noun: Status Reason
+  primary_noun: Code
+  type: Code
+  definition: The reason for this status condition or position, expressed as a code.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Reason
+  type: Text
+  definition: The reason for this status condition or position, expressed as text.
+  cardinality: 0..n
+  since_version: '2.0'
+- possessive_noun: Sequence
+  primary_noun: Identifier
+  type: Identifier
+  definition: A sequence identifier for this status.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Text
+  type: Text
+  definition: Provides any textual information related to this status.
+  cardinality: 0..n
+  since_version: '2.0'
+- primary_noun: Indicator
+  type: Indicator
+  definition: Specifies an indicator relevant to a specific status.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Percent
+  type: Percent
+  definition: A percentage meaningful in the context of this status.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Reliability
+  primary_noun: Percent
+  type: Percent
+  definition: The reliability of this status, expressed as a percentage.
+  cardinality: 0..1
+  since_version: '2.1'
+
+objects:
+- qualifier: Sub
+  type: Status
+  definition: An additional sub status to clarify or ellaborate on the status
+  cardinality: 0..n
+  since_version: '2.3'
+- type: Condition
+  definition: Measurements that quantify the condition of the objects covered by the status.
+  cardinality: 0..n
+  since_version: '2.0'

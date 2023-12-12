@@ -1,0 +1,22 @@
+name: Dependent Price Reference
+definition: A class to define the price of an item as a percentage of the price of a different item.
+since_version: '2.1'
+
+fields:
+- primary_noun: Percent
+  type: Percent
+  definition: The percentage by which the price of the different item is multiplied to calculate the price of the item.
+  cardinality: 0..1
+  since_version: '2.1'
+
+objects:
+- qualifier: Location
+  type: Address
+  definition: The reference location for this dependent price reference.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Dependent
+  type: Line Reference
+  definition: A reference to a line that the price is depended of.
+  cardinality: 0..1
+  since_version: '2.1'

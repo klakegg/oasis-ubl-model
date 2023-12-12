@@ -1,0 +1,164 @@
+name: Bill Of Lading
+definition: A document issued by the party who acts as an agent for a transportation carrier or other agents to the party who gives instructions for the transportation services (shipper, consignor, etc.) stating the details of the transportation, charges, and terms and conditions under which the transportation service is provided. The party issuing this document does not necessarily provide the physical transportation service. The information in the Bill of Lading corresponds to the information on the Forwarding Instructions. It is used for any mode of transport. A Bill of Lading can serve as a contractual document between the parties for the transportation service. The document evidences a contract of carriage by sea and the acceptance of responsibility for the goods by the carrier, by which the carrier undertakes to deliver the goods against surrender of the document. A provision in the document that the goods are to be delivered to the order of a named person, or to order, or to bearer, constitutes such an undertaking.
+alternative_business_terms: House Bill of Landing, Master Bill, Bill
+since_version: '2.0'
+
+fields:
+- possessive_noun: UBL Version
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies the earliest version of the UBL 2 schema for this document type that defines all of the elements that might be encountered in the current instance.
+  examples: 2.0.5
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Customization
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies a user-defined customization of UBL for a specific use.
+  examples: NES
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Profile
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies a user-defined profile of the customization of UBL being used.
+  examples: BasicProcurementProcess
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Profile Execution
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies an instance of executing a profile, to associate all transactions in a collaboration.
+  examples: BPP-1001
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this document, assigned by the sender.
+  alternative_business_terms: Bill of Lading Number
+  untded_code: '1016'
+  cardinality: '1'
+  since_version: '2.0'
+- primary_noun: Identifier
+  type: Identifier
+  definition: Reference number (such as a booking reference number) assigned by a carrier or its agent to identify a specific shipment when cargo space is reserved prior to loading.
+  alternative_business_terms: Booking Reference Number
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: UUID
+  type: Identifier
+  definition: A universally unique identifier for an instance of this document.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Issue
+  primary_noun: Date
+  type: Date
+  definition: The date, assigned by the sender, on which this document was issued.
+  alternative_business_terms: Transport Document Date
+  untded_code: '2417'
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Issue
+  primary_noun: Time
+  type: Time
+  definition: The time, assigned by the sender, at which this document was issued.
+  untded_code: '2417'
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Name
+  type: Name
+  definition: Text, assigned by the sender, that identifies this document to business users.
+  examples: 'House Bill , Consolidated Bill of Lading , Proforma , Sea Waybill '
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Description
+  type: Text
+  definition: Textual description of the document instance.
+  cardinality: 0..n
+  since_version: '2.0'
+- primary_noun: Note
+  type: Text
+  definition: Free-form text pertinent to this document, conveying information that is not contained explicitly in other structures.
+  cardinality: 0..n
+  since_version: '2.0'
+- possessive_noun: Document Status
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the status of the Bill Of Lading (revision, replacement, etc.).
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Shipping Order
+  primary_noun: Identifier
+  type: Identifier
+  definition: Reference number to identify a Shipping Order or Forwarding Instruction.
+  alternative_business_terms: Freight forwarding instruction, Shippers letter of instruction
+  untded_code: '1121'
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Indicator
+  type: Indicator
+  definition: Indicates whether the transport document is consigned to order.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Indicator
+  type: Indicator
+  definition: A term used in commerce in reference to certain duties, called ad valorem duties, which are levied on commodities at certain rates per centum on their value.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Value
+  type: Amount
+  definition: Value declared by the shipper or his agent solely for the purpose of varying the carrier's level of liability from that provided in the contract of carriage in case of loss or damage to goods or delayed delivery.
+  alternative_business_terms: Interest in Delivery
+  untded_code: '5036'
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Instruction
+  type: Text
+  definition: Other free-text instructions to the forwarders or carriers related to the shipment. This element ought to be used only where such information cannot be represented in other structured information entities within the document.
+  alternative_business_terms: Bill of Lading Remark
+  untded_code: '4244'
+  cardinality: 0..n
+  since_version: '2.0'
+
+objects:
+- qualifier: Consignor
+  type: Party
+  definition: The party consigning goods as stipulated in the transport contract by the party ordering transport.
+  alternative_business_terms: Consignor (WCO ID 71 and 72)
+  untded_code: 3036 and 3039
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Carrier
+  type: Party
+  definition: The party providing the transport of goods between named points.
+  alternative_business_terms: Transport Company, Shipping Line, NVOCC, Airline, Haulier, Courier, Carrier (WCO ID 49 and 50)
+  untded_code: 3036 and 3039
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Freight Forwarder
+  type: Party
+  definition: A party combining individual smaller consignments into a single larger shipment (a so-called consolidated consignment or shipment) that is sent to a counterpart who mirrors the consolidator's activity by dividing the consolidated consignment into its original components.
+  alternative_business_terms: Consolidator (WCO ID 192 AND 193)
+  untded_code: 3036 and 3039
+  cardinality: 0..1
+  since_version: '2.0'
+- type: Shipment
+  definition: An identifiable collection of one or more goods items to be transported between the seller party and the buyer party.
+  cardinality: 0..1
+  since_version: '2.0'
+- type: Document Reference
+  definition: A reference to another document associated with this document.
+  cardinality: 0..n
+  since_version: '2.0'
+- type: Exchange Rate
+  definition: Information that directly relates to the rate of exchange (conversion) between two currencies.
+  cardinality: 0..n
+  since_version: '2.0'
+- type: Document Distribution
+  definition: A list of interested parties to whom this document is distributed.
+  cardinality: 0..n
+  since_version: '2.0'
+- type: Signature
+  definition: A signature applied to this document.
+  cardinality: 0..n
+  since_version: '2.0'

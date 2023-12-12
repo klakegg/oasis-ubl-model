@@ -1,0 +1,55 @@
+name: Order Line
+definition: A class to define a line in an order document (e.g., Order, Order Change, or Order Response) describing an item being ordered.
+since_version: '2.0'
+
+fields:
+- possessive_noun: Substitution Status
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the substitution status of the item on this order line. The order line may indicate that the substitute is proposed by the buyer (in Order) or by the seller (in Order Response) or that a substitution has been made by the seller (in Order Response).
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Note
+  type: Text
+  definition: Free-form text conveying information that is not contained explicitly in other structures.
+  cardinality: 0..n
+  since_version: '2.1'
+
+objects:
+- type: Line Item
+  definition: The line item itself.
+  cardinality: '1'
+  since_version: '2.0'
+- qualifier: Seller Proposed Substitute
+  type: Line Item
+  definition: In Order Response, a line item proposed by the seller describing a product that might substitute for the product described in this order line.
+  cardinality: 0..n
+  since_version: '2.0'
+- qualifier: Seller Substituted
+  type: Line Item
+  definition: In Order Response, a line item that has replaced the original order line item. The specified quantity and pricing may differ from those in the original line item, but when a line item is substituted by the seller, it is assumed that other information, such as shipment details, will remain the same.
+  cardinality: 0..n
+  since_version: '2.0'
+- qualifier: Buyer Proposed Substitute
+  type: Line Item
+  definition: A description of an item proposed by the buyer as a possible alternative to the item associated with this order line.
+  cardinality: 0..n
+  since_version: '2.0'
+- qualifier: Catalogue
+  type: Line Reference
+  definition: A reference to a catalogue line associated with this order line.
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Quotation
+  type: Line Reference
+  definition: A reference to a quotation line associated with this order line.
+  cardinality: 0..1
+  since_version: '2.0'
+- type: Order Line Reference
+  definition: A reference to another order line, such as in a replacement order or another line on the same order that is related.
+  cardinality: 0..n
+  since_version: '2.1'
+- type: Document Reference
+  definition: A reference to a document associated with this order line.
+  cardinality: 0..n
+  since_version: '2.0'

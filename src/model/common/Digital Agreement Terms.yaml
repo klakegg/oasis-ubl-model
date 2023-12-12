@@ -1,0 +1,28 @@
+name: Digital Agreement Terms
+definition: A class to describe the terms and conditions of a digital agreement.
+alternative_business_terms: Trading Partner Agreement Terms
+since_version: '2.2'
+
+fields:
+- primary_noun: Description
+  type: Text
+  definition: Text describing the terms and conditions of a digital agreement.
+  cardinality: 1..n
+  since_version: '2.2'
+
+objects:
+- qualifier: Validity
+  type: Period
+  definition: The period of time for which this digital agreement is valid.
+  cardinality: 0..1
+  since_version: '2.2'
+- qualifier: Adoption
+  type: Period
+  definition: The period during which a digital agreement must be adopted.
+  cardinality: 0..1
+  since_version: '2.2'
+- type: Service Level Agreement
+  definition: The service level agreement which regulates the quality, availability and responsibilities of digital services.
+  alternative_business_terms: SLA
+  cardinality: 0..n
+  since_version: '2.2'

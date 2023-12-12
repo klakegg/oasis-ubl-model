@@ -1,0 +1,144 @@
+name: Retail Event
+definition: A document used to specify basic information about retail events (such as promotions, product introductions, and community or environmental events) that affect supply or demand.
+alternative_business_terms: Event
+since_version: '2.1'
+
+fields:
+- possessive_noun: UBL Version
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies the earliest version of the UBL 2 schema for this document type that defines all of the elements that might be encountered in the current instance.
+  examples: 2.0.5
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Customization
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies a user-defined customization of UBL for a specific use.
+  examples: NES
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Profile
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies a user-defined profile of the customization of UBL being used.
+  examples: BasicProcurementProcess
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Profile Execution
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies an instance of executing a profile, to associate all transactions in a collaboration.
+  examples: BPP-1001
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this document, assigned by the sender.
+  alternative_business_terms: Retail Event Number
+  cardinality: '1'
+  since_version: '2.1'
+- primary_noun: Indicator
+  type: Indicator
+  definition: Indicates whether this document is a copy (true) or not (false).
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: UUID
+  type: Identifier
+  definition: A universally unique identifier for an instance of this document.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Issue
+  primary_noun: Date
+  type: Date
+  definition: The date, assigned by the sender, on which this document was issued.
+  alternative_business_terms: Retail Event Date
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Issue
+  primary_noun: Time
+  type: Time
+  definition: The time, assigned by the sender, at which this document was issued.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Note
+  type: Text
+  definition: Free-form text pertinent to this document, conveying information that is not contained explicitly in other structures.
+  cardinality: 0..n
+  since_version: '2.1'
+- possessive_noun: Retail Event
+  primary_noun: Name
+  type: Name
+  definition: A title, theme, slogan, or other identifier for the event for use by trading partners.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Retail Event Status
+  primary_noun: Code
+  type: Code
+  definition: Describes the logical state of the discrete activity affecting supply or demand in the supply chain
+  cardinality: '1'
+  since_version: '2.1'
+- possessive_noun: Seller Event
+  primary_noun: Identifier
+  type: Identifier
+  definition: An event tracking identifier assigned by the seller.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Buyer Event
+  primary_noun: Identifier
+  type: Identifier
+  definition: An event tracking identifier assigned by the buyer.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Description
+  type: Text
+  definition: Definition of the discrete activity affecting supply or demand in the supply chain
+  cardinality: 0..n
+  since_version: '2.1'
+
+objects:
+- type: Period
+  definition: The period during which the event takes place.
+  cardinality: '1'
+  since_version: '2.1'
+- qualifier: Original
+  type: Document Reference
+  definition: A reference to a Forecast document associated with this event.
+  cardinality: 0..n
+  since_version: '2.1'
+- type: Signature
+  definition: A signature applied to this document.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Sender
+  type: Party
+  definition: The party sending this document.
+  cardinality: '1'
+  since_version: '2.1'
+- qualifier: Receiver
+  type: Party
+  definition: The party receiving this document.
+  cardinality: '1'
+  since_version: '2.1'
+- qualifier: Buyer
+  type: Customer Party
+  definition: The buyer.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Seller
+  type: Supplier Party
+  definition: The seller.
+  cardinality: 0..1
+  since_version: '2.1'
+- type: Event Comment
+  definition: A comment regarding the event.
+  cardinality: 0..n
+  since_version: '2.1'
+- type: Promotional Event
+  definition: The description of a promotional event associated with this event.
+  cardinality: 0..1
+  since_version: '2.1'
+- type: Miscellaneous Event
+  definition: A miscellaneous event associated with this event.
+  cardinality: 0..1
+  since_version: '2.1'

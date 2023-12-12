@@ -1,0 +1,48 @@
+name: Location Coordinate
+definition: A class for defining a set of geographical coordinates (apparently misnamed).
+since_version: '2.0'
+
+fields:
+- possessive_noun: Coordinate System
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the location system used.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Degrees
+  type: Measure
+  definition: The degree component of a latitude measured in degrees and minutes.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Minutes
+  type: Measure
+  definition: The minutes component of a latitude measured in degrees and minutes (modulo 60).
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Latitude Direction
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the direction of latitude measurement from the equator (north or south).
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Degrees
+  type: Measure
+  definition: The degree component of a longitude measured in degrees and minutes.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Minutes
+  type: Measure
+  definition: The minutes component of a longitude measured in degrees and minutes (modulo 60).
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Longitude Direction
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the direction of longitude measurement from the prime meridian (east or west).
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Altitude
+  type: Measure
+  definition: The altitude of the location.
+  cardinality: 0..1
+  since_version: '2.1'

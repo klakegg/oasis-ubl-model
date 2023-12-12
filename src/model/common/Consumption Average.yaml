@@ -1,0 +1,17 @@
+name: Consumption Average
+definition: A class to define an average consumption as a monetary amount.
+since_version: '2.1'
+
+fields:
+- primary_noun: Amount
+  type: Amount
+  definition: The average monetary amount of the consumption.
+  examples: '1.65'
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Description
+  type: Text
+  definition: A description of the average consumed.
+  examples: Average price incl. value added tax per kilowatt-hour in the billing period.
+  cardinality: 0..n
+  since_version: '2.1'

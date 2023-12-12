@@ -1,0 +1,15 @@
+name: Pricing Reference
+definition: A reference to the basis for pricing. This may be based on a catalogue or a quoted amount from a price list and include some alternative pricing conditions.
+since_version: '2.0'
+
+objects:
+- qualifier: Original
+  type: Item Location Quantity
+  definition: An original set of location-specific properties (e.g., price and quantity) associated with this item.
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Alternative Condition
+  type: Price
+  definition: The price expressed in terms other than the actual price, e.g., the list price v. the contracted price, or the price in bags v. the price in kilos, or the list price in bags v. the contracted price in kilos.
+  cardinality: 0..n
+  since_version: '2.0'

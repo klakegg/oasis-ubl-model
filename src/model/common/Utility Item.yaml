@@ -1,0 +1,97 @@
+name: Utility Item
+definition: A class to describe the consumption of a utility product.
+since_version: '2.1'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this utility item.
+  examples: '1'
+  cardinality: '1'
+  since_version: '2.1'
+- possessive_noun: Subscriber
+  primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for the subscriber to the utility.
+  examples: '98143211'
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Subscriber
+  primary_noun: Type
+  type: Text
+  definition: Identification of the subscriber type, expressed as text..
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Subscriber Type
+  primary_noun: Code
+  type: Code
+  definition: The code identifying for the service type.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Description
+  type: Text
+  definition: Text describing the consumption product.
+  examples: Basis price quarter (5.761 kWh per 35,58 cents), Transport of electricity, etc.
+  cardinality: 0..n
+  since_version: '2.1'
+- possessive_noun: Pack
+  primary_noun: Quantity
+  type: Quantity
+  definition: The unit packaging quantity.
+  examples: '1'
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Pack
+  primary_noun: Size
+  type: Numeric
+  definition: The number of items in a pack.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Consumption
+  primary_noun: Type
+  type: Text
+  definition: The type of product consumed, expressed as text.
+  examples: Consumption
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Consumption Type
+  primary_noun: Code
+  type: Code
+  definition: The type of product consumed, expressed as a code.
+  examples: Consumption
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Charge
+  primary_noun: Type
+  type: Text
+  definition: Information of the actual payments type for the utility Item
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Charge Type
+  primary_noun: Code
+  type: Code
+  definition: Information of the actual payments type code expressed as a code
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Charge
+  primary_noun: Type
+  type: Text
+  definition: Information about the one-time payment type in case everything is paid One time
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Charge Type
+  primary_noun: Code
+  type: Code
+  definition: Information about the one-time payment type code
+  cardinality: 0..1
+  since_version: '2.1'
+
+objects:
+- type: Tax Category
+  definition: The tax category applicable to this utility item.
+  cardinality: 0..1
+  since_version: '2.1'
+- type: Contract
+  definition: A contract setting forth conditions applicable to this utility item.
+  cardinality: 0..1
+  since_version: '2.1'

@@ -1,0 +1,93 @@
+#!/usr/bin/env ruby
+
+require 'bundler/setup'
+require 'nokogiri'
+require 'slop'
+require 'fileutils'
+require 'yaml'
+
+# Library
+library = {
+  'common' => Hash::new,
+  'doc' => Hash::new,
+}
+
+# Load source
+source = Nokogiri::XML File.open 'UBL-Entities-2.4.gc'
+source.xpath('//Row').each do |row|
+  # Parse row
+  r = Hash::new
+  row.xpath("Value").each do |value|
+    r[value['ColumnRef']] = value.xpath('SimpleValue').text
+  end
+
+  # Determine part
+  part = 'doc'
+  part = 'common' if r['ModelName'].include? 'Common'
+
+  # ABIE
+  if r['ComponentType'] == 'ABIE'
+    library[part][r['ObjectClass']] = {
+      'name' => r['ObjectClass'],
+      'definition' => r['Definition'],
+      'alternative_business_terms' => r.fetch('AlternativeBusinessTerms', nil),
+      'since_version' => r['CurrentVersion'],
+      'editor_notes' => r.fetch('EditorNotes', nil),
+  }.compact
+  end
+
+  # BBIE
+  if r['ComponentType'] == 'BBIE'
+    if !library[part][r['ObjectClass']].has_key? 'fields'
+      library[part][r['ObjectClass']]['fields'] = Array::new
+    end
+
+    library[part][r['ObjectClass']]['fields'].append({
+      'possessive_noun' => r.fetch('PropertyTermPossessiveNoun', nil),
+      'primary_noun' => r.fetch('PropertyTermPrimaryNoun', nil),
+      'type' => r['RepresentationTerm'],       
+      'definition' => r['Definition'],
+      'alternative_business_terms' => r.fetch('AlternativeBusinessTerms', nil),
+      'examples' => r.fetch('Examples', nil),
+      'untded_code' => r.fetch('UNTDEDCode', nil),
+      'cardinality' => r['Cardinality'].to_s,
+      'since_version' => r['CurrentVersion'],
+      'editor_notes' => r.fetch('EditorNotes', nil),
+      #'all' => r,
+  }.compact)
+  end
+
+  # ASBIE
+  if r['ComponentType'] == 'ASBIE'
+    if !library[part][r['ObjectClass']].has_key? 'objects'
+      library[part][r['ObjectClass']]['objects'] = Array::new
+    end
+
+    library[part][r['ObjectClass']]['objects'].append({
+      'qualifier' => r.fetch('PropertyTermQualifier', nil),
+      'type' => r['RepresentationTerm'], 
+      'definition' => r['Definition'],
+      'alternative_business_terms' => r.fetch('AlternativeBusinessTerms', nil),
+      'examples' => r.fetch('Examples', nil),
+      'untded_code' => r.fetch('UNTDEDCode', nil),
+      'cardinality' => r['Cardinality'].to_s,
+      'since_version' => r['CurrentVersion'],
+      'editor_notes' => r.fetch('EditorNotes', nil),
+      #'all' => r,
+  }.compact)
+  end
+end
+
+# Loop through models
+library.each do |part, models|
+  FileUtils.mkdir_p "src/model/#{part}"
+
+  # Write models
+  models.each do |name, model|
+    File.open "src/model/#{part}/#{name}.yaml", 'w' do |file|
+      file.write model.to_yaml(options = {:line_width => -1})[4..-1]
+        .gsub('fields:', "\nfields:")
+        .gsub('objects:', "\nobjects:")
+    end
+  end
+end

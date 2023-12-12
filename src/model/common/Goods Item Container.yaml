@@ -1,0 +1,24 @@
+name: Goods Item Container
+definition: A class defining how goods items are split across transport equipment.
+since_version: '2.0'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this goods item container.
+  untded_code: '4223'
+  cardinality: '1'
+  since_version: '2.0'
+- primary_noun: Quantity
+  type: Quantity
+  definition: The number of goods items loaded into or onto one piece of transport equipment as a total consignment or part of a consignment.
+  alternative_business_terms: Number of packages stuffed
+  untded_code: '7228'
+  cardinality: 0..1
+  since_version: '2.0'
+
+objects:
+- type: Transport Equipment
+  definition: A piece of transport equipment used to contain a single goods item.
+  cardinality: 0..n
+  since_version: '2.0'

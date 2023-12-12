@@ -1,0 +1,27 @@
+name: Declaration
+definition: A class to describe a declaration by an economic operator of certain characteristics or capabilities in fulfilment of requirements specified in a call for tenders.
+since_version: '2.1'
+
+fields:
+- primary_noun: Name
+  type: Name
+  definition: The name of this declaration.
+  cardinality: 0..n
+  since_version: '2.1'
+- possessive_noun: Declaration Type
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the type of this declaration.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Description
+  type: Text
+  definition: Text describing this declaration.
+  cardinality: 0..n
+  since_version: '2.1'
+
+objects:
+- type: Evidence Supplied
+  definition: The evidence supporting this declaration.
+  cardinality: 0..n
+  since_version: '2.0'

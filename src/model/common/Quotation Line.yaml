@@ -1,0 +1,69 @@
+name: Quotation Line
+definition: A class to define a line in a Quotation.
+since_version: '2.0'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this quotation line.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Note
+  type: Text
+  definition: Free-form text conveying information that is not contained explicitly in other structures.
+  cardinality: 0..n
+  since_version: '2.0'
+- primary_noun: Quantity
+  type: Quantity
+  definition: The quantity of the item quoted.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Line Extension
+  primary_noun: Amount
+  type: Amount
+  definition: The total amount for this quotation line, including allowance charges but net of taxes.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Line Extension
+  primary_noun: Amount
+  type: Amount
+  definition: The total amount for this quotation line, including all allowances, charges and taxes.
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Tax
+  primary_noun: Amount
+  type: Amount
+  definition: The total tax amount for this quotation line.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Request For Quotation Line
+  primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for the line in the Request for Quotation to which this line is a response.
+  cardinality: 0..1
+  since_version: '2.1'
+
+objects:
+- type: Document Reference
+  definition: A reference to a document associated with this quotation line.
+  cardinality: 0..n
+  since_version: '2.0'
+- type: Line Item
+  definition: The item that is the subject of this quotation line.
+  cardinality: '1'
+  since_version: '2.0'
+- qualifier: Seller Proposed Substitute
+  type: Line Item
+  definition: An item proposed by the seller as a substitute for the item that is the subject of this quotation line.
+  cardinality: 0..n
+  since_version: '2.0'
+- qualifier: Alternative
+  type: Line Item
+  definition: An item proposed by the seller as an alternative to the item that is the subject of this quotation line.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Request
+  type: Line Reference
+  definition: A reference to the line in the Request for Quotation to which this line is a response.
+  cardinality: 0..1
+  since_version: '2.1'

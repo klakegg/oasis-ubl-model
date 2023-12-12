@@ -1,0 +1,27 @@
+name: Endorser Party
+definition: A class to describe the party endorsing a document.
+since_version: '2.0'
+
+fields:
+- possessive_noun: Role
+  primary_noun: Code
+  type: Code
+  definition: A code specifying the role of the party providing the endorsement (e.g., issuer, embassy, insurance, etc.).
+  cardinality: '1'
+  since_version: '2.0'
+- primary_noun: Sequence
+  type: Numeric
+  definition: A number indicating the order of the endorsement provided by this party in the sequence in which endorsements are to be applied.
+  cardinality: '1'
+  since_version: '2.0'
+
+objects:
+- type: Party
+  definition: The party endorsing the application.
+  cardinality: '1'
+  since_version: '2.0'
+- qualifier: Signatory
+  type: Contact
+  definition: The individual representing the exporter who signs the Certificate of Origin application before submitting it to the issuer party.
+  cardinality: '1'
+  since_version: '2.0'

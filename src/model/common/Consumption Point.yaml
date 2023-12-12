@@ -1,0 +1,59 @@
+name: Consumption Point
+definition: A class to define the point of consumption for a utility, such as a meter.
+since_version: '2.1'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this point of consumption.
+  examples: 7411013716x
+  cardinality: '1'
+  since_version: '2.1'
+- primary_noun: Description
+  type: Text
+  definition: Text describing this consumption point.
+  examples: Additional informations concerning the consumption point
+  cardinality: 0..n
+  since_version: '2.1'
+- possessive_noun: Subscriber
+  primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for the subscriber responsible for the consumption at this consumption point.
+  examples: '98143211'
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Subscriber
+  primary_noun: Type
+  type: Text
+  definition: The type of subscriber, expressed as text.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Subscriber Type
+  primary_noun: Code
+  type: Code
+  definition: The type of subscriber, expressed as a code.
+  examples: APL
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Delivered
+  primary_noun: Quantity
+  type: Quantity
+  definition: The total quantity delivered, calculated at this consumption point.
+  examples: '5761.00'
+  cardinality: 0..1
+  since_version: '2.1'
+
+objects:
+- type: Address
+  definition: The address of this consumption point.
+  cardinality: 0..1
+  since_version: '2.1'
+- type: Web Site Access
+  definition: Access information for the website of this consumption point.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Utility
+  type: Meter
+  definition: A meter at this consumption point.
+  cardinality: 0..n
+  since_version: '2.1'

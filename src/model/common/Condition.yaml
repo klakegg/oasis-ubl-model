@@ -1,0 +1,31 @@
+name: Condition
+definition: A class to define a measurable condition of an object.
+since_version: '2.1'
+
+fields:
+- possessive_noun: Attribute
+  primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for the attribute that applies to the condition.
+  cardinality: '1'
+  since_version: '2.1'
+- primary_noun: Measure
+  type: Measure
+  definition: The measurement value.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Description
+  type: Text
+  definition: Text describing the attribute that applies to the condition.
+  cardinality: 0..n
+  since_version: '2.1'
+- primary_noun: Measure
+  type: Measure
+  definition: The minimum value in a range of measurement for this condition.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Measure
+  type: Measure
+  definition: The maximum value in a range of measurement for this condition.
+  cardinality: 0..1
+  since_version: '2.1'

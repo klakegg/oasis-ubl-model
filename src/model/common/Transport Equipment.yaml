@@ -1,0 +1,335 @@
+name: Transport Equipment
+definition: A class to describe a piece of equipment used to transport goods.
+alternative_business_terms: Shipping Container, Sea Container, Rail Wagon, Pallet, Trailer, Unit Load Device, ULD
+since_version: '2.0'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this piece of transport equipment.
+  examples: 'OCLU 1234567 '
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Consignment
+  primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for the consignment contained by this piece of transport equipment.
+  cardinality: 0..n
+  since_version: '2.1'
+- possessive_noun: Transport Equipment Type
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the type of this piece of transport equipment.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Provider Type
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the type of provider of this piece of transport equipment.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Owner Type
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the type of owner of this piece of transport equipment.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Size Type
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the size and type of this piece of piece of transport equipment. When the piece of transport equipment is a shipping container, it is recommended to use ContainerSizeTypeCode for validation.
+  alternative_business_terms: Container Size Type Code
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Disposition
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the current disposition of this piece of transport equipment.
+  alternative_business_terms: Status
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Fullness Indication
+  primary_noun: Code
+  type: Code
+  definition: A code signifying whether this piece of transport equipment is full, partially full, or empty.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Indicator
+  type: Indicator
+  definition: An indicator that this piece of transport equipment's refrigeration is on (true) or off (false).
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Information
+  type: Text
+  definition: Additional information about this piece of transport equipment.
+  cardinality: 0..n
+  since_version: '2.0'
+- primary_noun: Indicator
+  type: Indicator
+  definition: An indicator that this piece of transport equipment is returnable (true) or not (false).
+  untded_code: '8036'
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Indicator
+  type: Indicator
+  definition: An indication of the legal status of this piece of transport equipment with respect to the Container Convention Code.
+  untded_code: '8193'
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Air Flow
+  primary_noun: Percent
+  type: Percent
+  definition: The percent of the airflow within this piece of transport equipment.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Humidity
+  primary_noun: Percent
+  type: Percent
+  definition: The percent humidity within this piece of transport equipment.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Approved
+  primary_noun: Indicator
+  type: Indicator
+  definition: An indicator that this piece of transport equipment is approved for animal food (true) or not (false).
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Approved
+  primary_noun: Indicator
+  type: Indicator
+  definition: An indicator that this piece of transport equipment is approved for human food (true) or not (false).
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Approved
+  primary_noun: Indicator
+  type: Indicator
+  definition: An indicator that this piece of transport equipment is approved for dangerous goods (true) or not (false).
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Indicator
+  type: Indicator
+  definition: An indicator that this piece of transport equipment is refrigerated (true) or not (false).
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Characteristics
+  type: Text
+  definition: Characteristics of this piece of transport equipment.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Remarks
+  type: Text
+  definition: Damage associated with this piece of transport equipment.
+  cardinality: 0..n
+  since_version: '2.1'
+- primary_noun: Description
+  type: Text
+  definition: Text describing this piece of transport equipment.
+  cardinality: 0..n
+  since_version: '2.1'
+- possessive_noun: Transport
+  primary_noun: Requirements
+  type: Text
+  definition: Special transport requirements expressed as text.
+  cardinality: 0..n
+  since_version: '2.1'
+- primary_noun: Weight
+  type: Measure
+  definition: The gross weight of this piece of transport equipment.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Volume
+  type: Measure
+  definition: The gross volume of this piece of transport equipment.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Weight
+  type: Measure
+  definition: The weight of this piece of transport equipment when empty.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Tracking Device
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the tracking device for this piece of transport equipment.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Power
+  type: Indicator
+  definition: An indicator that this piece of transport equipment can supply power (true) or not (false).
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for use in tracing this piece of transport equipment, such as the EPC number used in RFID.
+  cardinality: 0..1
+  since_version: '2.1'
+
+objects:
+- qualifier: Measurement
+  type: Dimension
+  definition: A measurable dimension (length, mass, weight, or volume) of this piece of transport equipment.
+  cardinality: 0..n
+  since_version: '2.0'
+- type: Transport Equipment Seal
+  definition: A seal securing the door of a piece of transport equipment.
+  cardinality: 0..n
+  since_version: '2.0'
+- qualifier: Minimum
+  type: Temperature
+  definition: In the case of a refrigeration unit, the minimum allowable operating temperature for this container.
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Maximum
+  type: Temperature
+  definition: In the case of a refrigeration unit, the maximum allowable operating temperature for this container.
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Provider
+  type: Party
+  definition: The party providing this piece of transport equipment.
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Loading Proof
+  type: Party
+  definition: The authorized party responsible for certifying that the goods were loaded into this piece of transport equipment.
+  alternative_business_terms: Party responsible for proof of vanning (WCO ID 059)
+  untded_code: '3036'
+  cardinality: 0..1
+  since_version: '2.0'
+- type: Supplier Party
+  definition: The party that supplies this piece of transport equipment.
+  alternative_business_terms: Party responsible for proof of vanning (WCO ID 059)
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Owner
+  type: Party
+  definition: The party that owns this piece of transport equipment.
+  alternative_business_terms: Party responsible for proof of vanning (WCO ID 059)
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Operating
+  type: Party
+  definition: The party that operates this piece of transport equipment.
+  alternative_business_terms: Party responsible for proof of vanning (WCO ID 059)
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Loading
+  type: Location
+  definition: The location where this piece of transport equipment is loaded.
+  alternative_business_terms: Vanning address (WCO ID 068), Stuffing location
+  untded_code: '3268'
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Unloading
+  type: Location
+  definition: The location where this piece of transport equipment is unloaded.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Storage
+  type: Location
+  definition: The location where this piece of transport equipment is being stored.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Positioning
+  type: Transport Event
+  definition: A positioning of this piece of transport equipment.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Quarantine
+  type: Transport Event
+  definition: A quarantine of this piece of transport equipment.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Delivery
+  type: Transport Event
+  definition: A delivery of this piece of transport equipment.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Pickup
+  type: Transport Event
+  definition: A pickup of this piece of transport equipment.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Handling
+  type: Transport Event
+  definition: A handling of this piece of transport equipment.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Loading
+  type: Transport Event
+  definition: A loading of this piece of transport equipment.
+  cardinality: 0..n
+  since_version: '2.1'
+- type: Transport Event
+  definition: A transport event associated with this piece of transport equipment.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Applicable
+  type: Transport Means
+  definition: The applicable transport means associated with this piece of transport equipment.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Haulage
+  type: Trading Terms
+  definition: A set of haulage trading terms associated with this piece of transport equipment.
+  cardinality: 0..n
+  since_version: '2.1'
+- type: Hazardous Goods Transit
+  definition: Transit-related information regarding a type of hazardous goods contained in this piece of transport equipment.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Packaged
+  type: Transport Handling Unit
+  definition: A packaged transport handling unit associated with this piece of transport equipment.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Service
+  type: Allowance Charge
+  definition: A service allowance charge associated with this piece of transport equipment.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Freight
+  type: Allowance Charge
+  definition: A freight allowance charge associated with this piece of transport equipment.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Attached
+  type: Transport Equipment
+  definition: A piece of transport equipment attached to this piece of transport equipment.
+  cardinality: 0..n
+  since_version: '2.1'
+- type: Delivery
+  definition: The delivery of this piece of transport equipment.
+  cardinality: 0..1
+  since_version: '2.1'
+- type: Pickup
+  definition: The pickup of this piece of transport equipment.
+  cardinality: 0..1
+  since_version: '2.1'
+- type: Despatch
+  definition: The despatch of this piece of transport equipment.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Shipment
+  type: Document Reference
+  definition: A reference to a shipping document associated with this piece of transport equipment.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Contained In
+  type: Transport Equipment
+  definition: A piece of transport equipment contained in this piece of transport equipment.
+  examples: e.g. pallets inside containers
+  cardinality: 0..n
+  since_version: '2.1'
+- type: Package
+  definition: A package contained in this piece of transport equipment.
+  cardinality: 0..n
+  since_version: '2.1'
+- type: Goods Item
+  definition: A goods item contained in this piece of transport equipment.
+  cardinality: 0..n
+  since_version: '2.1'
+- type: Verified Gross Mass
+  definition: The verified gross mass of this piece of transport equipment.
+  cardinality: 0..1
+  since_version: '2.2'

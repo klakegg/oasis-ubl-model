@@ -1,0 +1,18 @@
+name: Crew Person Effect
+definition: A class describing the effect or belonging of a Crew Person
+since_version: '2.3'
+
+fields:
+- possessive_noun: Effect
+  primary_noun: Description
+  type: Text
+  definition: The description of the crew effect.
+  cardinality: 1..n
+  since_version: '2.3'
+
+objects:
+- qualifier: Crew
+  type: Person
+  definition: The crew person to whom the effect belongs.
+  cardinality: 0..1
+  since_version: '2.3'

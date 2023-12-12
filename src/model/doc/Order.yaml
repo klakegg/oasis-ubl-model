@@ -1,0 +1,257 @@
+name: Order
+definition: A document used to order goods and services.
+alternative_business_terms: Purchase Order
+since_version: '2.0'
+
+fields:
+- possessive_noun: UBL Version
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies the earliest version of the UBL 2 schema for this document type that defines all of the elements that might be encountered in the current instance.
+  examples: 2.0.5
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Customization
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies a user-defined customization of UBL for a specific use.
+  examples: NES
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Profile
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies a user-defined profile of the customization of UBL being used.
+  examples: BasicProcurementProcess
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Profile Execution
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies an instance of executing a profile, to associate all transactions in a collaboration.
+  examples: BPP-1001
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this document, assigned by the sender.
+  alternative_business_terms: Purchase Order Number, Order Number
+  untded_code: '1022'
+  cardinality: '1'
+  since_version: '2.0'
+- possessive_noun: Order
+  primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for the Order, assigned by the seller.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Indicator
+  type: Indicator
+  definition: Indicates whether this document is a copy (true) or not (false).
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: UUID
+  type: Identifier
+  definition: A universally unique identifier for an instance of this document.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Issue
+  primary_noun: Date
+  type: Date
+  definition: The date, assigned by the sender, on which this document was issued.
+  alternative_business_terms: Order Date
+  untded_code: '2011'
+  cardinality: '1'
+  since_version: '2.0'
+- possessive_noun: Issue
+  primary_noun: Time
+  type: Time
+  definition: The time, assigned by the sender, at which this document was issued.
+  untded_code: '2011'
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Order Type
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the type of Order.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Note
+  type: Text
+  definition: Free-form text pertinent to this document, conveying information that is not contained explicitly in other structures.
+  cardinality: 0..n
+  since_version: '2.0'
+- possessive_noun: Currency
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the currency requested for amount totals in Invoices related to this Order.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Currency
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the default currency for this document.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Currency
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the currency used for all prices in the Order.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Currency
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the currency requested for tax amounts in Invoices related to this Order.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Reference
+  type: Text
+  definition: A supplementary reference for the Order.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Accounting Cost
+  primary_noun: Code
+  type: Code
+  definition: The buyer's accounting code, applied to the Order as a whole.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Accounting
+  primary_noun: Cost
+  type: Text
+  definition: The buyer's accounting cost centre, applied to the Order as a whole, expressed as text.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Line
+  primary_noun: Count
+  type: Numeric
+  definition: The number of Order Lines in the document.
+  cardinality: 0..1
+  since_version: '2.0'
+
+objects:
+- qualifier: Validity
+  type: Period
+  definition: The period for which the Order is valid.
+  cardinality: 0..n
+  since_version: '2.0'
+- qualifier: Quotation
+  type: Document Reference
+  definition: A reference to a Quotation.
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Order
+  type: Document Reference
+  definition: A reference to another Order.
+  cardinality: 0..n
+  since_version: '2.0'
+- qualifier: Originator
+  type: Document Reference
+  definition: A reference to an originator document associated with this document.
+  cardinality: 0..1
+  since_version: '2.0'
+- type: Catalogue Reference
+  definition: A reference to the Catalogue on which this Order is based.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Additional
+  type: Document Reference
+  definition: A reference to an additional document associated with this document.
+  cardinality: 0..n
+  since_version: '2.0'
+- type: Contract
+  definition: A contracts associated with this Order.
+  cardinality: 0..n
+  since_version: '2.0'
+- type: Project Reference
+  definition: A project with which this Order is associated.
+  cardinality: 0..n
+  since_version: '2.1'
+- type: Signature
+  definition: A signature applied to this document.
+  cardinality: 0..n
+  since_version: '2.0'
+- qualifier: Buyer
+  type: Customer Party
+  definition: The buyer.
+  cardinality: '1'
+  since_version: '2.0'
+- qualifier: Seller
+  type: Supplier Party
+  definition: The seller.
+  cardinality: '1'
+  since_version: '2.0'
+- qualifier: Originator
+  type: Customer Party
+  definition: The originator.
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Freight Forwarder
+  type: Party
+  definition: A freight forwarder or carrier.
+  alternative_business_terms: Carrier
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Accounting
+  type: Customer Party
+  definition: The accounting customer party.
+  cardinality: 0..1
+  since_version: '2.0'
+- type: Delivery
+  definition: A delivery associated with this document.
+  cardinality: 0..n
+  since_version: '2.0'
+- type: Delivery Terms
+  definition: A set of delivery terms associated with this document.
+  cardinality: 0..n
+  since_version: '2.0'
+- type: Payment Means
+  definition: Expected means of payment.
+  cardinality: 0..n
+  since_version: '2.0'
+- type: Payment Terms
+  definition: A set of payment terms associated with this document.
+  cardinality: 0..n
+  since_version: '2.1'
+- type: Transaction Conditions
+  definition: A specification of purchasing or sales conditions applying to the whole Order.
+  alternative_business_terms: Sales condition, procurement condition
+  cardinality: 0..1
+  since_version: '2.0'
+- type: Allowance Charge
+  definition: A discount or charge that applies to a price component.
+  cardinality: 0..n
+  since_version: '2.0'
+- qualifier: Tax
+  type: Exchange Rate
+  definition: The exchange rate between the document currency and the tax currency.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Pricing
+  type: Exchange Rate
+  definition: The exchange rate between the document currency and the pricing currency.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Payment
+  type: Exchange Rate
+  definition: The exchange rate between the document currency and the payment currency.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Destination
+  type: Country
+  definition: The country of destination (for customs purposes).
+  cardinality: 0..1
+  since_version: '2.0'
+- type: Tax Total
+  definition: The total amount of a specific type of tax.
+  cardinality: 0..n
+  since_version: '2.0'
+- qualifier: Anticipated
+  type: Monetary Total
+  definition: The total amount for the Order anticipated by the buyer.
+  cardinality: 0..1
+  since_version: '2.0'
+- type: Order Line
+  definition: A line associated with a line in the Catalogue and specifying a kind of item being ordered.
+  cardinality: 1..n
+  since_version: '2.0'

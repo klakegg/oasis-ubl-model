@@ -1,0 +1,89 @@
+name: Certificate Of Origin Application
+definition: A class to define an application for a Certificate of Origin (CoO).
+since_version: '2.0'
+
+fields:
+- primary_noun: Reference
+  type: Identifier
+  definition: An identifier for a reference as part of the CoO application.
+  cardinality: '1'
+  since_version: '2.0'
+- possessive_noun: Certificate
+  primary_noun: Type
+  type: Text
+  definition: The type of CoO being applied for (Ordinary, Re-export, Commonwealth Preferential, etc.).
+  cardinality: '1'
+  since_version: '2.0'
+- possessive_noun: Application Status
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the status of the application (revision, replacement, etc.).
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Job
+  primary_noun: Identifier
+  type: Identifier
+  definition: The latest job number given to the CoO application. This is used by the system to keep track of amendments to or cancellation of any earlier applications.
+  cardinality: '1'
+  since_version: '2.0'
+- possessive_noun: Job
+  primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for the previous job used in case the application requires query or change.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Remarks
+  type: Text
+  definition: Remarks by the applicant for the CoO.
+  cardinality: 0..n
+  since_version: '2.0'
+
+objects:
+- type: Shipment
+  definition: The shipment of goods covered by the CoO.
+  cardinality: '1'
+  since_version: '2.0'
+- type: Endorser Party
+  definition: A party providing an endorsement to the CoO.
+  cardinality: 1..n
+  since_version: '2.0'
+- qualifier: Preparation
+  type: Party
+  definition: The party (individual, group, or body) that prepared this CoO application.
+  cardinality: '1'
+  since_version: '2.0'
+- qualifier: Issuer
+  type: Party
+  definition: The organization authorized to issue the CoO requested by this application.
+  cardinality: '1'
+  since_version: '2.0'
+- qualifier: Exporter
+  type: Party
+  definition: The party making an export declaration, or on behalf of which the export declaration is made, and that is the owner of the goods or has similar right of disposal over them at the time when the declaration is accepted.
+  alternative_business_terms: Exporter (WCO ID 41 and 42)
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Importer
+  type: Party
+  definition: The party making an import declaration, or on behalf of which a customs clearing agent or other authorized person makes an import declaration. This may include a person who has possession of the goods or to whom the goods are consigned.
+  alternative_business_terms: Importer (WCO ID 39 and 40)
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Issuing
+  type: Country
+  definition: The country where the requested CoO will be issued.
+  cardinality: '1'
+  since_version: '2.0'
+- type: Document Distribution
+  definition: An interested party to which the CoO is to be distributed.
+  cardinality: 0..n
+  since_version: '2.0'
+- qualifier: Supporting
+  type: Document Reference
+  definition: A reference to a document supporting this application.
+  cardinality: 0..n
+  since_version: '2.0'
+- type: Signature
+  definition: A signature applied to this application.
+  cardinality: 0..n
+  since_version: '2.0'

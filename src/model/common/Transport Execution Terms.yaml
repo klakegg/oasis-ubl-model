@@ -1,0 +1,61 @@
+name: Transport Execution Terms
+definition: A class to describe terms applying to a transport execution plan.
+since_version: '2.1'
+
+fields:
+- possessive_noun: Special
+  primary_noun: Terms
+  type: Text
+  definition: Text describing special terms specified by the transport user.
+  cardinality: 0..n
+  since_version: '2.1'
+- possessive_noun: Special
+  primary_noun: Terms
+  type: Text
+  definition: Text describing special terms specified by the transport service provider.
+  cardinality: 0..n
+  since_version: '2.1'
+- possessive_noun: Change
+  primary_noun: Conditions
+  type: Text
+  definition: Text describing conditions applying to a change of these transport execution terms.
+  cardinality: 0..n
+  since_version: '2.1'
+
+objects:
+- type: Payment Terms
+  definition: Payment terms associated with the transportation service.
+  cardinality: 0..n
+  since_version: '2.1'
+- type: Delivery Terms
+  definition: Delivery terms (e.g., Incoterms) associated with the transportation service.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Bonus
+  type: Payment Terms
+  definition: Terms relating to payment of applicable bonuses associated with the transport service.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Commission
+  type: Payment Terms
+  definition: Terms of payment applying to a commission specified in the transport execution plan.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Penalty
+  type: Payment Terms
+  definition: Terms of payment applying to a penalty specified in the transport execution plan.
+  cardinality: 0..1
+  since_version: '2.1'
+- type: Environmental Emission
+  definition: An environmental emission resulting from the transportation service.
+  cardinality: 0..n
+  since_version: '2.1'
+- type: Notification Requirement
+  definition: A notification requirement related to the transportation service; e.g., a requirement that the transport user will be notified when goods are ready for pickup.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Service Charge
+  type: Payment Terms
+  definition: Payment terms for the service charge associated with the transport service.
+  cardinality: 0..1
+  since_version: '2.1'

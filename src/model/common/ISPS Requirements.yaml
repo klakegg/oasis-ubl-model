@@ -1,0 +1,79 @@
+name: ISPS Requirements
+definition: A class to describe a set of ISPS Requirements.
+since_version: '2.3'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for these ISPS requirements.
+  cardinality: '1'
+  since_version: '2.3'
+- possessive_noun: ISSC
+  primary_noun: Indicator
+  type: Indicator
+  definition: An indicator of whether the International Ship Security Certificate (ISSC) is valid (true) or not (false).
+  cardinality: 0..1
+  since_version: '2.3'
+- primary_noun: Reason
+  type: Text
+  definition: A text describing the reason if not having a International Ship Security Certificate (ISSC).
+  cardinality: 0..n
+  since_version: '2.3'
+- primary_noun: Date
+  type: Date
+  definition: The expiration date of the International Ship Security Certificate (ISSC).
+  cardinality: 0..1
+  since_version: '2.3'
+- primary_noun: Indicator
+  type: Indicator
+  definition: An indicator of whether the vessel has a Ship Security Plan (SSP) on board (true) or not (false).
+  cardinality: 0..1
+  since_version: '2.3'
+- primary_noun: Indicator
+  type: Indicator
+  definition: An indication of whether the Ship Security Plan (SSP) meassures are applied (true) or not (false).
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Security Level
+  primary_noun: Code
+  type: Code
+  definition: A code describing the current operating security level.
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Matters
+  primary_noun: Description
+  type: Text
+  definition: A textual description of any addidtional matters concerning these ISPS requirements.
+  cardinality: 0..n
+  since_version: '2.3'
+
+objects:
+- qualifier: Additional
+  type: Security Measure
+  definition: Security measures for these ISPS requirements in addition to those in the ship security plan, such as special measures taken in response to unforeseen events.
+  cardinality: 0..n
+  since_version: '2.3'
+- type: Port Call Record
+  definition: The port call records for these ISPS requirements.
+  cardinality: 0..n
+  since_version: '2.3'
+- type: Ship To Ship Activity Record
+  definition: The recordded ship to ship activities for these ISPS requirements.
+  cardinality: 0..n
+  since_version: '2.3'
+- qualifier: Report
+  type: Location
+  definition: The location where these ISPC requirements are reported.
+  cardinality: 0..1
+  since_version: '2.3'
+- qualifier: ISSC Issuer
+  type: Party
+  definition: The party issuing the International Ship Security Cetificate (ISSC).
+  cardinality: 0..1
+  since_version: '2.3'
+- qualifier: Security Officer
+  type: Person
+  definition: The security officer reponsible for these ISPC requirements.
+  alternative_business_terms: SSO
+  cardinality: 0..1
+  since_version: '2.3'

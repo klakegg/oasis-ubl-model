@@ -1,0 +1,174 @@
+name: Purchase Receipt
+definition: A receipt for a purchase made with cash or cash equivalents.
+since_version: '2.4'
+
+fields:
+- possessive_noun: UBL Version
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies the earliest version of the UBL 2 schema for this document type that defines all of the elements that might be encountered in the current instance.
+  cardinality: 0..1
+  since_version: '2.4'
+- possessive_noun: Customization
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies a user-defined customization of UBL for a specific use.
+  cardinality: 0..1
+  since_version: '2.4'
+- possessive_noun: Profile
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies a user-defined profile of the customization of UBL being used.
+  cardinality: 0..1
+  since_version: '2.4'
+- possessive_noun: Profile Execution
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies an instance of executing a profile, to associate all transactions in a collaboration.
+  cardinality: 0..1
+  since_version: '2.4'
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this purchase receipt, assigned by the seller.
+  cardinality: '1'
+  since_version: '2.4'
+- primary_noun: UUID
+  type: Identifier
+  definition: A universally unique identifier for an instance of this document.
+  cardinality: 0..1
+  since_version: '2.4'
+- possessive_noun: Issue
+  primary_noun: Date
+  type: Date
+  definition: The date when the purchase receipt was issued.
+  cardinality: '1'
+  since_version: '2.4'
+- possessive_noun: Issue
+  primary_noun: Time
+  type: Time
+  definition: The time of day when the purchase receipt was issued.
+  cardinality: 0..1
+  since_version: '2.4'
+- possessive_noun: Transaction
+  primary_noun: Date
+  type: Date
+  definition: The date when the purchase transaction was initiated.
+  cardinality: 0..1
+  since_version: '2.4'
+- possessive_noun: Transaction
+  primary_noun: Time
+  type: Time
+  definition: The time of day when the purchase transaction was initiated.
+  cardinality: 0..1
+  since_version: '2.4'
+- possessive_noun: Purchase
+  primary_noun: Date
+  type: Date
+  definition: The date when the purchase took place.
+  cardinality: 0..1
+  since_version: '2.4'
+- possessive_noun: Purchase
+  primary_noun: Time
+  type: Time
+  definition: The time of day when the purchase took place.
+  cardinality: 0..1
+  since_version: '2.4'
+- primary_noun: Note
+  type: Text
+  definition: Free-form text pertinent to this document, conveying information that is not contained explicitly in other structures.
+  cardinality: 0..n
+  since_version: '2.4'
+- possessive_noun: Currency
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the default currency for this document.
+  cardinality: 0..1
+  since_version: '2.4'
+
+objects:
+- type: Purchase Reference
+  definition: A reference to an object, such as a subscription number, telephone number, meter, vehicle, person, etc., to which this purchase relates.
+  cardinality: 0..n
+  since_version: '2.4'
+- qualifier: Sales
+  type: Document Reference
+  definition: A reference to the sales document to which this purchase receipt is related.
+  cardinality: 0..1
+  since_version: '2.4'
+- qualifier: Additional
+  type: Document Reference
+  definition: A reference to an additional document associated with this purchase receipt.
+  cardinality: 0..n
+  since_version: '2.4'
+- type: Signature
+  definition: A signature applied to this document.
+  cardinality: 0..n
+  since_version: '2.4'
+- qualifier: Accounting
+  type: Supplier Party
+  definition: The accounting supplier party.
+  cardinality: '1'
+  since_version: '2.4'
+- qualifier: Accounting
+  type: Customer Party
+  definition: The accounting customer party.
+  cardinality: 0..1
+  since_version: '2.4'
+- qualifier: Cashier
+  type: Contact
+  definition: The cashier who handled the purchase at the point of sales.
+  cardinality: 0..1
+  since_version: '2.4'
+- type: Cash Register
+  definition: The cash register that was used for this purchase.
+  cardinality: 0..1
+  since_version: '2.4'
+- qualifier: Point Of Sale
+  type: Location
+  definition: The location of the point of sale where this purchase took place.
+  cardinality: 0..1
+  since_version: '2.4'
+- qualifier: Point Of Sale
+  type: Contact
+  definition: The contact person at the point of sale where this purchase took place.
+  cardinality: 0..1
+  since_version: '2.4'
+- type: Delivery
+  definition: The delivery associated with this purchase.
+  cardinality: 0..1
+  since_version: '2.4'
+- type: Payment
+  definition: One or more payments for this purchase.
+  cardinality: 0..n
+  since_version: '2.4'
+- type: Payment Means
+  definition: One or more payment means used to pay for this purchase, with their associated payments.
+  cardinality: 0..n
+  since_version: '2.4'
+- type: Allowance Charge
+  definition: A discount or charge that applies to a price component.
+  cardinality: 0..n
+  since_version: '2.4'
+- qualifier: Tax
+  type: Exchange Rate
+  definition: The exchange rate between the document currency and the tax currency.
+  cardinality: 0..1
+  since_version: '2.4'
+- qualifier: Pricing
+  type: Exchange Rate
+  definition: The exchange rate between the document currency and the pricing currency.
+  cardinality: 0..1
+  since_version: '2.4'
+- type: Tax Total
+  definition: The total amount of a specific type of tax.
+  cardinality: 0..n
+  since_version: '2.4'
+- qualifier: Legal
+  type: Monetary Total
+  definition: The total amount payable on the Invoice, including Allowances, Charges, and Taxes.
+  cardinality: '1'
+  since_version: '2.4'
+- type: Purchase Receipt Line
+  definition: One or more line items that describe this purchase.
+  cardinality: 1..n
+  since_version: '2.4'

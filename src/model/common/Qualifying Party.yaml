@@ -1,0 +1,78 @@
+name: Qualifying Party
+definition: A class to describe the distinctive features or characteristics qualifying an economic operator to be a party in a tendering process (e.g., number of employees, number of operating units, type of business, technical and financial capabilities, completed projects).
+since_version: '2.1'
+
+fields:
+- primary_noun: Participation
+  type: Percent
+  definition: The extent to which this party is expected to participate in the tendering process, expressed as a percentage.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Personal
+  primary_noun: Situation
+  type: Text
+  definition: Text describing the personal situation of the qualifying party.
+  cardinality: 0..n
+  since_version: '2.1'
+- possessive_noun: Operating
+  primary_noun: Years
+  type: Quantity
+  definition: The number of years that this qualifying party has been in operation.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Employee
+  type: Quantity
+  definition: The number of people employed by this qualifying party.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Business Classification
+  primary_noun: Evidence
+  type: Identifier
+  definition: An identifier for an item of evidence to support the classification of this qualifying party.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Business Identity
+  primary_noun: Evidence
+  type: Identifier
+  definition: An identifier for an item of evidence to support the business identity of this qualifying party.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Tenderer Role
+  primary_noun: Code
+  type: Code
+  definition: A code stating the Tenderer Role.
+  cardinality: 0..1
+  since_version: '2.1'
+
+objects:
+- qualifier: Business
+  type: Classification Scheme
+  definition: The classification scheme used for the business profile.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Technical
+  type: Capability
+  definition: A technical capability of this qualifying party.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Financial
+  type: Capability
+  definition: A financial capability of this qualifying party.
+  cardinality: 0..n
+  since_version: '2.1'
+- type: Completed Task
+  definition: A former task completed by this qualifying party.
+  cardinality: 0..n
+  since_version: '2.1'
+- type: Declaration
+  definition: A declaration by this qualifying party. of certain characteristics or capabilities in fulfilment of requirements specified in a call for tenders.
+  cardinality: 0..n
+  since_version: '2.1'
+- type: Party
+  definition: The qualifying party itself.
+  cardinality: 0..1
+  since_version: '2.1'
+- type: Economic Operator Role
+  definition: A class to describe the tenderer contracting role.
+  cardinality: 0..1
+  since_version: '2.1'

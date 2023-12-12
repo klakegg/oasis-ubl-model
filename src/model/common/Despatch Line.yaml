@@ -1,0 +1,91 @@
+name: Despatch Line
+definition: A class to define a line in a Despatch Advice.
+since_version: '2.0'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this despatch line.
+  cardinality: '1'
+  since_version: '2.0'
+- primary_noun: UUID
+  type: Identifier
+  definition: A universally unique identifier for this despatch line.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Note
+  type: Text
+  definition: Free-form text conveying information that is not contained explicitly in other structures.
+  cardinality: 0..n
+  since_version: '2.0'
+- possessive_noun: Line Status
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the status of this despatch line with respect to its original state.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Quantity
+  type: Quantity
+  definition: The quantity despatched (picked up).
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Quantity
+  type: Quantity
+  definition: The quantity on back order at the supplier.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Reason
+  type: Text
+  definition: The reason for the back order.
+  cardinality: 0..n
+  since_version: '2.0'
+- primary_noun: Quantity
+  type: Quantity
+  definition: The quantity outstanding (which will follow in a later despatch).
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Reason
+  type: Text
+  definition: The reason for the outstanding quantity.
+  cardinality: 0..n
+  since_version: '2.0'
+- primary_noun: Quantity
+  type: Quantity
+  definition: The quantity over-supplied, i.e., the quantity over and above that ordered.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Accounting Cost
+  primary_noun: Code
+  type: Code
+  definition: The accounting cost centre, applied to the Despatch Advice Line, expressed as a code.
+  cardinality: 0..1
+  since_version: '2.4'
+- possessive_noun: Accounting
+  primary_noun: Cost
+  type: Text
+  definition: The accounting cost centre, applied to the Despatch Advice Line, expressed as text.
+  cardinality: 0..1
+  since_version: '2.4'
+
+objects:
+- type: Order Line Reference
+  definition: A reference to an order line associated with this despatch line.
+  cardinality: 1..n
+  since_version: '2.0'
+- type: Document Reference
+  definition: A reference to a document associated with this despatch line.
+  cardinality: 0..n
+  since_version: '2.0'
+- type: Item
+  definition: The item associated with this despatch line.
+  cardinality: '1'
+  since_version: '2.0'
+- type: Shipment
+  definition: A shipment associated with this despatch line.
+  cardinality: 0..n
+  since_version: '2.0'
+- qualifier: Sub
+  type: Despatch Line
+  definition: A despatch line subsidiary to this despatch line.
+  cardinality: 0..n
+  since_version: '2.3'

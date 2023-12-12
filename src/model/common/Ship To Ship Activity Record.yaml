@@ -1,0 +1,31 @@
+name: Ship To Ship Activity Record
+definition: A class to describe a ship to ship activity record.
+alternative_business_terms: STS transfer
+since_version: '2.3'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An indentifier for this ship to ship activity.
+  cardinality: 0..1
+  since_version: '2.3'
+- primary_noun: Description
+  type: Text
+  definition: A text describing the ship to ship activity.
+  cardinality: 1..n
+  since_version: '2.3'
+
+objects:
+- qualifier: Applied
+  type: Security Measure
+  definition: Any security measures applied to this ship to ship activity in lieu of those specified in the approved Ship Security Plan (SSP).
+  cardinality: 0..n
+  since_version: '2.3'
+- type: Period
+  definition: The duration of this ship to ship activity.
+  cardinality: 0..1
+  since_version: '2.3'
+- type: Location
+  definition: The location where this ship to ship activity took place.
+  cardinality: 0..1
+  since_version: '2.3'

@@ -1,0 +1,31 @@
+name: Ship Store Article
+definition: An article in the ship's stores during a shipment stage.
+since_version: '2.3'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An indentifier for this ship store article.
+  cardinality: '1'
+  since_version: '2.3'
+- primary_noun: Name
+  type: Name
+  definition: A name for this ship store article.
+  cardinality: 0..1
+  since_version: '2.3'
+- primary_noun: Quantity
+  type: Quantity
+  definition: The quantity of this ship store article.
+  cardinality: 0..1
+  since_version: '2.3'
+- primary_noun: Official Use
+  type: Text
+  definition: A text describing the official use of this ship store article.
+  cardinality: 0..n
+  since_version: '2.3'
+
+objects:
+- type: Stowage
+  definition: The stowage or location on board of this ship store article.
+  cardinality: 0..1
+  since_version: '2.3'

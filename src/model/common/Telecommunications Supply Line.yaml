@@ -1,0 +1,54 @@
+name: Telecommunications Supply Line
+definition: A class that outlines the telecommunication supply in details
+since_version: '2.1'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this telecommunications supply line.
+  examples: '1'
+  cardinality: '1'
+  since_version: '2.1'
+- possessive_noun: Phone
+  primary_noun: Number
+  type: Text
+  definition: The phone number used for this telecommunication supply line
+  examples: '12345678'
+  cardinality: '1'
+  since_version: '2.1'
+- primary_noun: Description
+  type: Text
+  definition: The description of the telecommunication supply line
+  examples: Additional informations
+  cardinality: 0..n
+  since_version: '2.1'
+- possessive_noun: Line Extension
+  primary_noun: Amount
+  type: Amount
+  definition: An amount specifying the cost of this telecommunication line
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Line Extension
+  primary_noun: Amount
+  type: Amount
+  definition: The total amount for this telecommunications supply line, including all allowances, charges and taxes.
+  cardinality: 0..1
+  since_version: '2.3'
+
+objects:
+- type: Exchange Rate
+  definition: Exchanges rates used to calculate the amount for this line.
+  cardinality: 0..n
+  since_version: '2.1'
+- type: Allowance Charge
+  definition: An allowance or charge that applies to this telecommunication supply line.
+  cardinality: 0..n
+  since_version: '2.1'
+- type: Tax Total
+  definition: A total amount of taxes of a particular kind applicable to this telecommunications supply line
+  cardinality: 0..n
+  since_version: '2.1'
+- type: Telecommunications Service
+  definition: A telecommunications service (e.g., a telephone call).
+  cardinality: 1..n
+  since_version: '2.1'

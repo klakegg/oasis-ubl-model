@@ -1,0 +1,49 @@
+name: Evaluation Criterion
+definition: 'A class defining the required criterion for a tenderer to be elligible in a tendering process. '
+since_version: '2.1'
+
+fields:
+- possessive_noun: Evaluation Criterion Type
+  primary_noun: Code
+  type: Code
+  definition: A code that specifies the criterion; it may be financial, technical or organizational.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Description
+  type: Text
+  definition: A description of the criterion.
+  cardinality: 0..n
+  since_version: '2.1'
+- primary_noun: Amount
+  type: Amount
+  definition: Estimated monetary amount of the threshold for the criterion.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Quantity
+  type: Quantity
+  definition: Estimated quantity of the threshold for the criterion.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Expression
+  primary_noun: Code
+  type: Code
+  definition: A code identifying the expression that will be used to evaluate the criterion.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Expression
+  type: Text
+  definition: The expression that will be used to evaluate the criterion.
+  cardinality: 0..n
+  since_version: '2.1'
+
+objects:
+- qualifier: Duration
+  type: Period
+  definition: Describes the period for which the evaluation criterion is valid.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Suggested
+  type: Evidence
+  definition: 'Describes any evidences that ought to be used to satisfy the criterion. '
+  cardinality: 0..n
+  since_version: '2.1'

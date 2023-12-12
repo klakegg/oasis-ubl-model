@@ -1,0 +1,65 @@
+name: Tendered Project
+definition: A class to describe a tendered project or project lot.
+since_version: '2.1'
+
+fields:
+- primary_noun: Variant
+  type: Identifier
+  definition: An identifier for this variant of a tendered project.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Fee
+  type: Amount
+  definition: The fee amount for tendered projects.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Description
+  type: Text
+  definition: Text describing the fee amount for tendered projects.
+  cardinality: 0..n
+  since_version: '2.1'
+- possessive_noun: Tender Envelope
+  primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for the tender envelope this tendered project belongs to.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Tender Envelope Type
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the type of tender envelope this tendered project belongs to.
+  cardinality: 0..1
+  since_version: '2.1'
+
+objects:
+- qualifier: Additional
+  type: Fee
+  definition: An additional fee for this tendered project.
+  cardinality: 0..n
+  since_version: '2.3'
+- type: Procurement Project Lot
+  definition: The procurement project lot to which this Tender Line refers to. If there are no lots, this ought not be defined.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Evidence
+  type: Document Reference
+  definition: A reference to a non-structured evidentiary document supporting this tendered project.
+  cardinality: 0..n
+  since_version: '2.1'
+- type: Tax Total
+  definition: A total amount of taxes of a particular kind applicable to the monetary total for this tendered project.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Legal
+  type: Monetary Total
+  definition: The total amount for this tendered project.
+  cardinality: 0..1
+  since_version: '2.1'
+- type: Tender Line
+  definition: A line in the tender for this tendered project.
+  cardinality: 0..n
+  since_version: '2.1'
+- type: Awarding Criterion Response
+  definition: An association to an Awarding Criterion Response.
+  cardinality: 0..n
+  since_version: '2.1'

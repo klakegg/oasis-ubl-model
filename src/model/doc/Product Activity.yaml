@@ -1,0 +1,103 @@
+name: Product Activity
+definition: A document reporting the movement of goods at specified retail locations for inventory tracking purposes.
+since_version: '2.1'
+
+fields:
+- possessive_noun: UBL Version
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies the earliest version of the UBL 2 schema for this document type that defines all of the elements that might be encountered in the current instance.
+  examples: 2.0.5
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Customization
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies a user-defined customization of UBL for a specific use.
+  examples: NES
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Profile
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies a user-defined profile of the customization of UBL being used.
+  examples: BasicProcurementProcess
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Profile Execution
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies an instance of executing a profile, to associate all transactions in a collaboration.
+  examples: BPP-1001
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this document, assigned by the sender.
+  alternative_business_terms: Product Acvtivity Number
+  cardinality: '1'
+  since_version: '2.1'
+- primary_noun: Indicator
+  type: Indicator
+  definition: Indicates whether this document is a copy (true) or not (false).
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: UUID
+  type: Identifier
+  definition: A universally unique identifier for an instance of this document.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Issue
+  primary_noun: Date
+  type: Date
+  definition: The date, assigned by the sender, on which this document was issued.
+  alternative_business_terms: Activity Date
+  cardinality: '1'
+  since_version: '2.1'
+- possessive_noun: Issue
+  primary_noun: Time
+  type: Time
+  definition: The time, assigned by the sender, at which this document was issued.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Note
+  type: Text
+  definition: Free-form text pertinent to this document, conveying information that is not contained explicitly in other structures.
+  cardinality: 0..n
+  since_version: '2.1'
+- possessive_noun: Currency
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the default currency for this document.
+  cardinality: 0..1
+  since_version: '2.1'
+
+objects:
+- qualifier: Activity
+  type: Period
+  definition: The period covered by this Product Activity report.
+  cardinality: '1'
+  since_version: '2.1'
+- type: Document Reference
+  definition: A reference to another document associated with this document.
+  cardinality: 0..n
+  since_version: '2.1'
+- type: Signature
+  definition: A signature applied to this document.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Sender
+  type: Party
+  definition: The sender of the Product Activity.
+  cardinality: '1'
+  since_version: '2.1'
+- qualifier: Receiver
+  type: Party
+  definition: The receiver of the Product Activity.
+  cardinality: '1'
+  since_version: '2.1'
+- qualifier: Supply Chain
+  type: Activity Data Line
+  definition: A line describing the movement of goods to a specific location.
+  cardinality: 1..n
+  since_version: '2.1'

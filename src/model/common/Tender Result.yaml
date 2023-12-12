@@ -1,0 +1,99 @@
+name: Tender Result
+definition: A class to describe the awarding of a tender in a tendering process.
+since_version: '2.1'
+
+fields:
+- possessive_noun: Award
+  primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this tender result.
+  cardinality: 0..1
+  since_version: '2.2'
+- possessive_noun: Result
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the result of the tendering process.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Description
+  type: Text
+  definition: Text describing the result of the tendering process.
+  cardinality: 0..n
+  since_version: '2.1'
+- primary_noun: Advertisement
+  type: Amount
+  definition: 'The monetary value of the advertisement for this tendering process. '
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Award
+  primary_noun: Date
+  type: Date
+  definition: The date on which this result was formalized.
+  cardinality: '1'
+  since_version: '2.1'
+- possessive_noun: Award
+  primary_noun: Time
+  type: Time
+  definition: The time at which this result was formalized.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Tender
+  primary_noun: Quantity
+  type: Quantity
+  definition: The total number of tenders received in this tendering process.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Tender
+  primary_noun: Amount
+  type: Amount
+  definition: The least expensive tender received in the tendering process.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Tender
+  primary_noun: Amount
+  type: Amount
+  definition: The most expensive tender received in this tendering process.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Start
+  primary_noun: Date
+  type: Date
+  definition: The date on which the awarded contract begins.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Electronic Tender
+  primary_noun: Quantity
+  type: Quantity
+  definition: The number of electronic tenders received.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Foreign Tender
+  primary_noun: Quantity
+  type: Quantity
+  definition: The number of foreing tenders received.
+  cardinality: 0..1
+  since_version: '2.1'
+
+objects:
+- type: Contract
+  definition: A contract governing this tender result.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Awarded
+  type: Tendered Project
+  definition: The awarded tendered project associated with this tender result.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Contract Formalization
+  type: Period
+  definition: The period during which a contract associated with the awarded project is to be formalized.
+  cardinality: 0..1
+  since_version: '2.1'
+- type: Subcontract Terms
+  definition: Subcontract terms for this tender result.
+  cardinality: 0..n
+  since_version: '2.1'
+- type: Winning Party
+  definition: A party that is identified as the awarded by a tender result.
+  cardinality: 0..n
+  since_version: '2.1'

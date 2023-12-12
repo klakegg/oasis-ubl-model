@@ -1,0 +1,90 @@
+name: Meter Reading
+definition: A class to describe a meter reading.
+since_version: '2.1'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this meter reading.
+  examples: 7411013716x
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Meter Reading
+  primary_noun: Type
+  type: Text
+  definition: The type of this meter reading, expressed as text.
+  examples: Electricity
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Meter Reading Type
+  primary_noun: Code
+  type: Code
+  definition: The type of this meter reading, expressed as a code.
+  examples: Electricity
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Meter Reading
+  primary_noun: Date
+  type: Date
+  definition: The date of the previous meter reading.
+  examples: '2006-09-01'
+  cardinality: '1'
+  since_version: '2.1'
+- possessive_noun: Meter
+  primary_noun: Quantity
+  type: Quantity
+  definition: The quantity of the previous meter reading.
+  examples: '122604.00'
+  cardinality: '1'
+  since_version: '2.1'
+- possessive_noun: Meter Reading
+  primary_noun: Date
+  type: Date
+  definition: The date of the latest meter reading.
+  examples: '2006-09-01'
+  cardinality: '1'
+  since_version: '2.1'
+- possessive_noun: Meter
+  primary_noun: Quantity
+  type: Quantity
+  definition: The quantity of the latest meter reading.
+  examples: '128365.00'
+  cardinality: '1'
+  since_version: '2.1'
+- primary_noun: Method
+  type: Text
+  definition: The method used for the previous meter reading, expressed as text.
+  examples: Manuel
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Method
+  primary_noun: Code
+  type: Code
+  definition: The method used for the previous meter reading, expressed as a code.
+  examples: Estimated
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Method
+  type: Text
+  definition: The method used for the latest meter reading, expressed as text.
+  examples: Manuel
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Method
+  primary_noun: Code
+  type: Code
+  definition: The method used for the latest meter reading, expressed as a code.
+  examples: Estimated
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Comments
+  type: Text
+  definition: Text containing comments on this meter reading.
+  examples: The last stated meterstand is estimated
+  cardinality: 0..n
+  since_version: '2.1'
+- primary_noun: Quantity
+  type: Quantity
+  definition: Consumption in the period from PreviousMeterReadingDate to LatestMeterReadingDate.
+  cardinality: '1'
+  since_version: '2.1'

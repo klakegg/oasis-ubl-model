@@ -1,0 +1,111 @@
+name: Payment Terms
+definition: A class to describe a set of payment terms.
+since_version: '2.0'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this set of payment terms.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Payment Means
+  primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for a means of payment associated with these payment terms.
+  cardinality: 0..n
+  since_version: '2.0'
+- possessive_noun: Prepaid Payment Reference
+  primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for a reference to a prepaid payment.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Note
+  type: Text
+  definition: Free-form text conveying information that is not contained explicitly in other structures.
+  cardinality: 0..n
+  since_version: '2.0'
+- possessive_noun: Event
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the event during which these terms are offered.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Discount
+  primary_noun: Percent
+  type: Percent
+  definition: The percentage for the settlement discount that is offered for payment under these payment terms.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Surcharge
+  primary_noun: Percent
+  type: Percent
+  definition: The penalty for payment after the settlement period, expressed as a percentage of the payment.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Payment
+  primary_noun: Percent
+  type: Percent
+  definition: The part of a payment, expressed as a percent, relevant for these payment terms.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Amount
+  type: Amount
+  definition: The monetary amount covered by these payment terms.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Discount
+  primary_noun: Amount
+  type: Amount
+  definition: The amount of a settlement discount offered for payment under these payment terms.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Amount
+  type: Amount
+  definition: The monetary amount of the penalty for payment after the settlement period.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Payment Terms Details
+  primary_noun: URI
+  type: Identifier
+  definition: The Uniform Resource Identifier (URI) of a document providing additional details regarding these payment terms.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Payment Due
+  primary_noun: Date
+  type: Date
+  definition: The due date for these payment terms.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Installment Due
+  primary_noun: Date
+  type: Date
+  definition: The due date for an installment payment for these payment terms.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Reference
+  type: Text
+  definition: A reference to the payment terms used by the invoicing party. This may have been requested of the payer by the payee to accompany its remittance.
+  cardinality: 0..1
+  since_version: '2.1'
+
+objects:
+- qualifier: Settlement
+  type: Period
+  definition: The period during which settlement may occur.
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Penalty
+  type: Period
+  definition: The period during which penalties may apply.
+  cardinality: 0..1
+  since_version: '2.0'
+- type: Exchange Rate
+  definition: The currency exchange rate for purposes of these payment terms.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Validity
+  type: Period
+  definition: The period during which these payment terms are valid.
+  cardinality: 0..1
+  since_version: '2.1'

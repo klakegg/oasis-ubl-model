@@ -1,0 +1,34 @@
+name: Classification Category
+definition: A class to define a category within a classification scheme.
+since_version: '2.0'
+
+fields:
+- primary_noun: Name
+  type: Name
+  definition: The name of this category within the classification scheme.
+  alternative_business_terms: Code List Name
+  examples: 'UNSPSC Class , UNSPSC Segment , UNSPSC Family '
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Code
+  primary_noun: Value
+  type: Text
+  definition: The value of a code used to identify this category within the classification scheme.
+  alternative_business_terms: Code Value
+  examples: 3420001, 3273666, HSJJD-213
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Description
+  type: Text
+  definition: Text describing this category.
+  alternative_business_terms: Code Name
+  examples: 'Electrical Goods , Wooden Toys '
+  cardinality: 0..n
+  since_version: '2.0'
+
+objects:
+- qualifier: Categorizes
+  type: Classification Category
+  definition: A recursive description of a subcategory of this category.
+  cardinality: 0..n
+  since_version: '2.0'

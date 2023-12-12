@@ -1,0 +1,16 @@
+name: Shareholder Party
+definition: A class to describe a shareholder party.
+since_version: '2.1'
+
+fields:
+- primary_noun: Partecipation
+  type: Percent
+  definition: The shareholder participation, expressed as a percentage.
+  cardinality: 0..1
+  since_version: '2.1'
+
+objects:
+- type: Party
+  definition: The shareholder party.
+  cardinality: 0..1
+  since_version: '2.1'

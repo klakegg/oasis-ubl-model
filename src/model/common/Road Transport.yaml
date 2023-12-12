@@ -1,0 +1,13 @@
+name: Road Transport
+definition: A class for identifying a vehicle used for road transport.
+since_version: '2.0'
+
+fields:
+- possessive_noun: License Plate
+  primary_noun: Identifier
+  type: Identifier
+  definition: The license plate identifier of this vehicle.
+  alternative_business_terms: Vehicle registration number (WCO ID 167)
+  untded_code: '8213'
+  cardinality: '1'
+  since_version: '2.0'

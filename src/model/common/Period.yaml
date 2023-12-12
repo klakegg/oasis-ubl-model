@@ -1,0 +1,45 @@
+name: Period
+definition: A class to describe a period of time.
+since_version: '2.0'
+
+fields:
+- possessive_noun: Start
+  primary_noun: Date
+  type: Date
+  definition: The date on which this period begins.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Start
+  primary_noun: Time
+  type: Time
+  definition: The time at which this period begins.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: End
+  primary_noun: Date
+  type: Date
+  definition: The date on which this period ends.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: End
+  primary_noun: Time
+  type: Time
+  definition: The time at which this period ends.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Duration
+  type: Measure
+  definition: The duration of this period, expressed as an ISO 8601 code.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Description
+  primary_noun: Code
+  type: Code
+  definition: A description of this period, expressed as a code.
+  cardinality: 0..n
+  since_version: '2.0'
+- primary_noun: Description
+  type: Text
+  definition: A description of this period, expressed as text.
+  cardinality: 0..n
+  since_version: '2.0'

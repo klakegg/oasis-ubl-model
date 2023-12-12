@@ -1,0 +1,117 @@
+name: Service Level Agreement
+definition: A class to describe a service level agreement which regulates the quality, availability and responsibilities of digital services.
+alternative_business_terms: SLA
+since_version: '2.2'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this service level agreement.
+  cardinality: 0..1
+  since_version: '2.2'
+- possessive_noun: Service Type
+  primary_noun: Code
+  type: Code
+  definition: A specific type of service subject to this service level agreement.
+  examples: AP, SMP
+  cardinality: 0..1
+  since_version: '2.2'
+- possessive_noun: Service
+  primary_noun: Type
+  type: Text
+  definition: A specific type of service subject to this service level agreement, expressed as text.
+  cardinality: 0..n
+  since_version: '2.2'
+- possessive_noun: Time
+  primary_noun: Percent
+  type: Percent
+  definition: The availability percentage (e.g. 98.5% of the time).
+  alternative_business_terms: Time Service Factor
+  examples: '98.5'
+  cardinality: 0..1
+  since_version: '2.2'
+- primary_noun: Indicator
+  type: Indicator
+  definition: Indicates whether this service is available on monday (true) or not (false).
+  cardinality: 0..1
+  since_version: '2.2'
+- primary_noun: Indicator
+  type: Indicator
+  definition: Indicates whether this service is available on tuesday (true) or not (false).
+  cardinality: 0..1
+  since_version: '2.2'
+- primary_noun: Indicator
+  type: Indicator
+  definition: Indicates whether this service is available on wednesday (true) or not (false).
+  cardinality: 0..1
+  since_version: '2.2'
+- primary_noun: Indicator
+  type: Indicator
+  definition: Indicates whether this service is available on thursday (true) or not (false).
+  cardinality: 0..1
+  since_version: '2.2'
+- primary_noun: Indicator
+  type: Indicator
+  definition: Indicates whether this service is available on friday (true) or not (false).
+  cardinality: 0..1
+  since_version: '2.2'
+- primary_noun: Indicator
+  type: Indicator
+  definition: Indicates whether this service is available on saturday (true) or not (false).
+  cardinality: 0..1
+  since_version: '2.2'
+- primary_noun: Indicator
+  type: Indicator
+  definition: Indicates whether this service is available on sunday (true) or not (false).
+  cardinality: 0..1
+  since_version: '2.2'
+- possessive_noun: Response Time
+  primary_noun: Duration
+  type: Measure
+  definition: The response time for aknowledgment (e.g. to send a receipt to a sending Access Point within 300 seconds).
+  examples: '300'
+  cardinality: 0..1
+  since_version: '2.2'
+- possessive_noun: Down Time Schedule
+  primary_noun: Duration
+  type: Measure
+  definition: The minimum down time schedule for programmed maintenance (e.g. scheduled 3 days before).
+  examples: '3'
+  cardinality: 0..1
+  since_version: '2.2'
+- possessive_noun: Incident Notification
+  primary_noun: Duration
+  type: Measure
+  definition: The maximum length of time between the occurrence of an incident and the issuance of a notification (e.g. within 4 hours).
+  examples: '4'
+  cardinality: 0..1
+  since_version: '2.2'
+- possessive_noun: Data Loss
+  primary_noun: Duration
+  type: Measure
+  definition: The maximum data loss permitted (e.g. last 24 hours).
+  examples: '24'
+  cardinality: 0..1
+  since_version: '2.2'
+- possessive_noun: Time To Recover
+  primary_noun: Duration
+  type: Measure
+  definition: The time taken to recover after an outage of service (e.g. 3 hours).
+  alternative_business_terms: MTTR
+  examples: '3'
+  cardinality: 0..1
+  since_version: '2.2'
+
+objects:
+- qualifier: Service Availability
+  type: Period
+  definition: The period for which the service is available.
+  alternative_business_terms: Uptime
+  cardinality: 0..n
+  since_version: '2.2'
+- qualifier: Service Maintenance
+  type: Period
+  definition: The period of time designated in advance by the technical staff, during which preventive maintenance that could cause disruption of service may be performed.
+  alternative_business_terms: Downtime
+  cardinality: 0..n
+  since_version: '2.2'

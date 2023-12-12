@@ -1,0 +1,47 @@
+name: Activity Data Line
+definition: A class to associate a time period and locations (activity data) with an item for inventory planning purposes.
+since_version: '2.1'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this activity data line.
+  cardinality: '1'
+  since_version: '2.1'
+- possessive_noun: Supply Chain Activity Type
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the type of supply chain activity.
+  cardinality: '1'
+  since_version: '2.1'
+
+objects:
+- qualifier: Buyer
+  type: Customer Party
+  definition: The buyer of the item.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Seller
+  type: Supplier Party
+  definition: The seller of the item.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Activity
+  type: Period
+  definition: The period during which the activity is realized.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Activity Origin
+  type: Location
+  definition: Either the location where the movement of goods is observed or the location from which the goods are moved.
+  cardinality: '1'
+  since_version: '2.1'
+- qualifier: Activity Final
+  type: Location
+  definition: The location to which the goods are moved.
+  cardinality: 0..1
+  since_version: '2.1'
+- type: Sales Item
+  definition: Sales information for an item to which this line applies.
+  cardinality: 1..n
+  since_version: '2.1'

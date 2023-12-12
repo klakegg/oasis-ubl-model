@@ -1,0 +1,24 @@
+name: Unstructured Price
+definition: A simplified version of the Price class intended for applications such as telephone billing.
+since_version: '2.1'
+
+fields:
+- possessive_noun: Price
+  primary_noun: Amount
+  type: Amount
+  definition: The price amount.
+  examples: '23.45'
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Tax Inclusive Price
+  primary_noun: Amount
+  type: Amount
+  definition: The price amount inclusive of all taxes.
+  cardinality: 0..1
+  since_version: '2.4'
+- possessive_noun: Time
+  primary_noun: Amount
+  type: Text
+  definition: The usage time upon which the price is based.
+  cardinality: 0..1
+  since_version: '2.1'

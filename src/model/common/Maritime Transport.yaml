@@ -1,0 +1,94 @@
+name: Maritime Transport
+definition: A class to describe a vessel used for transport by water (including sea, river, and canal).
+since_version: '2.0'
+
+fields:
+- possessive_noun: Vessel
+  primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for a specific vessel.
+  alternative_business_terms: Lloyds Number, Registration Number (WCO ID 167)
+  examples: International Maritime Organisation number of a vessel
+  untded_code: '8213'
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Vessel
+  primary_noun: Name
+  type: Name
+  definition: The name of the vessel.
+  alternative_business_terms: Ships Name
+  untded_code: '8212'
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Radio Call Sign
+  primary_noun: Identifier
+  type: Identifier
+  definition: The radio call sign of the vessel.
+  examples: NES
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: MMSI Registration
+  primary_noun: Identifier
+  type: Identifier
+  definition: A Maritime Mobile Service Identity (MMSI) required for this vessel.
+  alternative_business_terms: MMSI number
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Ships
+  primary_noun: Requirements
+  type: Text
+  definition: Information about what services a vessel will require when it arrives at a port, such as refueling, maintenance, waste disposal etc.
+  cardinality: 0..n
+  since_version: '2.1'
+- possessive_noun: Gross
+  primary_noun: Tonnage
+  type: Measure
+  definition: Gross tonnage is calculated by measuring a ship's volume (from keel to funnel, to the outside of the hull framing) and applying a mathematical formula and is used to determine things such as a ship's manning regulations, safety rules, registration fees and port dues.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Net
+  primary_noun: Tonnage
+  type: Measure
+  definition: Net tonnage is calculated by measuring a ship's internal volume and applying a mathematical formula and is used to calculate the port duties.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Segregated
+  primary_noun: Ballast
+  type: Measure
+  definition: The measure of the segregated ballast of the vessel.
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Configuration
+  primary_noun: Code
+  type: Code
+  definition: A code specifying the ship configuration.
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Class
+  primary_noun: Code
+  type: Code
+  definition: A code specifying the irradiated nuclear fuel (INF) ship class.
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Antenna
+  primary_noun: Locus
+  type: Text
+  definition: The locus or exact location of the antenna on the vessel
+  cardinality: 0..1
+  since_version: '2.3'
+
+objects:
+- qualifier: Registry Certificate
+  type: Document Reference
+  definition: The certificate issued to the ship by the ships registry in a given flag state.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Registry Port
+  type: Location
+  definition: The port in which a vessel is registered or permanently based.
+  cardinality: 0..1
+  since_version: '2.1'
+- type: Vessel Dynamics
+  definition: The vessel dynamics for this maritime transport.
+  cardinality: 0..1
+  since_version: '2.3'

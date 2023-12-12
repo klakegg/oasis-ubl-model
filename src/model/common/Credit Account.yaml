@@ -1,0 +1,12 @@
+name: Credit Account
+definition: A class to identify a credit account for sales on account.
+since_version: '2.0'
+
+fields:
+- possessive_noun: Account
+  primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this credit account.
+  examples: 'Customer Code 29 '
+  cardinality: '1'
+  since_version: '2.0'

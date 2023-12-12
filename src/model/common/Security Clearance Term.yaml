@@ -1,0 +1,15 @@
+name: Security Clearance Term
+definition: A class to specify security clearance terms.
+since_version: '2.3'
+
+fields:
+- primary_noun: Code
+  type: Code
+  definition: A code signifying the security clearance requirement.
+  cardinality: 0..1
+  since_version: '2.3'
+- primary_noun: Description
+  type: Text
+  definition: A description of the security clearance requirement.
+  cardinality: 0..n
+  since_version: '2.3'

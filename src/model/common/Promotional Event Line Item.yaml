@@ -1,0 +1,16 @@
+name: Promotional Event Line Item
+definition: A class to describe a line item associated with a promotional event.
+since_version: '2.1'
+
+fields:
+- primary_noun: Amount
+  type: Amount
+  definition: The amount associated with this promotional event line item.
+  cardinality: '1'
+  since_version: '2.1'
+
+objects:
+- type: Event Line Item
+  definition: A line item describing the expected impacts associated with this promotional event for a specific product at a specific location.
+  cardinality: '1'
+  since_version: '2.1'

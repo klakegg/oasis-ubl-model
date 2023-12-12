@@ -1,0 +1,37 @@
+name: Transportation Segment
+definition: A class to describe one segment or leg in a transportation service.
+since_version: '2.1'
+
+fields:
+- primary_noun: Sequence
+  type: Numeric
+  definition: A number indicating the order of this segment in the sequence of transportation segments making up a transportation service.
+  examples: 1, 2, 3, 4, etc.
+  cardinality: '1'
+  since_version: '2.1'
+- possessive_noun: Transport Execution Plan
+  primary_noun: Reference
+  type: Identifier
+  definition: An identifier for the transport execution plan governing this transportation segment.
+  cardinality: 0..1
+  since_version: '2.1'
+
+objects:
+- type: Transportation Service
+  definition: The transportation service used in this transportation segment.
+  cardinality: '1'
+  since_version: '2.1'
+- qualifier: Transport Service Provider
+  type: Party
+  definition: The transport service provider responsible for carrying out transportation services in this transportation segment.
+  cardinality: '1'
+  since_version: '2.1'
+- qualifier: Referenced
+  type: Consignment
+  definition: A consignment referenced in this transportation segment. Such a consignment may have different identifiers than the consignment identifiers being used in the transportation service agreed between the transport user and the transport service provider.
+  cardinality: 0..1
+  since_version: '2.1'
+- type: Shipment Stage
+  definition: The shipment stage associated with this transportation segment.
+  cardinality: 0..n
+  since_version: '2.1'

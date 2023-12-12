@@ -1,0 +1,39 @@
+name: Forecast Line
+definition: Detailed information about a particular Forecast Line within a Forecast Document
+since_version: '2.1'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this forecast line.
+  cardinality: '1'
+  since_version: '2.1'
+- primary_noun: Note
+  type: Text
+  definition: Free-form text conveying information that is not contained explicitly in other structures.
+  cardinality: 0..n
+  since_version: '2.1'
+- possessive_noun: Frozen Document
+  primary_noun: Indicator
+  type: Indicator
+  definition: An indicator that the status of the forecast is modifiable (true) or not (false).
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Forecast Type
+  primary_noun: Code
+  type: Code
+  definition: 'A code signifying the type of forecast. Examples: BASE PROMOTIONAL SEASONAL TOTAL'
+  examples: seasonal, total
+  cardinality: '1'
+  since_version: '2.1'
+
+objects:
+- qualifier: Forecast
+  type: Period
+  definition: The period to which the forecast applies.
+  cardinality: 0..1
+  since_version: '2.1'
+- type: Sales Item
+  definition: Sales information for the item to which this line applies.
+  cardinality: 0..1
+  since_version: '2.1'

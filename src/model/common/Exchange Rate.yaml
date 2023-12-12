@@ -1,0 +1,59 @@
+name: Exchange Rate
+definition: A class to define an exchange rate.
+since_version: '2.0'
+
+fields:
+- possessive_noun: Currency
+  primary_noun: Code
+  type: Code
+  definition: The reference currency for this exchange rate; the currency from which the exchange is being made.
+  cardinality: '1'
+  since_version: '2.0'
+- possessive_noun: Currency Base
+  primary_noun: Rate
+  type: Rate
+  definition: In the case of a source currency with denominations of small value, the unit base.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Currency
+  primary_noun: Code
+  type: Code
+  definition: The target currency for this exchange rate; the currency to which the exchange is being made.
+  cardinality: '1'
+  since_version: '2.0'
+- possessive_noun: Currency Base
+  primary_noun: Rate
+  type: Rate
+  definition: In the case of a target currency with denominations of small value, the unit base.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Exchange Market
+  primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for the currency exchange market used as the source of this exchange rate.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Calculation
+  primary_noun: Rate
+  type: Rate
+  definition: The factor applied to the source currency to calculate the target currency.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Mathematic Operator
+  primary_noun: Code
+  type: Code
+  definition: A code signifying whether the calculation rate is a multiplier or a divisor.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Date
+  type: Date
+  definition: The date on which the exchange rate was established.
+  cardinality: 0..1
+  since_version: '2.0'
+
+objects:
+- qualifier: Foreign Exchange
+  type: Contract
+  definition: A contract for foreign exchange.
+  cardinality: 0..1
+  since_version: '2.0'

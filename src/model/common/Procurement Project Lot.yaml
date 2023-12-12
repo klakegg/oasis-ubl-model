@@ -1,0 +1,49 @@
+name: Procurement Project Lot
+definition: A class to describe one of the parts of a procurement project that is being subdivided to allow the contracting party to award different lots to different economic operators under different contracts.
+since_version: '2.1'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this procurement project lot.
+  cardinality: '1'
+  since_version: '2.1'
+
+objects:
+- qualifier: Legal
+  type: Document Reference
+  definition: A reference to a legal document.
+  cardinality: 0..n
+  since_version: '2.3'
+- qualifier: Technical
+  type: Document Reference
+  definition: A reference to a technical document.
+  cardinality: 0..n
+  since_version: '2.3'
+- qualifier: Required
+  type: Document Reference
+  definition: A reference to a required document.
+  cardinality: 0..n
+  since_version: '2.3'
+- qualifier: Provided
+  type: Document Reference
+  definition: A reference to a provided document.
+  cardinality: 0..n
+  since_version: '2.3'
+- qualifier: Additional
+  type: Document Reference
+  definition: A reference to an additional document associated with this document.
+  cardinality: 0..n
+  since_version: '2.3'
+- type: Tendering Terms
+  definition: Tendering terms for this procurement project lot.
+  cardinality: 0..1
+  since_version: '2.1'
+- type: Tendering Process
+  definition: Tendering process for this procurement project lot.
+  cardinality: 0..1
+  since_version: '2.3'
+- type: Procurement Project
+  definition: A description of the procurement project to be divided.
+  cardinality: 0..1
+  since_version: '2.1'

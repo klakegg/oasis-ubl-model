@@ -1,0 +1,25 @@
+name: Event Tactic
+definition: A class defining a specific type of action or situation arranged by the Buyer or the Seller to promote the product or products.
+since_version: '2.1'
+
+fields:
+- primary_noun: Comment
+  type: Text
+  definition: Generic field to add additional information or to specify mutually defined eventTacticTypes that are not currently listed.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Quantity
+  type: Quantity
+  definition: 'The currencies, units, etc. that describes what is need for the event or promotion Usage example: Number of pallets per store for a stack display'
+  cardinality: 0..1
+  since_version: '2.1'
+
+objects:
+- type: Event Tactic Enumeration
+  definition: The set of codes that describes this event tactic.
+  cardinality: '1'
+  since_version: '2.1'
+- type: Period
+  definition: The period covered by this event tactic.
+  cardinality: 0..1
+  since_version: '2.1'

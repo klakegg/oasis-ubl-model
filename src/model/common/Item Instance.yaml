@@ -1,0 +1,53 @@
+name: Item Instance
+definition: A class to describe a specific, trackable instance of an item.
+since_version: '2.0'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier used for tracing this item instance, such as the EPC number used in RFID.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Manufacture
+  primary_noun: Date
+  type: Date
+  definition: The date on which this item instance was manufactured.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Manufacture
+  primary_noun: Time
+  type: Time
+  definition: The time at which this item instance was manufactured.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Best Before
+  primary_noun: Date
+  type: Date
+  definition: The date before which it is best to use this item instance.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Registration
+  primary_noun: Identifier
+  type: Identifier
+  definition: The registration identifier of this item instance.
+  examples: car registration or licensing number
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Serial
+  primary_noun: Identifier
+  type: Identifier
+  definition: The serial number of this item instance.
+  examples: chassis number of a car
+  cardinality: 0..1
+  since_version: '2.0'
+
+objects:
+- qualifier: Additional
+  type: Item Property
+  definition: An additional property of this item instance.
+  cardinality: 0..n
+  since_version: '2.0'
+- type: Lot Identification
+  definition: The lot identifier of this item instance (the identifier that allows recall of the item if necessary).
+  cardinality: 0..1
+  since_version: '2.0'

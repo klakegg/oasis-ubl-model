@@ -1,0 +1,78 @@
+name: Awarding Terms
+definition: A class to define the terms for awarding a contract.
+since_version: '2.1'
+
+fields:
+- possessive_noun: Weighting Algorithm
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the weighting algorithm for awarding criteria. When multiple awarding criteria is used, different weighting and choices management algorithms based upon scores and weights of all award criteria can be used. An algorithm for weighting criteria will be reported in the call for tenders document. It is used to determine how to perform the final management of tenders based on the results in each of the established award criteria
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Description
+  type: Text
+  definition: Text describing terms under which the contract is to be awarded.
+  cardinality: 0..n
+  since_version: '2.1'
+- primary_noun: Description
+  type: Text
+  definition: Text describing the committee of experts evaluating the subjective criteria for awarding the contract.
+  cardinality: 0..n
+  since_version: '2.1'
+- primary_noun: Description
+  type: Text
+  definition: Text describing the exclusion criterion for abnormally low tenders.
+  cardinality: 0..n
+  since_version: '2.1'
+- possessive_noun: Prize
+  primary_noun: Indicator
+  type: Indicator
+  definition: Indicates whether a prize will be awarded (true) or not (false).
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Prize
+  primary_noun: Description
+  type: Text
+  definition: Number and value of the prizes to be awarded.
+  cardinality: 0..n
+  since_version: '2.1'
+- possessive_noun: Payment
+  primary_noun: Description
+  type: Text
+  definition: Details of payments to all participants.
+  cardinality: 0..n
+  since_version: '2.1'
+- possessive_noun: Followup Contract
+  primary_noun: Indicator
+  type: Indicator
+  definition: Indicates if any service contract following the contest will be awarded to the winner or one of the winners of the contest (true) or not (false).
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Binding On Buyer
+  primary_noun: Indicator
+  type: Indicator
+  definition: 'Indicates if the decision is binding on the buyer (true) or not (false). '
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: No Further Negotiation
+  primary_noun: Indicator
+  type: Indicator
+  definition: 'Indicates if no further negotiation is allowed (true) or not (false). '
+  cardinality: 0..1
+  since_version: '2.2'
+
+objects:
+- type: Awarding Criterion
+  definition: Defines a criterion for awarding this tender.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Technical Committee
+  type: Person
+  definition: A member of a committee of experts evaluating the subjective criteria for awarding the contract.
+  cardinality: 0..n
+  since_version: '2.1'
+- type: Prize
+  definition: Information about the value amount that will be offered to the winner depending on his rank.
+  examples: 'In a design context , 1st place EUR 10 000 , 2nd place EUR 5000 '
+  cardinality: 0..n
+  since_version: '2.3'

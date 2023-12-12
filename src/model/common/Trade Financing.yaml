@@ -1,0 +1,44 @@
+name: Trade Financing
+definition: A class to describe a trade financing instrument.
+since_version: '2.1'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this trade financing instrument.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Financing Instrument
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the type of this financing instrument.
+  examples: 'Factoring , Invoice Financing , Pre-shipment Financing , Letter of Credit , Irrevocable Letter of Credit .
+
+    '
+  cardinality: 0..1
+  since_version: '2.1'
+
+objects:
+- qualifier: Contract
+  type: Document Reference
+  definition: A reference to a contract document.
+  cardinality: 0..1
+  since_version: '2.1'
+- type: Document Reference
+  definition: A reference to a document associated with this trade financing instrument.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Financing
+  type: Party
+  definition: The financing party (bank or other enabled party).
+  cardinality: '1'
+  since_version: '2.1'
+- qualifier: Financing
+  type: Financial Account
+  definition: An internal bank account used by the bank or its first agent to manage the line of credit granted to the financing requester.
+  cardinality: 0..1
+  since_version: '2.1'
+- type: Clause
+  definition: A clause applicable to this trade financing instrument.
+  cardinality: 0..n
+  since_version: '2.1'

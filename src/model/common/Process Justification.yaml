@@ -1,0 +1,27 @@
+name: Process Justification
+definition: A class to describe a justification for the choice of tendering process.
+since_version: '2.1'
+
+fields:
+- possessive_noun: Cancellation Reason
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the type of the previous tendering process (which is now being cancelled).
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Reason
+  primary_noun: Code
+  type: Code
+  definition: The reason why the contracting authority has followed a particular tendering procedure for the awarding of a contract, expressed as a code.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Reason
+  type: Text
+  definition: The reason why the contracting authority has followed a particular tendering procedure for the awarding of a contract, expressed as text.
+  cardinality: 0..n
+  since_version: '2.1'
+- primary_noun: Description
+  type: Text
+  definition: Text providing justification for the selection of this process.
+  cardinality: 0..n
+  since_version: '2.1'

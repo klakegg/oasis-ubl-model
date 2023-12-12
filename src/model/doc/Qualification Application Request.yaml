@@ -1,0 +1,147 @@
+name: Qualification Application Request
+definition: A document issued by a procurement organization to notify an economic operator whether it has been admitted to or excluded from the tendering process.
+since_version: '2.2'
+
+fields:
+- possessive_noun: UBL Version
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies the earliest version of the UBL 2 schema for this document type that defines all of the elements that might be encountered in the current instance.
+  examples: 2.0.5
+  cardinality: 0..1
+  since_version: '2.2'
+- possessive_noun: Customization
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies a user-defined customization of UBL for a specific use.
+  examples: NES
+  cardinality: 0..1
+  since_version: '2.2'
+- possessive_noun: Profile
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies a user-defined profile of the customization of UBL being used.
+  examples: BasicProcurementProcess
+  cardinality: 0..1
+  since_version: '2.2'
+- possessive_noun: Profile Execution
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies an instance of executing a profile, to associate all transactions in a collaboration.
+  examples: BPP-1001
+  cardinality: 0..1
+  since_version: '2.2'
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this document, assigned by the sender.
+  cardinality: 0..1
+  since_version: '2.2'
+- primary_noun: Indicator
+  type: Indicator
+  definition: Indicates whether this document is a copy (true) or not (false).
+  cardinality: 0..1
+  since_version: '2.2'
+- primary_noun: UUID
+  type: Identifier
+  definition: A universally unique identifier for an instance of this document.
+  cardinality: 0..1
+  since_version: '2.2'
+- possessive_noun: Contract Folder
+  primary_noun: Identifier
+  type: Identifier
+  definition: An identifier, assigned by the sender, for the process file (i.e., record) to which this document belongs.
+  cardinality: '1'
+  since_version: '2.2'
+- possessive_noun: Contract
+  primary_noun: Name
+  type: Name
+  definition: Short title of a contract associated with this Tender.
+  cardinality: 0..n
+  since_version: '2.2'
+- possessive_noun: Issue
+  primary_noun: Date
+  type: Date
+  definition: The date, assigned by the sender, on which this document was issued.
+  cardinality: '1'
+  since_version: '2.2'
+- possessive_noun: Issue
+  primary_noun: Time
+  type: Time
+  definition: The time, assigned by the sender, at which this document was issued.
+  cardinality: 0..1
+  since_version: '2.2'
+- primary_noun: Version
+  type: Identifier
+  definition: Indicates the current version of the Qualification Application Request.
+  examples: '1.1 '
+  cardinality: 0..1
+  since_version: '2.2'
+- primary_noun: Version
+  type: Identifier
+  definition: Identifies the previous version of the Qualification Application Request which is superceded by this version.
+  examples: '1.0 '
+  cardinality: 0..1
+  since_version: '2.2'
+- possessive_noun: Procedure
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the type of this tendering procedure.
+  examples: Open, Restricted, Negotiated
+  cardinality: 0..1
+  since_version: '2.2'
+- possessive_noun: Qualification Application Type
+  primary_noun: Code
+  type: Code
+  definition: A code specifying the type of the Qualification Application.
+  examples: '"Regulated", "Self-contained"'
+  cardinality: 0..1
+  since_version: '2.2'
+- possessive_noun: Weight Scoring Methodology
+  primary_noun: Note
+  type: Text
+  definition: Free-form text to describing information about Weight Scoring Methodology.
+  cardinality: 0..n
+  since_version: '2.2'
+- possessive_noun: Weighting Type
+  primary_noun: Code
+  type: Code
+  definition: A code specifying the type of the Weighting.
+  examples: '"Regulated", "Self-contained"'
+  cardinality: 0..1
+  since_version: '2.2'
+- primary_noun: Note
+  type: Text
+  definition: Free-form text pertinent to this document, conveying information that is not contained explicitly in other structures.
+  cardinality: 0..n
+  since_version: '2.2'
+
+objects:
+- type: Contracting Party
+  definition: The contracting party.
+  cardinality: 1..n
+  since_version: '2.2'
+- type: Economic Operator Party
+  definition: The Economic Operator receiving the Qualification Application Resquest.
+  cardinality: 0..n
+  since_version: '2.2'
+- type: Procurement Project
+  definition: An overall definition of this procurement project.
+  cardinality: 0..1
+  since_version: '2.2'
+- type: Procurement Project Lot
+  definition: One of the procurement project lots into which this contract can be split.
+  cardinality: 0..n
+  since_version: '2.2'
+- type: Tendering Criterion
+  definition: A criterion supporting Tenderer qualifications.
+  cardinality: 0..n
+  since_version: '2.2'
+- qualifier: Additional
+  type: Document Reference
+  definition: A reference to an additional document associated with this document.
+  cardinality: 0..n
+  since_version: '2.2'
+- type: Signature
+  definition: A signature applied to this document.
+  cardinality: 0..n
+  since_version: '2.2'

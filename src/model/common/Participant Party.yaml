@@ -1,0 +1,51 @@
+name: Participant Party
+definition: A class to describe a participant party.
+since_version: '2.2'
+
+fields:
+- primary_noun: Indicator
+  type: Indicator
+  definition: An indicator that this party is playing the role of the initiator within a transaction (true) or not (false).
+  cardinality: 0..1
+  since_version: '2.2'
+- primary_noun: Indicator
+  type: Indicator
+  definition: An indicator that this party is a private entity (true) or not (false).
+  cardinality: 0..1
+  since_version: '2.2'
+- primary_noun: Indicator
+  type: Indicator
+  definition: An indicator that this party is a public (governmental) entity (true) or not (false).
+  cardinality: 0..1
+  since_version: '2.2'
+- primary_noun: Indicator
+  type: Indicator
+  definition: An indicator that this party is a service provider (true) or not (false).
+  cardinality: 0..1
+  since_version: '2.2'
+
+objects:
+- type: Party
+  definition: The participant party itself.
+  cardinality: '1'
+  since_version: '2.2'
+- qualifier: Legal
+  type: Contact
+  definition: A legal contact associated to this participant for sending legal notices.
+  cardinality: 0..1
+  since_version: '2.2'
+- qualifier: Technical
+  type: Contact
+  definition: A technical contact associated to this participant.
+  cardinality: 0..1
+  since_version: '2.2'
+- qualifier: Support
+  type: Contact
+  definition: A support contact associated to this participant.
+  cardinality: 0..1
+  since_version: '2.2'
+- qualifier: Commercial
+  type: Contact
+  definition: A commercial contact associated to this participant.
+  cardinality: 0..1
+  since_version: '2.2'

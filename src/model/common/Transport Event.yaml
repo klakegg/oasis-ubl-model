@@ -1,0 +1,71 @@
+name: Transport Event
+definition: A class to describe a significant occurrence or happening related to the transportation of goods.
+since_version: '2.0'
+
+fields:
+- primary_noun: Identification
+  type: Identifier
+  definition: An identifier for this transport event within an agreed event identification scheme.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Occurrence
+  primary_noun: Date
+  type: Date
+  definition: The date of this transport event.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Occurrence
+  primary_noun: Time
+  type: Time
+  definition: The time of this transport event.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Transport Event Type
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the type of this transport event.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Description
+  type: Text
+  definition: Text describing this transport event.
+  cardinality: 0..n
+  since_version: '2.0'
+- primary_noun: Indicator
+  type: Indicator
+  definition: An indicator that this transport event has been completed (true) or not (false).
+  cardinality: 0..1
+  since_version: '2.0'
+
+objects:
+- qualifier: Reported
+  type: Shipment
+  definition: The shipment involved in this transport event.
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Current
+  type: Status
+  definition: The current status of this transport event.
+  cardinality: 0..n
+  since_version: '2.0'
+- qualifier: Responsible
+  type: Party
+  definition: The party responsible for this transport event.
+  cardinality: 0..1
+  since_version: '2.4'
+- type: Contact
+  definition: A contact associated with this transport event.
+  cardinality: 0..n
+  since_version: '2.0'
+- type: Location
+  definition: The location associated with this transport event.
+  cardinality: 0..1
+  since_version: '2.1'
+- type: Signature
+  definition: A signature that can be used to sign for an entry or an exit at a transport location (e.g., port terminal).
+  cardinality: 0..1
+  since_version: '2.1'
+- type: Period
+  definition: A period of time associated with this transport event.
+  cardinality: 0..n
+  since_version: '2.1'

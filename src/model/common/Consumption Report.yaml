@@ -1,0 +1,117 @@
+name: Consumption Report
+definition: A class to describe utility consumption, including details of the environment in which consumption takes place.
+since_version: '2.1'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this consumption report.
+  examples: n/a
+  cardinality: '1'
+  since_version: '2.1'
+- possessive_noun: Consumption
+  primary_noun: Type
+  type: Text
+  definition: The type of consumption, expressed as text.
+  examples: Consumption
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Consumption Type
+  primary_noun: Code
+  type: Code
+  definition: The type of consumption, expressed as a code.
+  examples: Consumption
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Description
+  type: Text
+  definition: Text reporting utility consumption.
+  examples: This report contain the latest year consumption
+  cardinality: 0..n
+  since_version: '2.1'
+- possessive_noun: Consumed
+  primary_noun: Quantity
+  type: Quantity
+  definition: The total quantity consumed.
+  examples: '20479.00'
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Consumed
+  primary_noun: Quantity
+  type: Quantity
+  definition: The basic quantity consumed, excluding additional consumption.
+  examples: '20000.00'
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Occupants
+  primary_noun: Numeric
+  type: Numeric
+  definition: The number of people occupying the residence covered by this report.
+  examples: '4.0'
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Energy Level
+  primary_noun: Code
+  type: Code
+  definition: The level of energy consumed, compared to the average for this residence type and the number of people living in the residence, expressed as a code.
+  examples: B
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Energy
+  primary_noun: Level
+  type: Text
+  definition: The level of energy consumed, compared to the average for this residence type and the number of people living in the residence, expressed as text.
+  examples: Middel
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Residence
+  primary_noun: Type
+  type: Text
+  definition: The type of residence (house, apartment, etc.) covered in this report, expressed as text.
+  examples: House
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Residence Type
+  primary_noun: Code
+  type: Code
+  definition: The type of residence (house, apartment, etc.) covered in this report, expressed as a code.
+  examples: House
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Heating
+  primary_noun: Type
+  type: Text
+  definition: The type of heating in the residence covered in this report, expressed as text.
+  examples: District heating
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Heating Type
+  primary_noun: Code
+  type: Code
+  definition: The type of heating in the residence covered in this report, expressed as a code.
+  examples: DistrictHeating
+  cardinality: 0..1
+  since_version: '2.1'
+
+objects:
+- type: Period
+  definition: The period of consumption covered in this report.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Guidance
+  type: Document Reference
+  definition: A reference to a document providing an explanation of this kind of report.
+  cardinality: 0..1
+  since_version: '2.1'
+- type: Document Reference
+  definition: A reference to some other document (for example, this report in another format).
+  cardinality: 0..1
+  since_version: '2.1'
+- type: Consumption Report Reference
+  definition: A reference to a previous consumption report.
+  cardinality: 0..n
+  since_version: '2.1'
+- type: Consumption History
+  definition: A report describing historical parameters relating to a specific instance of consumption.
+  cardinality: 0..n
+  since_version: '2.1'

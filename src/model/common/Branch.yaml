@@ -1,0 +1,25 @@
+name: Branch
+definition: A class to describe a branch or a division of an organization.
+since_version: '2.0'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this branch or division of an organization.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Name
+  type: Name
+  definition: The name of this branch or division of an organization.
+  cardinality: 0..1
+  since_version: '2.0'
+
+objects:
+- type: Financial Institution
+  definition: The financial institution that this branch belongs to (if applicable).
+  cardinality: 0..1
+  since_version: '2.0'
+- type: Address
+  definition: The address of this branch or division.
+  cardinality: 0..1
+  since_version: '2.0'

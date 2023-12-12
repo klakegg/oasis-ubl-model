@@ -1,0 +1,29 @@
+name: Emission Calculation Method
+definition: A class to define how an environmental emission is calculated.
+since_version: '2.1'
+
+fields:
+- possessive_noun: Calculation Method
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the method used to calculate the emission.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Fullness Indication
+  primary_noun: Code
+  type: Code
+  definition: A code signifying whether a piece of transport equipment is full, partially full, or empty. This indication is used as a parameter when calculating the environmental emission.
+  cardinality: 0..1
+  since_version: '2.1'
+
+objects:
+- qualifier: Measurement From
+  type: Location
+  definition: A start location from which an environmental emission is calculated.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Measurement To
+  type: Location
+  definition: An end location to which an environmental emission is calculated.
+  cardinality: 0..1
+  since_version: '2.1'

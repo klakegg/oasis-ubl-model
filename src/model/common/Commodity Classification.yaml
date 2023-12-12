@@ -1,0 +1,35 @@
+name: Commodity Classification
+definition: A class to describe the classification of a commodity.
+since_version: '2.0'
+
+fields:
+- possessive_noun: Nature
+  primary_noun: Code
+  type: Code
+  definition: A code defined by a specific maintenance agency signifying the high-level nature of the commodity.
+  examples: 'wooden products '
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Cargo Type
+  primary_noun: Code
+  type: Code
+  definition: A mutually agreed code signifying the type of cargo for purposes of commodity classification.
+  examples: 'Refrigerated '
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Commodity
+  primary_noun: Code
+  type: Code
+  definition: The harmonized international commodity code for cross border and regulatory (customs and trade statistics) purposes.
+  alternative_business_terms: Harmonized Code
+  examples: '1102222883 '
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Item Classification
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the trade classification of the commodity.
+  alternative_business_terms: UN/SPSC Code
+  examples: '3440234 '
+  cardinality: 0..1
+  since_version: '2.0'

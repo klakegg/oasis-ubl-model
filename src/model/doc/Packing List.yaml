@@ -1,0 +1,123 @@
+name: Packing List
+definition: A document describing how goods are packed.
+since_version: '2.0'
+
+fields:
+- possessive_noun: UBL Version
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies the earliest version of the UBL 2 schema for this document type that defines all of the elements that might be encountered in the current instance.
+  examples: 2.0.5
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Customization
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies a user-defined customization of UBL for a specific use.
+  examples: NES
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Profile
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies a user-defined profile of the subset of UBL being used.
+  examples: BasicProcurementProcess
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Profile Execution
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies an instance of executing a profile, to associate all transactions in a collaboration.
+  examples: BPP-1001
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this document, assigned by the sender.
+  alternative_business_terms: Packing List Number
+  untded_code: '1014'
+  cardinality: '1'
+  since_version: '2.0'
+- primary_noun: UUID
+  type: Identifier
+  definition: A universally unique identifier for an instance of this document..
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Issue
+  primary_noun: Date
+  type: Date
+  definition: The date, assigned by the sender, on which this document was issued.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Issue
+  primary_noun: Time
+  type: Time
+  definition: The time, assigned by the sender, at which this document was issued.
+  untded_code: '2459'
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Name
+  type: Name
+  definition: Text, assigned by the sender, that identifies this document to business users.
+  untded_code: '2459'
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Description
+  type: Text
+  definition: Textual description of the document instance.
+  cardinality: 0..n
+  since_version: '2.0'
+- primary_noun: Note
+  type: Text
+  definition: Free-form text pertinent to this document, conveying information that is not contained explicitly in other structures.
+  cardinality: 0..n
+  since_version: '2.0'
+- primary_noun: Version
+  type: Identifier
+  definition: Version identifier of a Packing List.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Instruction
+  type: Text
+  definition: Contains other free-text-based instructions related to the shipment to the forwarders or carriers. This ought to be used only where such information cannot be represented in other structured information entities within the document.
+  cardinality: 0..1
+  since_version: '2.0'
+
+objects:
+- qualifier: Consignor
+  type: Party
+  definition: The party consigning goods, as stipulated in the transport contract by the party ordering transport.
+  alternative_business_terms: Consignor (WCO ID 71 and 72)
+  untded_code: 3036 and 3039
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Carrier
+  type: Party
+  definition: The party providing the transport of goods between named points.
+  alternative_business_terms: Transport Company, Shipping Line, NVOCC, Airline, Haulier, Courier, Carrier (WCO ID 49 and 50)
+  untded_code: 3036 and 3039
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Freight Forwarder
+  type: Party
+  definition: The party combining individual smaller shipments into a single larger consignment (a so-called consolidated consignment) that is sent to a counterpart who mirrors the consolidator's activity by dividing the consolidated consignment into its original components.
+  alternative_business_terms: Consolidator (WCO ID 192 AND 193)
+  untded_code: 3036 and 3039
+  cardinality: 0..1
+  since_version: '2.0'
+- type: Shipment
+  definition: A description of the shipment.
+  cardinality: '1'
+  since_version: '2.0'
+- type: Document Reference
+  definition: A reference to another document associated with this document.
+  cardinality: 0..n
+  since_version: '2.0'
+- type: Document Distribution
+  definition: A list of interested parties to whom this document is distributed.
+  cardinality: 0..n
+  since_version: '2.0'
+- type: Signature
+  definition: A signature applied to this document.
+  cardinality: 0..n
+  since_version: '2.0'

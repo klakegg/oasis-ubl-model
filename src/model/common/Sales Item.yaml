@@ -1,0 +1,30 @@
+name: Sales Item
+definition: A class to describe information related to an item in a sales context
+since_version: '2.1'
+
+fields:
+- primary_noun: Quantity
+  type: Quantity
+  definition: The quantity the given information are related to
+  cardinality: '1'
+  since_version: '2.1'
+
+objects:
+- type: Activity Property
+  definition: A class to describe the activity (for example "sales", "movement", ...) related to the item.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Tax Exclusive
+  type: Price
+  definition: A price for this sales item, exclusive of tax.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Tax Inclusive
+  type: Price
+  definition: A price for this sales item, including tax.
+  cardinality: 0..n
+  since_version: '2.1'
+- type: Item
+  definition: The sales item itself.
+  cardinality: '1'
+  since_version: '2.1'

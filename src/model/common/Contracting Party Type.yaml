@@ -1,0 +1,17 @@
+name: Contracting Party Type
+definition: The type of contracting party that is independent of its role.
+since_version: '2.1'
+
+fields:
+- possessive_noun: Party Type
+  primary_noun: Code
+  type: Code
+  definition: A code specifying the type of party that is independent of its role.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Party
+  primary_noun: Type
+  type: Text
+  definition: The type of party that is independent of its role, expressed as text.
+  cardinality: 0..n
+  since_version: '2.1'

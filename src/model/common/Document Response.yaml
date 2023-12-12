@@ -1,0 +1,27 @@
+name: Document Response
+definition: A class to describe an application-level response to a document.
+since_version: '2.0'
+
+objects:
+- type: Response
+  definition: A response to the document as a whole.
+  cardinality: '1'
+  since_version: '2.0'
+- type: Document Reference
+  definition: A referenced document.
+  cardinality: 1..n
+  since_version: '2.0'
+- qualifier: Issuer
+  type: Party
+  definition: The party that issued the document.
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Recipient
+  type: Party
+  definition: The party for which the document is intended.
+  cardinality: 0..1
+  since_version: '2.0'
+- type: Line Response
+  definition: A response to a particular line in the document.
+  cardinality: 0..n
+  since_version: '2.0'

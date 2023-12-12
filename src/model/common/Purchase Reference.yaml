@@ -1,0 +1,15 @@
+name: Purchase Reference
+definition: A class for referencing an object to which a purchase relates, such as a subscription number, telephone number, meter, vehicle, person, etc.
+since_version: '2.4'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An Identifier for this purchase reference.
+  cardinality: '1'
+  since_version: '2.4'
+- primary_noun: Description
+  type: Text
+  definition: A description of this purchase reference.
+  cardinality: 0..n
+  since_version: '2.4'

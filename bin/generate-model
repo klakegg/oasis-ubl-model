@@ -1,0 +1,107 @@
+#!/usr/bin/env ruby
+
+require 'bundler/setup'
+require 'nokogiri'
+require 'slop'
+require 'fileutils'
+require 'yaml'
+
+# Version
+version = '2.4'
+
+# Load template
+xml = Nokogiri::XML File.open 'src/template/UBL-Entities.gc'
+
+# Helper for appending codelist value
+def append(xml, field, value)
+  xml.Value('ColumnRef' => field) do |xml|
+    xml.SimpleValue value
+  end
+end
+
+counter = 1
+  
+# Build codelist
+codelist = Nokogiri::XML::Builder.new do |xml|
+  xml.SimpleCodeList do |codelist|
+
+    # Loop through models
+    Dir[File.join('src', 'model', '*', '*.yaml')].sort.each do |file|
+      model = YAML.load_file file
+      part = file.split('/')[2]
+
+      # Model name
+      model_name = "UBL-CommonLibrary-#{version}"
+      model_name = "UBL-#{model['name'].gsub(/\s/, '')}-#{version}" if part == 'doc'
+
+      # ABIE
+      codelist.Row do |xml|
+        counter += 1
+        xml.comment "#{counter}"
+        
+        append(xml, 'ModelName', model_name)
+        append(xml, 'ComponentName', model['name'].gsub(/\s/, ''))
+        append(xml, 'Definition', model['definition'])
+        append(xml, 'DictionaryEntryName', "#{model['name']}. Details")
+        append(xml, 'ObjectClass', model['name'])
+        append(xml, 'ComponentType', 'ABIE')
+        append(xml, 'CurrentVersion', model['since_version'])
+        append(xml, 'EditorNotes', model['editor_notes']) if model.has_key? 'editor_notes'
+      end
+
+      # BBIE
+      model.fetch('fields', Array::new).each do |entity|
+        codelist.Row do |xml|
+          counter += 1
+          xml.comment "#{counter}"
+
+          append(xml, 'ModelName', model_name)
+          append(xml, 'Cardinality', entity['cardinality'])
+          append(xml, 'Definition', entity['definition'])
+          append(xml, 'ObjectClass', model['name'])
+          append(xml, 'Examples', model['examples']) if model.has_key? 'examples'
+          append(xml, 'ComponentType', 'BBIE')
+          append(xml, 'RepresentationTerm', entity['type'])
+          append(xml, 'DataType', "#{entity['type']}. Type")
+          append(xml, 'UNTDEDCode', entity['untded_code']) if entity.has_key? 'untded_code'
+          append(xml, 'CurrentVersion', entity['since_version'])
+          append(xml, 'EditorNotes', entity['editor_notes']) if entity.has_key? 'editor_notes'
+        end
+      end
+
+      # ASBIE
+      model.fetch('objects', Array::new).each do |entity|
+        codelist.Row do |xml|
+          counter += 1
+          xml.comment "#{counter}"
+
+          append(xml, 'ModelName', model_name)
+          append(xml, 'Cardinality', entity['cardinality'])
+          append(xml, 'Definition', entity['definition'])
+          append(xml, 'DictionaryEntryName', "#{model['name']}. TODO. #{entity['type']}")
+          append(xml, 'ObjectClass', model['name'])
+          append(xml, 'ComponentType', 'ASBIE')
+          append(xml, 'RepresentationTerm', entity['type'])
+          append(xml, 'AssociatedObjectClass', entity['type'])
+          append(xml, 'UNTDEDCode', entity['untded_code']) if entity.has_key? 'untded_code'
+          append(xml, 'CurrentVersion', entity['since_version'])
+          append(xml, 'EditorNotes', entity['editor_notes']) if entity.has_key? 'editor_notes'
+        end
+      end
+    end
+
+  end
+end
+
+# Add codelist to XML
+xml.xpath('/*')[0].add_child '   ' + codelist
+  .to_xml(indent: 3)
+  .sub("<?xml version=\"1.0\"?>\n", '')
+  .gsub(/\n/, "\n   ")
+  .gsub(/>\s+<!/, '><!')
+
+# Write XML
+FileUtils.mkdir_p File.join('target', 'mod')
+File.open(File.join('target', 'mod', "UBL-Entities-#{version}.gc"), 'w') do |file|
+  file.write xml.to_xml(indent: 3)
+end

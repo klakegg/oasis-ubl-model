@@ -1,0 +1,28 @@
+name: Retail Planned Impact
+definition: A class to describe a planned effect of a retail event (e.g., a promotion or a change in inventory policy) upon supply or demand.
+since_version: '2.1'
+
+fields:
+- primary_noun: Amount
+  type: Amount
+  definition: Estimated monetary value of the planned event as an impact
+  cardinality: '1'
+  since_version: '2.1'
+- possessive_noun: Purpose
+  primary_noun: Code
+  type: Code
+  definition: It will have impact on either Sales forecast or Order Forecast
+  cardinality: '1'
+  since_version: '2.1'
+- possessive_noun: Forecast Type
+  primary_noun: Code
+  type: Code
+  definition: 'A code signifying the type of forecast. Examples of values are: BASE PROMOTIONAL SEASONAL TOTAL'
+  cardinality: '1'
+  since_version: '2.1'
+
+objects:
+- type: Period
+  definition: The period to which this impact applies.
+  cardinality: 0..1
+  since_version: '2.1'

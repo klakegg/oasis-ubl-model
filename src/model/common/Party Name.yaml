@@ -1,0 +1,11 @@
+name: Party Name
+definition: A class for defining the name of a party.
+since_version: '2.0'
+
+fields:
+- primary_noun: Name
+  type: Name
+  definition: The name of the party.
+  examples: 'Microsoft '
+  cardinality: '1'
+  since_version: '2.0'

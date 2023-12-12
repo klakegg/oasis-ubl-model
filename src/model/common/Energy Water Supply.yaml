@@ -1,0 +1,22 @@
+name: Energy Water Supply
+definition: A class to describe the supply (and therefore consumption) of an amount of energy or water.
+since_version: '2.1'
+
+objects:
+- type: Consumption Report
+  definition: An amount of energy or water consumed.
+  cardinality: 0..n
+  since_version: '2.1'
+- type: Energy Tax Report
+  definition: A tax on the consumption of energy or water.
+  cardinality: 0..n
+  since_version: '2.1'
+- type: Consumption Average
+  definition: A consumption average.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Energy Water
+  type: Consumption Correction
+  definition: Describes any corrections or adjustments to the supply of energy or water.
+  cardinality: 0..n
+  since_version: '2.1'

@@ -1,0 +1,22 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    deep_merge (1.2.2)
+    nokogiri (1.15.5-arm64-darwin)
+      racc (~> 1.4)
+    racc (1.7.3)
+    slop (4.10.1)
+    yaml (0.2.1)
+
+PLATFORMS
+  arm64-darwin-22
+
+DEPENDENCIES
+  bundler (~> 2.4)
+  deep_merge
+  nokogiri (~> 1.13)
+  slop (~> 4.9)
+  yaml (~> 0.2.0)
+
+BUNDLED WITH
+   2.4.6

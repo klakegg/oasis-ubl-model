@@ -1,0 +1,59 @@
+name: Pickup
+definition: A class to describe a pickup for delivery.
+alternative_business_terms: Collection
+since_version: '2.1'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this pickup.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Pickup
+  primary_noun: Date
+  type: Date
+  definition: The actual pickup date.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Pickup
+  primary_noun: Time
+  type: Time
+  definition: The actual pickup time.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Pickup
+  primary_noun: Date
+  type: Date
+  definition: The earliest pickup date.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Pickup
+  primary_noun: Time
+  type: Time
+  definition: The earliest pickup time.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Pickup
+  primary_noun: Date
+  type: Date
+  definition: The latest pickup date.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Pickup
+  primary_noun: Time
+  type: Time
+  definition: The latest pickup time.
+  cardinality: 0..1
+  since_version: '2.1'
+
+objects:
+- qualifier: Pickup
+  type: Location
+  definition: The pickup location.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Pickup
+  type: Party
+  definition: The party responsible for picking up a delivery.
+  cardinality: 0..1
+  since_version: '2.0'

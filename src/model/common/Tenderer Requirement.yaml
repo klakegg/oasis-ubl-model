@@ -1,0 +1,35 @@
+name: Tenderer Requirement
+definition: A class to describe an action or statement required of an economic operator participating in a tendering process.
+since_version: '2.1'
+
+fields:
+- primary_noun: Name
+  type: Name
+  definition: A name of this tenderer requirement.
+  cardinality: 0..n
+  since_version: '2.1'
+- possessive_noun: Type
+  primary_noun: Code
+  type: Code
+  definition: A code signifying this requirement.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Description
+  type: Text
+  definition: Text describing this requirement.
+  cardinality: 0..n
+  since_version: '2.1'
+- possessive_noun: Legal
+  primary_noun: Reference
+  type: Text
+  definition: The legal reference of the exclusion criterion.
+  examples: Art. 45 2 b
+  cardinality: 0..1
+  since_version: '2.1'
+
+objects:
+- qualifier: Suggested
+  type: Evidence
+  definition: An item of evidence that ought to be submitted to satisfy this requirement.
+  cardinality: 0..n
+  since_version: '2.1'

@@ -1,0 +1,41 @@
+name: Capability
+definition: A class to describe a specific capability of an organization.
+since_version: '2.1'
+
+fields:
+- possessive_noun: Capability Type
+  primary_noun: Code
+  type: Code
+  definition: This class can be used as Financial or Technical capabilities. For instance, "Turnover" or "Qualified Engineers" are two possible codes.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Description
+  type: Text
+  definition: Text describing this capability.
+  cardinality: 0..n
+  since_version: '2.1'
+- primary_noun: Value
+  type: Amount
+  definition: A monetary amount as a measure of this capability.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Quantity
+  type: Quantity
+  definition: A quantity as a measure of this capability.
+  cardinality: 0..1
+  since_version: '2.1'
+
+objects:
+- type: Evidence Supplied
+  definition: The evidence that supports the capability claim.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Validity
+  type: Period
+  definition: The period of time for which this capability is (or has been) valid.
+  cardinality: 0..1
+  since_version: '2.1'
+- type: Web Site
+  definition: A web site where the capability is detailed.
+  cardinality: 0..1
+  since_version: '2.2'

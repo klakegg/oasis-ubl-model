@@ -1,0 +1,27 @@
+name: Environmental Emission
+definition: A class to describe an environmental emission.
+since_version: '2.1'
+
+fields:
+- possessive_noun: Environmental Emission Type
+  primary_noun: Code
+  type: Code
+  definition: A code specifying the type of environmental emission.
+  cardinality: '1'
+  since_version: '2.1'
+- primary_noun: Value
+  type: Measure
+  definition: A value measurement for the environmental emission.
+  cardinality: '1'
+  since_version: '2.1'
+- primary_noun: Description
+  type: Text
+  definition: Text describing this environmental emission.
+  cardinality: 0..n
+  since_version: '2.1'
+
+objects:
+- type: Emission Calculation Method
+  definition: A method used to calculate the amount of this emission.
+  cardinality: 0..n
+  since_version: '2.1'

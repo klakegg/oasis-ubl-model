@@ -1,0 +1,74 @@
+name: Customs Declaration
+definition: A class describing identifiers or references relating to customs procedures.
+since_version: '2.1'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier associated with customs related procedures.
+  examples: 'CUST001 3333-44-123 '
+  cardinality: '1'
+  since_version: '2.1'
+- possessive_noun: Function
+  primary_noun: Code
+  type: Code
+  definition: A code describing the function of this customs declaration.
+  cardinality: 0..1
+  since_version: '2.4'
+
+objects:
+- qualifier: Validity
+  type: Period
+  definition: The period during which this customs declaration is valid
+  cardinality: 0..1
+  since_version: '2.3'
+- qualifier: Applicable Territory
+  type: Address
+  definition: The area or region where this customs declaration applies
+  cardinality: 0..1
+  since_version: '2.3'
+- type: Shipment
+  definition: A reference to the shipment of goods being declared
+  cardinality: 0..1
+  since_version: '2.3'
+- qualifier: Customs Exit Office
+  type: Location
+  definition: The location of the exit office from where the goods will leave or have left the customs territory
+  alternative_business_terms: Customs office of exit
+  cardinality: 0..1
+  since_version: '2.3'
+- qualifier: Issuer
+  type: Party
+  definition: Describes the party issuing the customs declaration.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Consignor
+  type: Party
+  definition: The party, usually the seller, who is responsible for the consignment
+  cardinality: 0..1
+  since_version: '2.3'
+- qualifier: Consignee
+  type: Party
+  definition: The party, usually the buyer, who will receive the goods
+  cardinality: 0..1
+  since_version: '2.3'
+- qualifier: Freight Forwarder
+  type: Party
+  definition: The freight forwarder or the forwarding agent responsible for the transportation of the goods
+  cardinality: 0..1
+  since_version: '2.3'
+- qualifier: Customs
+  type: Party
+  definition: The authority responsible for processing this customs declaration
+  cardinality: 0..1
+  since_version: '2.3'
+- qualifier: Previous
+  type: Customs Declaration
+  definition: A reference to a previous version of this customs declaration
+  cardinality: 0..1
+  since_version: '2.3'
+- qualifier: Additional
+  type: Document Reference
+  definition: A reference to additional documents relevant or related to this customs declaration
+  cardinality: 0..n
+  since_version: '2.3'

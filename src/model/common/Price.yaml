@@ -1,0 +1,75 @@
+name: Price
+definition: A class to describe a price, expressed in a data structure containing multiple properties (compare with UnstructuredPrice).
+since_version: '2.0'
+
+fields:
+- possessive_noun: Price
+  primary_noun: Amount
+  type: Amount
+  definition: The amount of the price.
+  alternative_business_terms: unit price
+  examples: '23.45'
+  cardinality: '1'
+  since_version: '2.0'
+- possessive_noun: Tax Inclusive Price
+  primary_noun: Amount
+  type: Amount
+  definition: The amount of the price inclusive of all taxes.
+  cardinality: 0..1
+  since_version: '2.4'
+- primary_noun: Quantity
+  type: Quantity
+  definition: The quantity at which this price applies.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Reason
+  type: Text
+  definition: A reason for a price change.
+  examples: 'Clearance of old stock , New contract applies '
+  cardinality: 0..n
+  since_version: '2.0'
+- possessive_noun: Price Type
+  primary_noun: Code
+  type: Code
+  definition: The type of price, expressed as a code.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Price
+  primary_noun: Type
+  type: Text
+  definition: The type of price, expressed as text.
+  examples: retail, wholesale, discount, contract
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Orderable Unit
+  primary_noun: Factor
+  type: Rate
+  definition: The factor by which the base price unit can be converted to the orderable unit.
+  examples: Nails are priced by weight but ordered by quantity. So this would say how many nails per kilo
+  cardinality: 0..1
+  since_version: '2.0'
+
+objects:
+- qualifier: Validity
+  type: Period
+  definition: A period during which this price is valid.
+  cardinality: 0..n
+  since_version: '2.0'
+- type: Price List
+  definition: Information about a price list applicable to this price.
+  cardinality: 0..1
+  since_version: '2.0'
+- type: Allowance Charge
+  definition: An allowance or charge associated with this price.
+  cardinality: 0..n
+  since_version: '2.0'
+- qualifier: Pricing
+  type: Exchange Rate
+  definition: The exchange rate applicable to this price, if it differs from the exchange rate applicable to the document as a whole.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Alternative Currency
+  type: Price
+  definition: The price expressed in an alternative currency
+  cardinality: 0..n
+  since_version: '2.3'

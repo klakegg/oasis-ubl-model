@@ -1,0 +1,29 @@
+name: Price List
+definition: A class to describe a price list.
+since_version: '2.0'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this price list.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Status
+  primary_noun: Code
+  type: Code
+  definition: A code signifying whether this price list is an original, copy, revision, or cancellation.
+  examples: 'new - announcement only , new and available , deleted - announcement only '
+  cardinality: 0..1
+  since_version: '2.0'
+
+objects:
+- qualifier: Validity
+  type: Period
+  definition: A period during which this price list is valid.
+  cardinality: 0..n
+  since_version: '2.0'
+- qualifier: Previous
+  type: Price List
+  definition: The previous price list.
+  cardinality: 0..1
+  since_version: '2.0'

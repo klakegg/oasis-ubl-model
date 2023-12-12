@@ -1,0 +1,40 @@
+name: Tax Total
+definition: A class to describe the total tax for a particular taxation scheme.
+since_version: '2.0'
+
+fields:
+- possessive_noun: Tax
+  primary_noun: Amount
+  type: Amount
+  definition: The total tax amount for a particular taxation scheme, e.g., VAT; the sum of the tax subtotals for each tax category within the taxation scheme.
+  cardinality: '1'
+  since_version: '2.0'
+- possessive_noun: Calculation
+  primary_noun: Sequence
+  type: Numeric
+  definition: The number of this tax total in the sequence of tax totals corresponding to the order in which multiple taxes are applied. If all taxes are applied to the same taxable amount (i.e., their order of application is inconsequential), then CalculationSequenceNumeric is 1 for all tax totals applied to a given amount.
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Rounding
+  primary_noun: Amount
+  type: Amount
+  definition: The rounding amount (positive or negative) added to the calculated tax total to produce the rounded TaxAmount.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Indicator
+  type: Indicator
+  definition: An indicator that this total is recognized as legal evidence for taxation purposes (true) or not (false).
+  examples: default is negative
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Indicator
+  type: Indicator
+  definition: An indicator that tax is included in the calculation (true) or not (false).
+  cardinality: 0..1
+  since_version: '2.1'
+
+objects:
+- type: Tax Subtotal
+  definition: One of the subtotals the sum of which equals the total tax amount for a particular taxation scheme.
+  cardinality: 0..n
+  since_version: '2.0'

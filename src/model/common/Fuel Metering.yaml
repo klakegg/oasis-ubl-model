@@ -1,0 +1,15 @@
+name: Fuel Metering
+definition: A class to describe fuel metering.
+since_version: '2.4'
+
+fields:
+- primary_noun: Type
+  type: Identifier
+  definition: An identifier for the type of fuel metering.
+  cardinality: '1'
+  since_version: '2.4'
+- primary_noun: Value
+  type: Text
+  definition: The value of this fuel metering.
+  cardinality: '1'
+  since_version: '2.4'

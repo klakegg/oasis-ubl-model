@@ -1,0 +1,42 @@
+name: Completed Task
+definition: A class to describe the completion of a specific task in the tendering process.
+since_version: '2.1'
+
+fields:
+- primary_noun: Average
+  type: Amount
+  definition: The average monetary amount of a task such as this completed task.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Total
+  primary_noun: Task
+  type: Amount
+  definition: The actual total monetary amount of this completed task.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Party
+  primary_noun: Capacity
+  type: Amount
+  definition: A monetary amount corresponding to the financial capacity of the party that carried out this completed task.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Description
+  type: Text
+  definition: Text describing this completed task.
+  cardinality: 0..n
+  since_version: '2.1'
+
+objects:
+- type: Evidence Supplied
+  definition: The evidence justifying a designation of "complete" for this task.
+  cardinality: 0..n
+  since_version: '2.1'
+- type: Period
+  definition: The period in which this completed task was performed.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Recipient
+  type: Customer Party
+  definition: The original customer for this completed task.
+  cardinality: 0..1
+  since_version: '2.1'

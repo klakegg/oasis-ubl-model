@@ -1,0 +1,97 @@
+name: Contract
+definition: A class to describe a contract.
+since_version: '2.0'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this contract.
+  examples: 'CC23 '
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Issue
+  primary_noun: Date
+  type: Date
+  definition: The date on which this contract was issued.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Issue
+  primary_noun: Time
+  type: Time
+  definition: The time at which this contract was issued.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Nomination
+  primary_noun: Date
+  type: Date
+  definition: In a transportation contract, the deadline date by which the services referred to in the transport execution plan have to be booked. For example, if this service is a carrier service scheduled for Wednesday 16 February 2011 at 10 a.m. CET, the nomination date might be Tuesday15 February 2011.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Nomination
+  primary_noun: Time
+  type: Time
+  definition: In a transportation contract, the deadline time by which the services referred to in the transport execution plan have to be booked. For example, if this service is a carrier service scheduled for Wednesday 16 February 2011 at 10 a.m. CET, the nomination date might be Tuesday15 February 2011 and the nomination time 4 p.m. at the latest.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Contract Type
+  primary_noun: Code
+  type: Code
+  definition: The type of this contract, expressed as a code, such as "Cost plus award fee" and "Cost plus fixed fee" from UNCEFACT Contract Type code list.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Contract
+  primary_noun: Type
+  type: Text
+  definition: The type of this contract, expressed as text, such as "Cost plus award fee" and "Cost plus fixed fee" from UNCEFACT Contract Type code list.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Note
+  type: Text
+  definition: Free-form text conveying information that is not contained explicitly in other structures.
+  alternative_business_terms: Remarks
+  cardinality: 0..n
+  since_version: '2.1'
+- primary_noun: Version
+  type: Identifier
+  definition: An identifier for the current version of this contract.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Reason
+  primary_noun: Code
+  type: Code
+  definition: The main reason for modifying the contract expressed as a code.
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Reason
+  primary_noun: Description
+  type: Text
+  definition: Text describing the main reason for modifying the contract
+  cardinality: 0..n
+  since_version: '2.3'
+- primary_noun: Description
+  type: Text
+  definition: Text describing this contract.
+  cardinality: 0..n
+  since_version: '2.1'
+
+objects:
+- qualifier: Validity
+  type: Period
+  definition: The period during which this contract is valid.
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Contract
+  type: Document Reference
+  definition: A reference to a contract document.
+  cardinality: 0..n
+  since_version: '2.0'
+- qualifier: Nomination
+  type: Period
+  definition: In a transportation contract, the period required to book the services specified in the contract before the services can begin.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Contractual
+  type: Delivery
+  definition: In a transportation contract, the delivery of the services required to book the services specified in the contract.
+  cardinality: 0..1
+  since_version: '2.1'

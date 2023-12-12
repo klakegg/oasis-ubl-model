@@ -1,0 +1,100 @@
+name: Transport Progress Status
+definition: A document sent from a Transportation Network Manager to a Transport Service Provider giving the status of the whereabouts and schedule of the transport means involved in a transport service.
+since_version: '2.1'
+
+fields:
+- possessive_noun: UBL Version
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies the earliest version of the UBL 2 schema for this document type that defines all of the elements that might be encountered in the current instance.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Customization
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies a user-defined customization of UBL for a specific use.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Profile
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies a user-defined profile of the customization of UBL being used.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Profile Execution
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies an instance of executing a profile, to associate all transactions in a collaboration.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this document, assigned by the sender.
+  cardinality: '1'
+  since_version: '2.1'
+- primary_noun: Indicator
+  type: Indicator
+  definition: Indicates whether this document is a copy (true) or not (false).
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: UUID
+  type: Identifier
+  definition: A universally unique identifier for an instance of this document.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Issue
+  primary_noun: Date
+  type: Date
+  definition: The date, assigned by the sender, on which this document was issued.
+  cardinality: '1'
+  since_version: '2.1'
+- possessive_noun: Issue
+  primary_noun: Time
+  type: Time
+  definition: The time, assigned by the sender, at which this document was issued.
+  cardinality: '1'
+  since_version: '2.1'
+- primary_noun: Note
+  type: Text
+  definition: Free-form text pertinent to this document, conveying information that is not contained explicitly in other structures.
+  cardinality: 0..n
+  since_version: '2.1'
+- primary_noun: Indicator
+  type: Indicator
+  definition: Indicates whether transport progress information is available.
+  cardinality: 0..1
+  since_version: '2.1'
+
+objects:
+- type: Signature
+  definition: A signature applied to this document.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Sender
+  type: Party
+  definition: The party sending the Transport Progress Status.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Receiver
+  type: Party
+  definition: The party receiving the Transport Progress Status.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Source Issuer
+  type: Party
+  definition: The party that is the source of the Transport Progress Status.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Transport Progress Status Request
+  type: Document Reference
+  definition: A reference to the Transport Progress Status Request document to which this status report is a response.
+  cardinality: 0..1
+  since_version: '2.1'
+- type: Transport Means
+  definition: The transport means by which the current transport service is effectuated.
+  cardinality: '1'
+  since_version: '2.1'
+- type: Transport Schedule
+  definition: Describes the status and schedule of the transport means operating the transport service as well as the current location of the transport means.
+  cardinality: 0..n
+  since_version: '2.1'

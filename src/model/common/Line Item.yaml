@@ -1,0 +1,174 @@
+name: Line Item
+definition: A class to describe a line item.
+since_version: '2.0'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this line item, assigned by the buyer.
+  cardinality: '1'
+  since_version: '2.0'
+- possessive_noun: Order
+  primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this line item, assigned by the seller.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: UUID
+  type: Identifier
+  definition: A universally unique identifier for this line item.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Note
+  type: Text
+  definition: Free-form text conveying information that is not contained explicitly in other structures.
+  cardinality: 0..n
+  since_version: '2.0'
+- possessive_noun: Line Status
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the status of this line item with respect to its original state.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Quantity
+  type: Quantity
+  definition: The quantity of items associated with this line item.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Line Extension
+  primary_noun: Amount
+  type: Amount
+  definition: The total amount for this line item, including allowance charges but net of taxes.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Line Extension
+  primary_noun: Amount
+  type: Amount
+  definition: The total amount for this line item, including all allowances, charges and taxes.
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Tax
+  primary_noun: Amount
+  type: Amount
+  definition: The total tax amount for this line item.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Quantity
+  type: Quantity
+  definition: The minimum quantity of the item associated with this line.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Quantity
+  type: Quantity
+  definition: The maximum quantity of the item associated with this line.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Backorder
+  type: Quantity
+  definition: The minimum back order quantity of the item associated with this line (where back order is allowed).
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Backorder
+  type: Quantity
+  definition: The maximum back order quantity of the item associated with this line (where back order is allowed).
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Inspection Method
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the inspection requirements for the item associated with this line item.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Partial Delivery
+  primary_noun: Indicator
+  type: Indicator
+  definition: An indicator that a partial delivery is allowed (true) or not (false).
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Back Order Allowed
+  primary_noun: Indicator
+  type: Indicator
+  definition: An indicator that back order is allowed (true) or not (false).
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Accounting Cost
+  primary_noun: Code
+  type: Code
+  definition: The buyer's accounting cost centre for this line item, expressed as a code.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Accounting
+  primary_noun: Cost
+  type: Text
+  definition: The buyer's accounting cost centre for this line item, expressed as text.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Information
+  type: Text
+  definition: Text describing a warranty (provided by WarrantyParty) for the good or service described in this line item.
+  examples: 'Unless specified otherwise and in addition to any rights the Customer may have under statute, Dell warrants to the Customer that Dell branded Products (excluding third party products and software), will be free from defects in materials and workmanship affecting normal use for a period of one year from invoice date ( Standard Warranty ). '
+  cardinality: 0..n
+  since_version: '2.1'
+
+objects:
+- type: Delivery
+  definition: A delivery associated with this line item.
+  cardinality: 0..n
+  since_version: '2.0'
+- type: Delivery Terms
+  definition: Terms and conditions of the delivery associated with this line item.
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Originator
+  type: Party
+  definition: The party who originated the Order associated with this line item.
+  cardinality: 0..1
+  since_version: '2.0'
+- type: Ordered Shipment
+  definition: An ordered shipment associated with this line item.
+  cardinality: 0..n
+  since_version: '2.0'
+- type: Pricing Reference
+  definition: A reference to pricing and item location information associated with this line item.
+  cardinality: 0..1
+  since_version: '2.0'
+- type: Allowance Charge
+  definition: An allowance or charge associated with this line item.
+  cardinality: 0..n
+  since_version: '2.0'
+- type: Price
+  definition: The price of the item of trade associated with this line item.
+  cardinality: 0..1
+  since_version: '2.0'
+- type: Item
+  definition: The item of trade associated with this line item.
+  cardinality: '1'
+  since_version: '2.0'
+- qualifier: Sub
+  type: Line Item
+  definition: The subsidiary line items that constitute the main line item, such as in a bill of materials.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Warranty Validity
+  type: Period
+  definition: The period during which the warranty associated with this line item is valid.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Warranty
+  type: Party
+  definition: The party responsible for any warranty associated with this line item.
+  cardinality: 0..1
+  since_version: '2.1'
+- type: Tax Total
+  definition: A total amount of taxes of a particular kind applicable to this item.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Item
+  type: Price Extension
+  definition: The price extension, calculated by multiplying the price per unit by the quantity of items.
+  cardinality: 0..1
+  since_version: '2.1'
+- type: Line Reference
+  definition: A reference to a line in a document associated with this line item.
+  cardinality: 0..n
+  since_version: '2.1'

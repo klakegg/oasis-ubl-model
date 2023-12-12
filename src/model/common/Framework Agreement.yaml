@@ -1,0 +1,48 @@
+name: Framework Agreement
+definition: A class to describe a tendering framework agreement.
+since_version: '2.1'
+
+fields:
+- primary_noun: Operator
+  type: Quantity
+  definition: The number of economic operators expected to participate in this framework agreement.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Operator
+  type: Quantity
+  definition: The maximum number of economic operators allowed to participate in this framework agreement.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Justification
+  type: Text
+  definition: Text describing the justification for this framework agreement.
+  cardinality: 0..n
+  since_version: '2.1'
+- primary_noun: Frequency
+  type: Text
+  definition: Text describing the frequency with which subsequent contracts will be awarded.
+  cardinality: 0..n
+  since_version: '2.1'
+- primary_noun: Value
+  type: Amount
+  definition: The estimated value which will be spent within a framework agreement over its whole duration, including options and renewals.
+  cardinality: 0..1
+  since_version: '2.3'
+- primary_noun: Value
+  type: Amount
+  definition: The maximum Value which can be spent within a framework agreement over its whole duration, including options and renewals.
+  cardinality: 0..1
+  since_version: '2.3'
+
+objects:
+- qualifier: Duration
+  type: Period
+  definition: The period during which this framework agreement applies.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Subsequent Process
+  type: Tender Requirement
+  definition: A tender requirement intended for consumption by downstream tendering processes derived from the establishment of this framework agreement.
+  examples: Curricula required
+  cardinality: 0..n
+  since_version: '2.1'

@@ -1,0 +1,13 @@
+name: Ordered Shipment
+definition: A class to describe an ordered shipment.
+since_version: '2.0'
+
+objects:
+- type: Shipment
+  definition: The ordered shipment.
+  cardinality: '1'
+  since_version: '2.0'
+- type: Package
+  definition: A package in this ordered shipment.
+  cardinality: 0..n
+  since_version: '2.0'

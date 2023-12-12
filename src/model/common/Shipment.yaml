@@ -1,0 +1,189 @@
+name: Shipment
+definition: A class defining an identifiable collection of one or more goods items to be transported between the seller party and the buyer party. This information may be defined within a commercial contract. A shipment can be transported in different consignments (e.g., split for logistical purposes).
+since_version: '2.0'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this shipment.
+  alternative_business_terms: Waybill Number
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Shipping Priority Level
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the priority or level of service required for this shipment.
+  alternative_business_terms: Service Level, Service Priority
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Handling
+  primary_noun: Code
+  type: Code
+  definition: The handling required for this shipment, expressed as a code.
+  alternative_business_terms: Special Handling
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Instructions
+  type: Text
+  definition: The handling required for this shipment, expressed as text.
+  untded_code: '4078'
+  cardinality: 0..n
+  since_version: '2.0'
+- primary_noun: Information
+  type: Text
+  definition: Free-form text pertinent to this shipment, conveying information that is not contained explicitly in other structures.
+  cardinality: 0..n
+  since_version: '2.0'
+- primary_noun: Weight
+  type: Measure
+  definition: The total gross weight of a shipment; the weight of the goods plus packaging plus transport equipment.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Weight
+  type: Measure
+  definition: The net weight of this shipment, excluding packaging.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Weight
+  type: Measure
+  definition: The total net weight of this shipment, excluding packaging and transport equipment.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Volume
+  type: Measure
+  definition: The total volume of the goods in this shipment, including packaging.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Volume
+  type: Measure
+  definition: The total volume of the goods in this shipment, excluding packaging and transport equipment.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Goods Item
+  primary_noun: Quantity
+  type: Quantity
+  definition: The total number of goods items in this shipment.
+  untded_code: '7240'
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Transport Handling Unit
+  primary_noun: Quantity
+  type: Quantity
+  definition: The number of pieces of transport handling equipment (pallets, boxes, cases, etc.) in this shipment.
+  alternative_business_terms: Number of THUs
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Value
+  type: Amount
+  definition: The amount covered by insurance for this shipment.
+  alternative_business_terms: Value Insured
+  untded_code: '5011'
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Value
+  type: Amount
+  definition: The total declared value for customs purposes of those goods in this shipment that are subject to the same customs procedure and have the same tariff/statistical heading, country information, and duty regime.
+  untded_code: '5032'
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Value
+  type: Amount
+  definition: The value of this shipment, declared by the shipper or his agent solely for the purpose of varying the carrier's level of liability from that provided in the contract of carriage, in case of loss or damage to goods or delayed delivery.
+  alternative_business_terms: Declared value for carriage, Interest in delivery
+  untded_code: '5036'
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Value
+  type: Amount
+  definition: The value, declared for statistical purposes, of those goods in this shipment that have the same statistical heading.
+  alternative_business_terms: Statistical Value
+  untded_code: '5218'
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Value
+  type: Amount
+  definition: The monetary amount that has to be or has been paid as calculated under the applicable trade delivery.
+  alternative_business_terms: FOB Value
+  untded_code: '5054'
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Instructions
+  type: Text
+  definition: Special instructions relating to this shipment.
+  cardinality: 0..n
+  since_version: '2.0'
+- primary_noun: Instructions
+  type: Text
+  definition: Delivery instructions relating to this shipment.
+  untded_code: '4492'
+  cardinality: 0..n
+  since_version: '2.0'
+- primary_noun: Indicator
+  type: Indicator
+  definition: An indicator that the consignment has been split in transit (true) or not (false).
+  untded_code: '4492'
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Quantity
+  type: Quantity
+  definition: The total number of consignments within this shipment.
+  cardinality: 0..1
+  since_version: '2.1'
+
+objects:
+- type: Consignment
+  definition: A consignment covering this shipment.
+  cardinality: 0..n
+  since_version: '2.0'
+- type: Goods Item
+  definition: A goods item included in this shipment.
+  cardinality: 0..n
+  since_version: '2.0'
+- type: Shipment Stage
+  definition: A stage in the transport movement of this shipment.
+  cardinality: 0..n
+  since_version: '2.0'
+- type: Delivery
+  definition: The delivery of this shipment.
+  cardinality: 0..1
+  since_version: '2.0'
+- type: Transport Handling Unit
+  definition: A transport handling unit associated with this shipment.
+  cardinality: 0..n
+  since_version: '2.0'
+- qualifier: Return
+  type: Address
+  definition: The address to which a shipment ought to be returned.
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Origin
+  type: Address
+  definition: The region in which the goods have been produced or manufactured, according to criteria laid down for the purposes of application of the customs tariff, or of quantitative restrictions, or of any other measure related to trade.
+  untded_code: '3238'
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: First Arrival Port
+  type: Location
+  definition: The first arrival location of a shipment. This would be a port for sea, an airport for air, a terminal for rail, or a border post for land crossing.
+  untded_code: '3509'
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Last Exit Port
+  type: Location
+  definition: The final exporting location for a shipment. This would be a port for sea, an airport for air, a terminal for rail, or a border post for land crossing.
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Export
+  type: Country
+  definition: The country from which the goods were originally exported, without any commercial transaction taking place in intermediate countries.
+  alternative_business_terms: Country of exportation (WCO ID 062)
+  untded_code: '3207'
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Freight
+  type: Allowance Charge
+  definition: A cost incurred by the shipper in moving goods, by whatever means, from one place to another under the terms of the contract of carriage. In addition to transport costs, this may include such elements as packing, documentation, loading, unloading, and insurance to the extent that they relate to the freight costs.
+  alternative_business_terms: Freight Costs
+  untded_code: '5290'
+  cardinality: 0..n
+  since_version: '2.0'

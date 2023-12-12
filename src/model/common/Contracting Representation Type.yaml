@@ -1,0 +1,19 @@
+name: Contracting Representation Type
+definition: The type of representation the party has acting for the Contracting party
+since_version: '2.3'
+
+fields:
+- possessive_noun: Representation Type
+  primary_noun: Code
+  type: Code
+  definition: A code specifying the type of representation empowering the party to act on behalf of a third party
+  examples: CPB, SP, ..
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Representation
+  primary_noun: Type
+  type: Text
+  definition: The type of representation empowering the party to act on behalf of a third party, expressed as text.
+  examples: Central Purchasing Body, Service Provider, ...
+  cardinality: 0..n
+  since_version: '2.3'

@@ -1,0 +1,23 @@
+name: Regulation
+definition: A class to describe a regulation.
+since_version: '2.1'
+
+fields:
+- primary_noun: Name
+  type: Name
+  definition: A name for this regulation.
+  cardinality: 1..n
+  since_version: '2.1'
+- possessive_noun: Legal
+  primary_noun: Reference
+  type: Text
+  definition: Text describing a legal reference.
+  examples: Art. 45 2 b
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Ontology
+  primary_noun: URI
+  type: Identifier
+  definition: The Uniform Resource Identifier (URI) of an ontology related to this regulation.
+  cardinality: 0..1
+  since_version: '2.1'

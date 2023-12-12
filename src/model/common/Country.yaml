@@ -1,0 +1,17 @@
+name: Country
+definition: A class to describe a country.
+since_version: '2.0'
+
+fields:
+- possessive_noun: Identification
+  primary_noun: Code
+  type: Code
+  definition: A code signifying this country.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Name
+  type: Name
+  definition: The name of this country.
+  examples: SOUTH AFRICA
+  cardinality: 0..1
+  since_version: '2.0'

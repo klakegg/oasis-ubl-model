@@ -1,0 +1,86 @@
+name: Consumption Correction
+definition: The Statement of correction, for examples heating correction.
+since_version: '2.1'
+
+fields:
+- possessive_noun: Correction
+  primary_noun: Type
+  type: Text
+  definition: Statement for the correction type.
+  examples: Heating Correction
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Correction Type
+  primary_noun: Code
+  type: Code
+  definition: Statement at the code for the correction type.
+  examples: HeatingCorrection
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Meter
+  primary_noun: Number
+  type: Text
+  definition: Statement for meter number.
+  examples: '530071575'
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Gas
+  primary_noun: Pressure
+  type: Quantity
+  definition: Correction of the gas pressure.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Temperature
+  primary_noun: Reduction
+  type: Quantity
+  definition: Statement for the actuel heating correction temperature.
+  examples: "-36.69"
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Temperature
+  primary_noun: Reduction
+  type: Quantity
+  definition: Statement for the standard for heating correction temperature.
+  examples: "-37.00"
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Temperature
+  primary_noun: Reduction
+  type: Quantity
+  definition: Deviation from standard heating correction.
+  examples: '0.31'
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Description
+  type: Text
+  definition: Description related to the corrections.
+  cardinality: 0..n
+  since_version: '2.1'
+- possessive_noun: Correction Unit
+  primary_noun: Amount
+  type: Amount
+  definition: Correction per MWH per degree C.
+  examples: '0.0000'
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Consumption
+  primary_noun: Energy
+  type: Quantity
+  definition: Your consumpt for district heating energy.
+  examples: '563.6240'
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Consumption
+  primary_noun: Water
+  type: Quantity
+  definition: Your consumpt for district heating water.
+  examples: '13212.14'
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Correction
+  primary_noun: Amount
+  type: Amount
+  definition: Your correction for heating correction.
+  examples: '0.00'
+  cardinality: 0..1
+  since_version: '2.1'

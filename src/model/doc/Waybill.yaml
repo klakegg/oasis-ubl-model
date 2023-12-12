@@ -1,0 +1,187 @@
+name: Waybill
+definition: A transport document describing a shipment It is issued by the party who undertakes to provide transportation services, or undertakes to arrange for their provision, to the party who gives instructions for the transportation services (shipper, consignor, etc.). It states the instructions for the beneficiary and may contain the details of the transportation, charges, and terms and conditions under which the transportation service is provided.
+alternative_business_terms: Consignment Note
+since_version: '2.0'
+
+fields:
+- possessive_noun: UBL Version
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies the earliest version of the UBL 2 schema for this document type that defines all of the elements that might be encountered in the current instance.
+  examples: 2.0.5
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Customization
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies a user-defined customization of UBL for a specific use.
+  examples: NES
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Profile
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies a user-defined profile of the customization of UBL being used.
+  examples: BasicProcurementProcess
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Profile Execution
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies an instance of executing a profile, to associate all transactions in a collaboration.
+  examples: BPP-1001
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this document, assigned by the sender.
+  alternative_business_terms: Master Waybill Number
+  untded_code: '1188'
+  cardinality: '1'
+  since_version: '2.0'
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier (in the form of a reference number) assigned by a carrier or its agent to identify a specific shipment.
+  untded_code: '1016'
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: UUID
+  type: Identifier
+  definition: A universally unique identifier for an instance of this document.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Version
+  primary_noun: Identifier
+  type: Identifier
+  definition: The version of this waybill.
+  cardinality: 0..1
+  since_version: '2.4'
+- possessive_noun: Status
+  primary_noun: Code
+  type: Code
+  definition: The status of this waybill (draft, signed, approved, etc.), expressed as a code.
+  cardinality: 0..1
+  since_version: '2.4'
+- possessive_noun: Issue
+  primary_noun: Date
+  type: Date
+  definition: The date, assigned by the sender, on which this document was issued.
+  untded_code: '2417'
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Issue
+  primary_noun: Time
+  type: Time
+  definition: The time, assigned by the sender, at which this document was issued.
+  untded_code: '2417'
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Name
+  type: Name
+  definition: Text, assigned by the sender, that identifies this document to business users.
+  examples: 'Air Waybill , House Waybill '
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Description
+  type: Text
+  definition: Text describing the contents of the Waybill.
+  cardinality: 0..n
+  since_version: '2.0'
+- primary_noun: Note
+  type: Text
+  definition: Free-form text pertinent to this document, conveying information that is not contained explicitly in other structures.
+  cardinality: 0..n
+  since_version: '2.0'
+- possessive_noun: Shipping Order
+  primary_noun: Identifier
+  type: Identifier
+  definition: An identifier (in the form of a reference number) of the Shipping Order or Forwarding Instruction associated with this shipment.
+  untded_code: '1121'
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Waybill Type
+  primary_noun: Code
+  type: Code
+  definition: The type of waybill (Bill of Laden, Airwaybill, CMR, House waybill, etc.) expressed as a code.
+  cardinality: 0..1
+  since_version: '2.4'
+- primary_noun: Indicator
+  type: Indicator
+  definition: An indicator of whether this waybill is consolidated from other waybills (true) or not (false).
+  cardinality: 0..1
+  since_version: '2.4'
+- primary_noun: Indicator
+  type: Indicator
+  definition: A term used in commerce in reference to certain duties, called ad valorem duties, which are levied on commodities at certain rates per centum on their value.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Value
+  type: Amount
+  definition: Value declared by the shipper or his agent solely for the purpose of varying the carrier's level of liability from that provided in the contract of carriage in case of loss or damage to goods or delayed delivery.
+  untded_code: '5036'
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Instruction
+  type: Text
+  definition: Other free-text instructions related to the shipment to the forwarders or carriers. This ought to be used only where such information cannot be represented in other structured information entities within the document.
+  untded_code: '4244'
+  cardinality: 0..n
+  since_version: '2.0'
+
+objects:
+- qualifier: Issue
+  type: Location
+  definition: The location where this waybill was issued.
+  cardinality: 0..1
+  since_version: '2.4'
+- qualifier: Sender
+  type: Party
+  definition: The party sending this waybill.
+  cardinality: 0..1
+  since_version: '2.4'
+- qualifier: Receiver
+  type: Party
+  definition: The party receiving this waybill.
+  cardinality: 0..1
+  since_version: '2.4'
+- qualifier: Consignor
+  type: Party
+  definition: The party consigning goods, as stipulated in the transport contract by the party ordering transport.
+  alternative_business_terms: Consignor (WCO ID 71 and 72)
+  untded_code: 3036 and 3039
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Carrier
+  type: Party
+  definition: The party providing the transport of goods between named points.
+  alternative_business_terms: Transport Company, Shipping Line, NVOCC, Airline, Haulier, Courier, Carrier (WCO ID 49 and 50)
+  untded_code: 3036 and 3039
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Freight Forwarder
+  type: Party
+  definition: A party combining individual smaller consignments into a single larger shipment (a so-called consolidated consignment or shipment) that is sent to a counterpart who mirrors the consolidator's activity by dividing the consolidated consignment into its original components.
+  alternative_business_terms: Consolidator (WCO ID 192 AND 193)
+  untded_code: 3036 and 3039
+  cardinality: 0..1
+  since_version: '2.0'
+- type: Shipment
+  definition: A description of the shipment.
+  cardinality: '1'
+  since_version: '2.0'
+- type: Document Reference
+  definition: A reference to another document associated with this document.
+  cardinality: 0..n
+  since_version: '2.0'
+- type: Exchange Rate
+  definition: Information about the rate of exchange (conversion) between two currencies.
+  cardinality: 0..n
+  since_version: '2.0'
+- type: Document Distribution
+  definition: A list of interested parties to whom this document is distributed.
+  cardinality: 0..n
+  since_version: '2.0'
+- type: Signature
+  definition: A signature applied to this document.
+  cardinality: 0..n
+  since_version: '2.0'

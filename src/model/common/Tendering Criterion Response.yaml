@@ -1,0 +1,55 @@
+name: Tendering Criterion Response
+definition: A class to describe a response to a criterion property.
+since_version: '2.2'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this criterion property response.
+  cardinality: 0..1
+  since_version: '2.2'
+- primary_noun: Name
+  type: Name
+  definition: The name of the criterion property response
+  cardinality: 0..1
+  since_version: '2.2'
+- primary_noun: Description
+  type: Text
+  definition: A description of the criterion response
+  cardinality: 0..n
+  since_version: '2.2'
+- possessive_noun: Validated Criterion Property
+  primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this item of criterion support.
+  cardinality: 0..1
+  since_version: '2.2'
+- possessive_noun: Confidentiality Level
+  primary_noun: Code
+  type: Code
+  definition: A code specifying the confidentiality level of the response to this criterion.
+  cardinality: 0..1
+  since_version: '2.2'
+
+objects:
+- type: Response Value
+  definition: The criterion requirement property values.
+  cardinality: 0..n
+  since_version: '2.2'
+- qualifier: Applicable
+  type: Period
+  definition: The period to which this criterion property response applies.
+  cardinality: 0..n
+  since_version: '2.2'
+- type: Evidence Supplied
+  definition: A reference to the evidence supporting this criterion property response.
+  cardinality: 0..n
+  since_version: '2.2'
+- type: Procurement Project Lot Reference
+  definition: One or more lots to which the criterion response applies
+  cardinality: 0..n
+  since_version: '2.3'
+- type: Commodity Classification
+  definition: One or more classification to which this criterion response applies
+  cardinality: 0..n
+  since_version: '2.3'

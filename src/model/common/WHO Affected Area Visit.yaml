@@ -1,0 +1,17 @@
+name: WHO Affected Area Visit
+definition: A class to describe a visit to a port located in a geographical area considered an “affected area” by the World Health Organization (WHO).
+since_version: '2.3'
+
+fields:
+- primary_noun: Visit
+  type: Date
+  definition: The date that the WHO Affected Area was visited.
+  cardinality: '1'
+  since_version: '2.3'
+
+objects:
+- qualifier: WHO Affected Area Port
+  type: Location
+  definition: The location of the port of the visited WHO Affected Area.
+  cardinality: '1'
+  since_version: '2.3'

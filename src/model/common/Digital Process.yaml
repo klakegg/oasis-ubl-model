@@ -1,0 +1,34 @@
+name: Digital Process
+definition: A class to describe a digital trade process.
+alternative_business_terms: Business Process
+since_version: '2.2'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for the digital collaboration.
+  cardinality: 0..1
+  since_version: '2.2'
+- primary_noun: Description
+  type: Text
+  definition: Text describing the digital process.
+  cardinality: 0..n
+  since_version: '2.2'
+- possessive_noun: Profile
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies a user-defined profile of this digital process (e.g. an UBL profile).
+  examples: urn:www.cenbii.eu:profile:bii05:ver2.0
+  cardinality: 0..1
+  since_version: '2.2'
+
+objects:
+- type: Digital Collaboration
+  definition: The digital collaboration associated with this digital process.
+  cardinality: 0..n
+  since_version: '2.2'
+- qualifier: Certification
+  type: Document Reference
+  definition: A reference to a certification document associated with this digital process.
+  cardinality: 0..n
+  since_version: '2.2'

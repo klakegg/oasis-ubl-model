@@ -1,0 +1,164 @@
+name: Goods Certificate
+definition: A document that describes a certificate of goods for importation and exportation
+since_version: '2.3'
+
+fields:
+- possessive_noun: UBL Version
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies the earliest version of the UBL 2 schema for this document type that defines all of the elements that might be encountered in the current instance.
+  examples: '2.3'
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Customization
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies a user-defined customization of UBL for a specific use.
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Profile
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies a user-defined profile of the customization of UBL being used.
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Profile Execution
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies an instance of executing a profile, to associate all transactions in a collaboration.
+  examples: BPP-1001
+  cardinality: 0..1
+  since_version: '2.3'
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this document, assigned by the sender.
+  cardinality: '1'
+  since_version: '2.3'
+- primary_noun: UUID
+  type: Identifier
+  definition: A universally unique identifier for an instance of this document.
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Issue
+  primary_noun: Date
+  type: Date
+  definition: The date, assigned by the sender, on which this document was issued.
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Issue
+  primary_noun: Time
+  type: Time
+  definition: The time, assigned by the sender, at which this document was issued.
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Type
+  primary_noun: Code
+  type: Code
+  definition: A code specifying the type of goods certificate
+  cardinality: 0..1
+  since_version: '2.3'
+- primary_noun: Description
+  type: Text
+  definition: Textual description of this goods certificate
+  cardinality: 0..n
+  since_version: '2.3'
+- primary_noun: Note
+  type: Text
+  definition: Free-form text pertinent to this document, conveying information that is not contained explicitly in other structures.
+  cardinality: 0..n
+  since_version: '2.3'
+- primary_noun: Version
+  type: Identifier
+  definition: Identifies the current version of this goods certificate
+  cardinality: 0..1
+  since_version: '2.3'
+
+objects:
+- qualifier: Validity
+  type: Period
+  definition: The period of time for which this goods certificate is considered valid
+  cardinality: 0..1
+  since_version: '2.3'
+- qualifier: Applicable Territory
+  type: Address
+  definition: A geographic area where this goods certificate is valid
+  cardinality: 0..1
+  since_version: '2.3'
+- qualifier: Exporter
+  type: Party
+  definition: The party who exports the goods or has similar right of disposal over them at the time of export
+  alternative_business_terms: Exporter (WCO ID 41 and 42)
+  cardinality: 0..1
+  since_version: '2.3'
+- qualifier: Importer
+  type: Party
+  definition: The party who imports the goods, or on whose behalf the goods are being import
+  alternative_business_terms: Importer (WCO ID 39 and 40)
+  cardinality: 0..1
+  since_version: '2.3'
+- qualifier: Warehouse
+  type: Party
+  definition: The party who is responsible for storing the goods
+  cardinality: 0..1
+  since_version: '2.3'
+- qualifier: Consignor
+  type: Party
+  definition: The party, usually the seller, who is responsible for the consignment
+  cardinality: 0..1
+  since_version: '2.3'
+- qualifier: Consignee
+  type: Party
+  definition: The party, usually the buyer, who will receive the goods
+  cardinality: 0..1
+  since_version: '2.3'
+- qualifier: Freight Forwarder
+  type: Party
+  definition: The freight forwarder or the forwarding agent responsible for the transportation of the goods
+  cardinality: 0..1
+  since_version: '2.3'
+- qualifier: Issuer
+  type: Party
+  definition: The party issuing this goods certificate
+  cardinality: '1'
+  since_version: '2.3'
+- qualifier: Legal Authority
+  type: Party
+  definition: The legal authority, when different from the issuer, who sanctions this goods certificate
+  cardinality: 0..1
+  since_version: '2.3'
+- qualifier: Applicant
+  type: Party
+  definition: The party applying for this goods certificate
+  cardinality: 0..1
+  since_version: '2.3'
+- type: Shipment
+  definition: The shipment for which this goods certificate is issued
+  cardinality: '1'
+  since_version: '2.3'
+- type: Attestation
+  definition: Any attestations made for the goods related to this goods certificate
+  cardinality: 0..n
+  since_version: '2.3'
+- type: Goods Processing
+  definition: Any processing that the goods have been undergoing
+  cardinality: 0..n
+  since_version: '2.3'
+- qualifier: Original
+  type: Document Reference
+  definition: A reference to the original version of the goods certificate
+  cardinality: 0..1
+  since_version: '2.3'
+- qualifier: Previous
+  type: Document Reference
+  definition: A reference to the previous version of the goods certificate
+  cardinality: 0..1
+  since_version: '2.3'
+- qualifier: Additional
+  type: Document Reference
+  definition: A reference to an additional document associated with this goods certificate
+  cardinality: 0..n
+  since_version: '2.3'
+- type: Signature
+  definition: A signature applied to this document.
+  cardinality: 0..n
+  since_version: '2.3'

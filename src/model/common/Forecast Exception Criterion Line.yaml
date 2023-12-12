@@ -1,0 +1,35 @@
+name: Forecast Exception Criterion Line
+definition: Establishes the criterion for one of the three types of exceptions. This class provides criteria for the kind of forecast exception, the identification of the purpose of the forecast, the source of data and the time basis criterion for the exception.
+since_version: '2.1'
+
+fields:
+- possessive_noun: Purpose
+  primary_noun: Code
+  type: Code
+  definition: A description of the purpose for the forecast that is assigned to each forecast data item exception criterion.
+  cardinality: '1'
+  since_version: '2.1'
+- possessive_noun: Forecast Type
+  primary_noun: Code
+  type: Code
+  definition: A description of a Forecast selected from a list.
+  cardinality: '1'
+  since_version: '2.1'
+- possessive_noun: Comparison Data Source
+  primary_noun: Code
+  type: Code
+  definition: If it is a forecast comparison exception, this value indicates the other source of information.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Data Source
+  primary_noun: Code
+  type: Code
+  definition: Indication of the partner who provides the information.
+  cardinality: '1'
+  since_version: '2.1'
+- possessive_noun: Time Delta Days
+  primary_noun: Quantity
+  type: Quantity
+  definition: Time basis in days for the Exception.
+  cardinality: 0..1
+  since_version: '2.1'

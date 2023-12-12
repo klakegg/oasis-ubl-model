@@ -1,0 +1,127 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "$ref": "#/definitions/abie",
+    "definitions": {
+        "abie": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "name",
+                "definition",
+                "since_version"
+            ],
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "definition": {
+                    "type": "string"
+                },
+                "since_version": {
+                    "type": "string"
+                },
+                "fields": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/bbie"
+                    }
+                },
+                "objects": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/asbie"
+                    }
+                }
+            }
+        },
+        "asbie": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "type",
+                "definition",
+                "cardinality",
+                "since_version"
+            ],
+            "properties": {
+                "qualifier": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "definition": {
+                    "type": "string"
+                },
+                "cardinality": {
+                    "type": "string",
+                    "enum": [
+                        "0..1",
+                        "1",
+                        "1..1",
+                        "0..n",
+                        "1..n"
+                    ]
+                },
+                "examples": {
+                    "type": "string"
+                },
+                "untded_code": {
+                    "type": "string"
+                },
+                "alternative_business_terms": {
+                    "type": "string"
+                },
+                "since_version": {
+                    "type": "string"
+                }
+            }
+        },
+        "bbie": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "type",
+                "definition",
+                "cardinality",
+                "since_version"
+            ],
+            "properties": {
+                "possessive_noun": {
+                    "type": "string"
+                },
+                "primary_noun": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "definition": {
+                    "type": "string"
+                },
+                "cardinality": {
+                    "type": "string",
+                    "enum": [
+                        "0..1",
+                        "1",
+                        "1..1",
+                        "0..n",
+                        "1..n"
+                    ]
+                },
+                "examples": {
+                    "type": "string"
+                },
+                "untded_code": {
+                    "type": "string"
+                },
+                "alternative_business_terms": {
+                    "type": "string"
+                },
+                "since_version": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

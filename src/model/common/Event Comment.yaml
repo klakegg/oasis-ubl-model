@@ -1,0 +1,22 @@
+name: Event Comment
+definition: A class to define comments about a retail event.
+since_version: '2.1'
+
+fields:
+- primary_noun: Comment
+  type: Text
+  definition: Text commenting on the event.
+  cardinality: '1'
+  since_version: '2.1'
+- possessive_noun: Issue
+  primary_noun: Date
+  type: Date
+  definition: The date on which this comment was made.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Issue
+  primary_noun: Time
+  type: Time
+  definition: The time at which this comment was made.
+  cardinality: 0..1
+  since_version: '2.1'

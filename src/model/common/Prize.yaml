@@ -1,0 +1,22 @@
+name: Prize
+definition: A class to describe something valuable offered or striven for in competition.
+since_version: '2.3'
+
+fields:
+- possessive_noun: Rank
+  primary_noun: Code
+  type: Code
+  definition: The relative position in the competition associated with a prize.
+  examples: e.g. "1, 2, 3 +
+  cardinality: '1'
+  since_version: '2.3'
+- primary_noun: Value
+  type: Amount
+  definition: The monetary value amount of a prize.
+  cardinality: 0..1
+  since_version: '2.3'
+- primary_noun: Description
+  type: Text
+  definition: Text providing more information about this prize.
+  cardinality: 0..n
+  since_version: '2.3'

@@ -1,0 +1,10 @@
+name: Procurement Project Lot Reference
+definition: A class to reference to a lot identifier.
+since_version: '2.2'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this procurement project lot.
+  cardinality: '1'
+  since_version: '2.2'

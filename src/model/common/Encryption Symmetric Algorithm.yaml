@@ -1,0 +1,17 @@
+name: Encryption Symmetric Algorithm
+definition: Details of a symmetric algorithm used in encryption.
+since_version: '2.2'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: A human-readable identifier the algorithm.
+  examples: AES-256 Rijndael CBC
+  cardinality: 0..1
+  since_version: '2.2'
+- primary_noun: OID
+  type: Identifier
+  definition: The object identifier for the algorithm.
+  examples: 2.16.840.1.101.3.4.1.42
+  cardinality: 0..1
+  since_version: '2.2'

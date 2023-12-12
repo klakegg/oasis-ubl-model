@@ -1,0 +1,87 @@
+name: Exception Notification Line
+definition: A class to define a line in an Exception Notification.
+since_version: '2.1'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this exception notification line.
+  cardinality: '1'
+  since_version: '2.1'
+- primary_noun: Note
+  type: Text
+  definition: Free-form text conveying information that is not contained explicitly in other structures.
+  cardinality: 0..n
+  since_version: '2.1'
+- primary_noun: Description
+  type: Text
+  definition: Text describing the exception.
+  cardinality: 0..n
+  since_version: '2.1'
+- possessive_noun: Exception Status
+  primary_noun: Code
+  type: Code
+  definition: A code signifying status specific to a shipment exception.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Priority
+  primary_noun: Code
+  type: Code
+  definition: Priority of Exception.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Resolution
+  primary_noun: Code
+  type: Code
+  definition: 'Coded representation of possible resolution methods". Possible values are: DEFAULT_TO_AVERAGE_OF_COMPARED_VALUES DEFAULT_TO_BUYERS_VALUE DEFAULT_TO_HIGH_VALUE DEFAULT_TO_LOW_VALUE DEFAULT_TO_SELLERS_VALUE MANUAL_RESOLUTION MUTUALLY_DEFINED'
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Compared
+  primary_noun: Value
+  type: Measure
+  definition: The value that was compared with the source value that resulted in the exception
+  cardinality: '1'
+  since_version: '2.1'
+- possessive_noun: Source
+  primary_noun: Value
+  type: Measure
+  definition: The value used as the basis of comparison
+  cardinality: '1'
+  since_version: '2.1'
+- primary_noun: Variance
+  type: Quantity
+  definition: The variance of a data item from an expected value during a particular time interval.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Supply Chain Activity Type
+  primary_noun: Code
+  type: Code
+  definition: 'Establishes the criterion for one of the three types of exceptions: Operational, performance metric and forecast. This reports an exception notification about an operational exception. Description could be: A code used to identify an operational exception. Possible values are: CANCELED_ORDERS EMERGENCY_ORDERS ON_HAND ORDERS RECEIPTS SALES SHIPMENTS'
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Performance Metric Type
+  primary_noun: Code
+  type: Code
+  definition: A code used to identify a measure of performance. It defines the type of the Performance Metric on which an exception criteria is being defined
+  cardinality: 0..1
+  since_version: '2.1'
+
+objects:
+- qualifier: Exception Observation
+  type: Period
+  definition: The period (start-end date) when this exception is observed
+  cardinality: 0..1
+  since_version: '2.1'
+- type: Document Reference
+  definition: A reference to Exception Criteria document can be provided.
+  cardinality: 0..n
+  since_version: '2.1'
+- type: Forecast Exception
+  definition: A forecast accuracy or comparison exception.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Supply
+  type: Item
+  definition: The product associated with this exception notification line.
+  cardinality: '1'
+  since_version: '2.1'

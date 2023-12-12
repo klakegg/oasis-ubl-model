@@ -1,0 +1,54 @@
+name: Event
+definition: A class to describe a significant occurrence relating to an object, process, or person.
+since_version: '2.1'
+
+fields:
+- primary_noun: Identification
+  type: Identifier
+  definition: An identifier for this event within an agreed event identification scheme.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Occurrence
+  primary_noun: Date
+  type: Date
+  definition: The date of this event.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Occurrence
+  primary_noun: Time
+  type: Time
+  definition: The time of this event.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Type
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the type of this event.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Description
+  type: Text
+  definition: Text describing this event.
+  cardinality: 0..n
+  since_version: '2.1'
+- primary_noun: Indicator
+  type: Indicator
+  definition: An indicator that this event has been completed (true) or not (false).
+  cardinality: 0..1
+  since_version: '2.1'
+
+objects:
+- qualifier: Current
+  type: Status
+  definition: The current status of this event.
+  cardinality: 0..n
+  since_version: '2.1'
+- type: Contact
+  definition: Contacts associated with this event.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Occurence
+  type: Location
+  definition: The location of this event.
+  cardinality: 0..1
+  since_version: '2.1'

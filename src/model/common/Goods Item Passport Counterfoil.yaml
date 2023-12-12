@@ -1,0 +1,65 @@
+name: Goods Item Passport Counterfoil
+definition: A class describing a Goods Item Passport or ATA Carnet Counterfoil
+alternative_business_terms: ATA Carnet Counterfoil
+since_version: '2.3'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: This identifier for this Goods Item Passport Counterfoil
+  cardinality: '1'
+  since_version: '2.3'
+- possessive_noun: Goods Item Passport
+  primary_noun: Identifier
+  type: Identifier
+  definition: The identifier of the Goods Item Passport or ATA Carnet of this counterfoil, usually the number on the upper part of the orange hazard placard required on the means of transport
+  alternative_business_terms: ATA Carnet number
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Reexportation
+  primary_noun: Date
+  type: Date
+  definition: Final date of re-exportation, if less than the overall validity period of te Goods Item Passport or ATA Carnet
+  cardinality: 0..1
+  since_version: '2.3'
+- primary_noun: Note
+  type: Text
+  definition: Free-form text conveying information that is not contained explicitly in other structures.
+  cardinality: 0..n
+  since_version: '2.3'
+
+objects:
+- qualifier: Customs Office
+  type: Location
+  definition: The location of the customs office to where the counterfoil has been presented
+  cardinality: 0..1
+  since_version: '2.3'
+- type: Goods Item
+  definition: A goods item associated with this counterfoil
+  cardinality: 0..1
+  since_version: '2.3'
+- qualifier: Exportation
+  type: Document Reference
+  definition: A reference to a document used for the export of the goods related to this counterfoil
+  cardinality: 0..n
+  since_version: '2.3'
+- qualifier: Importation
+  type: Document Reference
+  definition: A reference to a document used for the import of the goods related to this counterfoil
+  cardinality: 0..n
+  since_version: '2.3'
+- qualifier: Reexportation
+  type: Document Reference
+  definition: A reference to a document used for the re-exportation of the goods related to this counterfoil
+  cardinality: 0..n
+  since_version: '2.3'
+- qualifier: Reimportation
+  type: Document Reference
+  definition: A reference to a document used for re-importation of the goods related to this counterfoil
+  cardinality: 0..n
+  since_version: '2.3'
+- qualifier: Voucher
+  type: Document Reference
+  definition: A reference to a voucher related to this counterfoil
+  cardinality: 0..n
+  since_version: '2.3'

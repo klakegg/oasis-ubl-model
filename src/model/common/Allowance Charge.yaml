@@ -1,0 +1,90 @@
+name: Allowance Charge
+definition: A class to describe information about a charge or discount as applied to a price component.
+since_version: '2.0'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this allowance or charge.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Indicator
+  type: Indicator
+  definition: An indicator that this AllowanceCharge describes a charge (true) or a discount (false).
+  cardinality: '1'
+  since_version: '2.0'
+- possessive_noun: Allowance Charge Reason
+  primary_noun: Code
+  type: Code
+  definition: A mutually agreed code signifying the reason for this allowance or charge.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Reason
+  type: Text
+  definition: The reason for this allowance or charge.
+  cardinality: 0..n
+  since_version: '2.0'
+- primary_noun: Factor
+  type: Numeric
+  definition: A number by which the base amount is multiplied to calculate the actual amount of this allowance or charge.
+  examples: '0.20'
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Indicator
+  type: Indicator
+  definition: An indicator that this allowance or charge is prepaid (true) or not (false).
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Sequence
+  type: Numeric
+  definition: A number indicating the order of this allowance or charge in the sequence of calculations applied when there are multiple allowances or charges.
+  examples: 1, 2, 3, 4, etc.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Amount
+  type: Amount
+  definition: The monetary amount of this allowance or charge to be applied.
+  examples: '35,23'
+  cardinality: '1'
+  since_version: '2.0'
+- primary_noun: Amount
+  type: Amount
+  definition: The monetary amount of this allowance or charge inclusive of all taxes.
+  cardinality: 0..1
+  since_version: '2.4'
+- primary_noun: Amount
+  type: Amount
+  definition: The monetary amount to which the multiplier factor is applied in calculating the amount of this allowance or charge.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Accounting Cost
+  primary_noun: Code
+  type: Code
+  definition: The accounting cost centre used by the buyer to account for this allowance or charge, expressed as a code.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Accounting
+  primary_noun: Cost
+  type: Text
+  definition: The accounting cost centre used by the buyer to account for this allowance or charge, expressed as text.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Amount
+  type: Amount
+  definition: The allowance or charge per item; the total allowance or charge is calculated by multiplying the per unit amount by the quantity of items, either at the level of the individual transaction line or for the total number of items in the document, depending on the context in which it appears.
+  cardinality: 0..1
+  since_version: '2.1'
+
+objects:
+- type: Tax Category
+  definition: A tax category applicable to this allowance or charge.
+  cardinality: 0..n
+  since_version: '2.0'
+- type: Tax Total
+  definition: The total of all the taxes applicable to this allowance or charge.
+  cardinality: 0..1
+  since_version: '2.0'
+- type: Payment Means
+  definition: A means of payment for this allowance or charge.
+  cardinality: 0..n
+  since_version: '2.0'

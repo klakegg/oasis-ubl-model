@@ -1,0 +1,156 @@
+name: Tendering Process
+definition: A class to describe the process of a formal offer and response to execute work or supply goods at a stated price.
+since_version: '2.1'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this tendering process.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Contracting
+  primary_noun: System
+  type: Identifier
+  definition: When reopening a tendering process, the identifier of the original framework agreement or dynamic purchasing system.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Description
+  type: Text
+  definition: Text describing the tendering process.
+  cardinality: 0..n
+  since_version: '2.1'
+- primary_noun: Description
+  type: Text
+  definition: Text describing the negotiation to be followed during the tendering process.
+  cardinality: 0..n
+  since_version: '2.1'
+- possessive_noun: Procedure
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the type of this tendering procedure.
+  examples: Open, Restricted, Negotiated
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Urgency
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the urgency of this tendering process.
+  examples: Urgent, Normal, Emergency
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Expense
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the type of expense for this tendering process.
+  examples: Normal, Anticipated
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Part Presentation
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the type of presentation of tenders required (e.g., one lot, multiple lots, or all the lots).
+  examples: One Lot, Multiple Lots, All Lots
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Contracting System
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the type of contracting system (e.g., framework agreement, dynamic purchasing system). If the procedure is individual (nonrepetitive), this code ought to be omitted.
+  examples: Framework Agreement, Dynamic Purchasing System
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Submission Method
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the method to be followed in submitting tenders.
+  examples: Manual, Electronically, etc.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Constraint
+  type: Indicator
+  definition: An indicator that the number of candidates participating in this process has been reduced (true) or not (false).
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Constraint
+  type: Indicator
+  definition: An indicator that the project associated with this tendering process is constrained by a government procurement agreement (true) or not (false).
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: URI
+  type: Identifier
+  definition: The URI where the tools for electronic communication related with the tendering process can be found.
+  cardinality: 0..1
+  since_version: '2.2'
+- primary_noun: Terminated
+  type: Indicator
+  definition: An indicator that the competition launched is terminated.
+  examples: PIN call for competition is terminated.
+  cardinality: 0..1
+  since_version: '2.3'
+
+objects:
+- qualifier: Document Availability
+  type: Period
+  definition: The period during which documents relating to this tendering process must be completed.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Tender Submission Deadline
+  type: Period
+  definition: The period during which tenders must be delivered.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Invitation Submission
+  type: Period
+  definition: The period during which invitations to tender must be completed and delivered.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Participation Invitation
+  type: Period
+  definition: The period during which the invitation to participate must be sent.
+  cardinality: 0..1
+  since_version: '2.3'
+- qualifier: Participation Request Reception
+  type: Period
+  definition: The period during which requests for participation must be completed and delivered.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Additional Information Request
+  type: Period
+  definition: The period during which additional information about the procurement can be requested.
+  cardinality: 0..1
+  since_version: '2.3'
+- qualifier: Notice
+  type: Document Reference
+  definition: A reference to a notice pertaining to this tendering process.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Additional
+  type: Document Reference
+  definition: A reference to an additional document.
+  cardinality: 0..n
+  since_version: '2.1'
+- type: Process Justification
+  definition: A justification for the selection of this tendering process.
+  cardinality: 0..n
+  since_version: '2.1'
+- type: Economic Operator Short List
+  definition: A set of criteria used to create a short list of candidates.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Open Tender
+  type: Event
+  definition: Textual description of the legal form required for potential tenderers.
+  cardinality: 0..n
+  since_version: '2.1'
+- type: Auction Terms
+  definition: The terms to be fulfilled by tenderers if an auction is to be executed before the awarding of a tender.
+  cardinality: 0..1
+  since_version: '2.1'
+- type: Framework Agreement
+  definition: A tendering framework agreement.
+  cardinality: 0..1
+  since_version: '2.1'
+- type: Contracting System
+  definition: A reference to a contracting system. Only when the procedure is repetitive.
+  cardinality: 0..n
+  since_version: '2.2'

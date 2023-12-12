@@ -1,0 +1,26 @@
+name: Message Delivery
+definition: A class to describe how a message is delivered (routed).
+since_version: '2.2'
+
+fields:
+- possessive_noun: Protocol
+  primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for the protocol to be used within this message delivery.
+  examples: AS2, ebMS2, AS4, WS-RM
+  cardinality: 0..1
+  since_version: '2.2'
+- possessive_noun: Envelope Type
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the type of envelope to be used within this message delivery (e.g. OASIS BDX Business Document Envelope).
+  examples: BDE
+  cardinality: 0..1
+  since_version: '2.2'
+- possessive_noun: Endpoint
+  primary_noun: URI
+  type: Identifier
+  definition: The Uniform Resource Identifier (URI) of the access point (e.g. an HTTP URL including the port).
+  examples: https://services.enterprise.com/participant-id/rx
+  cardinality: 0..1
+  since_version: '2.2'

@@ -1,0 +1,32 @@
+name: Energy Tax Report
+definition: A class to describe energy taxes.
+since_version: '2.1'
+
+fields:
+- possessive_noun: Tax Energy
+  primary_noun: Amount
+  type: Amount
+  definition: The monetary amount of taxes (and duties).
+  examples: '3087.90'
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: On Account
+  primary_noun: Amount
+  type: Amount
+  definition: The monetary amount of taxes (and duties) paid on account.
+  examples: '2855.40'
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Tax Energy
+  primary_noun: Balance
+  type: Amount
+  definition: The monetary amount of the balance of taxes owing.
+  examples: '232.49'
+  cardinality: 0..1
+  since_version: '2.1'
+
+objects:
+- type: Tax Scheme
+  definition: The relevant taxation scheme.
+  cardinality: '1'
+  since_version: '2.1'

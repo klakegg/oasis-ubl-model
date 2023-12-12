@@ -1,0 +1,43 @@
+name: Telecommunications Supply
+definition: A class describing the supply of a telecommunication service, e.g., providing telephone calls.
+since_version: '2.1'
+
+fields:
+- possessive_noun: Telecommunications Supply
+  primary_noun: Type
+  type: Text
+  definition: The type of telecommunications supply, expressed as text.
+  examples: Itemized tele Statement
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Telecommunications Supply Type
+  primary_noun: Code
+  type: Code
+  definition: The type of telecommunications supply, expressed as a code.
+  examples: TeleExtended
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Privacy
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the level of confidentiality of this information for this telecommunication supply.
+  examples: CompanyLevel
+  cardinality: '1'
+  since_version: '2.1'
+- primary_noun: Description
+  type: Text
+  definition: Text describing the telecommunications supply.
+  examples: Extended conversation Statement January quarter 2008.
+  cardinality: 0..n
+  since_version: '2.1'
+- primary_noun: Amount
+  type: Amount
+  definition: The total amount associated with this telecommunications supply.
+  cardinality: 0..1
+  since_version: '2.1'
+
+objects:
+- type: Telecommunications Supply Line
+  definition: Outlines the provided telecommunication supply
+  cardinality: 1..n
+  since_version: '2.1'

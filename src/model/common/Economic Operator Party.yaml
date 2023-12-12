@@ -1,0 +1,17 @@
+name: Economic Operator Party
+definition: A class to describe a potential contractor, supplier and service provider responding to a tender.
+since_version: '2.2'
+
+objects:
+- type: Qualifying Party
+  definition: The party qualifying this economic operator.
+  cardinality: 0..n
+  since_version: '2.2'
+- type: Economic Operator Role
+  definition: The role of the party in a tender consortium.
+  cardinality: 0..1
+  since_version: '2.2'
+- type: Party
+  definition: The party information about the economic operator in a tender.
+  cardinality: '1'
+  since_version: '2.2'

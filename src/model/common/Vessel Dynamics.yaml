@@ -1,0 +1,35 @@
+name: Vessel Dynamics
+definition: A class to describe the dynamics of a vesssel.
+since_version: '2.3'
+
+fields:
+- possessive_noun: Status
+  primary_noun: Code
+  type: Code
+  definition: A code specifying the navigation status for the vessel.
+  cardinality: 0..1
+  since_version: '2.3'
+- primary_noun: Indicator
+  type: Indicator
+  definition: Indicates whether the vessel is at anchor.
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Course Over Ground
+  primary_noun: Direction
+  type: Text
+  definition: Text describing the actual direction of progress of a vessel, between two points, in relation to the surface of the earth.
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Speed Over Ground
+  primary_noun: Measure
+  type: Measure
+  definition: Text describing the speed of the vessel relative to the surface of the earth.
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Rate Of Turn
+  primary_noun: Measure
+  type: Measure
+  definition: Text describing the rate at which the vessel is turning.
+  examples: ROTI
+  cardinality: 0..1
+  since_version: '2.3'

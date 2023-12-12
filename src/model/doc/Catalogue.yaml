@@ -1,0 +1,162 @@
+name: Catalogue
+definition: A document that describes items, prices, and price validity.
+since_version: '2.0'
+
+fields:
+- possessive_noun: UBL Version
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies the earliest version of the UBL 2 schema for this document type that defines all of the elements that might be encountered in the current instance.
+  examples: 2.0.5
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Customization
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies a user-defined customization of UBL for a specific use.
+  examples: NES
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Profile
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies a user-defined profile of the customization of UBL being used.
+  examples: BasicProcurementProcess
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Profile Execution
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies an instance of executing a profile, to associate all transactions in a collaboration.
+  examples: BPP-1001
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this document, assigned by the sender.
+  cardinality: '1'
+  since_version: '2.0'
+- primary_noun: UUID
+  type: Identifier
+  definition: A universally unique identifier for an instance of this document.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Action
+  primary_noun: Code
+  type: Code
+  definition: A code signifying whether the transaction is a replacement or an update.
+  examples: Replace , Update .
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Name
+  type: Name
+  definition: Text, assigned by the sender, that identifies this document to business users.
+  examples: 'winter 2005 collection '
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Issue
+  primary_noun: Date
+  type: Date
+  definition: The date, assigned by the sender, on which this document was issued.
+  cardinality: '1'
+  since_version: '2.0'
+- possessive_noun: Issue
+  primary_noun: Time
+  type: Time
+  definition: The time, assigned by the sender, at which this document was issued.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Revision
+  primary_noun: Date
+  type: Date
+  definition: The date, assigned by the seller party, on which the information in the Catalogue was last revised.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Revision
+  primary_noun: Time
+  type: Time
+  definition: The time, assigned by the Seller party, at which the information in the Catalogue was last revised.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Note
+  type: Text
+  definition: Free-form text pertinent to this document, conveying information that is not contained explicitly in other structures.
+  cardinality: 0..n
+  since_version: '2.0'
+- primary_noun: Description
+  type: Text
+  definition: Textual description of the document instance.
+  examples: 'computer accessories for laptops '
+  cardinality: 0..n
+  since_version: '2.0'
+- primary_noun: Version
+  type: Identifier
+  definition: An identifier for the current version of the Catalogue.
+  examples: '1.1 '
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Version
+  type: Identifier
+  definition: An identifier for the previous version of the Catalogue that is superseded by this version.
+  examples: '1.0 '
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Line
+  primary_noun: Count
+  type: Numeric
+  definition: The number of Catalogue Lines in the document.
+  cardinality: 0..1
+  since_version: '2.0'
+
+objects:
+- qualifier: Validity
+  type: Period
+  definition: A period, assigned by the seller, during which the information in the Catalogue is effective. This may be given as start and end dates or as a duration.
+  cardinality: 0..n
+  since_version: '2.0'
+- qualifier: Referenced
+  type: Contract
+  definition: A contract or framework agreement with which this Catalogue is associated.
+  cardinality: 0..n
+  since_version: '2.0'
+- qualifier: Source
+  type: Catalogue Reference
+  definition: A reference to the source catalogue.
+  cardinality: 0..1
+  since_version: '2.1'
+- type: Document Reference
+  definition: A reference to another document associated with this document.
+  cardinality: 0..n
+  since_version: '2.1'
+- type: Signature
+  definition: A signature applied to this document.
+  cardinality: 0..n
+  since_version: '2.0'
+- qualifier: Provider
+  type: Party
+  definition: The party providing the Catalogue.
+  cardinality: '1'
+  since_version: '2.0'
+- qualifier: Receiver
+  type: Party
+  definition: The party receiving the Catalogue.
+  cardinality: '1'
+  since_version: '2.0'
+- qualifier: Seller
+  type: Supplier Party
+  definition: The seller.
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Contractor
+  type: Customer Party
+  definition: The customer party responsible for the contracts with which the Catalogue is associated.
+  cardinality: 0..1
+  since_version: '2.0'
+- type: Trading Terms
+  definition: The trading terms associated with this Catalogue.
+  cardinality: 0..n
+  since_version: '2.0'
+- type: Catalogue Line
+  definition: A line in a Catalogue describing an item of sale.
+  cardinality: 1..n
+  since_version: '2.0'

@@ -1,0 +1,49 @@
+name: Power Of Attorney
+definition: A class to describe a power of attorney.
+since_version: '2.1'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this power of attorney.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Issue
+  primary_noun: Date
+  type: Date
+  definition: The date on which this power of attorney was issued.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Issue
+  primary_noun: Time
+  type: Time
+  definition: The time at which this power of attorney was issued.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Description
+  type: Text
+  definition: Text describing this power of attorney.
+  cardinality: 0..n
+  since_version: '2.1'
+
+objects:
+- qualifier: Notary
+  type: Party
+  definition: The party notarizing this power of attorney.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Agent
+  type: Party
+  definition: The party who acts as an agent or fiduciary for the principal and who holds this power of attorney on behalf of the principal.
+  cardinality: '1'
+  since_version: '2.1'
+- qualifier: Witness
+  type: Party
+  definition: An association to a WitnessParty.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Mandate
+  type: Document Reference
+  definition: A reference to a mandate associated with this power of attorney.
+  cardinality: 0..n
+  since_version: '2.1'

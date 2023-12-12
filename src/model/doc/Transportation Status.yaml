@@ -1,0 +1,160 @@
+name: Transportation Status
+definition: A document to circulate reports of transportation status or changes in status (events) among a group of participants.
+since_version: '2.0'
+
+fields:
+- possessive_noun: UBL Version
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies the earliest version of the UBL 2 schema for this document type that defines all of the elements that might be encountered in the current instance.
+  examples: 2.0.5
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Customization
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies a user-defined customization of UBL for a specific use.
+  examples: NES
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Profile
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies a user-defined profile of the customization of UBL being used.
+  examples: BasicProcurementProcess
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Profile Execution
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies an instance of executing a profile, to associate all transactions in a collaboration.
+  examples: BPP-1001
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this document, assigned by the sender.
+  cardinality: '1'
+  since_version: '2.0'
+- primary_noun: Identifier
+  type: Identifier
+  definition: A reference number assigned by a carrier or its agent to identify a specific shipment, such as a booking reference number when cargo space is reserved prior to loading.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: UUID
+  type: Identifier
+  definition: A universally unique identifier for an instance of this document.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Issue
+  primary_noun: Date
+  type: Date
+  definition: The date, assigned by the sender, on which this document was issued.
+  untded_code: '2185'
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Issue
+  primary_noun: Time
+  type: Time
+  definition: The time, assigned by the sender, at which this document was issued.
+  untded_code: '2185'
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Name
+  type: Name
+  definition: Text, assigned by the sender, that identifies this document to business users.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Description
+  type: Text
+  definition: A textual description of transportation status.
+  cardinality: 0..n
+  since_version: '2.0'
+- primary_noun: Note
+  type: Text
+  definition: Free-form text pertinent to this document, conveying information that is not contained explicitly in other structures.
+  cardinality: 0..n
+  since_version: '2.0'
+- possessive_noun: Shipping Order
+  primary_noun: Identifier
+  type: Identifier
+  definition: A reference number for a shipping order.
+  untded_code: '1121'
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Instruction
+  type: Text
+  definition: An instruction regarding this message.
+  untded_code: '1121'
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Transportation Status Type
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the type of status provided in a Transportation Status document.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Transport Execution Status
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the overall status of transport service execution.
+  cardinality: 0..1
+  since_version: '2.1'
+
+objects:
+- type: Consignment
+  definition: A consignment associated with this Transportation Status report.
+  cardinality: 0..n
+  since_version: '2.0'
+- type: Transport Event
+  definition: An event associated with this Transportation Status report.
+  cardinality: 0..n
+  since_version: '2.0'
+- type: Document Reference
+  definition: A reference to another document associated with this document.
+  cardinality: 0..n
+  since_version: '2.0'
+- type: Signature
+  definition: A signature applied to this document.
+  cardinality: 0..n
+  since_version: '2.0'
+- qualifier: Sender
+  type: Party
+  definition: The party sending this Transportation Status report.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Receiver
+  type: Party
+  definition: The party receiving this Transportation Status report.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Transportation Status Request
+  type: Document Reference
+  definition: A reference to the Transportation Status Request to which this report is a response.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Transport Execution Plan
+  type: Document Reference
+  definition: A reference to the Transport Execution Plan associated with the transport service whose status is being reported.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Updated Pickup
+  type: Transport Event
+  definition: Update of the original plan regarding a pickup of goods.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Updated Delivery
+  type: Transport Event
+  definition: Update of the original plan regarding a delivery.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Status
+  type: Location
+  definition: Locations associated with this Transportation Status report.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Status
+  type: Period
+  definition: A period for which status is provided.
+  cardinality: 0..n
+  since_version: '2.1'

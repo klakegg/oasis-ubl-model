@@ -1,0 +1,31 @@
+name: Attestation Line
+definition: A class describing an attestation line
+since_version: '2.3'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this attestation line
+  cardinality: 0..1
+  since_version: '2.3'
+- primary_noun: Code
+  type: Code
+  definition: A code describing the type of attestation line or statement
+  cardinality: 0..1
+  since_version: '2.3'
+- primary_noun: Description
+  type: Text
+  definition: A textual description of this attestation line
+  cardinality: 0..n
+  since_version: '2.3'
+
+objects:
+- type: Criterion Item
+  definition: Criterion items associated with this attestation line
+  cardinality: 0..n
+  since_version: '2.3'
+- qualifier: Sub
+  type: Attestation Line
+  definition: An attestation line subsidiary to this attestation line
+  cardinality: 0..n
+  since_version: '2.3'

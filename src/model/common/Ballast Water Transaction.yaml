@@ -1,0 +1,64 @@
+name: Ballast Water Transaction
+definition: A class to define a ballast water transaction, such as the uptake, exchange or discharge of ballast water.
+since_version: '2.3'
+
+fields:
+- possessive_noun: Tank
+  primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for the ballast water tank being used in this ballast water transaction.
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Tank Type
+  primary_noun: Code
+  type: Code
+  definition: A code for the type of ballast water tank being used in the ballast water transaction.
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Method
+  primary_noun: Code
+  type: Code
+  definition: A code expressing how ballast water is being filled into or discharged from the tank.
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Exchanged
+  primary_noun: Percent
+  type: Percent
+  definition: The percentage of the ballast water in the tank being exchanged in this ballast water transaction.
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Volume
+  primary_noun: Measure
+  type: Measure
+  definition: The volume of ballast water being exchanged in this ballast water transaction.
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Sea Height
+  primary_noun: Measure
+  type: Measure
+  definition: A measure of the sea height at the time of the transaction.
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Salinity
+  primary_noun: Measure
+  type: Measure
+  definition: A measure for the salinity of the water in the tank.
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Transaction
+  primary_noun: Date
+  type: Date
+  definition: The date when this ballast water transaction takes place.
+  cardinality: 0..1
+  since_version: '2.3'
+
+objects:
+- type: Location
+  definition: The location where this ballast water transaction takes place.
+  cardinality: 0..1
+  since_version: '2.3'
+- qualifier: Ballast Water
+  type: Temperature
+  definition: The temperature of the ballast water at time of transaction.
+  cardinality: 0..1
+  since_version: '2.3'

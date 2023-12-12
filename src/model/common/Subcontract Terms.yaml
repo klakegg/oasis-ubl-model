@@ -1,0 +1,41 @@
+name: Subcontract Terms
+definition: A class to describe subcontract terms for a tendering process.
+since_version: '2.1'
+
+fields:
+- primary_noun: Rate
+  type: Rate
+  definition: The precise percentage allowed to be subcontracted.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Price
+  type: Indicator
+  definition: An indicator that the subcontract price is known (true) or not (false).
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Description
+  type: Text
+  definition: Text describing the subcontract terms.
+  cardinality: 0..n
+  since_version: '2.1'
+- primary_noun: Amount
+  type: Amount
+  definition: The monetary amount assigned to the subcontracted task.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Subcontracting Conditions
+  primary_noun: Code
+  type: Code
+  definition: A code specifying the conditions for subcontracting.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Percent
+  type: Percent
+  definition: The maximum percentage allowed to be subcontracted.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Percent
+  type: Percent
+  definition: The minimum percentage allowed to be subcontracted.
+  cardinality: 0..1
+  since_version: '2.1'

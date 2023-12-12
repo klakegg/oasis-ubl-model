@@ -1,0 +1,47 @@
+name: Party Tax Scheme
+definition: A class to describe a taxation scheme applying to a party.
+since_version: '2.0'
+
+fields:
+- primary_noun: Name
+  type: Name
+  definition: The name of the party as registered with the relevant fiscal authority.
+  examples: 'Microsoft Corporation '
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Company
+  primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for the party assigned for tax purposes by the taxation authority.
+  alternative_business_terms: VAT Number
+  examples: '3556625 '
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Tax Level
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the tax level applicable to the party within this taxation scheme.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Exemption Reason
+  primary_noun: Code
+  type: Code
+  definition: A reason for the party's exemption from tax, expressed as a code.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Reason
+  type: Text
+  definition: A reason for the party's exemption from tax, expressed as text.
+  cardinality: 0..n
+  since_version: '2.0'
+
+objects:
+- qualifier: Registration
+  type: Address
+  definition: The address of the party as registered for tax purposes.
+  cardinality: 0..1
+  since_version: '2.0'
+- type: Tax Scheme
+  definition: The taxation scheme applicable to the party.
+  cardinality: '1'
+  since_version: '2.0'

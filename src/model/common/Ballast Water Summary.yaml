@@ -1,0 +1,90 @@
+name: Ballast Water Summary
+definition: A class to summarize the ballast water management of a vessel.
+since_version: '2.3'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identification of this ballast water summary.
+  cardinality: 0..1
+  since_version: '2.3'
+- primary_noun: Indicator
+  type: Indicator
+  definition: An indication of whether a waste water management plan is on board (true) or not (false).
+  cardinality: 0..1
+  since_version: '2.3'
+- primary_noun: Indicator
+  type: Indicator
+  definition: An indication of whether a waste water management plan has been implemented (true) or not (false).
+  cardinality: 0..1
+  since_version: '2.3'
+- primary_noun: Indicator
+  type: Indicator
+  definition: An indication of whether International Maritime Organization (IMO) ballast water guidelines are on board (true) or not (false).
+  cardinality: 0..1
+  since_version: '2.3'
+- primary_noun: Quantity
+  type: Quantity
+  definition: The total number of ballast tanks on board the vessel.
+  cardinality: 0..1
+  since_version: '2.3'
+- primary_noun: Quantity
+  type: Quantity
+  definition: The number of tanks in the ballast of the vessel.
+  cardinality: 0..1
+  since_version: '2.3'
+- primary_noun: Quantity
+  type: Quantity
+  definition: The number of tanks being exchanged as part of this ballast water summary.
+  cardinality: 0..1
+  since_version: '2.3'
+- primary_noun: Quantity
+  type: Quantity
+  definition: The quantity of tanks not being exchanged.
+  cardinality: 0..1
+  since_version: '2.3'
+- primary_noun: Measure
+  type: Measure
+  definition: The messure of the total ballast water on board the vessel.
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Capacity
+  primary_noun: Measure
+  type: Measure
+  definition: The total ballast water capacity of the vessel.
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Actions
+  primary_noun: Text
+  type: Text
+  definition: A text describing any other control actions that are part of this ballast water summary.
+  cardinality: 0..n
+  since_version: '2.3'
+- possessive_noun: Actions
+  primary_noun: Reason
+  type: Text
+  definition: A textual description of the reason if no control actions are being taken.
+  cardinality: 0..n
+  since_version: '2.3'
+
+objects:
+- qualifier: Uptake
+  type: Ballast Water Transaction
+  definition: The uptake ballast water transaction.
+  cardinality: 0..n
+  since_version: '2.3'
+- qualifier: Exchange
+  type: Ballast Water Transaction
+  definition: The exchange ballast water transaction.
+  cardinality: 0..n
+  since_version: '2.3'
+- qualifier: Discharge
+  type: Ballast Water Transaction
+  definition: The discharge ballast water transaction.
+  cardinality: 0..n
+  since_version: '2.3'
+- qualifier: Responsible Officer
+  type: Person
+  definition: The officer responsible for this ballast water summery.
+  cardinality: 0..1
+  since_version: '2.3'

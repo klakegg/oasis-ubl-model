@@ -1,0 +1,45 @@
+name: Goods Processing
+definition: A class to describe the processing of goods and products
+since_version: '2.3'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this goods processing.
+  cardinality: 0..1
+  since_version: '2.3'
+- primary_noun: Type
+  type: Code
+  definition: A type code for this goods processing.
+  cardinality: 0..1
+  since_version: '2.3'
+- primary_noun: Description
+  type: Text
+  definition: A description for this goods processing expressed in one or more languages
+  cardinality: 0..n
+  since_version: '2.3'
+- primary_noun: Note
+  type: Text
+  definition: Free-form text conveying information that is not contained explicitly in other structures.
+  cardinality: 0..n
+  since_version: '2.3'
+
+objects:
+- type: Period
+  definition: The period within this goods processing was performed
+  cardinality: 0..1
+  since_version: '2.3'
+- qualifier: Processing
+  type: Party
+  definition: The party processing the goods
+  cardinality: 0..1
+  since_version: '2.3'
+- type: Criterion Item
+  definition: A reference to a criterion item that applies to this goods processing
+  cardinality: 0..n
+  since_version: '2.3'
+- qualifier: Sub
+  type: Goods Processing
+  definition: A subordinate processing to this goods processing
+  cardinality: 0..n
+  since_version: '2.3'

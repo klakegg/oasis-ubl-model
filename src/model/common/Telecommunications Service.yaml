@@ -1,0 +1,125 @@
+name: Telecommunications Service
+definition: A class to describe a telecommunications service (e.g., a telephone call or a video on demand service).
+since_version: '2.1'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this telecommunications service.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Date
+  type: Date
+  definition: In the case of a telephone call, the date of the call.
+  examples: '2008-01-01'
+  cardinality: '1'
+  since_version: '2.1'
+- primary_noun: Time
+  type: Time
+  definition: In the case of a telephone call, the time of the call.
+  examples: '00:01:00'
+  cardinality: '1'
+  since_version: '2.1'
+- possessive_noun: Service Number
+  primary_noun: Called
+  type: Text
+  definition: In the case of a telephone call, the phone number called.
+  examples: '12345679'
+  cardinality: '1'
+  since_version: '2.1'
+- possessive_noun: Telecommunications Service
+  primary_noun: Category
+  type: Text
+  definition: The telecommunications category, expressed as text.
+  examples: Subscription
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Telecommunications Service Category
+  primary_noun: Code
+  type: Code
+  definition: The telecommunications category, expressed as a code.
+  examples: Subscription
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Movie
+  primary_noun: Title
+  type: Text
+  definition: The title of a movie delivered via this telecommunications service.
+  examples: The Matrix
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Roaming Partner
+  primary_noun: Name
+  type: Name
+  definition: Statement of the roaming partner name.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Pay Per
+  primary_noun: View
+  type: Text
+  definition: A pay-per-view delivered via this telecommunications service.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Quantity
+  type: Quantity
+  definition: The number of calls.
+  examples: '5761'
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Telecommunications Service
+  primary_noun: Call
+  type: Text
+  definition: The telecommunications call described as a text
+  examples: CallAttempt
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Telecommunications Service Call
+  primary_noun: Code
+  type: Code
+  definition: The telecommunications call described as a code
+  examples: CallAttempt
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Amount
+  type: Amount
+  definition: The amount to be payed as the base for one call
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Amount
+  type: Amount
+  definition: The amount to be payed for the call
+  examples: '542.44'
+  cardinality: 0..1
+  since_version: '2.1'
+
+objects:
+- type: Price
+  definition: The price for using the telecommunication service
+  cardinality: 0..1
+  since_version: '2.1'
+- type: Country
+  definition: The country to which the service is provided. In case of a telephone call it is the country where the receiver is located.
+  cardinality: 0..1
+  since_version: '2.1'
+- type: Exchange Rate
+  definition: A exchanges rates used in the pricing e.g.. when phone calls has crossed border lines.
+  cardinality: 0..n
+  since_version: '2.1'
+- type: Allowance Charge
+  definition: An allowance or charge that applies to the UtilityStatement as a whole.
+  cardinality: 0..n
+  since_version: '2.1'
+- type: Tax Total
+  definition: A total amount of taxes of a particular kind applicable to this telecommunications service.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Call
+  type: Duty
+  definition: In the case of a telephone call, a duty on this call.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Time
+  type: Duty
+  definition: A duty on a consumption of time.
+  cardinality: 0..n
+  since_version: '2.1'

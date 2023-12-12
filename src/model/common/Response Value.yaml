@@ -1,0 +1,87 @@
+name: Response Value
+definition: A class to describe the criterion requirement response value.
+since_version: '2.2'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier to refer to the criterion requirement response value.
+  cardinality: 0..1
+  since_version: '2.2'
+- primary_noun: Description
+  type: Text
+  definition: A description of the response value to the criterion requirement.
+  cardinality: 0..n
+  since_version: '2.2'
+- possessive_noun: Response
+  primary_noun: Text
+  type: Text
+  definition: A text or name used as a reply to the criterion requirement.
+  cardinality: 0..n
+  since_version: '2.2'
+- possessive_noun: Response
+  primary_noun: Amount
+  type: Amount
+  definition: An amount used as a reply to the criterion requirement.
+  cardinality: 0..1
+  since_version: '2.2'
+- possessive_noun: Response
+  primary_noun: Binary Object
+  type: Binary Object
+  definition: A binary graphic, picture, sound or video object used as a reply to the criterion requirement.
+  cardinality: 0..1
+  since_version: '2.2'
+- possessive_noun: Response
+  primary_noun: Code
+  type: Code
+  definition: A code used as a reply to the criterion requirement.
+  cardinality: 0..1
+  since_version: '2.2'
+- possessive_noun: Response
+  primary_noun: Date
+  type: Date
+  definition: A date used as a reply to the criterion requirement.
+  cardinality: 0..1
+  since_version: '2.2'
+- possessive_noun: Response
+  primary_noun: Identifier
+  type: Identifier
+  definition: An identifier used as a reply to the criterion requirement.
+  cardinality: 0..1
+  since_version: '2.2'
+- possessive_noun: Response
+  primary_noun: Indicator
+  type: Indicator
+  definition: An indicator used as a reply to the criterion requirement.
+  cardinality: 0..1
+  since_version: '2.2'
+- possessive_noun: Response
+  primary_noun: Measure
+  type: Measure
+  definition: A measure used as a reply to the criterion requirement.
+  cardinality: 0..1
+  since_version: '2.2'
+- possessive_noun: Response
+  primary_noun: Numeric
+  type: Numeric
+  definition: A number, rate or percent used as a reply to the criterion requirement.
+  cardinality: 0..1
+  since_version: '2.2'
+- possessive_noun: Response
+  primary_noun: Quantity
+  type: Quantity
+  definition: A quantity used as a reply to the criterion requirement.
+  cardinality: 0..1
+  since_version: '2.2'
+- possessive_noun: Response
+  primary_noun: Time
+  type: Time
+  definition: A time used as a reply to the criterion requirement.
+  cardinality: 0..1
+  since_version: '2.2'
+- possessive_noun: Response
+  primary_noun: URI
+  type: Identifier
+  definition: A URI value used as a reply to the criterion requirement.
+  cardinality: 0..1
+  since_version: '2.2'

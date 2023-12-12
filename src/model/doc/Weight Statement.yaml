@@ -1,0 +1,98 @@
+name: Weight Statement
+definition: A document used to report weight or verified mass measurements in the transport chain.
+alternative_business_terms: Weight Declaration, Weight Certificate
+since_version: '2.2'
+
+fields:
+- possessive_noun: UBL Version
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies the earliest version of the UBL 2 schema for this document type that defines all of the elements that might be encountered in the current instance.
+  examples: '2.2'
+  cardinality: 0..1
+  since_version: '2.2'
+- possessive_noun: Customization
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies a user-defined customization of UBL for a specific use.
+  examples: SMDG
+  cardinality: 0..1
+  since_version: '2.2'
+- possessive_noun: Profile
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies a user-defined profile of the customization of UBL being used.
+  examples: SOLAS
+  cardinality: 0..1
+  since_version: '2.2'
+- possessive_noun: Profile Execution
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies an instance of executing a profile, to associate all transactions in a collaboration.
+  examples: BPP-1001
+  cardinality: 0..1
+  since_version: '2.2'
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this document, assigned by the sender.
+  cardinality: '1'
+  since_version: '2.2'
+- primary_noun: UUID
+  type: Identifier
+  definition: A universally unique identifier for an instance of this document.
+  cardinality: 0..1
+  since_version: '2.2'
+- possessive_noun: Issue
+  primary_noun: Date
+  type: Date
+  definition: The date, assigned by the sender, on which this document was issued.
+  cardinality: '1'
+  since_version: '2.2'
+- possessive_noun: Issue
+  primary_noun: Time
+  type: Time
+  definition: The time, assigned by the sender, at which this document was issued.
+  cardinality: 0..1
+  since_version: '2.2'
+- possessive_noun: Weight Statement Type
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the type of Weight Statement.
+  examples: VGM, WeightCertificate
+  cardinality: 0..1
+  since_version: '2.2'
+
+objects:
+- type: Signature
+  definition: A signature applied to this document.
+  cardinality: 0..n
+  since_version: '2.2'
+- qualifier: Sender
+  type: Party
+  definition: The party sending this weight statement (e.g. Weighing Station, Shipper, Freight Forwarder, Carrier, ...).
+  cardinality: '1'
+  since_version: '2.2'
+- qualifier: Receiver
+  type: Party
+  definition: The party receiving this weight statement (e.g. Carrier, Terminal Operator, ...).
+  cardinality: '1'
+  since_version: '2.2'
+- qualifier: Weighing
+  type: Party
+  definition: The party executing the weight measure (e.g. Weighing Station).
+  cardinality: 0..1
+  since_version: '2.2'
+- qualifier: Shipper
+  type: Party
+  definition: The party playing the role of the Shipper (BCO, FF or NVOCC) who is responsible for the VGM (e.g. according the SOLAS Convention).
+  cardinality: 0..1
+  since_version: '2.2'
+- qualifier: Responsible
+  type: Party
+  definition: The party responsible for signing the VGM on behalf of the Shipper.
+  cardinality: 0..1
+  since_version: '2.2'
+- type: Shipment
+  definition: The relevant shipment information with details on the transport equipment weight or mass measurements, including verified gross mass (VGM) information.
+  cardinality: '1'
+  since_version: '2.2'

@@ -1,0 +1,30 @@
+name: Social Media Profile
+definition: A class to describe a social media profile.
+since_version: '2.2'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for a specific social media.
+  examples: FB
+  cardinality: 0..1
+  since_version: '2.2'
+- primary_noun: Name
+  type: Name
+  definition: The common name of the social media.
+  examples: Facebook
+  cardinality: 0..1
+  since_version: '2.2'
+- possessive_noun: Social Media Type
+  primary_noun: Code
+  type: Code
+  definition: A code that specifies the type of social media.
+  examples: BusinessNetwork, SocialNetwork, ...
+  cardinality: 0..1
+  since_version: '2.2'
+- primary_noun: URI
+  type: Identifier
+  definition: The Uniform Resource Identifier (URI) of a party profile in the social media; i.e., its Uniform Resource Locator (URL).
+  examples: https://www.facebook.com/oasis.open/
+  cardinality: '1'
+  since_version: '2.2'

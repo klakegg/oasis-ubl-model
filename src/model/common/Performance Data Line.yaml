@@ -1,0 +1,37 @@
+name: Performance Data Line
+definition: A class to define a line in a Performance History.
+since_version: '2.1'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this performance data line.
+  cardinality: '1'
+  since_version: '2.1'
+- primary_noun: Note
+  type: Text
+  definition: Free-form text conveying information that is not contained explicitly in other structures.
+  cardinality: 0..n
+  since_version: '2.1'
+- possessive_noun: Performance
+  primary_noun: Value
+  type: Quantity
+  definition: The value of the reported attribute.
+  cardinality: '1'
+  since_version: '2.1'
+- possessive_noun: Performance Metric Type
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the measure of performance applicable to the reported attribute.
+  cardinality: '1'
+  since_version: '2.1'
+
+objects:
+- type: Period
+  definition: The period to which this performance data line applies.
+  cardinality: 0..1
+  since_version: '2.1'
+- type: Item
+  definition: The item whose performance is reported in this data line.
+  cardinality: 0..1
+  since_version: '2.1'

@@ -1,0 +1,35 @@
+name: Supplier Consumption
+definition: The consumption in case the consumption is for one and only one supplier.
+since_version: '2.1'
+
+fields:
+- primary_noun: Description
+  type: Text
+  definition: Free-form text conveying information that is not contained explicitly in other structures.
+  examples: This is what you pay for electricity to DONG Energy North Utility
+  cardinality: 0..n
+  since_version: '2.1'
+
+objects:
+- qualifier: Utility Supplier
+  type: Party
+  definition: The party supplying the utility.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Utility Customer
+  type: Party
+  definition: The utility customer.
+  cardinality: 0..1
+  since_version: '2.1'
+- type: Consumption
+  definition: The consumption regarding this supplier
+  cardinality: '1'
+  since_version: '2.1'
+- type: Contract
+  definition: A contract setting forth conditions regulating the consumption.
+  cardinality: 0..1
+  since_version: '2.1'
+- type: Consumption Line
+  definition: The consumption of a utility product.
+  cardinality: 1..n
+  since_version: '2.1'

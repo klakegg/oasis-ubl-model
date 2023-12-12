@@ -1,0 +1,66 @@
+name: Tenderer Qualification Request
+definition: The evaluation that the Contracting Authority party requests to fulfill to the tenderers.
+since_version: '2.1'
+
+fields:
+- possessive_noun: Company Legal Form
+  primary_noun: Code
+  type: Code
+  definition: The legal status requested for potential tenderers, expressed as a code.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Company Legal
+  primary_noun: Form
+  type: Text
+  definition: The legal status requested for potential tenderers, expressed as text
+  cardinality: 0..n
+  since_version: '2.1'
+- possessive_noun: Personal
+  primary_noun: Situation
+  type: Text
+  definition: Text describing the personal situation of the economic operators in this tendering process.
+  cardinality: 0..n
+  since_version: '2.1'
+- possessive_noun: Operating
+  primary_noun: Years
+  type: Quantity
+  definition: Textual description of the legal form required for potential tenderers.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Employee
+  type: Quantity
+  definition: Textual description of the legal form required for potential tenderers.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Description
+  type: Text
+  definition: Text describing the evaluation requirements for this tenderer.
+  cardinality: 0..n
+  since_version: '2.1'
+
+objects:
+- qualifier: Required Business
+  type: Classification Scheme
+  definition: A classification scheme for the business profile.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Technical
+  type: Evaluation Criterion
+  definition: A technical evaluation criterion required for an economic operator in a tendering process.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Financial
+  type: Evaluation Criterion
+  definition: A financial evaluation criterion required for an economic operator in a tendering process.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Specific
+  type: Tenderer Requirement
+  definition: A requirement to be met by a tenderer.
+  examples: Preregistration in a Business Registry
+  cardinality: 0..n
+  since_version: '2.1'
+- type: Economic Operator Role
+  definition: A class to describe the tenderer contracting role.
+  cardinality: 0..n
+  since_version: '2.1'

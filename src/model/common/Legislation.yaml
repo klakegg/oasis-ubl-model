@@ -1,0 +1,46 @@
+name: Legislation
+definition: A class to describe a reference to a piece of legislation.
+since_version: '2.2'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier to refer to the legislation.
+  cardinality: 0..1
+  since_version: '2.2'
+- primary_noun: Title
+  type: Text
+  definition: The title of the legislation.
+  cardinality: 0..n
+  since_version: '2.2'
+- primary_noun: Description
+  type: Text
+  definition: The textual description of the legislation.
+  cardinality: 0..n
+  since_version: '2.2'
+- primary_noun: Jurisdiction Level
+  type: Text
+  definition: The jurisdiction level for the legislation.
+  cardinality: 0..n
+  since_version: '2.2'
+- primary_noun: Article
+  type: Text
+  definition: The article of the legislation.
+  cardinality: 0..n
+  since_version: '2.2'
+- primary_noun: URI
+  type: Identifier
+  definition: A URI to the legislation.
+  cardinality: 0..n
+  since_version: '2.2'
+
+objects:
+- type: Language
+  definition: The language of the legislation.
+  cardinality: 0..n
+  since_version: '2.2'
+- qualifier: Jurisdiction Region
+  type: Address
+  definition: The geopolitical region in which this legislation applies.
+  cardinality: 0..n
+  since_version: '2.2'

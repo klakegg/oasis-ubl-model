@@ -1,0 +1,39 @@
+name: Response
+definition: A class to describe an application-level response to a document.
+since_version: '2.0'
+
+fields:
+- primary_noun: Reference
+  type: Identifier
+  definition: An identifier for the section (or line) of the document to which this response applies.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Response
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the type of response.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Description
+  type: Text
+  definition: Text describing this response.
+  cardinality: 0..n
+  since_version: '2.0'
+- possessive_noun: Effective
+  primary_noun: Date
+  type: Date
+  definition: The date upon which this response is valid.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Effective
+  primary_noun: Time
+  type: Time
+  definition: The time at which this response is valid.
+  cardinality: 0..1
+  since_version: '2.1'
+
+objects:
+- type: Status
+  definition: A status report associated with this response.
+  cardinality: 0..n
+  since_version: '2.1'

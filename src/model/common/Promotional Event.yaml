@@ -1,0 +1,34 @@
+name: Promotional Event
+definition: Agree can be renamed as PromotionalEvents
+since_version: '2.1'
+
+fields:
+- possessive_noun: Promotional Event Type
+  primary_noun: Code
+  type: Code
+  definition: 'A code signifying the type of this promotional event. Examples can be: Holiday, Seasonal Event, Store Closing, Trade Item Introduction'
+  cardinality: '1'
+  since_version: '2.1'
+- primary_noun: Submission
+  type: Date
+  definition: The date on which a proposal for this promotional event was submitted.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: First Shipment Availibility
+  primary_noun: Date
+  type: Date
+  definition: The first day that products will be available to ship from buyer to seller if the proposal for this promotional event is accepted.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Proposal Acceptance
+  primary_noun: Date
+  type: Date
+  definition: The deadline for acceptance of this promotional event.
+  cardinality: 0..1
+  since_version: '2.1'
+
+objects:
+- type: Promotional Specification
+  definition: A specification for a promotional event.
+  cardinality: 1..n
+  since_version: '2.1'

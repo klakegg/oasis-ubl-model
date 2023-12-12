@@ -1,0 +1,113 @@
+name: Party
+definition: A class to describe an organization, sub-organization, or individual fulfilling a role in a business process.
+since_version: '2.0'
+
+fields:
+- primary_noun: Indicator
+  type: Indicator
+  definition: An indicator that this party is "care of" (c/o) (true) or not (false).
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Indicator
+  type: Indicator
+  definition: An indicator that this party is "for the attention of" (FAO) (true) or not (false).
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: URI
+  type: Identifier
+  definition: The Uniform Resource Identifier (URI) that identifies this party's web site; i.e., the web site's Uniform Resource Locator (URL).
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Logo
+  primary_noun: Reference
+  type: Identifier
+  definition: An identifier for this party's logo.
+  examples: http://www2.coca-cola.com/images/logo.gif
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Endpoint
+  primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for the end point of the routing service (e.g., EAN Location Number, GLN).
+  examples: '5790002221134'
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Industry Classification
+  primary_noun: Code
+  type: Code
+  definition: This party's Industry Classification Code.
+  examples: Public authority , NAIC codes
+  cardinality: 0..1
+  since_version: '2.1'
+
+objects:
+- type: Party Identification
+  definition: An identifier for this party.
+  cardinality: 0..n
+  since_version: '2.0'
+- type: Party Name
+  definition: A name for this party.
+  cardinality: 0..n
+  since_version: '2.0'
+- type: Language
+  definition: The language associated with this party.
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Postal
+  type: Address
+  definition: The party's postal address.
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Physical
+  type: Location
+  definition: The physical location of this party.
+  cardinality: 0..1
+  since_version: '2.0'
+- type: Party Tax Scheme
+  definition: A tax scheme applying to this party.
+  cardinality: 0..n
+  since_version: '2.0'
+- type: Party Legal Entity
+  definition: A description of this party as a legal entity.
+  cardinality: 0..n
+  since_version: '2.0'
+- type: Contact
+  definition: The primary contact for this party.
+  cardinality: 0..1
+  since_version: '2.0'
+- type: Person
+  definition: A person associated with this party.
+  cardinality: 0..n
+  since_version: '2.0'
+- qualifier: Agent
+  type: Party
+  definition: A party who acts as an agent for this party.
+  examples: Customs Broker
+  cardinality: 0..1
+  since_version: '2.0'
+- type: Service Provider Party
+  definition: A party providing a service to this party.
+  cardinality: 0..n
+  since_version: '2.1'
+- type: Power Of Attorney
+  definition: A power of attorney associated with this party.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Party
+  type: Authorization
+  definition: An authorization issued to this party
+  cardinality: 0..n
+  since_version: '2.3'
+- type: Financial Account
+  definition: The financial account associated with this party.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Additional
+  type: Web Site
+  definition: An additional web site associated with this party (e.g. a satellite web site).
+  cardinality: 0..n
+  since_version: '2.2'
+- type: Social Media Profile
+  definition: A social media profile associated with this party.
+  cardinality: 0..n
+  since_version: '2.2'

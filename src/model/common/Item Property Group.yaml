@@ -1,0 +1,23 @@
+name: Item Property Group
+definition: A class to describe a property group or classification.
+since_version: '2.0'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this group of item properties.
+  examples: '233-004 '
+  cardinality: '1'
+  since_version: '2.0'
+- primary_noun: Name
+  type: Name
+  definition: The name of this item property group.
+  examples: 'Electrical Specifications , Dietary Content '
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Importance
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the importance of this property group in using it to describe a required Item.
+  cardinality: 0..1
+  since_version: '2.1'

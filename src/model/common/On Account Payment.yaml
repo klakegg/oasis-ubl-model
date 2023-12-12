@@ -1,0 +1,23 @@
+name: On Account Payment
+definition: A scheduled prepayment (on-account payment) for a estimated utility consumption
+since_version: '2.1'
+
+fields:
+- possessive_noun: Consumed
+  primary_noun: Quantity
+  type: Quantity
+  definition: The estimated consumed quantity covered by the payment.
+  cardinality: '1'
+  since_version: '2.1'
+- primary_noun: Note
+  type: Text
+  definition: Free-form text conveying information that is not contained explicitly in other structures.
+  examples: We make a reservation for price regulations. You will receive you next yearly statement about one year from today.
+  cardinality: 0..n
+  since_version: '2.1'
+
+objects:
+- type: Payment Terms
+  definition: A specification of payment terms associated with this payment.
+  cardinality: 1..n
+  since_version: '2.1'

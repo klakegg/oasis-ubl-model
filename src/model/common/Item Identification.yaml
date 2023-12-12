@@ -1,0 +1,44 @@
+name: Item Identification
+definition: A class for assigning identifying information to an item.
+since_version: '2.0'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for the item.
+  examples: 'CUST001 3333-44-123 '
+  cardinality: '1'
+  since_version: '2.0'
+- primary_noun: Identifier
+  type: Identifier
+  definition: An extended identifier for the item that identifies the item with specific properties, e.g., Item 123 = Chair / Item 123 Ext 45 = brown chair. Two chairs can have the same item number, but one is brown. The other is white.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Symbology
+  primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for a system of barcodes.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Scope
+  primary_noun: Identifier
+  type: Identifier
+  definition: A scope within which the issuer has assigned this identifier.
+  cardinality: 0..1
+  since_version: '2.3'
+
+objects:
+- type: Physical Attribute
+  definition: A physical attribute of the item.
+  cardinality: 0..n
+  since_version: '2.0'
+- qualifier: Measurement
+  type: Dimension
+  definition: A measurable dimension (length, mass, weight, or volume) of the item.
+  cardinality: 0..n
+  since_version: '2.0'
+- qualifier: Issuer
+  type: Party
+  definition: The party that issued this item identification.
+  cardinality: 0..1
+  since_version: '2.0'

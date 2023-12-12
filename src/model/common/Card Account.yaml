@@ -1,0 +1,75 @@
+name: Card Account
+definition: A class to define a credit card, debit card, or charge card account.
+since_version: '2.0'
+
+fields:
+- possessive_noun: Account
+  primary_noun: Number
+  type: Identifier
+  definition: An identifier of the card (e.g., the Primary Account Number (PAN)).
+  examples: 4558 XXXX XXXX XXXX (a real card number)
+  cardinality: '1'
+  since_version: '2.0'
+- primary_noun: Network
+  type: Identifier
+  definition: An identifier for the financial service network provider of the card.
+  examples: VISA, MasterCard, American Express
+  cardinality: '1'
+  since_version: '2.0'
+- possessive_noun: Card Type
+  primary_noun: Code
+  type: Code
+  definition: A mutually agreed code signifying the type of card. Examples of types are "debit", "credit" and "purchasing"
+  examples: Debit Card, Credit Card, Procurement Card
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Validity Start
+  primary_noun: Date
+  type: Date
+  definition: The date from which the card is valid.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Expiry
+  primary_noun: Date
+  type: Date
+  definition: The date on which the card expires.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Issuer
+  type: Identifier
+  definition: An identifier for the institution issuing the card.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Issue
+  primary_noun: Number
+  type: Identifier
+  definition: An identifier for the card, specified by the issuer.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: CV2
+  type: Identifier
+  definition: An identifier for the Card Verification Value (often found on the reverse of the card itself).
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Card Chip
+  primary_noun: Code
+  type: Code
+  definition: A mutually agreed code to distinguish between CHIP and MAG STRIPE cards.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Application
+  type: Identifier
+  definition: An identifier on the chip card for the application that provides the quoted information; an AID (application ID).
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Holder
+  type: Name
+  definition: The name of the cardholder.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Role
+  primary_noun: Code
+  type: Code
+  definition: The role of this card or the card holder (e.g., the buyer, when the card is used as a payment means to pay for an item), expressed as a code.
+  cardinality: 0..1
+  since_version: '2.3'

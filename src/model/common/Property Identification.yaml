@@ -1,0 +1,23 @@
+name: Property Identification
+definition: A class for assigning identifying information for a property
+since_version: '2.3'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An Identifier for the property.
+  cardinality: '1'
+  since_version: '2.3'
+- possessive_noun: Scope
+  primary_noun: Identifier
+  type: Identifier
+  definition: A scope within which the issuer has assigned this identifier.
+  cardinality: 0..1
+  since_version: '2.3'
+
+objects:
+- qualifier: Issuer
+  type: Party
+  definition: The party that issued this property identifier.
+  cardinality: 0..1
+  since_version: '2.3'

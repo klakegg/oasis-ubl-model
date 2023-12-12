@@ -1,0 +1,15 @@
+name: Cash Register
+definition: A class to define the cash register used in a commercial transaction.
+since_version: '2.4'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: The identifier of this cash register.
+  cardinality: '1'
+  since_version: '2.4'
+- primary_noun: Serial Number
+  type: Identifier
+  definition: The serial number of this cash register.
+  cardinality: 0..1
+  since_version: '2.4'

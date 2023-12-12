@@ -1,0 +1,29 @@
+name: Criterion Item
+definition: A class describing a criteria
+since_version: '2.3'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this criteria
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Type
+  primary_noun: Code
+  type: Code
+  definition: A code describing the type of criteria
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Criterion
+  primary_noun: Description
+  type: Text
+  definition: The criteria for this item, expressed as a text
+  cardinality: 1..n
+  since_version: '2.3'
+
+objects:
+- qualifier: Declared Property
+  type: Item
+  definition: The item associated with this criteria
+  cardinality: '1'
+  since_version: '2.3'

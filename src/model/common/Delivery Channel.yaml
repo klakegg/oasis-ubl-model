@@ -1,0 +1,36 @@
+name: Delivery Channel
+definition: A class to describe a delivery channel.
+since_version: '2.2'
+
+fields:
+- possessive_noun: Network
+  primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for the network where messages are delivered (e.g. a business network).
+  examples: OpenPEPPOL
+  cardinality: 0..1
+  since_version: '2.2'
+- possessive_noun: Participant
+  primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for a registered participant in the network (e.g. according a precise scheme such as IT:VAT, DK:CVR, GLN).
+  examples: '5790002221134'
+  cardinality: 0..1
+  since_version: '2.2'
+- primary_noun: Indicator
+  type: Indicator
+  definition: An indicator that the channel is a test channel (true).
+  cardinality: 0..1
+  since_version: '2.2'
+
+objects:
+- qualifier: Digital
+  type: Certificate
+  definition: A digital certificate associated with this delivery channel.
+  cardinality: 0..1
+  since_version: '2.2'
+- qualifier: Digital
+  type: Message Delivery
+  definition: A digital message delivery associated with this delivery channel (aka routing information).
+  cardinality: 0..1
+  since_version: '2.2'

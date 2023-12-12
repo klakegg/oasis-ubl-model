@@ -1,0 +1,44 @@
+name: Supplier Party
+definition: A class to describe a supplier party.
+since_version: '2.0'
+
+fields:
+- possessive_noun: Account
+  primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this supplier party, assigned by the customer.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Account
+  primary_noun: Identifier
+  type: Identifier
+  definition: An additional identifier for this supplier party.
+  cardinality: 0..n
+  since_version: '2.0'
+- possessive_noun: Data Sending
+  primary_noun: Capability
+  type: Text
+  definition: Text describing the supplier's ability to send invoice data via a purchase card provider (e.g., VISA, MasterCard, American Express).
+  cardinality: 0..1
+  since_version: '2.0'
+
+objects:
+- type: Party
+  definition: The supplier party itself.
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Despatch
+  type: Contact
+  definition: A contact at this supplier party for despatches (pickups).
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Accounting
+  type: Contact
+  definition: A contact at this supplier party for accounting.
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Seller
+  type: Contact
+  definition: The primary contact for this supplier party.
+  cardinality: 0..1
+  since_version: '2.0'

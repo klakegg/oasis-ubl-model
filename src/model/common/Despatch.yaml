@@ -1,0 +1,114 @@
+name: Despatch
+definition: A class to describe the despatching of goods (their pickup for delivery).
+since_version: '2.0'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this despatch event.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Despatch
+  primary_noun: Date
+  type: Date
+  definition: The despatch (pickup) date requested, normally by the buyer.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Despatch
+  primary_noun: Time
+  type: Time
+  definition: The despatch (pickup) time requested, normally by the buyer.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Despatch
+  primary_noun: Date
+  type: Date
+  definition: The estimated despatch (pickup) date.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Despatch
+  primary_noun: Time
+  type: Time
+  definition: The estimated despatch (pickup) time.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Despatch
+  primary_noun: Date
+  type: Date
+  definition: The actual despatch (pickup) date.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Despatch
+  primary_noun: Time
+  type: Time
+  definition: The actual despatch (pickup) time.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Despatch
+  primary_noun: Date
+  type: Date
+  definition: The date guaranteed for the despatch (pickup).
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Despatch
+  primary_noun: Time
+  type: Time
+  definition: The time guaranteed for the despatch (pickup).
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Release
+  type: Identifier
+  definition: An identifier for the release of the despatch used as security control or cargo control (pick-up).
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Instructions
+  type: Text
+  definition: Text describing any special instructions applying to the despatch (pickup).
+  cardinality: 0..n
+  since_version: '2.1'
+
+objects:
+- qualifier: Despatch
+  type: Address
+  definition: The address of the despatch (pickup).
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Despatch
+  type: Location
+  definition: The location of the despatch (pickup).
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Despatch
+  type: Party
+  definition: The party despatching the goods.
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Carrier
+  type: Party
+  definition: The party carrying the goods.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Notify
+  type: Party
+  definition: A party to be notified of this despatch (pickup).
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Responsible
+  type: Party
+  definition: The party responsible for this despatch (pickup).
+  cardinality: 0..1
+  since_version: '2.4'
+- type: Contact
+  definition: The primary contact for this despatch (pickup).
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Estimated Despatch
+  type: Period
+  definition: The period estimated for the despatch (pickup) of goods.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Requested Despatch
+  type: Period
+  definition: The period requested for the despatch (pickup) of goods.
+  cardinality: 0..1
+  since_version: '2.1'

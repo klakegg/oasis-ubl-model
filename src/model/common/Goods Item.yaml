@@ -1,0 +1,271 @@
+name: Goods Item
+definition: A class to describe a separately identifiable quantity of goods of a single product type.
+since_version: '2.0'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this goods item.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Sequence
+  primary_noun: Number
+  type: Identifier
+  definition: A sequence number differentiating a specific goods item within a consignment.
+  untded_code: '1050'
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Description
+  type: Text
+  definition: Text describing this goods item to identify it for customs, statistical, or transport purposes.
+  alternative_business_terms: Description of goods (WCO ID 137)
+  untded_code: '7002'
+  cardinality: 0..n
+  since_version: '2.0'
+- primary_noun: Indicator
+  type: Indicator
+  definition: An indication that the transported goods item is subject to an international regulation concerning the carriage of dangerous goods (true) or not (false).
+  examples: default is negative
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Value
+  type: Amount
+  definition: The total declared value for customs purposes of the goods item.
+  alternative_business_terms: For Customs Value (WCO ID 108)
+  untded_code: '5032'
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Value
+  type: Amount
+  definition: The value of this goods item, declared by the shipper or his agent solely for the purpose of varying the carrier's level of liability from that provided in the contract of carriage, in case of loss or damage to goods or delayed delivery.
+  alternative_business_terms: Interest in delivery, declared value for carriage
+  untded_code: '5306'
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Value
+  type: Amount
+  definition: The total declared value of all the goods items in the same consignment with this goods item that have the same statistical heading.
+  alternative_business_terms: Statistical Value (WCO ID 114)
+  untded_code: '5218'
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Value
+  type: Amount
+  definition: The monetary amount that has to be or has been paid as calculated under the applicable trade delivery.
+  alternative_business_terms: FOB Value
+  untded_code: '5054'
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Value
+  type: Amount
+  definition: The amount covered by insurance for this goods item.
+  alternative_business_terms: Value Insured
+  untded_code: '5011'
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Value
+  type: Amount
+  definition: The amount on which a duty, tax, or fee will be assessed.
+  untded_code: '5286'
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Weight
+  type: Measure
+  definition: The weight of this goods item, including packing and packaging but excluding the carrier's equipment.
+  alternative_business_terms: Actual Gross Weight
+  untded_code: '6292'
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Weight
+  type: Measure
+  definition: The weight of this goods item, excluding packing but including packaging that normally accompanies the goods.
+  untded_code: '6016'
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Weight
+  type: Measure
+  definition: The total weight of this goods item, excluding all packing and packaging.
+  alternative_business_terms: Customs Weight (WCO ID 128)
+  untded_code: '6048'
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Weight
+  type: Measure
+  definition: The weight on which a charge is to be based.
+  untded_code: '6030'
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Volume
+  type: Measure
+  definition: The volume of this goods item, normally calculated by multiplying its maximum length, width, and height.
+  alternative_business_terms: Volume, Gross Measurement Cube (GMC), Cube (WCO ID 134)
+  untded_code: '6322'
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Volume
+  type: Measure
+  definition: The volume contained by a goods item, excluding the volume of any packaging material.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Quantity
+  type: Quantity
+  definition: The number of units making up this goods item.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Preference Criterion
+  primary_noun: Code
+  type: Code
+  definition: A code signifying the treatment preference for this goods item according to international trading agreements.
+  examples: 'Preference Criterion is used in the following manner in the paper CO of another country (e.g.): A - The good is wholly obtained or produced entirely in the territory of one or more of the NAFTA countries as reference in Article 415. Note: The purchase of a good in the territory does not necessarily render it wholly obtained or produced . If the good is an agricultural good, see also criterion F and Annex 703.2. (Reference: Article 401(a), 415). B - ... C - ... D - ... E - ... F - The good is an originating agricultural good under preference criterion A,B, or C above and is not subjected to quantitative restriction in the importing NAFTA country because.... Thus, the column Preference Criterion will indicate either A, B, C,...'
+  untded_code: '9285'
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Customs
+  primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for a set of tariff codes required to specify a type of goods for customs, transport, statistical, or other regulatory purposes.
+  alternative_business_terms: Tariff code extensions (WCO ID 255)
+  untded_code: '7361'
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Customs Status
+  primary_noun: Code
+  type: Code
+  definition: A code assigned by customs to signify the status of this goods item.
+  alternative_business_terms: Customs status of goods (WCO ID 094)
+  untded_code: '4095'
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Customs Procedure
+  primary_noun: Code
+  type: Code
+  definition: A code assigned by customs to signifying the customs procedure applied to this Goods Item.
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Customs Tariff
+  primary_noun: Quantity
+  type: Quantity
+  definition: Quantity of the units in this goods item as required by customs for tariff, statistical, or fiscal purposes.
+  untded_code: '6102'
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Classified
+  primary_noun: Indicator
+  type: Indicator
+  definition: An indicator that this goods item has been classified for import by customs (true) or not (false).
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Quantity
+  type: Quantity
+  definition: The number of units in the goods item to which charges apply.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Quantity
+  type: Quantity
+  definition: The number of units in the goods item that may be returned.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for use in tracing this goods item, such as the EPC number used in RFID.
+  cardinality: 0..1
+  since_version: '2.1'
+
+objects:
+- type: Item
+  definition: Product information relating to a goods item.
+  cardinality: 0..n
+  since_version: '2.0'
+- type: Goods Item Container
+  definition: The transporting of a goods item in a unit of transport equipment (e.g., container).
+  cardinality: 0..n
+  since_version: '2.0'
+- qualifier: Freight
+  type: Allowance Charge
+  definition: A cost incurred by the shipper in moving goods, by whatever means, from one place to another under the terms of the contract of carriage. In addition to transport costs, this may include such elements as packing, documentation, loading, unloading, and insurance to the extent that they relate to the freight costs.
+  alternative_business_terms: Freight Costs
+  untded_code: '5290'
+  cardinality: 0..n
+  since_version: '2.0'
+- type: Invoice Line
+  definition: Information about an invoice line relating to this goods item.
+  cardinality: 0..n
+  since_version: '2.0'
+- type: Order Line Reference
+  definition: A reference to an order line associated with this goods item.
+  cardinality: 0..n
+  since_version: '2.3'
+- qualifier: Despatch
+  type: Line Reference
+  definition: A reference to the despatch line associated with this goods item.
+  cardinality: 0..1
+  since_version: '2.4'
+- qualifier: Receipt
+  type: Line Reference
+  definition: A reference to the receipt line associated with this goods item.
+  cardinality: 0..1
+  since_version: '2.4'
+- type: Temperature
+  definition: The temperature of the goods item.
+  examples: maximum, storage, minimum
+  cardinality: 0..n
+  since_version: '2.0'
+- qualifier: Contained
+  type: Goods Item
+  definition: A goods item contained in this goods item.
+  cardinality: 0..n
+  since_version: '2.0'
+- qualifier: Origin
+  type: Address
+  definition: The region in which the goods have been produced or manufactured, according to criteria laid down for the purposes of application of the customs tariff, or of quantitative restrictions, or of any other measure related to trade.
+  alternative_business_terms: Region of origin (WCO ID 066)
+  untded_code: '3229'
+  cardinality: 0..1
+  since_version: '2.0'
+- type: Delivery
+  definition: The delivery of this goods item.
+  cardinality: 0..1
+  since_version: '2.1'
+- type: Pickup
+  definition: The pickup of this goods item.
+  cardinality: 0..1
+  since_version: '2.1'
+- type: Despatch
+  definition: The despatch of this goods item.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Bonded Warehouse
+  type: Location
+  definition: The location of the bonded warehouse where this goods item is temporarily stored.
+  cardinality: 0..1
+  since_version: '2.4'
+- qualifier: Measurement
+  type: Dimension
+  definition: A measurable dimension (length, mass, weight, or volume) of this goods item.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Containing
+  type: Package
+  definition: A package containing this goods item.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Shipment
+  type: Document Reference
+  definition: A reference to a shipping document associated with this goods item.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Additional
+  type: Document Reference
+  definition: A reference to an additional document associated with this goods item.
+  cardinality: 0..n
+  since_version: '2.4'
+- qualifier: Minimum
+  type: Temperature
+  definition: Information about minimum temperature.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Maximum
+  type: Temperature
+  definition: Information about maximum temperature.
+  cardinality: 0..1
+  since_version: '2.1'

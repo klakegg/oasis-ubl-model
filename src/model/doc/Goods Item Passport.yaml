@@ -1,0 +1,153 @@
+name: Goods Item Passport
+definition: A document providing a temporary export license, also knowned as an ATA Carnet
+alternative_business_terms: ATA Carnet
+since_version: '2.3'
+
+fields:
+- possessive_noun: UBL Version
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies the earliest version of the UBL 2 schema for this document type that defines all of the elements that might be encountered in the current instance.
+  examples: '2.3'
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Customization
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies a user-defined customization of UBL for a specific use.
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Profile
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies a user-defined profile of the customization of UBL being used.
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Profile Execution
+  primary_noun: Identifier
+  type: Identifier
+  definition: Identifies an instance of executing a profile, to associate all transactions in a collaboration.
+  examples: BPP-1001
+  cardinality: 0..1
+  since_version: '2.3'
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this document, assigned by the sender.
+  cardinality: '1'
+  since_version: '2.3'
+- primary_noun: UUID
+  type: Identifier
+  definition: A universally unique identifier for an instance of this document.
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Issue
+  primary_noun: Date
+  type: Date
+  definition: The date, assigned by the sender, on which this document was issued.
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Issue
+  primary_noun: Time
+  type: Time
+  definition: The time, assigned by the sender, at which this document was issued.
+  cardinality: 0..1
+  since_version: '2.3'
+- primary_noun: Status
+  type: Code
+  definition: The reason for importing the goods, expressed as a code.
+  cardinality: 0..1
+  since_version: '2.3'
+- primary_noun: Status
+  type: Text
+  definition: The reason for importing the goods, expressed as text in one or more languages.
+  cardinality: 0..n
+  since_version: '2.3'
+- primary_noun: Note
+  type: Text
+  definition: Free-form text pertinent to this document, conveying information that is not contained explicitly in other structures.
+  cardinality: 0..n
+  since_version: '2.3'
+- primary_noun: Version
+  type: Identifier
+  definition: Identifies the current version of this request for proof
+  cardinality: 0..1
+  since_version: '2.3'
+- primary_noun: Reason
+  type: Code
+  definition: The reason for importing the goods, expressed as a code
+  cardinality: 0..1
+  since_version: '2.3'
+- primary_noun: Reason
+  type: Text
+  definition: The reason for importing the goods, expressed as text in one or more languages
+  cardinality: 0..n
+  since_version: '2.3'
+
+objects:
+- qualifier: Validity
+  type: Period
+  definition: The period within which this Goods Item Passport is valid
+  cardinality: 0..1
+  since_version: '2.3'
+- qualifier: Issuer
+  type: Party
+  definition: The party issuing this Goods Item Passport
+  cardinality: 0..1
+  since_version: '2.3'
+- qualifier: Holder
+  type: Party
+  definition: The holder of the Goods Item Passport, often the temporary exporter of the goods
+  cardinality: '1'
+  since_version: '2.3'
+- qualifier: Representative
+  type: Party
+  definition: The party accompanying the goods while temporarily exported
+  cardinality: 0..1
+  since_version: '2.3'
+- qualifier: Exporting Guarantor
+  type: Party
+  definition: A party (often a chamber of commerce) which provides a guarantee goods while temporarily exported
+  cardinality: 0..1
+  since_version: '2.3'
+- qualifier: Importing Guarantor
+  type: Party
+  definition: A party (often a chamber of commerce) which provides a guarantee goods while temporarily imported
+  cardinality: 0..1
+  since_version: '2.3'
+- qualifier: Exporting Customs
+  type: Party
+  definition: The competent Customs party of the exporting country
+  cardinality: 0..1
+  since_version: '2.3'
+- qualifier: Importing Customs
+  type: Party
+  definition: The competent Customs party of the importing country
+  cardinality: 0..1
+  since_version: '2.3'
+- type: Shipment
+  definition: The reference to the shipment of the goods included under this Goods Item Passport
+  cardinality: '1'
+  since_version: '2.3'
+- type: Goods Item Passport Counterfoil
+  definition: One or more counterfoils associated with this Goods Item Passport
+  alternative_business_terms: ATA Carnet counterfoil
+  cardinality: 1..n
+  since_version: '2.3'
+- qualifier: Issuer
+  type: Endorsement
+  definition: A reference to the issuer's endorsement of this Goods Item Passport
+  cardinality: 0..1
+  since_version: '2.3'
+- qualifier: Additional
+  type: Document Reference
+  definition: One or more references to additional documents related to this Goods Item Passport
+  cardinality: 0..n
+  since_version: '2.3'
+- type: Document Distribution
+  definition: One or more parties to whom this document is distributed
+  cardinality: 0..n
+  since_version: '2.3'
+- type: Signature
+  definition: A signature applied to this document.
+  cardinality: 0..n
+  since_version: '2.3'

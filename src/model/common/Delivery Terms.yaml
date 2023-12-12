@@ -1,0 +1,44 @@
+name: Delivery Terms
+definition: A class for describing the terms and conditions applying to the delivery of goods.
+since_version: '2.0'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this description of delivery terms.
+  examples: CIF, FOB, or EXW from the INCOTERMS Terms of Delivery. (2000 version preferred.)
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Terms
+  type: Text
+  definition: A description of any terms or conditions relating to the delivery items.
+  cardinality: 0..n
+  since_version: '2.0'
+- possessive_noun: Loss Risk Responsibility
+  primary_noun: Code
+  type: Code
+  definition: A code that identifies one of various responsibilities for loss risk in the execution of the delivery.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Loss
+  primary_noun: Risk
+  type: Text
+  definition: A description of responsibility for risk of loss in execution of the delivery, expressed as text.
+  cardinality: 0..n
+  since_version: '2.0'
+- primary_noun: Amount
+  type: Amount
+  definition: The monetary amount covered by these delivery terms.
+  cardinality: 0..1
+  since_version: '2.1'
+
+objects:
+- qualifier: Delivery
+  type: Location
+  definition: The location for the contracted delivery.
+  cardinality: 0..1
+  since_version: '2.0'
+- type: Allowance Charge
+  definition: An allowance or charge covered by these delivery terms.
+  cardinality: 0..1
+  since_version: '2.0'

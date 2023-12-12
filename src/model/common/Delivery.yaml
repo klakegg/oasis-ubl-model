@@ -1,0 +1,133 @@
+name: Delivery
+definition: A class to describe a delivery.
+since_version: '2.0'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this delivery.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Quantity
+  type: Quantity
+  definition: The quantity of items, child consignments, shipments in this delivery.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Quantity
+  type: Quantity
+  definition: The minimum quantity of items, child consignments, shipments in this delivery.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Quantity
+  type: Quantity
+  definition: The maximum quantity of items, child consignments, shipments in this delivery.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Delivery
+  primary_noun: Date
+  type: Date
+  definition: The actual date of delivery.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Delivery
+  primary_noun: Time
+  type: Time
+  definition: The actual time of delivery.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Delivery
+  primary_noun: Date
+  type: Date
+  definition: The latest date of delivery allowed by the buyer.
+  cardinality: 0..1
+  since_version: '2.0'
+- possessive_noun: Delivery
+  primary_noun: Time
+  type: Time
+  definition: The latest time of delivery allowed by the buyer.
+  cardinality: 0..1
+  since_version: '2.0'
+- primary_noun: Release
+  type: Identifier
+  definition: An identifier used for approval of access to delivery locations (e.g., port terminals).
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Tracking
+  primary_noun: Identifier
+  type: Identifier
+  definition: The delivery Tracking ID (for transport tracking).
+  cardinality: 0..1
+  since_version: '2.0'
+
+objects:
+- qualifier: Delivery
+  type: Address
+  definition: The delivery address.
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Delivery
+  type: Location
+  definition: The delivery location.
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Alternative Delivery
+  type: Location
+  definition: An alternative delivery location.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Requested Delivery
+  type: Period
+  definition: The period requested for delivery.
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Promised Delivery
+  type: Period
+  definition: The period promised for delivery.
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Estimated Delivery
+  type: Period
+  definition: The period estimated for delivery.
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Carrier
+  type: Party
+  definition: The party responsible for delivering the goods.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Delivery
+  type: Party
+  definition: The party to whom the goods are delivered.
+  cardinality: 0..1
+  since_version: '2.0'
+- qualifier: Notify
+  type: Party
+  definition: A party to be notified of this delivery.
+  cardinality: 0..n
+  since_version: '2.1'
+- type: Despatch
+  definition: The despatch (pickup) associated with this delivery.
+  cardinality: 0..1
+  since_version: '2.0'
+- type: Delivery Terms
+  definition: Terms and conditions relating to the delivery.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Minimum
+  type: Delivery Unit
+  definition: The minimum delivery unit for this delivery.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Maximum
+  type: Delivery Unit
+  definition: The maximum delivery unit for this delivery.
+  cardinality: 0..1
+  since_version: '2.1'
+- type: Shipment
+  definition: The shipment being delivered.
+  cardinality: 0..1
+  since_version: '2.1'
+- type: Fuel Consumption
+  definition: One or more fuel consumptions of this delivery.
+  cardinality: 0..n
+  since_version: '2.4'

@@ -1,0 +1,15 @@
+name: Ship Requirement
+definition: A class to describe a requirement for a ship
+since_version: '2.3'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this ship requirement.
+  cardinality: 0..1
+  since_version: '2.3'
+- primary_noun: Description
+  type: Text
+  definition: The description of this ship requirement
+  cardinality: 1..n
+  since_version: '2.3'

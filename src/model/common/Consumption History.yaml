@@ -1,0 +1,49 @@
+name: Consumption History
+definition: A class to describe the measurement of a type of consumption during a particular period, used for the subscriber to get an overview of his consumption
+since_version: '2.1'
+
+fields:
+- possessive_noun: Meter
+  primary_noun: Number
+  type: Text
+  definition: A text identifier for the meter measuring the consumption.
+  examples: 61722x
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Quantity
+  type: Quantity
+  definition: The quantity consumed.
+  examples: '7621.00'
+  cardinality: '1'
+  since_version: '2.1'
+- primary_noun: Amount
+  type: Amount
+  definition: The monetary amount to be charged for the quantity consumed.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Consumption Level
+  primary_noun: Code
+  type: Code
+  definition: The consumption level, expressed as a code used explain the consumption quantity, e.g.. diversion from the normal.
+  examples: B
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Consumption Level
+  primary_noun: Text
+  type: Text
+  definition: The consumption level, expressed as text, used explain the consumption quantity, e.g.. diversion from the normal.
+  examples: Average
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Description
+  type: Text
+  definition: Text describing the consumption itself.
+  examples: 2004/2005
+  cardinality: 0..n
+  since_version: '2.1'
+
+objects:
+- type: Period
+  definition: The period during which the consumption took place.
+  cardinality: '1'
+  since_version: '2.1'

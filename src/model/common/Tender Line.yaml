@@ -1,0 +1,129 @@
+name: Tender Line
+definition: A class to define a line in a Tender.
+since_version: '2.1'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: An identifier for this tender line.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Note
+  type: Text
+  definition: Free-form text conveying information that is not contained explicitly in other structures.
+  cardinality: 0..n
+  since_version: '2.1'
+- primary_noun: Quantity
+  type: Quantity
+  definition: The quantity of the item quoted in this tender line.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Line Extension
+  primary_noun: Amount
+  type: Amount
+  definition: The total amount for this tender line, including allowance charges but net of taxes.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Line Extension
+  primary_noun: Amount
+  type: Amount
+  definition: The total amount for this tender line, including all allowances, charges and taxes.
+  cardinality: 0..1
+  since_version: '2.3'
+- possessive_noun: Tax
+  primary_noun: Amount
+  type: Amount
+  definition: The total tax amount for this tender line.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Unit
+  type: Text
+  definition: Text describing a unit in which the item described in this tender line can be ordered.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Content
+  primary_noun: Unit
+  type: Quantity
+  definition: The unit of measure and quantity of the orderable unit.
+  examples: If order unit measure identifier is each , then content unit quantity is 1 .
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Order Quantity
+  primary_noun: Increment
+  type: Numeric
+  definition: The number of items that can set the order quantity increments.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Order
+  primary_noun: Quantity
+  type: Quantity
+  definition: The minimum number of items described in this tender line that can be ordered.
+  examples: '10 boxes '
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Order
+  primary_noun: Quantity
+  type: Quantity
+  definition: The maximum number of items described in this tender line that can be ordered.
+  examples: '1 tonne '
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Information
+  type: Text
+  definition: Text about a warranty (provided by WarrantyParty) for the good or service described in this tender line.
+  examples: 'Unless specified otherwise and in addition to any rights the Customer may have under statute, Dell warrants to the Customer that Dell branded Products (excluding third party products and software), will be free from defects in materials and workmanship affecting normal use for a period of one year from invoice date ( Standard Warranty ). '
+  cardinality: 0..n
+  since_version: '2.1'
+- possessive_noun: Pack Level
+  primary_noun: Code
+  type: Code
+  definition: A mutually agreed code signifying the level of packaging associated with the item described in this tender line.
+  alternative_business_terms: Consumer Unit, Trading Unit
+  examples: 'level 2 , Group 4 '
+  cardinality: 0..1
+  since_version: '2.1'
+
+objects:
+- type: Document Reference
+  definition: A reference to a document associated with this tender line.
+  cardinality: 0..n
+  since_version: '2.1'
+- type: Item
+  definition: The item associated with this tender line.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Offered
+  type: Item Location Quantity
+  definition: A set of location-specific properties (e.g., price, quantity, lead time) associated with the item described in this tender line.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Replacement
+  type: Related Item
+  definition: A catalogue item that may be a replacement for the item described in this tender line.
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Warranty
+  type: Party
+  definition: The party responsible for any warranty described in this tender line.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Warranty Validity
+  type: Period
+  definition: The period for which a warranty associated with the item described in this tender line is valid.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Sub
+  type: Tender Line
+  definition: An association to a Sub Tender Line
+  cardinality: 0..n
+  since_version: '2.1'
+- qualifier: Call For Tenders
+  type: Line Reference
+  definition: Reference to a Line on a Call For Tenders document.
+  cardinality: 0..1
+  since_version: '2.1'
+- qualifier: Call For Tenders
+  type: Document Reference
+  definition: One or more references to Call For Tenders documents.
+  cardinality: 0..n
+  since_version: '2.1'

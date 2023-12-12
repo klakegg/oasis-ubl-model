@@ -1,0 +1,82 @@
+name: Awarding Criterion
+definition: A class to define a criterion from the contracting party that will be taken into account when awarding a contract. An awarding criterion can be objective, when it can be evaluated following a formula, or subjective, when human analysis is required.
+since_version: '2.1'
+
+fields:
+- primary_noun: Identifier
+  type: Identifier
+  definition: Identifies a specific awarding criterion.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Awarding Criterion Type
+  primary_noun: Code
+  type: Code
+  definition: 'A code used to define this awarding criterion. '
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Name
+  type: Name
+  definition: The name of this awarding criterion.
+  cardinality: 0..n
+  since_version: '2.3'
+- primary_noun: Description
+  type: Text
+  definition: A description of the awarding criterion.
+  cardinality: 0..n
+  since_version: '2.1'
+- possessive_noun: Weight
+  primary_noun: Numeric
+  type: Numeric
+  definition: A number defining the comparative weighting assigned to this awarding criterion, to enable formulaic evaluation.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Weight
+  type: Text
+  definition: A description of the comparative weighting for this awarding criterion.
+  cardinality: 0..n
+  since_version: '2.1'
+- possessive_noun: Calculation
+  primary_noun: Expression
+  type: Text
+  definition: The mathematical expression that will be used to evaluate this criterion.
+  cardinality: 0..n
+  since_version: '2.1'
+- possessive_noun: Calculation Expression
+  primary_noun: Code
+  type: Code
+  definition: A code identifying the mathematical expression that will be used to evaluate this criterion.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Quantity
+  type: Quantity
+  definition: The minimum quantity for an awarding criterion.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Quantity
+  type: Quantity
+  definition: The maximum quantity for an awarding criterion.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Amount
+  type: Amount
+  definition: The minimum monetary amount for an awarding criterion.
+  cardinality: 0..1
+  since_version: '2.1'
+- primary_noun: Amount
+  type: Amount
+  definition: The maximum monetary amount for an awarding criterion.
+  cardinality: 0..1
+  since_version: '2.1'
+- possessive_noun: Minimum Improvement
+  primary_noun: Bid
+  type: Text
+  definition: Describes the minimum improvement bid for this awarding criterion when used in an auction.
+  cardinality: 0..n
+  since_version: '2.1'
+
+objects:
+- qualifier: Subordinate
+  type: Awarding Criterion
+  definition: Defines any subsidiary awarding criterion.
+  cardinality: 0..n
+  since_version: '2.1'
